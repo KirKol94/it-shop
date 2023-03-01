@@ -13,6 +13,9 @@ const Header: FC = () => {
           <li>
             <Link to="/not-found">Не существующая</Link>
           </li>
+          <li>
+            <Link to="/test-page">тестовая страничка</Link>
+          </li>
         </ul>
       </nav>
     </header>
