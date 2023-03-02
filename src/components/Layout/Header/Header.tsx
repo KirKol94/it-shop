@@ -4,7 +4,7 @@ import styles from "./Header.module.scss";
 
 const Header: FC = () => {
   return (
-    <header>``
+    <header>
       <nav className={styles.nav}>
         <ul className={styles.list}>
           <li>
