@@ -15,6 +15,7 @@ const TestPage = () => {
 
       <Modal isOpen={isVisibleModal} setIsOpen={setIsVisibleModal}>
         <h1>modal window</h1>
+        <button onClick={() => setIsVisibleModal(false)}>close</button>
       </Modal>
     </div>
   );
