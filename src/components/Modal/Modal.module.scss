@@ -5,8 +5,6 @@
   bottom: 0;
   left: 0;
 
-  background-color: rgba(black, 0.8);
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,4 +14,5 @@
   background-color: #fff;
   border-radius: 1rem;
   padding: 1rem;
+  box-shadow: 6px 6px 10px 4px rgba(#000, .5);
 }
