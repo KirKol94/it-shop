@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Modal from "../../components/Modal/Modal";
-import Title from "../../components/Title/Title";
+import Modal from "../../components/ui/Modal/Modal";
+import Title from "../../components/ui/Title/Title";
 
 const TestPage = () => {
   const [isVisibleModal, setIsVisibleModal] = useState(false);

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Title from "../../components/Title/Title";
+import Title from "../../components/ui/Title/Title";
 
 const Page404: FC = () => {
   return (
