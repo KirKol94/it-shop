@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect } from "react";
+import React, { FC, ReactNode } from "react";
 import ReactDOM from "react-dom";
 import styles from "./Modal.module.scss";
 import { Dialog } from "@headlessui/react";
