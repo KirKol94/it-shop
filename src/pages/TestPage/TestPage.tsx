@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Modal from "../../components/ui/Modal/Modal";
 import Title from "../../components/ui/Title/Title";
-import SearchIcon from "../../components/icons/SearchIcon";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { fetchProducts } from "../../store/products/asyncProductActions";
 import { fetchCategories } from "../../store/categories/asyncCategoryActions";
+import Card from "../../components/ui/Card/Card";
 
 const TestPage = () => {
   const dispatch = useAppDispatch();
@@ -31,9 +31,7 @@ const TestPage = () => {
       </button>
 
       <Modal isOpen={isVisibleModal} setIsOpen={setIsVisibleModal}>
-        <SearchIcon />
-        <h1>modal window</h1>
-        <button onClick={() => setIsVisibleModal(false)}>close</button>
+        <Card />
       </Modal>
     </div>
   );
