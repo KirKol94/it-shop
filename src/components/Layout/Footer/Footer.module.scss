@@ -1,5 +1,5 @@
 .footer {
-  color: #251e13;
+  color: $accent-color;
   width: 100%;
   // .footer__container
   &__container {
@@ -86,7 +86,7 @@
   &__icon {
     position: relative;
     padding: 6px 16px;
-    background: linear-gradient(91.06deg, #816e4c 0%, #6f5b39 100%);
+    background: linear-gradient(91.06deg, $brown-color 0%, #6f5b39 100%);
     box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.25);
     border-radius: 50%;
     &::before {
@@ -176,7 +176,7 @@
     white-space: pre-wrap;
     will-change: transform;
     color: #95928f;
-    background-color: #fff;
+    background-color: $text-color;
     // .newsletter__label_mail
     &_mail {
     }
@@ -214,7 +214,7 @@
   &__button {
     width: 100%;
     margin-bottom: 14px;
-    color: #fff;
+    color: $text-color;
   }
   // .newsletter__politic
   &__politic {
@@ -223,7 +223,7 @@
     text-align: center;
     color: #95928f;
     & > a {
-      color: #816e4c;
+      color: $brown-color;
       text-decoration-line: underline;
     }
   }
@@ -284,14 +284,14 @@
 }
 .button {
   transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
+  padding: 10px 22px;
+  
   &_main {
-    padding: 10px 22px;
+    background: $brown-color;
     border-radius: 36px;
-    background: #816e4c;
 
     &:hover {
       box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.25);
-      border-radius: 36px;
     }
   }
 }
