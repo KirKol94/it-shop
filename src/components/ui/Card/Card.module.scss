@@ -1,3 +1,6 @@
+@import "src/styles/common/vars";
+@import "src/styles/common/mixins";
+
 .card {
   display: flex;
   flex-direction: column;
@@ -18,15 +21,18 @@
     & > img {
       border-radius: 16px;
       transition: transform 0.5s ease, box-shadow 0.3s ease;
+
       &:hover {
         transform: scale(1.05);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
       }
     }
   }
+
   // .card__body
   &__body {
   }
+
   // .card__title
   &__title {
     font-weight: 600;
@@ -36,6 +42,7 @@
     line-height: 1.5;
     @include text-overflow;
   }
+
   // .card__description
   &__description {
     font-family: $second-font;
@@ -45,12 +52,14 @@
     color: $text-color;
     @include text-overflow(4);
   }
+
   // .card__footer
   &__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   // .card__price
   &__price {
     font-weight: 600;
@@ -58,6 +67,7 @@
     line-height: 1.2;
     color: $text-color;
   }
+
   // .card__button
   &__button {
     flex: 0 1 180px;
