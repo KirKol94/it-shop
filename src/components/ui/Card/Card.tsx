@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import CardImg from "../../../assets/img/card/card.jpg";
 import styles from "./Card.module.scss";
+import Button from "../Button/Button";
 
 const Card: FC = () => {
   return (
@@ -19,7 +20,9 @@ const Card: FC = () => {
 
       <div className={styles.card__footer}>
         <span className={styles.card__price}>599 ₽</span>
-        <button className={styles.card__button}>В корзину</button>
+        <Button type="main" onClick={() => {}} className={styles.card__button}>
+          В корзину
+        </Button>
       </div>
     </div>
   );
