@@ -14,6 +14,7 @@
   &__img {
     overflow: hidden;
     border-radius: 16px;
+
     & > img {
       border-radius: 16px;
       transition: transform 0.5s ease, box-shadow 0.3s ease;
@@ -37,7 +38,7 @@
   }
   // .card__description
   &__description {
-    font-family: $raleway-font;
+    font-family: $second-font;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.5;
