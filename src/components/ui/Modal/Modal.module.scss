@@ -1,4 +1,4 @@
-.overlay{
+.overlay {
   position: absolute;
   top: 0;
   right: 0;
@@ -12,8 +12,22 @@
   justify-content: center;
 }
 
-.modal{
+.modal {
   background-color: #fff;
   border-radius: 1rem;
   padding: 1rem;
+  animation: fade-in-modal 500ms linear;
+}
+
+@keyframes fade-in-modal {
+  from {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 }
