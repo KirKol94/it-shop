@@ -1,5 +1,5 @@
 .footer {
-  color: #251e13;
+  color: $accent-color;
   width: 100%;
   // .footer__container
   &__container {
@@ -86,7 +86,7 @@
   &__icon {
     position: relative;
     padding: 6px 16px;
-    background: linear-gradient(91.06deg, #816e4c 0%, #6f5b39 100%);
+    background: linear-gradient(91.06deg, $brown-color 0%, #6f5b39 100%);
     box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.25);
     border-radius: 50%;
     &::before {
@@ -136,7 +136,7 @@
     font-size: 18px;
     line-height: 21px;
     margin-bottom: 14px;
-    color: #251e13;
+    color: $text-color;
   }
   // .newsletter__form
   &__form {
@@ -155,7 +155,7 @@
       transform: translateY(-28px) scale(0.75);
       padding: 0 3px;
       border-radius: 3px;
-      color: #251e13;
+      color: $text-color;
     }
   }
 
@@ -175,8 +175,8 @@
     transition: all 200ms cubic-bezier(0.25, 0.8, 0.25, 1);
     white-space: pre-wrap;
     will-change: transform;
-    color: #95928f;
-    background-color: #fff;
+    color: $grey-color;
+    background-color: $text-color;
     // .newsletter__label_mail
     &_mail {
     }
@@ -186,7 +186,7 @@
     width: 100%;
     height: 43px;
     border-radius: 4px;
-    border: 1px solid #95928f;
+    border: 1px solid $grey-color;
     padding: 12px 20px;
     box-sizing: border-box;
     font-style: normal;
@@ -214,16 +214,16 @@
   &__button {
     width: 100%;
     margin-bottom: 14px;
-    color: #fff;
+    color: $text-color;
   }
   // .newsletter__politic
   &__politic {
     font-weight: 400;
     font-size: 10px;
     text-align: center;
-    color: #95928f;
+    color: $grey-color;
     & > a {
-      color: #816e4c;
+      color: $brown-color;
       text-decoration-line: underline;
     }
   }
@@ -250,11 +250,11 @@
     width: 25px;
 
     &:not(old):checked + label > span {
-      border-color: #333;
+      border-color: $accent-color;
     }
 
     &:not(old) + label > span {
-      border: 3px solid #d3d3d3;
+      border: 3px solid $grey-color;
       cursor: pointer;
       display: inline-block;
       height: 16px;
@@ -265,7 +265,7 @@
     }
 
     &:not(old):checked + label > span > span {
-      background: #333;
+      background: $accent-color;
       border-radius: 1em;
       display: block;
       height: 6px;
@@ -279,19 +279,27 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: #251e13;
+    color: $text-color;
   }
 }
 .button {
   transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
-  &_main {
-    padding: 10px 22px;
-    border-radius: 36px;
-    background: #816e4c;
+  padding: 10px 22px;
 
+  &_main {
+    background-color: $brown-color;
+    border-radius: 36px;
     &:hover {
       box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.25);
-      border-radius: 36px;
+    }
+  }
+
+  &_second {
+    background-color: $accent-color;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    &:hover {
+      box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.25);
     }
   }
 }

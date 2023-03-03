@@ -1,12 +1,16 @@
 // Fonts
-$base-font: "Inter", sans-serif, Arial;
+$main-font: "Inter", sans-serif, Arial;
+$second-font: "Raleway", sans-serif;
 
 // Colors
-$bg-color: #fff;
-$text-color: #000;
+$accent-color: #2c2c2c;
+$bg-color: linear-gradient(115.43deg, #1e1e1e 0%, #1c1c1c 100%);
+$grey-color: #95928f;
+$text-color: #fff;
+$brown-color: #816e4c;
 
 // Spacing
-
+$container-width: 1230px;
 // Breakpoints
 
 // Containers

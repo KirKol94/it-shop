@@ -1,0 +1,32 @@
+@mixin text-overflow($line-clamp: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line-clamp;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Breakpoints
+@mixin mobile {
+  @media screen and (max-width: $mobile-bp) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-bp) {
+    @content;
+  }
+}
+
+@mixin notebook {
+  @media screen and (min-width: $notebook-bp) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-bp) {
+    @content;
+  }
+}
