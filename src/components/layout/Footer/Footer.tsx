@@ -205,7 +205,8 @@ const Footer: FC = () => {
               </div>
               <div className={styles.newsletter__bottom}>
                 <Button
-                  type="main"
+                  variant="main"
+                  type="submit"
                   className={styles.newsletter__button}
                   onClick={() => {}}
                 >

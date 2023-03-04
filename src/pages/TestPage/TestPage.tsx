@@ -28,7 +28,7 @@ const TestPage = () => {
       <Title>🐺 Тестовая страничка</Title>
 
       <Button
-        type="main"
+        variant="main"
         onClick={() => setIsVisibleModal((prev) => !prev)}
         className=""
       >

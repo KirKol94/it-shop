@@ -20,7 +20,11 @@ const Card: FC = () => {
 
       <div className={styles.card__footer}>
         <span className={styles.card__price}>599 ₽</span>
-        <Button type="main" onClick={() => {}} className={styles.card__button}>
+        <Button
+          variant="main"
+          onClick={() => {}}
+          className={styles.card__button}
+        >
           В корзину
         </Button>
       </div>
