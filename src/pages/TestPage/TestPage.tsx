@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { fetchProducts } from "../../store/products/asyncProductActions";
 import { fetchCategories } from "../../store/categories/asyncCategoryActions";
 import Card from "../../components/ui/Card/Card";
+import Button from "../../components/ui/Button/Button";
 
 const TestPage = () => {
   const dispatch = useAppDispatch();
@@ -26,9 +27,13 @@ const TestPage = () => {
     <div>
       <Title>🐺 Тестовая страничка</Title>
 
-      <button onClick={() => setIsVisibleModal((prev) => !prev)}>
+      <Button
+        variant="main"
+        onClick={() => setIsVisibleModal((prev) => !prev)}
+        className=""
+      >
         показать модалку
-      </button>
+      </Button>
 
       <Modal isOpen={isVisibleModal} setIsOpen={setIsVisibleModal}>
         <Card />
