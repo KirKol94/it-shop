@@ -5,7 +5,7 @@ interface IProps {
   stroke?: string;
 }
 
-const SearchIcon: FC<IProps> = ({ size = 20, stroke = "#95928F" }) => (
+const SearchIcon: FC<IProps> = ({ size = 20, stroke = "#FFFFFF" }) => (
   <svg
     width={size}
     height={size}
