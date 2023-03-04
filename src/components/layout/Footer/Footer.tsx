@@ -3,8 +3,18 @@ import styles from "./Footer.module.scss";
 import Logo from "../../ui/Logo/Logo";
 import clsx from "clsx";
 import Button from "../../ui/Button/Button";
+import { Link } from "react-router-dom";
 
 const Footer: FC = () => {
+  const menuLinks = [
+    { name: "Главная", url: "" },
+    { name: "Новинки", url: "new-products" },
+    { name: "Футболки", url: "t-shirts" },
+    { name: "Кепки", url: "caps" },
+    { name: "Аксессуары", url: "accessories" },
+    { name: "Чехлы", url: "covers" },
+  ];
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__container}>
@@ -27,36 +37,13 @@ const Footer: FC = () => {
             Меню
           </p>
           <ul className={styles.navFooter__list}>
-            <li className={styles.navFooter__item}>
-              <a className={styles.navFooter__link} href="##">
-                Главная
-              </a>
-            </li>
-            <li className={styles.navFooter__item}>
-              <a className={styles.navFooter__link} href="##">
-                Новинки
-              </a>
-            </li>
-            <li className={styles.navFooter__item}>
-              <a className="navFooter__link" href="##">
-                Футболки
-              </a>
-            </li>
-            <li className={styles.navFooter__item}>
-              <a className={styles.navFooter__link} href="##">
-                Кепки
-              </a>
-            </li>
-            <li className={styles.navFooter__item}>
-              <a className={styles.navFooter__link} href="##">
-                Аксессуары
-              </a>
-            </li>
-            <li className={styles.navFooter__item}>
-              <a className={styles.navFooter__link} href="##">
-                Чехлы
-              </a>
-            </li>
+            {menuLinks.map(({ name, url }) => (
+              <li key={url} className={styles.navFooter__item}>
+                <Link className={styles.navFooter__link} to={url}>
+                  {name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
         <div className={styles.footer__block}>
