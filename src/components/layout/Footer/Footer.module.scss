@@ -219,7 +219,7 @@
     width: 25px;
 
     &:not(old):checked + label > span {
-      border-color: $accent-color;
+      border-color: $text-color;
     }
 
     &:not(old) + label > span {
@@ -234,7 +234,7 @@
     }
 
     &:not(old):checked + label > span > span {
-      background: $accent-color;
+      background: $text-color;
       border-radius: 1em;
       display: block;
       height: 6px;
