@@ -7,18 +7,18 @@ import styles from "./Categories.module.scss";
 const Categories: FC = () => {
   const links = [
     { to: "", name: "Главная" },
-    { to: "/catalog", name: "Каталог" },
-    { to: "/test-page", name: "Доставка и оплата" },
-    { to: "/unknown", name: "О нас" },
+    { to: "catalog", name: "Каталог" },
+    { to: "test-page", name: "Доставка и оплата" },
+    { to: "unknown", name: "О нас" },
   ];
 
   return (
-    <div className={styles.header}>
-      <nav className={styles.nav}>
-        <ul className={styles.list}>
+    <div className={styles.categories}>
+      <nav className={styles.categories__container}>
+        <ul className={styles.categories__list}>
           {links.map(({ to, name }) => (
             <li key={to}>
-              <Link className={styles.link} to={to}>
+              <Link className={styles.categories__link} to={to}>
                 {name}
                 {name === "Каталог" ? <Arrow /> : null}
               </Link>
@@ -27,8 +27,12 @@ const Categories: FC = () => {
         </ul>
 
         <div className={styles.inputWrapper}>
-          <input className={styles.input} placeholder="Поиск" type="text" />
-          <div className={styles.searchIcon}>
+          <input
+            className={styles.inputWrapper__input}
+            placeholder="Поиск"
+            type="text"
+          />
+          <div className={styles.inputWrapper__searchIcon}>
             <SearchIcon />
           </div>
         </div>
