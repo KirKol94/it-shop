@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
-import Modal from "../../components/ui/Modal/Modal";
-import Title from "../../components/ui/Title/Title";
+import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { fetchProducts } from "../../store/products/asyncProductActions";
 import { fetchCategories } from "../../store/categories/asyncCategoryActions";
 import Card from "../../components/ui/Card/Card";
-import Button from "../../components/ui/Button/Button";
+import styles from "./TestPage.module.scss";
 
 const TestPage = () => {
   const dispatch = useAppDispatch();
-  const [isVisibleModal, setIsVisibleModal] = useState(false);
   const isLoadingCategories = useAppSelector(
     (state) => state.category.isLoading
   );
@@ -24,20 +21,21 @@ const TestPage = () => {
   }
 
   return (
-    <div>
-      <Title>🐺 Тестовая страничка</Title>
+    <div className={styles.testPage}>
+      <div className={styles.testPage__container}>
+        <h2 className={styles.title}>Футболки и свитшоты</h2>
 
-      <Button
-        variant="main"
-        onClick={() => setIsVisibleModal((prev) => !prev)}
-        className=""
-      >
-        показать модалку
-      </Button>
-
-      <Modal isOpen={isVisibleModal} setIsOpen={setIsVisibleModal}>
-        <Card />
-      </Modal>
+        <div className={styles.cards}>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
+      </div>
     </div>
   );
 };

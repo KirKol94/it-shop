@@ -1,10 +1,11 @@
 import React, { FC } from "react";
-import Title from "../../components/ui/Title/Title";
 
 const Page404: FC = () => {
   return (
-    <div>
-      <Title>🐺Ошибка 404 Страница не найдена</Title>
+    <div className="page404">
+      <div className="page404__container">
+        <h1>🐺Ошибка 404 Страница не найдена</h1>
+      </div>
     </div>
   );
 };

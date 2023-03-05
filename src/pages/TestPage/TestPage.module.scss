@@ -1,0 +1,25 @@
+@import "src/styles/common/vars";
+
+.testPage {
+  background-color: $bg-dark;
+
+  &__container {
+    display: block;
+  }
+}
+
+.title{
+  margin-top: 80px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 125%;
+}
+
+.cards {
+  padding: 20px 0 80px;
+  display: flex;
+  column-gap: 20px;
+  row-gap: 32px;
+  flex-wrap: wrap;
+}
