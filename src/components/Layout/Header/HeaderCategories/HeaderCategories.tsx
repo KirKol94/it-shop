@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import SearchIcon from "../../icons/SearchIcon";
-import Arrow from "../../icons/Arrow";
-import styles from "./Categories.module.scss";
+import SearchIcon from "../../../icons/SearchIcon";
+import Arrow from "../../../icons/Arrow";
+import styles from "./HeaderCategories.module.scss";
 
-const Categories: FC = () => {
+const HeaderCategories: FC = () => {
   const links = [
     { to: "", name: "Главная" },
     { to: "catalog", name: "Каталог" },
@@ -41,4 +41,4 @@ const Categories: FC = () => {
   );
 };
 
-export default Categories;
+export default HeaderCategories;
