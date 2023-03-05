@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styles from "./HeaderTop.module.scss";
-import linkLogo from "../media.png";
+import linkLogo from "../../../../assets/img/header/media.png";
 import Logo from "../../../ui/Logo/Logo";
 import { Link } from "react-router-dom";
 
