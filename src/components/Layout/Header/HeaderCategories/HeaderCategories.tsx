@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from "../../../icons/SearchIcon";
-import Arrow from "../../../icons/Arrow";
+import ArrowIcon from "../../../icons/ArrowIcon";
 import styles from "./HeaderCategories.module.scss";
 
 const HeaderCategories: FC = () => {
@@ -20,7 +20,7 @@ const HeaderCategories: FC = () => {
             <li key={to}>
               <Link className={styles.categories__link} to={to}>
                 {name}
-                {name === "Каталог" ? <Arrow /> : null}
+                {name === "Каталог" ? <ArrowIcon /> : null}
               </Link>
             </li>
           ))}
