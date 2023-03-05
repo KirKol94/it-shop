@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styles from "./HeaderTop.module.scss";
-import linkLogo from "../../../../assets/img/header/media.png";
+import VkIcon from "../../../icons/VkIcon";
 import Logo from "../../../ui/Logo/Logo";
 import { Link } from "react-router-dom";
 
@@ -19,7 +19,7 @@ const HeaderTop: FC = () => {
           {media.map(({ name, link }) => (
             <li key={link}>
               <a href={link}>
-                <img src={linkLogo} alt="" />
+                <VkIcon />
               </a>
             </li>
           ))}
@@ -36,7 +36,7 @@ const HeaderTop: FC = () => {
             </Link>
           </div>
           <Link to="cart" className={styles.header__bagWrapper}>
-            <img src={linkLogo} alt="" />
+            <VkIcon />
             <span>Корзина</span>
           </Link>
         </div>
