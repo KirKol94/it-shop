@@ -2,6 +2,8 @@
 
 .footer {
   color: $text-color;
+  padding: 80px 0;
+  background-color: $accent-color;
   width: 100%;
   &__container {
     display: flex;
