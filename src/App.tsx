@@ -4,8 +4,8 @@ import Home from "./pages/Home/Home";
 import Page404 from "./pages/Page404/Page404";
 import PageStructure from "./components/layout/PageStructure/PageStructure";
 import TestPage from "./pages/TestPage/TestPage";
-import AuthModal from './components/modals/AuthModal/AuthModal'
-import RegisterModal from './components/modals/RegisterModal/RegisterModal'
+import AuthModal from "./components/modals/AuthModal/AuthModal";
+import RegisterModal from "./components/modals/RegisterModal/RegisterModal";
 
 const App: FC = () => {
   return (
