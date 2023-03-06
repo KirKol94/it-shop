@@ -67,7 +67,7 @@ const CardModal: FC = () => {
         <Button
           variant="main"
           onClick={() => {}}
-          className={`${styles.cardModal__button} ${styles.button} ${styles.button_main}`}
+          className={styles.cardModal__button}
         >
           В корзину
         </Button>
