@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styles from "./CardModal.module.scss";
 import CardImg from "../../../assets/img/cardModal/cardModal.jpg";
 import Button from "../Button/Button";
+import clsx from "clsx";
 
 const CardModal: FC = () => {
   const sizes = [
@@ -52,7 +53,7 @@ const CardModal: FC = () => {
         <span className={styles.cardModal__price}>599 ₽</span>
         <div className={styles.count}>
           <span
-            className={`${styles.count__btn} ${styles.count__btn_minus}`}
+            className={clsx(styles.count__btn, styles.count__btn_minus)}
           ></span>
           <input
             className={styles.count__input}
@@ -61,7 +62,7 @@ const CardModal: FC = () => {
             maxLength={3}
           />
           <span
-            className={`${styles.count__btn} ${styles.count__btn_plus}`}
+            className={clsx(styles.count__btn, styles.count__btn_plus)}
           ></span>
         </div>
         <Button
