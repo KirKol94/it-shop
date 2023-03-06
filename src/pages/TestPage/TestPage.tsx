@@ -5,6 +5,7 @@ import { fetchCategories } from "../../store/categories/asyncCategoryActions";
 import Card from "../../components/ui/Card/Card";
 import styles from "./TestPage.module.scss";
 import Button from "../../components/ui/Button/Button";
+import CardModal from "../../components/modals/CardModal/CardModal";
 
 const TestPage = () => {
   const dispatch = useAppDispatch();
@@ -45,6 +46,8 @@ const TestPage = () => {
           </div>
         </div>
       </section>
+
+      <CardModal />
 
       <section className={styles.cards}>
         <div className={styles.cards__container}>
