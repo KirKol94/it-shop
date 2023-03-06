@@ -1,16 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { fetchProducts } from "../../store/products/asyncProductActions";
 import { fetchCategories } from "../../store/categories/asyncCategoryActions";
 import Card from "../../components/ui/Card/Card";
 import styles from "./TestPage.module.scss";
 import Button from "../../components/ui/Button/Button";
+import CardModal from "../../components/modals/CardModal/CardModal";
 
 const TestPage = () => {
   const dispatch = useAppDispatch();
   const isLoadingCategories = useAppSelector(
     (state) => state.category.isLoading
   );
+
+  const [isOpenCard, setIsOpenCard] = useState(false);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -39,12 +42,18 @@ const TestPage = () => {
             <Button variant="main" className="button" onClick={() => {}}>
               В каталог мерча
             </Button>
-            <Button variant="second" className="button" onClick={() => {}}>
+            <Button
+              variant="second"
+              className="button"
+              onClick={() => setIsOpenCard(true)}
+            >
               Нанять талантливых джунов
             </Button>
           </div>
         </div>
       </section>
+
+      <CardModal isOpenCard={isOpenCard} setIsOpenCard={setIsOpenCard} />
 
       <section className={styles.cards}>
         <div className={styles.cards__container}>
