@@ -9,14 +9,17 @@ const AuthModal = () => {
 
   const onClose = () => {
     setIsOpen(false)
-    navigate('/')
+    navigate('/test-page')
   }
 
   return (
     <Modal isOpen={isOpen} setIsOpen={onClose}>
-      <h2 className={styles.title}>
-        Auth Modal
-      </h2>
+      <div className={styles.container}>
+        <h2 className={styles.title}>
+          Auth Modal
+        </h2>
+        <p className={styles.text}>при закрытии этого модального окна улетаешь на главную</p>
+      </div>
     </Modal>
   )
 }
