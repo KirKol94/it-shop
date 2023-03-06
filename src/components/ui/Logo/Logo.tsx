@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import LogoIcon from "../../icons/LogoIcon";
-import styles from "./Logo.module.scss";
+import LogoIcon from "../../icons/logoIcon";
+import styles from "./logo.module.scss";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
 

@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import ReactDOM from "react-dom";
-import styles from "./Modal.module.scss";
+import styles from "./modal.module.scss";
 import { Dialog } from "@headlessui/react";
 
 const portal: HTMLElement | null = document.getElementById(

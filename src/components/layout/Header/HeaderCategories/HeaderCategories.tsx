@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import SearchIcon from "../../../icons/SearchIcon";
-import ArrowIcon from "../../../icons/ArrowIcon";
-import styles from "./HeaderCategories.module.scss";
+import SearchIcon from "../../../icons/searchIcon";
+import ArrowIcon from "../../../icons/arrowIcon";
+import styles from "./headerCategories.module.scss";
 
 const HeaderCategories: FC = () => {
   const links = [

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import CardImg from "../../../assets/img/card/card.jpg";
-import styles from "./Card.module.scss";
-import Button from "../Button/Button";
+import styles from "./card.module.scss";
+import Button from "../button/button";
 
 const Card: FC = () => {
   return (

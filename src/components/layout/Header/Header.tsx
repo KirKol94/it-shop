@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import HeaderCategories from "./HeaderCategories/HeaderCategories";
-import HeaderTop from "./HeaderTop/HeaderTop";
+import HeaderCategories from "./headerCategories/headerCategories";
+import HeaderTop from "./headerTop/headerTop";
 
 const Header: FC = () => {
   return (

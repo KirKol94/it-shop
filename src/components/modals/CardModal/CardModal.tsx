@@ -1,9 +1,9 @@
 import React, { FC } from "react";
-import styles from "./CardModal.module.scss";
+import styles from "./cardModal.module.scss";
 import CardImg from "../../../assets/img/cardModal/cardModal.jpg";
-import Button from "../../ui/Button/Button";
+import Button from "../../ui/button/button";
 import clsx from "clsx";
-import Modal from "../../ui/Modal/Modal";
+import Modal from "../../ui/modal/modal";
 
 interface IProps {
   isOpenCard: boolean;

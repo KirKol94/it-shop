@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import styles from "./Footer.module.scss";
-import Logo from "../../ui/Logo/Logo";
+import styles from "./footer.module.scss";
+import Logo from "../../ui/logo/logo";
 import clsx from "clsx";
-import Button from "../../ui/Button/Button";
+import Button from "../../ui/button/button";
 import { Link } from "react-router-dom";
 
 const Footer: FC = () => {

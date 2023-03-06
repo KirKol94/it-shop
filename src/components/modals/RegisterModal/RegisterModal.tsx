@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Modal from "../../ui/Modal/Modal";
-import styles from "./Register.module.scss";
+import Modal from "../../ui/modal/modal";
+import styles from "./register.module.scss";
 import { useNavigate } from "react-router-dom";
 
 const RegisterModal = () => {

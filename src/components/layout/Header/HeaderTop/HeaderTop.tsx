@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import styles from "./HeaderTop.module.scss";
-import VkIcon from "../../../icons/VkIcon";
-import Logo from "../../../ui/Logo/Logo";
+import styles from "./headerTop.module.scss";
+import VkIcon from "../../../icons/vkIcon";
+import Logo from "../../../ui/logo/logo";
 import { Link } from "react-router-dom";
 
 const HeaderTop: FC = () => {

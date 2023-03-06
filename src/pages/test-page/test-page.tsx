@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { fetchProducts } from "../../store/products/asyncProductActions";
 import { fetchCategories } from "../../store/categories/asyncCategoryActions";
-import Card from "../../components/ui/Card/Card";
-import styles from "./TestPage.module.scss";
-import Button from "../../components/ui/Button/Button";
-import CardModal from "../../components/modals/CardModal/CardModal";
+import Card from "../../components/ui/card/card";
+import styles from "./test-page.module.scss";
+import Button from "../../components/ui/button/button";
+import CardModal from "../../components/modals/cardModal/cardModal";
 
 const TestPage = () => {
   const dispatch = useAppDispatch();

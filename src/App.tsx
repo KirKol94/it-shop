@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Page404 from "./pages/Page404/Page404";
-import PageStructure from "./components/layout/PageStructure/PageStructure";
-import TestPage from "./pages/TestPage/TestPage";
-import AuthModal from "./components/modals/AuthModal/AuthModal";
-import RegisterModal from "./components/modals/RegisterModal/RegisterModal";
+import Home from "./pages/home/home";
+import Page404 from "./pages/page-404/page-404";
+import PageStructure from "./components/layout/pageStructure/pageStructure";
+import TestPage from "./pages/test-page/test-page";
+import AuthModal from "./components/modals/authModal/authModal";
+import RegisterModal from "./components/modals/registerModal/registerModal";
 
 const App: FC = () => {
   return (
