@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styles from "./CardModal.module.scss";
 import CardImg from "../../../assets/img/cardModal/cardModal.jpg";
-import Button from "../Button/Button";
+import Button from "../../ui/Button/Button";
 import clsx from "clsx";
 
 const CardModal: FC = () => {
