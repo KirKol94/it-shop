@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import styles from "./CardModal.module.scss";
 import Button from "../../ui/Button/Button";
 import clsx from "clsx";
@@ -12,15 +12,8 @@ interface IProps {
 }
 
 const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
-  const sizes = [
-    { name: "size", value: "xs" },
-    { name: "size", value: "s" },
-    { name: "size", value: "m" },
-    { name: "size", value: "l" },
-    { name: "size", value: "xl" },
-  ];
-
-  const [size, setSize] = useState("xs");
+  const sizes = ["xs", "s", "m", "l", "xl"];
+  const [size, setSize] = useState(sizes[0]);
   const [count, setCount] = useState(1);
   const price = product.price * +count;
 
@@ -50,6 +43,35 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
     );
   };
 
+  // далее код, передвигающий ползунок в размерах
+  const sizesRef = useRef<HTMLDivElement>(null);
+  const sizesSelectedRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const sizesElement = sizesRef.current;
+    const sizesSelectedElement = sizesSelectedRef.current;
+
+    const handleSizeClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target.classList.contains(styles.sizes__label) &&
+        sizesSelectedElement
+      ) {
+        sizesSelectedElement.style.left = target.offsetLeft + "px";
+      }
+    };
+
+    if (sizesElement) {
+      sizesElement.addEventListener("click", handleSizeClick);
+    }
+
+    return () => {
+      if (sizesElement) {
+        sizesElement.removeEventListener("click", handleSizeClick);
+      }
+    };
+  });
+
   return (
     <Modal isOpen={isOpenCard} setIsOpen={() => setIsOpenCard(false)}>
       <div className={styles.cardModal}>
@@ -61,18 +83,21 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
           <h3 className={styles.cardModal__title}>{product.name}</h3>
           <p className={styles.cardModal__description}>{product.description}</p>
 
-          <div className={styles.sizes}>
-            <div className={styles.sizes__selected}></div>
-            {sizes.map(({ name, value }) => (
+          <div className={styles.sizes} ref={sizesRef}>
+            <div
+              className={styles.sizes__selected}
+              ref={sizesSelectedRef}
+            ></div>
+            {sizes.map((value) => (
               <React.Fragment key={value}>
                 <input
                   className={styles.sizes__input}
                   type="radio"
                   id={`sizes__input_${value}`}
-                  name={name}
+                  name={"size"}
                   value={value}
                   onChange={() => setSize(value)}
-                  checked={value === "xs"}
+                  checked={value === size}
                 />
                 <label
                   className={styles.sizes__label}
