@@ -15,6 +15,13 @@ const Footer: FC = () => {
     { name: "Чехлы", url: "covers" },
   ];
 
+  const socialLinks = [
+    { name: "vk", url: "https://vk.com/1" },
+    { name: "vk", url: "https://vk.com/2" },
+    { name: "vk", url: "https://vk.com/3" },
+    { name: "vk", url: "https://vk.com/4" },
+  ];
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__container}>
@@ -56,46 +63,24 @@ const Footer: FC = () => {
             Познакомиться с нами
           </p>
           <ul className={clsx(styles.footer__socials, styles.socials)}>
-            <li className={styles.socials__item}>
-              <a className={styles.socials__link} href="##">
-                <span
-                  className={clsx(
-                    styles.socials__icon,
-                    styles.socials__icon_vk
-                  )}
-                />
-              </a>
-            </li>
-            <li className={styles.socials__item}>
-              <a className={styles.socials__link} href="##">
-                <span
-                  className={clsx(
-                    styles.socials__icon,
-                    styles.socials__icon_tg
-                  )}
-                />
-              </a>
-            </li>
-            <li className={styles.socials__item}>
-              <a className={styles.socials__link} href="##">
-                <span
-                  className={clsx(
-                    styles.socials__icon,
-                    styles.socials__icon_ds
-                  )}
-                />
-              </a>
-            </li>
-            <li className={styles.socials__item}>
-              <a className={styles.socials__link} href="##">
-                <span
-                  className={clsx(
-                    styles.socials__icon,
-                    styles.socials__icon_git
-                  )}
-                />
-              </a>
-            </li>
+            {socialLinks.map(({ name, url }) => (
+              <li key={url} className={styles.socials__item}>
+                <a
+                  className={styles.socials__link}
+                  href={url}
+                  title={name}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span
+                    className={clsx(
+                      styles.socials__icon,
+                      styles.socials__icon_vk
+                    )}
+                  />
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className={styles.footer__block}>
@@ -215,11 +200,8 @@ const Footer: FC = () => {
                 <p className={styles.newsletter__politic}>
                   При нажатии на кнопку подписаться вы даёте своё согласие на
                   получение новостной рассылкипо электронной почте. Для
-                  получения подробной информации ознакомьтесь с{" "}
-                  <a href="##" target="_blank">
-                    политикой конфиденциальности
-                  </a>
-                  .
+                  получения подробной информации ознакомьтесь с
+                  <Link to="policy">политикой конфиденциальности</Link>.
                 </p>
               </div>
             </form>

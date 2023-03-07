@@ -1,29 +1,30 @@
 import React, { FC, useState } from "react";
-import CardImg from "../../../assets/img/card/card.jpg";
 import styles from "./Card.module.scss";
 import Button from "../Button/Button";
 import CardModal from "../../modals/CardModal/CardModal";
+import { IProduct } from "../../../types/IProduct";
 
-const Card: FC = () => {
+interface IProps {
+  product: IProduct;
+}
+
+const Card: FC<IProps> = ({ product }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <div className={styles.card}>
         <div className={styles.card__img} onClick={() => setIsOpen(true)}>
-          <img src={CardImg} alt="картинка <название товара>" />
+          <img src={product.image} alt={product.name} />
         </div>
 
         <div className={styles.card__body}>
-          <h3 className={styles.card__title}>Lorem ipsum dolor sit amet</h3>
-          <p className={styles.card__description}>
-            Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          </p>
+          <h3 className={styles.card__title}>{product.name}</h3>
+          <p className={styles.card__description}>{product.description}</p>
         </div>
 
         <div className={styles.card__footer}>
-          <span className={styles.card__price}>599 ₽</span>
+          <span className={styles.card__price}>{product.price} ₽</span>
           <Button
             variant="main"
             onClick={() => {}}
@@ -34,7 +35,11 @@ const Card: FC = () => {
         </div>
       </div>
 
-      <CardModal isOpenCard={isOpen} setIsOpenCard={setIsOpen} />
+      <CardModal
+        isOpenCard={isOpen}
+        setIsOpenCard={setIsOpen}
+        product={product}
+      />
     </>
   );
 };
