@@ -1,13 +1,10 @@
 import { ICategory } from "./ICategory";
 
 export interface IProduct {
-  category: ICategory;
+  category?: ICategory;
   name: string;
-  slug: string;
-  image: File;
+  image: string;
   description: string;
   price: number;
-  available: boolean;
-  created: Date;
-  updated: Date;
+  available?: boolean;
 }
