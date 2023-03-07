@@ -1,16 +1,17 @@
 import React, { FC } from "react";
 import styles from "./CardModal.module.scss";
-import CardImg from "../../../assets/img/cardModal/cardModal.jpg";
 import Button from "../../ui/Button/Button";
 import clsx from "clsx";
 import Modal from "../../ui/Modal/Modal";
+import { IProduct } from "../../../types/IProduct";
 
 interface IProps {
+  product: IProduct;
   isOpenCard: boolean;
   setIsOpenCard: (isOpenCard: boolean) => void;
 }
 
-const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard }) => {
+const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
   const sizes = [
     { name: "size", value: "xs" },
     { name: "size", value: "s" },
@@ -23,17 +24,12 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard }) => {
     <Modal isOpen={isOpenCard} setIsOpen={() => setIsOpenCard(false)}>
       <div className={styles.cardModal}>
         <div className={styles.cardModal__img}>
-          <img src={CardImg} alt="картинка <название товара>" />
+          <img src={product.image} alt={product.name} />
         </div>
 
         <div className={styles.cardModal__body}>
-          <h3 className={styles.cardModal__title}>
-            Lorem ipsum dolor sit amet
-          </h3>
-          <p className={styles.cardModal__description}>
-            Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          </p>
+          <h3 className={styles.cardModal__title}>{product.name}</h3>
+          <p className={styles.cardModal__description}>{product.description}</p>
 
           <div className={styles.sizes}>
             <div className={styles.sizes__selected}></div>
@@ -60,7 +56,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard }) => {
         </div>
 
         <div className={styles.cardModal__footer}>
-          <span className={styles.cardModal__price}>599 ₽</span>
+          <span className={styles.cardModal__price}>{product.price} ₽</span>
           <div className={styles.count}>
             <span
               className={clsx(styles.count__btn, styles.count__btn_minus)}
