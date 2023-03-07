@@ -24,7 +24,7 @@ const HeaderTop: FC = () => {
           <ul className={styles.header__media}>
             {media.map(({ name, link }) => (
               <li key={link}>
-                <a href={link} title={name}>
+                <a href={link} target="_blank" title={name} rel="noreferrer">
                   <VkIcon />
                 </a>
               </li>
