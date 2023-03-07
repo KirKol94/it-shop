@@ -4,15 +4,11 @@ import { IProduct } from "../../types/IProduct";
 type CartSlice = {
   isLoading: boolean;
   products: IProduct[];
-  totalCount: number;
-  totalPrice: number;
 };
 
 const initialState: CartSlice = {
   isLoading: false,
   products: [],
-  totalCount: 0,
-  totalPrice: 0,
 };
 
 export const cartSlice = createSlice({
@@ -28,10 +24,23 @@ export const cartSlice = createSlice({
     setCartProducts(state, action: PayloadAction<IProduct[]>) {
       state.products = action.payload;
     },
+
+    // Добавляем товар в корзину
+    addProduct(state, action: PayloadAction<IProduct>) {
+      state.products.push(action.payload);
+      console.log("товар добавлен");
+    },
+
+    // Удалить товар из корзины
+    deleteProduct(state, action: PayloadAction<IProduct>) {
+      state.products.push(action.payload);
+      console.log("товар удалён");
+    },
   },
 });
 
 // экспортируем экшены
-export const { setIsLoading, setCartProducts } = cartSlice.actions;
+export const { setIsLoading, setCartProducts, addProduct, deleteProduct } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

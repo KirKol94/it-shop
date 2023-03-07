@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import styles from "./CardModal.module.scss";
 import Button from "../../ui/Button/Button";
 import clsx from "clsx";
@@ -19,6 +19,35 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
     { name: "size", value: "l" },
     { name: "size", value: "xl" },
   ];
+
+  const [size, setSize] = useState("xs");
+  const [count, setCount] = useState(1);
+
+  const increment = () => {
+    setCount((prev) => prev + 1);
+  };
+
+  const decrement = () => {
+    if (count > 1) setCount((prev) => prev - 1);
+  };
+
+  // разрешаем вводить только цифры
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const regex = /^[0-9]*$/;
+    const value = e.target.value;
+    if (regex.test(value)) {
+      setCount(+value);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsOpenCard(false);
+    setCount(1);
+    console.log(
+      `товар: ${product.name}\nразмер: ${size}\nколичествр: ${count}`
+    );
+  };
 
   return (
     <Modal isOpen={isOpenCard} setIsOpen={() => setIsOpenCard(false)}>
@@ -41,7 +70,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
                   id={`sizes__input_${value}`}
                   name={name}
                   value={value}
-                  onChange={() => {}}
+                  onChange={() => setSize(value)}
                   checked={value === "xs"}
                 />
                 <label
@@ -55,31 +84,35 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
           </div>
         </div>
 
-        <div className={styles.cardModal__footer}>
+        <form onSubmit={handleSubmit} className={styles.cardModal__footer}>
           <span className={styles.cardModal__price}>{product.price} ₽</span>
           <div className={styles.count}>
             <span
+              onClick={decrement}
               className={clsx(styles.count__btn, styles.count__btn_minus)}
             ></span>
             <input
               className={styles.count__input}
               type="text"
-              value="1"
-              onChange={() => {}}
+              inputMode="numeric"
+              value={count}
+              onChange={handleInputChange}
               maxLength={3}
             />
             <span
+              onClick={increment}
               className={clsx(styles.count__btn, styles.count__btn_plus)}
             ></span>
           </div>
           <Button
+            type="submit"
             variant="main"
-            onClick={() => {}}
             className={styles.cardModal__button}
+            onClick={() => {}}
           >
             В корзину
           </Button>
-        </div>
+        </form>
       </div>
     </Modal>
   );
