@@ -15,10 +15,17 @@
 
   // .card__img
   &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     border-radius: 16px;
+    height: 220px;
 
     & > img {
+      flex: 1 0 auto;
+      height: 100%;
+      object-fit: cover;
       border-radius: 16px;
       transition: transform 0.5s ease, box-shadow 0.3s ease;
 
@@ -32,6 +39,7 @@
 
   // .card__body
   &__body {
+    flex: 1 1 auto;
   }
 
   // .card__title
@@ -59,6 +67,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   // .card__price
@@ -71,7 +81,7 @@
 
   // .card__button
   &__button {
-    flex: 0 1 180px;
+    flex: 1 1 140px;
     color: $text-color;
   }
 }
