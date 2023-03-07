@@ -86,7 +86,9 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
         </div>
 
         <form onSubmit={handleSubmit} className={styles.cardModal__footer}>
-          <span className={styles.cardModal__price}>{price} ₽</span>
+          <span className={styles.cardModal__price}>
+            {price.toLocaleString("ru")} ₽
+          </span>
           <div className={styles.count}>
             <span
               onClick={decrement}

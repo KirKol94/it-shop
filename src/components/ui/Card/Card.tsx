@@ -24,7 +24,9 @@ const Card: FC<IProps> = ({ product }) => {
         </div>
 
         <div className={styles.card__footer}>
-          <span className={styles.card__price}>{product.price} ₽</span>
+          <span className={styles.card__price}>
+            {product.price.toLocaleString("ru")} ₽
+          </span>
           <Button
             variant="main"
             onClick={() => setIsOpen(true)}
