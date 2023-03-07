@@ -36,7 +36,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const regex = /^[0-9]*$/;
     const value = e.target.value;
-    if (regex.test(value)) {
+    if (regex.test(value) && +value !== 0) {
       setCount(+value);
     }
   };
