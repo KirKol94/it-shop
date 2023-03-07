@@ -22,6 +22,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
 
   const [size, setSize] = useState("xs");
   const [count, setCount] = useState(1);
+  const price = product.price * +count;
 
   const increment = () => {
     setCount((prev) => prev + 1);
@@ -45,7 +46,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
     setIsOpenCard(false);
     setCount(1);
     console.log(
-      `товар: ${product.name}\nразмер: ${size}\nколичествр: ${count}`
+      `товар: ${product.name} на сумму: ${price}\nразмер: ${size}\nколичествр: ${count}`
     );
   };
 
@@ -85,7 +86,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
         </div>
 
         <form onSubmit={handleSubmit} className={styles.cardModal__footer}>
-          <span className={styles.cardModal__price}>{product.price} ₽</span>
+          <span className={styles.cardModal__price}>{price} ₽</span>
           <div className={styles.count}>
             <span
               onClick={decrement}

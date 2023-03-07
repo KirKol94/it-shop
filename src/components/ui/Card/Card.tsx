@@ -27,10 +27,10 @@ const Card: FC<IProps> = ({ product }) => {
           <span className={styles.card__price}>{product.price} ₽</span>
           <Button
             variant="main"
-            onClick={() => {}}
+            onClick={() => setIsOpen(true)}
             className={styles.card__button}
           >
-            В корзину
+            Подробнее
           </Button>
         </div>
       </div>

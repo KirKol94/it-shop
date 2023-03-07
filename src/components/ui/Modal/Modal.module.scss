@@ -17,13 +17,13 @@
 
 .modal {
   will-change: opacity, transform;
-  animation: fade-in-modal 500ms linear;
+  animation: fade-in-modal 200ms linear;
 }
 
 @keyframes fade-in-modal {
   from {
     opacity: 0;
-    transform: translateY(10%);
+    transform: translateY(5%);
   }
 
   to {
