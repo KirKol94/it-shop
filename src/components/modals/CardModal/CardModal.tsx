@@ -36,7 +36,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const regex = /^[0-9]*$/;
     const value = e.target.value;
-    if (regex.test(value)) {
+    if (regex.test(value) && +value !== 0) {
       setCount(+value);
     }
   };
@@ -86,7 +86,9 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
         </div>
 
         <form onSubmit={handleSubmit} className={styles.cardModal__footer}>
-          <span className={styles.cardModal__price}>{price} ₽</span>
+          <span className={styles.cardModal__price}>
+            {price.toLocaleString("ru")} ₽
+          </span>
           <div className={styles.count}>
             <span
               onClick={decrement}
