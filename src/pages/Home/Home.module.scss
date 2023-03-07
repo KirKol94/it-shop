@@ -1,0 +1,60 @@
+@import "src/styles/common/vars";
+
+.heroSection {
+  padding: 120px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), center / cover no-repeat url("../../assets/img/test-page/hero-section/bg.webp");
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    max-width: 800px;
+    font-family: $second-font;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 125%;
+    text-align: center;
+  }
+
+  &__subtitle {
+    max-width: 800px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  &__actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.cards {
+  background-color: $bg-dark;
+
+  &__container {
+    display: block;
+  }
+
+  &__title {
+    margin-top: 80px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 125%;
+  }
+
+  &__items {
+    padding: 20px 0 80px;
+    display: flex;
+    column-gap: 20px;
+    row-gap: 32px;
+    flex-wrap: wrap;
+  }
+}
