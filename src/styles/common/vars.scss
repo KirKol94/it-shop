@@ -4,12 +4,16 @@ $second-font: "Raleway", sans-serif;
 
 // Colors
 $accent-color: #2c2c2c;
-$bg-color: #2C2926;
+$bg-color: #2c2926;
 $bg-dark: #191919;
 $grey-color: #95928f;
 $text-color: #fff;
 $brown-color: #816e4c;
-$light-brown-color: #BCA67F;
+$light-brown-color: #bca67f;
+
+// Gradient
+$main-gradient: linear-gradient(180deg, #1d1e1e 0%, #1a1b1a 100%);
+$hover-gradient: radial-gradient(70.18% 70.18% at 16.7% 11.77%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.066) 100%), radial-gradient(48.75% 48.75% at 50% 32.66%, #495449 0%, #1A1B1A 100%);
 
 // Spacing
 $container-width: 1230px;
