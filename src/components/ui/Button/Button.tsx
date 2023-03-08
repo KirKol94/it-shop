@@ -3,7 +3,7 @@ import styles from "./Button.module.scss";
 import clsx from "clsx";
 
 interface IProps {
-  variant: "main" | "second";
+  variant: "main" | "second" | "primary";
   type?: "submit" | "button" | "reset" | "menu";
   className: string;
   children: ReactNode;
@@ -23,7 +23,8 @@ const Button: FC<IProps> = ({
         styles.button,
         className,
         variant === "main" && styles.button_main,
-        variant === "second" && styles.button_second
+        variant === "second" && styles.button_second,
+        variant === "primary" && styles.button_primary
       )}
     >
       {children}
