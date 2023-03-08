@@ -3,8 +3,16 @@ import { Link } from "react-router-dom";
 import SearchIcon from "../../../icons/SearchIcon";
 import ArrowIcon from "../../../icons/ArrowIcon";
 import styles from "./HeaderCategories.module.scss";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/reduxHooks";
+import { setSearchProductValue } from "../../../../store/products/productSlice";
 
 const HeaderCategories: FC = () => {
+  const dispatch = useAppDispatch();
+
+  const searchProductValue = useAppSelector(
+    (state) => state.product.searchProductValue
+  );
+
   const links = [
     { to: "", name: "Главная" },
     { to: "catalog", name: "Каталог" },
@@ -30,6 +38,8 @@ const HeaderCategories: FC = () => {
           <input
             className={styles.inputWrapper__input}
             placeholder="Поиск"
+            value={searchProductValue}
+            onChange={(e) => dispatch(setSearchProductValue(e.target.value))}
             type="text"
           />
           <div className={styles.inputWrapper__searchIcon}>

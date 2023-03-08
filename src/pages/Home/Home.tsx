@@ -5,7 +5,12 @@ import styles from "./Home.module.scss";
 import { useAppSelector } from "../../hooks/reduxHooks";
 
 const Home: FC = () => {
-  const products = useAppSelector((state) => state.product.products);
+  const searchProductValue = useAppSelector(
+    (state) => state.product.searchProductValue
+  );
+  const products = useAppSelector((state) => state.product.products).filter(
+    (p) => p.name.toLowerCase().includes(searchProductValue.toLowerCase())
+  );
 
   return (
     <>
