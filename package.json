@@ -27,13 +27,19 @@
     "build": "react-scripts build && echo '/* /index.html 200' > build/_redirects ",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier --write src/**/*.*",
+    "prettier": "prettier --write src/**/*.{ts,tsx}",
     "lint:scss": "stylelint '**/*.scss' --fix",
-    "precommit": "npm run lint:scss && lint-staged"
+    "precommit": "lint-staged",
+    "format": "npm run prettier",
+    "lint": "npm run lint:scss && npm run prettier"
   },
   "lint-staged": {
     "**/*.scss": [
       "npm run lint:scss",
+      "git add"
+    ],
+    "**/*.{ts,tsx}": [
+      "npm run prettier",
       "git add"
     ]
   },
