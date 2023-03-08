@@ -3,11 +3,13 @@ import { IProduct } from "../../types/IProduct";
 
 type ProductState = {
   isLoading: boolean;
+  searchProductValue: string;
   products: IProduct[];
 };
 
 const initialState: ProductState = {
   isLoading: false,
+  searchProductValue: "",
   products: [
     {
       image:
@@ -80,10 +82,16 @@ export const productSlice = createSlice({
     setProducts(state, action: PayloadAction<IProduct[]>) {
       state.products = action.payload;
     },
+
+    //   получить массив отфильтрованных товаров
+    setSearchProductValue(state, action: PayloadAction<string>) {
+      state.searchProductValue = action.payload;
+    },
   },
 });
 
 // экспортируем экшены
-export const { setIsLoading, setProducts } = productSlice.actions;
+export const { setIsLoading, setProducts, setSearchProductValue } =
+  productSlice.actions;
 
 export default productSlice.reducer;
