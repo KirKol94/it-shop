@@ -1,4 +1,4 @@
-@import '../../../../styles/common/vars';
+@import "../../../../styles/common/vars";
 
 .header {
   padding: 20px 0;
@@ -7,11 +7,11 @@
 
   &__container {
     display: flex;
+    height: 100%;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    height: 100%;
-    align-items: center;
   }
 
   &__media {
@@ -22,23 +22,23 @@
   &__profileWrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 27px;
     align-items: center;
+    gap: 27px;
   }
 
   &__loginWrapper {
     display: flex;
-    font-size: 20px;
-    line-height: 24px;
     color: $grey-color;
+    font-size: 20px;
     gap: 4px;
+    line-height: 24px;
   }
 
   &__link {
     color: $grey-color;
+    cursor: pointer;
     font-size: 20px;
     line-height: 24px;
-    cursor: pointer;
 
     &:hover {
       color: $text-color;
@@ -47,9 +47,9 @@
 
   &__bagWrapper {
     display: flex;
-    gap: 8px;
     align-items: center;
     color: $text-color;
+    gap: 8px;
 
     span {
       font-size: 20px;

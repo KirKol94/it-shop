@@ -1,15 +1,16 @@
 @import "src/styles/common/vars";
 
 .footer {
-  color: $text-color;
+  width: 100%;
   padding: 80px 0;
   background-color: $accent-color;
-  width: 100%;
+  color: $text-color;
+
   &__container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: 20px;
   }
 
@@ -17,43 +18,54 @@
     display: flex;
     flex-direction: column;
   }
+
   &__logo {
     margin-bottom: 24px;
   }
+
   &__address {
   }
+
   &__nav {
   }
+
   &__socials {
   }
+
   &__newsletter {
   }
 }
+
 .addressInfo {
   display: flex;
   flex-direction: column;
-  gap: 24px;
   font-style: normal;
+  gap: 24px;
+
   &__text {
-    font-weight: 300;
     font-size: 16px;
+    font-weight: 300;
     line-height: 19px;
   }
 }
+
 .navFooter {
   &__list {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
+
   &__item {
   }
+
   &__link {
   }
 }
+
 .footerSubtitle {
-  font-weight: 700;
   font-size: 18px;
+  font-weight: 700;
   line-height: 21px;
 
   &_nav {
@@ -64,48 +76,57 @@
     margin-bottom: 14px;
   }
 }
+
 .socials {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 24px;
+
   &__item {
   }
+
   &__link {
   }
+
   &__icon {
     position: relative;
     padding: 6px 16px;
+    border-radius: 50%;
     background: linear-gradient(91.06deg, $brown-color 0%, #6f5b39 100%);
     box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 50%;
+
     &::before {
-      content: "";
       position: absolute;
       top: 50%;
       left: 50%;
       width: 24px;
       height: 24px;
-      transform: translate(-50%, -50%);
-      background-repeat: no-repeat;
       background-position: center;
+      background-repeat: no-repeat;
       background-size: contain;
+      content: "";
+      transform: translate(-50%, -50%);
     }
+
     &_vk {
       &::before {
         background-image: url("../../../assets/svg/vk.svg");
       }
     }
+
     &_tg {
       &::before {
         background-image: url("../../../assets/svg/vk.svg");
       }
     }
+
     &_ds {
       &::before {
         background-image: url("../../../assets/svg/vk.svg");
       }
     }
+
     &_git {
       &::before {
         background-image: url("../../../assets/svg/vk.svg");
@@ -116,19 +137,22 @@
 
 .newsletter {
   max-width: 280px;
+
   &__title {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
     margin-bottom: 14px;
     color: $text-color;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
   }
+
   &__form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 14px;
   }
+
   &__inputBox {
     position: relative;
     width: 100%;
@@ -140,110 +164,124 @@
   }
 
   &__label {
-    top: 50%;
-    display: block;
-    left: 10px;
-    pointer-events: none;
     position: absolute;
-    text-align: left;
-    font-weight: 400;
+    top: 50%;
+    left: 10px;
+    display: block;
+    background-color: $text-color;
+    color: $grey-color;
     font-size: 16px;
+    font-weight: 400;
     line-height: 19px;
+    pointer-events: none;
+    text-align: left;
     transform: translateY(-50%);
     transform-origin: 0 0;
     transition: all 200ms cubic-bezier(0.25, 0.8, 0.25, 1);
     white-space: pre-wrap;
     will-change: transform;
-    color: $grey-color;
-    background-color: $text-color;
+
     &_mail {
     }
   }
+
   &__input {
     width: 100%;
-    border-radius: 4px;
-    border: 1px solid $grey-color;
-    padding: 18px 10px 6px;
     box-sizing: border-box;
+    padding: 18px 10px 6px;
+    border: 1px solid $grey-color;
+    border-radius: 4px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
     line-height: 20px;
     transition: border-color 0.3s;
   }
+
   &__inputValid {
     &_tel {
     }
+
     &_mail {
     }
   }
+
   &__gender {
   }
+
   &__bottom {
   }
+
   &__button {
     width: 100%;
     margin-bottom: 14px;
     color: $text-color;
   }
+
   &__politic {
-    font-weight: 400;
-    font-size: 10px;
-    text-align: center;
     color: $grey-color;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+
     & > a {
       color: $brown-color;
       text-decoration-line: underline;
     }
   }
 }
+
 .genderChoice {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 35px;
+
   &__block {
   }
+
   &__radio {
   }
+
   &__input {
-    cursor: pointer;
-    height: 25px;
-    margin: 4px 0 0;
-    opacity: 0;
-    padding: 0;
     position: absolute;
     width: 25px;
+    height: 25px;
+    padding: 0;
+    margin: 4px 0 0;
+    cursor: pointer;
+    opacity: 0;
 
     &:not(old):checked + label > span {
       border-color: $text-color;
     }
 
     &:not(old) + label > span {
-      border: 3px solid $grey-color;
-      cursor: pointer;
       display: inline-block;
-      height: 16px;
-      margin: 0 10px 2px 0;
-      vertical-align: bottom;
       width: 16px;
+      height: 16px;
+      border: 3px solid $grey-color;
       border-radius: 50%;
+      margin: 0 10px 2px 0;
+      cursor: pointer;
+      vertical-align: bottom;
     }
 
     &:not(old):checked + label > span > span {
-      background: $text-color;
-      border-radius: 1em;
       display: block;
-      height: 6px;
-      margin: 2px;
       width: 6px;
+      height: 6px;
+      border-radius: 1em;
+      margin: 2px;
+      background: $text-color;
     }
   }
+
   &__label {
-    cursor: pointer;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
     color: $text-color;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
   }
 }

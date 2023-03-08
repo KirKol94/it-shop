@@ -3,179 +3,174 @@
 
 .cardModal {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 480px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
+  max-width: 480px;
+  flex-direction: column;
   border-radius: 32px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.4);
+  gap: 16px;
 
-  // .cardModal__img
   &__img {
     overflow: hidden;
     border-radius: 16px 16px 0 0;
+
     & > img {
       width: 100%;
       max-height: clamp(22.5rem, 7.955rem + 72.73vw, 30rem);
       border-radius: 32px 32px 0 0;
     }
   }
-  // .cardModal__body
+
   &__body {
     padding: 16px;
     text-align: center;
   }
-  // .cardModal__title
+
   &__title {
-    font-weight: 600;
-    font-size: 20px;
     margin-bottom: 12px;
     color: $text-color;
+    font-size: 20px;
+    font-weight: 600;
     line-height: 1.5;
     @include text-overflow;
   }
-  // .cardModal__description
+
   &__description {
-    font-family: "Raleway";
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.5;
-    color: $text-color;
     margin-bottom: 16px;
+    color: $text-color;
+    font-family: "Raleway";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
     @include text-overflow(4);
   }
-  // .cardModal__footer
+
   &__footer {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: clamp(0.75rem, -0.826rem + 7.88vw, 1.563rem);
-    column-gap: 16px;
     padding: 0 16px 16px;
+    column-gap: 16px;
+    gap: clamp(0.75rem, -0.826rem + 7.88vw, 1.563rem);
   }
-  // .cardModal__price
+
   &__price {
-    font-weight: 600;
+    color: $text-color;
     font-size: clamp(1.125rem, 0.883rem + 1.21vw, 1.25rem);
+    font-weight: 600;
     line-height: 1.2;
-    color: $text-color;
-  }
-  // .cardModal__button
-  &__button {
-    flex: 1 1 auto;
-    color: $text-color;
-  }
-}
 
-.sizes {
-  position: relative;
-  display: flex;
-  height: 40px;
-  background-color: $bg-dark;
-  border-radius: 20px;
-
-  // .sizes__selected
-  &__selected {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    width: calc(20%);
-    // transform: translateX(calc(100%));
-    transition: left 200ms ease-out 0s, width;
-    padding: 2px;
-
-    &::before {
-      content: " ";
-      width: 100%;
-      height: 100%;
-      display: block;
-      border-radius: 9999px;
-      background-color: $accent-color;
-      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-    }
-  }
-  // .sizes__input
-  &__input {
-    position: absolute;
-    display: none;
-
-    &:checked + label {
-      font-weight: 500;
+    &__button {
+      flex: 1 1 auto;
       color: $text-color;
     }
   }
-  // .sizes__label
-  &__label {
+
+  .sizes {
     position: relative;
-    display: block;
-    flex: 1 1 0%;
-    cursor: pointer;
-    user-select: none;
-    border-radius: 9999px;
-    color: $light-brown-color;
-    font-size: 12px;
-    line-height: 40px;
-    text-transform: uppercase;
-    font-weight: 400;
-    text-align: center;
-    transition: color 150ms ease 0s, font-weight 0.3s;
-
-    &:hover {
-      color: $text-color;
-    }
-  }
-}
-
-.count {
-  display: flex;
-  align-items: center;
-
-  // .count__input
-  &__input {
-    width: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
-    height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    color: $text-color;
-    background-color: $accent-color;
-  }
-
-  // .count__btn
-  &__btn {
-    position: relative;
-    width: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
-    height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
-    padding: 10.5px 14.5px;
-    color: $light-brown-color;
+    display: flex;
+    height: 40px;
+    border-radius: 20px;
     background-color: $bg-dark;
-    cursor: pointer;
 
-    &::before {
+    &__selected {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    // .count__btn_minus
-    &_minus {
-      border-radius: 20px 0px 0px 20px;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      width: calc(20%);
+      padding: 2px;
+      // transform: translateX(calc(100%));
+      transition: left 200ms ease-out 0s, width;
 
       &::before {
-        content: "-";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 9999px;
+        background-color: $accent-color;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+        content: " ";
       }
     }
 
-    // .count__btn_plus
-    &_plus {
-      border-radius: 0px 20px 20px 0px;
+    &__input {
+      position: absolute;
+      display: none;
+
+      &:checked + label {
+        color: $text-color;
+        font-weight: 500;
+      }
+    }
+
+    &__label {
+      position: relative;
+      display: block;
+      flex: 1 1 0%;
+      border-radius: 9999px;
+      color: $light-brown-color;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 40px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: color 150ms ease 0s, font-weight 0.3s;
+      user-select: none;
+
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
+
+  .count {
+    display: flex;
+    align-items: center;
+
+    &__input {
+      width: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
+      height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
+      background-color: $accent-color;
+      color: $text-color;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+    }
+
+    &__btn {
+      position: relative;
+      width: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
+      height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
+      padding: 10.5px 14.5px;
+      background-color: $bg-dark;
+      color: $light-brown-color;
+      cursor: pointer;
 
       &::before {
-        content: "+";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &_minus {
+        border-radius: 20px 0px 0px 20px;
+
+        &::before {
+          content: "-";
+        }
+      }
+
+      &_plus {
+        border-radius: 0px 20px 20px 0px;
+
+        &::before {
+          content: "+";
+        }
       }
     }
   }
