@@ -4,9 +4,17 @@
     "stylelint-config-idiomatic-order"
   ],
   "rules": {
-    "rule-empty-line-before": ["always", {
-      "except": ["first-nested"],
-      "ignore": ["after-comment"],
-    }]
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "first-nested"
+        ],
+        "ignore": [
+          "after-comment"
+        ]
+      }
+    ],
+    "order/order": "flexible",
   }
 }
