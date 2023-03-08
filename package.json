@@ -27,7 +27,21 @@
     "build": "react-scripts build && echo '/* /index.html 200' > build/_redirects ",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "npx prettier --write src/**/*.*"
+    "prettier": "prettier --write src/**/*.{ts,tsx}",
+    "lint:scss": "stylelint '**/*.scss' --fix",
+    "precommit": "lint-staged",
+    "format": "npm run prettier",
+    "lint": "npm run lint:scss && npm run prettier"
+  },
+  "lint-staged": {
+    "**/*.scss": [
+      "npm run lint:scss",
+      "git add"
+    ],
+    "**/*.{ts,tsx}": [
+      "npm run prettier",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -48,7 +62,14 @@
     ]
   },
   "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
     "prettier": "2.8.4",
-    "sass": "^1.58.3"
+    "sass": "^1.58.3",
+    "stylelint": "^15.2.0",
+    "stylelint-config-idiomatic-order": "^9.0.0",
+    "stylelint-config-recommended-scss": "^9.0.1",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^4.4.0"
   }
 }

@@ -4,20 +4,20 @@
   right: 0;
   bottom: 0;
   left: 0;
-  backdrop-filter: blur(10px);
-
-  background-color: rgba(black, 0.2);
 
   display: flex;
   align-items: center;
   justify-content: center;
   animation: fade-in-overlay 300ms linear;
+  backdrop-filter: blur(10px);
+
+  background-color: rgba(black, 0.2);
   will-change: opacity;
 }
 
 .modal {
-  will-change: opacity, transform;
   animation: fade-in-modal 200ms linear;
+  will-change: opacity, transform;
 }
 
 @keyframes fade-in-modal {

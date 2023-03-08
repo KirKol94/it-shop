@@ -7,30 +7,30 @@
   &__container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
   &__title {
     max-width: 800px;
     font-family: $second-font;
-    font-weight: 800;
     font-size: 48px;
+    font-weight: 800;
     line-height: 125%;
     text-align: center;
   }
 
   &__subtitle {
     max-width: 800px;
-    font-weight: 400;
     font-size: 24px;
+    font-weight: 400;
     line-height: 150%;
     text-align: center;
   }
 
   &__actions {
-    margin-top: 20px;
     display: flex;
+    margin-top: 20px;
     gap: 20px;
   }
 }
@@ -44,17 +44,17 @@
 
   &__title {
     margin-top: 80px;
-    text-align: center;
-    font-weight: 700;
     font-size: 40px;
+    font-weight: 700;
     line-height: 125%;
+    text-align: center;
   }
 
   &__items {
-    padding: 20px 0 80px;
     display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0 80px;
     column-gap: 20px;
     row-gap: 32px;
-    flex-wrap: wrap;
   }
 }

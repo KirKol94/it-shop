@@ -8,8 +8,7 @@ html {
   box-sizing: inherit;
 }
 
-ul,
-ol {
+ul, ol {
   padding: 0;
 }
 
@@ -50,15 +49,15 @@ input,
 button,
 textarea,
 select {
+  border: none;
   font: inherit;
   letter-spacing: inherit;
-  border: none;
 }
 
 button {
   padding: 0;
+  border: none;
+  background-color: transparent;
   color: inherit;
   cursor: pointer;
-  background-color: transparent;
-  border: none;
 }
