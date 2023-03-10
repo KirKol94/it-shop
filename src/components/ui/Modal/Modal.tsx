@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import ReactDOM from "react-dom";
-import styles from "./Modal.module.scss";
 import { Dialog } from "@headlessui/react";
+import { StyledOverlay, StyledModal } from "./styled";
 
 const portal: HTMLElement | null = document.getElementById(
   "modal"
@@ -14,13 +14,15 @@ interface IProps {
 }
 
 const Modal: FC<IProps> = ({ isOpen, setIsOpen, children }) => {
+  const onClose = () => setIsOpen(false);
+
   return ReactDOM.createPortal(
-    <Dialog
-      className={styles.overlay}
-      open={isOpen}
-      onClose={() => setIsOpen(false)}
-    >
-      <Dialog.Panel className={styles.modal}>{children}</Dialog.Panel>
+    <Dialog open={isOpen} onClose={onClose}>
+      <StyledOverlay>
+        <Dialog.Panel>
+          <StyledModal>{children}</StyledModal>
+        </Dialog.Panel>
+      </StyledOverlay>
     </Dialog>,
     portal
   );
