@@ -16,7 +16,7 @@ const HeaderCategories: FC = () => {
   const links = [
     { to: "", name: "Главная" },
     { to: "catalog", name: "Каталог" },
-    { to: "test-page", name: "Доставка и оплата" },
+    { to: "home-page", name: "Доставка и оплата" },
     { to: "unknown", name: "О нас" },
   ];
 

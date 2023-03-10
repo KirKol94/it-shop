@@ -1,3 +1,5 @@
+export const containerWidth = "1230px";
+
 export const textColors = {
   main: "#fff",
   gray: "#95928f",
