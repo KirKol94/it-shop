@@ -23,7 +23,7 @@ export const bgColors = {
 
 export const fonts = {
   main: "Inter, sans-serif, Arial",
-  second: '"Raleway", sans-serif',
+  second: "Raleway, sans-serif",
   primary: "Jura, sans-serif",
 };
 
