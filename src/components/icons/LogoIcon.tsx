@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const LogoIcon = () => {
+const LogoIcon: FC = () => {
   return (
     <svg
       width="208"
