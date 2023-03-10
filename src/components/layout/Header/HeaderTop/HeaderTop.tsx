@@ -30,7 +30,7 @@ const HeaderTop: FC = () => {
               </li>
             ))}
           </ul>
-          <Logo className="" />
+          <Logo />
           <div className={styles.header__profileWrapper}>
             <div className={styles.header__loginWrapper}>
               <button

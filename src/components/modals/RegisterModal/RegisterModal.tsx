@@ -1,7 +1,6 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import Modal from "../../ui/Modal/Modal";
 import styles from "./Register.module.scss";
-import { useNavigate } from "react-router-dom";
 
 interface IProps {
   isOpen: boolean;
