@@ -1,17 +1,7 @@
 import { StyledButton } from "../Button/styled";
 import styled from "styled-components";
-
-const cutLongStringStyles = (lineCount: number) => {
-  return {
-    "word-break": "break-word",
-    display: "-webkit-box",
-    "-webkit-line-clamp": `${lineCount}`,
-    "line-clamp": `${lineCount}`,
-    "text-overflow": "ellipsis",
-    overflow: "hidden",
-    "-webkit-box-orient": "vertical",
-  };
-};
+import { cutLongStringStyles } from "../../../styled/mixins";
+import { fonts, gradients, textColors } from "../../../styled/vars";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -21,7 +11,7 @@ export const Wrapper = styled.div`
   gap: 12px;
   padding: 16px;
   border-radius: 16px;
-  background: linear-gradient(180deg, #1d1e1e 0%, #1a1b1a 100%);
+  background: ${gradients.main};
   transition: all 0.5s;
 
   &:hover {
@@ -33,6 +23,7 @@ export const Wrapper = styled.div`
     }
   }
 `;
+
 export const ImgBox = styled.div`
   display: flex;
   height: 300px;
@@ -40,6 +31,7 @@ export const ImgBox = styled.div`
   justify-content: center;
   border-radius: 16px;
 `;
+
 export const Img = styled.img`
   height: 100%;
   flex: 1 0 auto;
@@ -48,25 +40,29 @@ export const Img = styled.img`
   cursor: pointer;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
 `;
+
 export const Body = styled.div`
   flex: 1 1 auto;
 `;
+
 export const Title = styled.h3`
   margin-bottom: 12px;
-  color: #fff;
+  color: ${textColors.main};
   font-size: 20px;
   font-weight: 600;
   line-height: 1.5;
   ${cutLongStringStyles(2)}
 `;
+
 export const Description = styled.p`
-  color: #fff;
-  font-family: "Raleway", sans-serif;
+  color: ${textColors.main};
+  font-family: ${fonts.second};
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
   ${cutLongStringStyles(4)}
 `;
+
 export const Footer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -74,13 +70,15 @@ export const Footer = styled.div`
   justify-content: space-between;
   gap: 10px;
 `;
+
 export const Price = styled.span`
-  color: #fff;
+  color: ${textColors.main};
   font-size: 16px;
   font-weight: 600;
   line-height: 1.2;
 `;
+
 export const Button = styled(StyledButton)`
   flex: 0 1 160px;
-  color: #fff;
+  color: ${textColors.main};
 `;

@@ -5,11 +5,12 @@ import clsx from "clsx";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { StyledButton } from "../../ui/Button/styled";
+import { textColors } from "../../../styled/vars";
 
 const Button = styled(StyledButton)`
   width: 100%;
   margin-bottom: 14px;
-  color: #fff;
+  color: ${textColors.main};
 `;
 
 const Footer: FC = () => {

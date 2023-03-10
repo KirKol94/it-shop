@@ -1,5 +1,6 @@
 import { IButtonProps } from "./Button";
 import styled from "styled-components";
+import { bgColors } from "../../../styled/vars";
 
 export const StyledButton = styled.button<IButtonProps>`
   padding: ${({ variant }) => (variant === "primary" ? "4px 0" : "10px 22px")};
@@ -8,11 +9,11 @@ export const StyledButton = styled.button<IButtonProps>`
   background-color: ${({ variant }) => {
     switch (variant) {
       case "main":
-        return "#816e4c";
+        return bgColors.lightBrown;
       case "second":
-        return "#2c2c2c";
+        return bgColors.accent;
       case "primary":
-        return "#2c2926";
+        return bgColors.main;
     }
   }};
   backdrop-filter: ${({ variant }) => variant === "second" && "blur(10px)"};
