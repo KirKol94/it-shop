@@ -14,6 +14,7 @@ export const borderColors = {
 };
 
 export const bgColors = {
+  white: "#fff",
   main: "#2c2926",
   accent: "#2c2c2c",
   lightBrown: "#816e4c",
