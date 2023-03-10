@@ -8,6 +8,10 @@ export const textColors = {
   lightBrown: "#bca67f",
 };
 
+export const borderColors = {
+  gray: "#95928f",
+};
+
 export const bgColors = {
   main: "#2c2926",
   accent: "#2c2c2c",
