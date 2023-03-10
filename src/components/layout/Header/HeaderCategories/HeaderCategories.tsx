@@ -1,10 +1,17 @@
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
 import SearchIcon from "../../../icons/SearchIcon";
 import ArrowIcon from "../../../icons/ArrowIcon";
-import styles from "./HeaderCategories.module.scss";
 import { useAppDispatch, useAppSelector } from "../../../../hooks/reduxHooks";
 import { setSearchProductValue } from "../../../../store/products/productSlice";
+import {
+  CategoryLink,
+  Container,
+  Input,
+  InputBox,
+  List,
+  SearchIconBox,
+  Wrapper,
+} from "./styled";
 
 const HeaderCategories: FC = () => {
   const dispatch = useAppDispatch();
@@ -21,33 +28,34 @@ const HeaderCategories: FC = () => {
   ];
 
   return (
-    <div className={styles.categories}>
-      <nav className={styles.categories__container}>
-        <ul className={styles.categories__list}>
-          {links.map(({ to, name }) => (
-            <li key={to}>
-              <Link className={styles.categories__link} to={to}>
-                {name}
-                {name === "Каталог" ? <ArrowIcon /> : null}
-              </Link>
-            </li>
-          ))}
-        </ul>
+    <Wrapper>
+      <Container>
+        <nav>
+          <List>
+            {links.map(({ to, name }) => (
+              <li key={to}>
+                <CategoryLink to={to}>
+                  {name}
+                  {name === "Каталог" && <ArrowIcon />}
+                </CategoryLink>
+              </li>
+            ))}
+          </List>
+        </nav>
 
-        <div className={styles.inputWrapper}>
-          <input
-            className={styles.inputWrapper__input}
+        <InputBox>
+          <Input
             placeholder="Поиск"
             value={searchProductValue}
             onChange={(e) => dispatch(setSearchProductValue(e.target.value))}
             type="text"
           />
-          <div className={styles.inputWrapper__searchIcon}>
+          <SearchIconBox>
             <SearchIcon />
-          </div>
-        </div>
-      </nav>
-    </div>
+          </SearchIconBox>
+        </InputBox>
+      </Container>
+    </Wrapper>
   );
 };
 
