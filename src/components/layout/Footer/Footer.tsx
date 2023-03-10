@@ -2,8 +2,15 @@ import React, { FC } from "react";
 import styles from "./Footer.module.scss";
 import Logo from "../../ui/Logo/Logo";
 import clsx from "clsx";
-import Button from "../../ui/Button/Button";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { StyledButton } from "../../ui/Button/styled";
+
+const Button = styled(StyledButton)`
+  width: 100%;
+  margin-bottom: 14px;
+  color: #fff;
+`;
 
 const Footer: FC = () => {
   const menuLinks = [
@@ -189,12 +196,7 @@ const Footer: FC = () => {
                 </div>
               </div>
               <div className={styles.newsletter__bottom}>
-                <Button
-                  variant="main"
-                  type="submit"
-                  className={styles.newsletter__button}
-                  onClick={() => {}}
-                >
+                <Button variant="main" type="submit" onClick={() => {}}>
                   Подписаться
                 </Button>
                 <p className={styles.newsletter__politic}>

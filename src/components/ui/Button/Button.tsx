@@ -5,18 +5,12 @@ export interface IButtonProps {
   variant: "main" | "second" | "primary";
   onClick: () => void;
   type?: "submit" | "button" | "reset" | "menu";
-  className?: string;
   children: ReactNode;
 }
 
-const Button: FC<IButtonProps> = ({
-  variant = "main",
-  className,
-  onClick,
-  children,
-}) => {
+const Button: FC<IButtonProps> = ({ variant = "main", onClick, children }) => {
   return (
-    <StyledButton className={className} variant={variant} onClick={onClick}>
+    <StyledButton variant={variant} onClick={onClick}>
       {children}
     </StyledButton>
   );

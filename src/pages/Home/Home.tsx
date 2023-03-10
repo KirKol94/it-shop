@@ -27,10 +27,10 @@ const Home: FC = () => {
           </p>
 
           <div className={styles.heroSection__actions}>
-            <Button variant="main" className="button" onClick={() => {}}>
+            <Button variant="main" onClick={() => {}}>
               В каталог мерча
             </Button>
-            <Button variant="second" className="button" onClick={() => {}}>
+            <Button variant="second" onClick={() => {}}>
               Нанять талантливых джунов
             </Button>
           </div>

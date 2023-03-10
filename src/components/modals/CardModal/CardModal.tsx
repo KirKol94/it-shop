@@ -1,15 +1,21 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import styles from "./CardModal.module.scss";
-import Button from "../../ui/Button/Button";
 import clsx from "clsx";
 import Modal from "../../ui/Modal/Modal";
 import { IProduct } from "../../../types/IProduct";
+import styled from "styled-components";
+import { StyledButton } from "../../ui/Button/styled";
 
 interface IProps {
   product: IProduct;
   isOpenCard: boolean;
   setIsOpenCard: (isOpenCard: boolean) => void;
 }
+
+export const Button = styled(StyledButton)`
+  flex: 1 1 auto;
+  color: #fff;
+`;
 
 const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
   const sizes = ["xs", "s", "m", "l", "xl"];
@@ -132,12 +138,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
               className={clsx(styles.count__btn, styles.count__btn_plus)}
             ></span>
           </div>
-          <Button
-            type="submit"
-            variant="main"
-            className={styles.cardModal__button}
-            onClick={() => {}}
-          >
+          <Button type="submit" variant="main" onClick={() => {}}>
             В корзину
           </Button>
         </form>
