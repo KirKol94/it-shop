@@ -1,12 +1,11 @@
 import React, { FC } from "react";
+import { StyledContainer } from "../../styled/root";
 
 const Page404: FC = () => {
   return (
-    <div className="page404">
-      <div className="page404__container">
-        <h1>🐺Ошибка 404 Страница не найдена</h1>
-      </div>
-    </div>
+    <StyledContainer>
+      <h1>🐺Ошибка 404 Страница не найдена</h1>
+    </StyledContainer>
   );
 };
 
