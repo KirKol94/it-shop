@@ -1,8 +1,8 @@
 import React, { FC, useState } from "react";
 import VkIcon from "../../../icons/VkIcon";
-import Logo from "../../../ui/Logo/Logo";
-import AuthModal from "../../../modals/AuthModal/AuthModal";
-import RegisterModal from "../../../modals/RegisterModal/RegisterModal";
+import Logo from "../../../ui/logo/Logo";
+import AuthModal from "../../../modals/authModal/AuthModal";
+import RegisterModal from "../../../modals/registerModal/RegisterModal";
 import {
   CartBox,
   CartText,

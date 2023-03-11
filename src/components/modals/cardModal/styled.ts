@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { bgColors, fonts, textColors } from "../../../styled/vars";
-import { StyledButton } from "../../ui/Button/styled";
+import { StyledButton } from "../../ui/button/styled";
 
 export const CardModalWrapper = styled.div`
   display: flex;

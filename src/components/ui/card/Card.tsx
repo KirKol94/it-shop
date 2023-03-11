@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import CardModal from "../../modals/CardModal/CardModal";
+import CardModal from "../../modals/cardModal/CardModal";
 import { IProduct } from "../../../types/IProduct";
 import {
   Wrapper,

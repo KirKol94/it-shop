@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import Button from "../../components/ui/Button/Button";
-import Card from "../../components/ui/Card/Card";
+import Button from "../../components/ui/button/Button";
+import Card from "../../components/ui/card/Card";
 import { useAppSelector } from "../../hooks/reduxHooks";
 import {
   Buttons,
