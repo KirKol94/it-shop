@@ -71,11 +71,11 @@ export const Sizes = styled.div`
   background-color: ${bgColors.dark};
 `;
 
-export const Selected = styled.div`
+export const Selected = styled.div<{ position: number }>`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: ${({ position }) => position}px;
   width: calc(20%);
   padding: 2px;
   transition: left 200ms ease-out 0s, width;
@@ -84,7 +84,7 @@ export const Selected = styled.div`
     display: block;
     width: 100%;
     height: 100%;
-    border-radius: 9999px;
+    border-radius: 16px;
     background-color: ${bgColors.accent};
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
     content: " ";

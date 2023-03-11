@@ -58,35 +58,14 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
   };
 
   // далее код, передвигающий ползунок в размерах
-  const sizesRef = useRef<HTMLDivElement>(null);
-  const sizesSelectedRef = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState(0);
+  const labelRef = useRef<HTMLLabelElement>(null);
 
   useEffect(() => {
-    const sizesElement = sizesRef.current;
-    const sizesSelectedElement = sizesSelectedRef.current;
-    console.log(sizesElement, sizesSelectedElement);
-
-    const handleSizeClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      console.log(target);
-      // if (
-      //   target.classList.contains(styles.sizes__label) &&
-      //   sizesSelectedElement
-      // ) {
-      //   sizesSelectedElement.style.left = target.offsetLeft + "px";
-      // }
-    };
-
-    if (sizesElement) {
-      sizesElement.addEventListener("click", handleSizeClick);
+    if (labelRef.current) {
+      setPosition(labelRef.current.offsetLeft);
     }
-
-    return () => {
-      if (sizesElement) {
-        sizesElement.removeEventListener("click", handleSizeClick);
-      }
-    };
-  });
+  }, [size]);
 
   return (
     <Modal isOpen={isOpenCard} setIsOpen={() => setIsOpenCard(false)}>
@@ -99,8 +78,8 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
           <Title>{product.name}</Title>
           <Description>{product.description}</Description>
 
-          <Sizes ref={sizesRef}>
-            <Selected ref={sizesSelectedRef}></Selected>
+          <Sizes>
+            <Selected position={position}></Selected>
             {sizes.map((value) => (
               <React.Fragment key={value}>
                 <SizeInput
@@ -108,10 +87,16 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
                   id={`sizes__input_${value}`}
                   name={"size"}
                   value={value}
-                  onChange={() => setSize(value)}
+                  readOnly={true}
                   checked={value === size}
                 />
-                <SizeLabel htmlFor={`sizes__input_${value}`}>{value}</SizeLabel>
+                <SizeLabel
+                  ref={value === size ? labelRef : null}
+                  onClick={() => setSize(value)}
+                  htmlFor={`sizes__input_${value}`}
+                >
+                  {value}
+                </SizeLabel>
               </React.Fragment>
             ))}
           </Sizes>
