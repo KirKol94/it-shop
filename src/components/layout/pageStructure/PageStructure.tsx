@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import { Outlet } from "react-router-dom";
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
+import React, { FC } from 'react'
+import { Outlet } from 'react-router-dom'
+import Header from '../header/Header'
+import Footer from '../footer/Footer'
 
 const PageStructure: FC = () => (
   <>
@@ -12,6 +12,6 @@ const PageStructure: FC = () => (
 
     <Footer />
   </>
-);
+)
 
-export default PageStructure;
+export default PageStructure

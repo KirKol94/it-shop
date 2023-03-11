@@ -1,9 +1,9 @@
-import React, { FC } from "react";
-import LogoIcon from "../../icons/LogoIcon";
-import { Link } from "react-router-dom";
+import React, { FC } from 'react'
+import LogoIcon from '../../icons/LogoIcon'
+import { Link } from 'react-router-dom'
 
 interface IProps {
-  className?: string;
+  className?: string
 }
 
 const Logo: FC<IProps> = ({ className }) => (
@@ -12,6 +12,6 @@ const Logo: FC<IProps> = ({ className }) => (
       <LogoIcon />
     </div>
   </Link>
-);
+)
 
-export default Logo;
+export default Logo

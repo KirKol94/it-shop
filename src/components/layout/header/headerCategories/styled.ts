@@ -1,18 +1,18 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 import {
   bgColors,
   borderColors,
   fonts,
   textColors,
-} from "../../../../styled/vars";
-import { RootContainer } from "../../../../styled/root";
-import { Link } from "react-router-dom";
+} from '../../../../styled/vars'
+import { RootContainer } from '../../../../styled/root'
+import { Link } from 'react-router-dom'
 
 export const Wrapper = styled.div`
   position: sticky;
   border-bottom: 1px solid ${borderColors.gray};
   background-color: ${bgColors.accent};
-`;
+`
 
 export const Container = styled(RootContainer)`
   display: flex;
@@ -21,13 +21,13 @@ export const Container = styled(RootContainer)`
   align-items: center;
   justify-content: space-between;
   row-gap: 8px;
-`;
+`
 
 export const List = styled.ul`
   display: flex;
   gap: 32px;
   overflow-x: auto;
-`;
+`
 
 export const CategoryLink = styled(Link)`
   display: flex;
@@ -39,7 +39,7 @@ export const CategoryLink = styled(Link)`
   gap: 9px;
   line-height: 24px;
   white-space: nowrap;
-`;
+`
 
 export const InputBox = styled.div`
   position: relative;
@@ -51,7 +51,7 @@ export const InputBox = styled.div`
   &:focus-within {
     opacity: 1;
   }
-`;
+`
 
 export const Input = styled.input`
   height: 100%;
@@ -68,9 +68,9 @@ export const Input = styled.input`
     color: ${textColors.main};
     opacity: 1;
   }
-`;
+`
 
 export const SearchIconBox = styled.div`
   position: absolute;
   right: 20px;
-`;
+`

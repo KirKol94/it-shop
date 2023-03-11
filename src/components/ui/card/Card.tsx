@@ -1,6 +1,6 @@
-import React, { FC, useState } from "react";
-import CardModal from "../../modals/cardModal/CardModal";
-import { IProduct } from "../../../types/IProduct";
+import React, { FC, useState } from 'react'
+import CardModal from '../../modals/cardModal/CardModal'
+import { IProduct } from '../../../types/IProduct'
 import {
   Wrapper,
   Img,
@@ -11,14 +11,14 @@ import {
   Description,
   Footer,
   Button,
-} from "./styled";
+} from './styled'
 
 interface IProps {
-  product: IProduct;
+  product: IProduct
 }
 
 const Card: FC<IProps> = ({ product }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
@@ -33,7 +33,7 @@ const Card: FC<IProps> = ({ product }) => {
         </Body>
 
         <Footer>
-          <Price>{product.price.toLocaleString("ru")} ₽</Price>
+          <Price>{product.price.toLocaleString('ru')} ₽</Price>
           <Button variant="primary" onClick={() => setIsOpen(true)}>
             Подробнее
           </Button>
@@ -46,7 +46,7 @@ const Card: FC<IProps> = ({ product }) => {
         product={product}
       />
     </>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

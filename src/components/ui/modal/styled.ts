@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const StyledOverlay = styled.div`
   position: fixed;
@@ -23,7 +23,7 @@ export const StyledOverlay = styled.div`
       opacity: 1;
     }
   }
-`;
+`
 
 export const StyledModal = styled.div`
   animation: fade-in-modal 200ms linear;
@@ -40,4 +40,4 @@ export const StyledModal = styled.div`
       transform: translateY(0);
     }
   }
-`;
+`

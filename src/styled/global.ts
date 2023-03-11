@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import { bgColors, fonts, textColors } from "./vars";
+import { createGlobalStyle } from 'styled-components'
+import { bgColors, fonts, textColors } from './vars'
 
 export const GlobalCss = createGlobalStyle`
   html {
@@ -77,4 +77,4 @@ export const GlobalCss = createGlobalStyle`
   input {
     outline: none;
   }
-`;
+`

@@ -1,8 +1,8 @@
-import React, { FC, useState } from "react";
-import VkIcon from "../../../icons/VkIcon";
-import Logo from "../../../ui/logo/Logo";
-import AuthModal from "../../../modals/authModal/AuthModal";
-import RegisterModal from "../../../modals/registerModal/RegisterModal";
+import React, { FC, useState } from 'react'
+import VkIcon from '../../../icons/VkIcon'
+import Logo from '../../../ui/logo/Logo'
+import AuthModal from '../../../modals/authModal/AuthModal'
+import RegisterModal from '../../../modals/registerModal/RegisterModal'
 import {
   CartBox,
   CartText,
@@ -12,18 +12,18 @@ import {
   Media,
   ProfileBox,
   Wrapper,
-} from "./styled";
+} from './styled'
 
 const HeaderTop: FC = () => {
   const media = [
-    { name: "vk", link: "https://vk.com/1" },
-    { name: "vk", link: "https://vk.com/2" },
-    { name: "vk", link: "https://vk.com/3" },
-    { name: "vk", link: "https://vk.com/4" },
-  ];
+    { name: 'vk', link: 'https://vk.com/1' },
+    { name: 'vk', link: 'https://vk.com/2' },
+    { name: 'vk', link: 'https://vk.com/3' },
+    { name: 'vk', link: 'https://vk.com/4' },
+  ]
 
-  const [isAuthOpen, setIsAuthOpen] = useState(false);
-  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+  const [isAuthOpen, setIsAuthOpen] = useState(false)
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false)
 
   return (
     <>
@@ -65,7 +65,7 @@ const HeaderTop: FC = () => {
         setIsOpen={() => setIsRegisterOpen(false)}
       />
     </>
-  );
-};
+  )
+}
 
-export default HeaderTop;
+export default HeaderTop
