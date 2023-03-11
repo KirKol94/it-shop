@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import Footer from "../footer/Footer";
 
 const PageStructure: FC = () => (
   <>
