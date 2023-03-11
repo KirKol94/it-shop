@@ -20,8 +20,7 @@ import {
   Privacy,
   Socials,
   SocialsIcon,
-  SubtitleNav,
-  SubtitleSocials,
+  Subtitle,
 } from "./styled";
 import { Link } from "react-router-dom";
 
@@ -60,7 +59,7 @@ const Footer: FC = () => {
         </Block>
 
         <nav>
-          <SubtitleNav>Меню</SubtitleNav>
+          <Subtitle mod="nav">Меню</Subtitle>
           <FooterList>
             {menuLinks.map(({ name, url }) => (
               <li key={url}>
@@ -70,7 +69,7 @@ const Footer: FC = () => {
           </FooterList>
         </nav>
         <Block>
-          <SubtitleSocials>Познакомиться с нами</SubtitleSocials>
+          <Subtitle mod="social">Познакомиться с нами</Subtitle>
           <Socials>
             {socialLinks.map(({ name, url }) => (
               <li key={url}>

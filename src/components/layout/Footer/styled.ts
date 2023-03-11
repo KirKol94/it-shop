@@ -48,18 +48,11 @@ export const AddressText = styled.p`
   line-height: 19px;
 `;
 
-export const Subtitle = styled.p`
+export const Subtitle = styled.p<{ mod: "nav" | "social" }>`
   font-size: 18px;
   font-weight: 700;
   line-height: 21px;
-`;
-
-export const SubtitleNav = styled(Subtitle)`
-  margin-bottom: 8px;
-`;
-
-export const SubtitleSocials = styled(Subtitle)`
-  margin-bottom: 14px;
+  margin-bottom: ${({ mod }) => (mod === "nav" ? "8px" : "14px")};
 `;
 
 export const NewsLetter = styled.div`
