@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { bgColors, borderColors, textColors } from "../../../../styled/vars";
-import { StyledContainer } from "../../../../styled/root";
+import { RootContainer } from "../../../../styled/root";
 
 export const Wrapper = styled.div`
   padding: 20px 0;
@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   background-color: ${bgColors.accent};
 `;
 
-export const Container = styled(StyledContainer)`
+export const Container = styled(RootContainer)`
   display: flex;
   height: 100%;
   flex-wrap: wrap;
