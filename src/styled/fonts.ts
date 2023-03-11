@@ -4,6 +4,7 @@ import InterRegular from '../assets/fonts/Inter/Inter-Regular.ttf'
 import InterMedium from '../assets/fonts/Inter/Inter-Medium.ttf'
 import InterSemiBold from '../assets/fonts/Inter/Inter-SemiBold.ttf'
 import RalewayLight from '../assets/fonts/Raleway/Raleway-Light.ttf'
+import RalewayRegular from '../assets/fonts/Raleway/Raleway-Regular.ttf'
 import RalewayMedium from '../assets/fonts/Raleway/Raleway-Medium.ttf'
 import RalewaySemiBold from '../assets/fonts/Raleway/Raleway-SemiBold.ttf'
 import JuraLight from '../assets/fonts/Jura/Jura-Light.ttf'
@@ -16,90 +17,90 @@ export const GlobalFonts = createGlobalStyle`
     font-family: "Inter";
     font-style: normal;
     font-weight: 300;
-    src: url(${InterLight}) format("ttf");
+    src: url(${InterLight});
   }
 
   @font-face {
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    src: url(${InterRegular}) format("ttf");
+    src: url(${InterRegular});
   }
 
   @font-face {
     font-family: "Inter";
     font-style: normal;
     font-weight: 500;
-    src: url(${InterMedium}) format("ttf");
+    src: url(${InterMedium});
   }
 
   @font-face {
     font-family: "Inter";
     font-style: normal;
     font-weight: 600;
-    src: url(${InterSemiBold}) format("ttf");
+    src: url(${InterSemiBold});
   }
 
   @font-face {
     font-family: "Raleway";
     font-style: normal;
     font-weight: 300;
-    src: url(${RalewayLight}) format("ttf");
+    src: url(${RalewayLight});
   }
 
   @font-face {
     font-family: "Raleway";
     font-style: normal;
     font-weight: 400;
-    src: url("../assets/fonts/Raleway/Raleway-Regular.ttf");
+    src: url(${RalewayRegular});
   }
 
   @font-face {
     font-family: "Raleway";
     font-style: normal;
     font-weight: 500;
-    src: url(${RalewayMedium}) format("ttf");
+    src: url(${RalewayMedium});
   }
 
   @font-face {
     font-family: "Raleway";
     font-style: normal;
     font-weight: 600;
-    src: url(${RalewaySemiBold}) format("ttf");
+    src: url(${RalewaySemiBold});
   }
 
   @font-face {
     font-family: "Jura";
     font-style: normal;
     font-weight: 300;
-    src: url(${JuraLight}) format("ttf");
+    src: url(${JuraLight});
   }
 
   @font-face {
     font-family: "Jura";
     font-style: normal;
     font-weight: 400;
-    src: url(${JuraRegular}) format("ttf");
+    src: url(${JuraRegular});
   }
 
   @font-face {
     font-family: "Jura";
     font-style: normal;
     font-weight: 500;
-    src: url(${JuraMedium}) format("ttf");
+    src: url(${JuraMedium});
   }
 
   @font-face {
     font-family: "Jura";
     font-style: normal;
     font-weight: 600;
-    src: url(${JuraSemiBold}) format("ttf");
+    src: url(${JuraSemiBold});
   }
 
   @font-face {
     font-family: " Jura ";
     font-style: normal;
     font-weight: 700;
-    src: url(${JuraSemiBold}) format("ttf");
+    src: url(${JuraSemiBold});
   }
 `
