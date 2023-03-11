@@ -3,11 +3,13 @@ import { IProduct } from "../../types/IProduct";
 
 type ProductState = {
   isLoading: boolean;
+  searchProductValue: string;
   products: IProduct[];
 };
 
 const initialState: ProductState = {
   isLoading: false,
+  searchProductValue: "",
   products: [
     {
       image:
@@ -28,7 +30,7 @@ const initialState: ProductState = {
         "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3725&q=80",
       name: "Рубашка с галстуком",
       description:
-        "Клёвая рубашка для успешного человека, но не для айтишника - для них свитер",
+        "Очень крутая рубашка белого цвета для очень успешных людей, которые знают толк в хороших вещах и имеют потрясающий вкус, а ещё она доступна каждому  Купи - и будь пиздат!",
       price: 5999,
     },
     {
@@ -80,10 +82,16 @@ export const productSlice = createSlice({
     setProducts(state, action: PayloadAction<IProduct[]>) {
       state.products = action.payload;
     },
+
+    //   получить массив отфильтрованных товаров
+    setSearchProductValue(state, action: PayloadAction<string>) {
+      state.searchProductValue = action.payload;
+    },
   },
 });
 
 // экспортируем экшены
-export const { setIsLoading, setProducts } = productSlice.actions;
+export const { setIsLoading, setProducts, setSearchProductValue } =
+  productSlice.actions;
 
 export default productSlice.reducer;
