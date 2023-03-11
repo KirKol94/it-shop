@@ -1,10 +1,18 @@
 import React, { FC, useState } from "react";
-import styles from "./HeaderTop.module.scss";
 import VkIcon from "../../../icons/VkIcon";
 import Logo from "../../../ui/Logo/Logo";
-import { Link } from "react-router-dom";
 import AuthModal from "../../../modals/AuthModal/AuthModal";
 import RegisterModal from "../../../modals/RegisterModal/RegisterModal";
+import {
+  CartBox,
+  CartText,
+  Container,
+  HeaderAuthBtn,
+  LoginBox,
+  Media,
+  ProfileBox,
+  Wrapper,
+} from "./styled";
 
 const HeaderTop: FC = () => {
   const media = [
@@ -19,9 +27,9 @@ const HeaderTop: FC = () => {
 
   return (
     <>
-      <div className={styles.header}>
-        <div className={styles.header__container}>
-          <ul className={styles.header__media}>
+      <Wrapper>
+        <Container>
+          <Media>
             {media.map(({ name, link }) => (
               <li key={link}>
                 <a href={link} target="_blank" title={name} rel="noreferrer">
@@ -29,31 +37,27 @@ const HeaderTop: FC = () => {
                 </a>
               </li>
             ))}
-          </ul>
+          </Media>
+
           <Logo />
-          <div className={styles.header__profileWrapper}>
-            <div className={styles.header__loginWrapper}>
-              <button
-                className={styles.header__link}
-                onClick={() => setIsAuthOpen(true)}
-              >
+
+          <ProfileBox>
+            <LoginBox>
+              <HeaderAuthBtn onClick={() => setIsAuthOpen(true)}>
                 Войти
-              </button>
+              </HeaderAuthBtn>
               |
-              <button
-                className={styles.header__link}
-                onClick={() => setIsRegisterOpen(true)}
-              >
+              <HeaderAuthBtn onClick={() => setIsRegisterOpen(true)}>
                 Регистрация
-              </button>
-            </div>
-            <Link to="cart" className={styles.header__bagWrapper}>
+              </HeaderAuthBtn>
+            </LoginBox>
+            <CartBox to="cart">
               <VkIcon />
-              <span>Корзина</span>
-            </Link>
-          </div>
-        </div>
-      </div>
+              <CartText>Корзина</CartText>
+            </CartBox>
+          </ProfileBox>
+        </Container>
+      </Wrapper>
 
       <AuthModal isOpen={isAuthOpen} setIsOpen={() => setIsAuthOpen(false)} />
       <RegisterModal

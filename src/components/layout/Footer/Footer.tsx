@@ -1,8 +1,27 @@
 import React, { FC } from "react";
-import styles from "./Footer.module.scss";
-import Logo from "../../ui/Logo/Logo";
-import clsx from "clsx";
-import Button from "../../ui/Button/Button";
+import {
+  Address,
+  AddressText,
+  Block,
+  Button,
+  Container,
+  FooterList,
+  FooterLogo,
+  FooterWrapper,
+  Form,
+  GenderBox,
+  GenderInput,
+  GenderLabel,
+  InputBox,
+  InputText,
+  Label,
+  NewsLetter,
+  NewsLetterTitle,
+  Privacy,
+  Socials,
+  SocialsIcon,
+  Subtitle,
+} from "./styled";
 import { Link } from "react-router-dom";
 
 const Footer: FC = () => {
@@ -23,77 +42,50 @@ const Footer: FC = () => {
   ];
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footer__container}>
-        <div className={styles.footer__block}>
-          <Logo className={styles.footer__logo} />
-          <address className={clsx(styles.addressInfo, styles.footer__address)}>
-            <p className={styles.addressInfo__text}>
-              ул. Пушкина, д. Колотушкина
-            </p>
-            <p className={styles.addressInfo__text}>
+    <FooterWrapper>
+      <Container>
+        <Block>
+          <FooterLogo />
+
+          <Address>
+            <AddressText>ул. Пушкина, д. Колотушкина</AddressText>
+            <AddressText>
               <a href="mailto:info@wolfpack.com">info@wolfpack.com</a>
-            </p>
-            <p className={styles.addressInfo__text}>
+            </AddressText>
+            <AddressText>
               <a href="tel:+79999999999">+7 (999) 999-99-99</a>
-            </p>
-          </address>
-        </div>
-        <nav className={clsx(styles.footer__nav, styles.navFooter)}>
-          <p className={clsx(styles.footerSubtitle, styles.footerSubtitle_nav)}>
-            Меню
-          </p>
-          <ul className={styles.navFooter__list}>
+            </AddressText>
+          </Address>
+        </Block>
+
+        <nav>
+          <Subtitle mod="nav">Меню</Subtitle>
+          <FooterList>
             {menuLinks.map(({ name, url }) => (
-              <li key={url} className={styles.navFooter__item}>
-                <Link className={styles.navFooter__link} to={url}>
-                  {name}
-                </Link>
+              <li key={url}>
+                <Link to={url}>{name}</Link>
               </li>
             ))}
-          </ul>
+          </FooterList>
         </nav>
-        <div className={styles.footer__block}>
-          <p
-            className={clsx(
-              styles.footerSubtitle,
-              styles.footerSubtitle_socials
-            )}
-          >
-            Познакомиться с нами
-          </p>
-          <ul className={clsx(styles.footer__socials, styles.socials)}>
+        <Block>
+          <Subtitle mod="social">Познакомиться с нами</Subtitle>
+          <Socials>
             {socialLinks.map(({ name, url }) => (
-              <li key={url} className={styles.socials__item}>
-                <a
-                  className={styles.socials__link}
-                  href={url}
-                  title={name}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span
-                    className={clsx(
-                      styles.socials__icon,
-                      styles.socials__icon_vk
-                    )}
-                  />
+              <li key={url}>
+                <a href={url} title={name} target="_blank" rel="noreferrer">
+                  <SocialsIcon />
                 </a>
               </li>
             ))}
-          </ul>
-        </div>
-        <div className={styles.footer__block}>
-          <div className={clsx(styles.footer__newsletter, styles.newsletter)}>
-            <p className={styles.newsletter__title}>Подписаться на рассылку</p>
-            <form
-              className={styles.newsletter__form}
-              id="fastMail"
-              name="fastMail"
-            >
-              <div className={styles.newsletter__inputBox}>
-                <input
-                  className={styles.newsletter__input}
+          </Socials>
+        </Block>
+        <Block>
+          <NewsLetter>
+            <NewsLetterTitle>Подписаться на рассылку</NewsLetterTitle>
+            <Form id="fastMail" name="fastMail">
+              <InputBox>
+                <InputText
                   autoComplete="off"
                   id="fastMailPhone"
                   type="text"
@@ -101,25 +93,11 @@ const Footer: FC = () => {
                   maxLength={20}
                   placeholder=" "
                 />
-                <label
-                  className={styles.newsletter__label}
-                  htmlFor="fastMailPhone"
-                >
-                  Имя
-                </label>
-                <span
-                  className={clsx(
-                    styles.newsletter__inputValid,
-                    styles.newsletter__inputValid_tel
-                  )}
-                  hidden
-                >
-                  УКАЖИТЕ ВАШЕ ИМЯ
-                </span>
-              </div>
-              <div className={styles.newsletter__inputBox}>
-                <input
-                  className={styles.newsletter__input}
+                <Label htmlFor="fastMailPhone">Имя</Label>
+                <span hidden>УКАЖИТЕ ВАШЕ ИМЯ</span>
+              </InputBox>
+              <InputBox>
+                <InputText
                   autoComplete="off"
                   id="fastMailEmail"
                   type="email"
@@ -127,88 +105,62 @@ const Footer: FC = () => {
                   maxLength={40}
                   placeholder=" "
                 />
-                <label
-                  className={styles.newsletter__label}
-                  htmlFor="fastMailEmail"
-                >
-                  Эл. почта
-                </label>
-                <span
-                  className={clsx(
-                    styles.newsletter__inputValid,
-                    styles.newsletter__inputValid_mail
-                  )}
-                  hidden
-                >
+                <Label htmlFor="fastMailEmail">Эл. почта</Label>
+                <span hidden>
                   УКАЖИТЕ ПРАВИЛЬНЫЙ АДРЕС ВАШЕЙ ЭЛЕКТРОННОЙ ПОЧТЫ
                 </span>
-              </div>
-              <div
-                className={clsx(styles.newsletter__gender, styles.genderChoice)}
-              >
-                <div className={styles.genderChoice__block}>
-                  <div className={styles.genderChoice__radio}>
-                    <input
+              </InputBox>
+              <GenderBox>
+                <div>
+                  <div>
+                    <GenderInput
                       defaultChecked={true}
-                      className={styles.genderChoice__input}
                       id="gender-choice__input_w"
                       name="Gender"
                       type="radio"
                       defaultValue="W"
                     />
-                    <label
-                      className={styles.genderChoice__label}
-                      htmlFor="gender-choice__input_w"
-                    >
+                    <GenderLabel htmlFor="gender-choice__input_w">
                       <span>
                         <span />
                       </span>
                       Женщина
-                    </label>
+                    </GenderLabel>
                   </div>
                 </div>
-                <div className={styles.genderChoice__block}>
-                  <div className={styles.genderChoice__radio}>
-                    <input
-                      className={styles.genderChoice__input}
+                <div>
+                  <div>
+                    <GenderInput
                       id="gender-choice__input_m"
                       name="Gender"
                       type="radio"
                       defaultValue="M"
                     />
-                    <label
-                      className={styles.genderChoice__label}
-                      htmlFor="gender-choice__input_m"
-                    >
+                    <GenderLabel htmlFor="gender-choice__input_m">
                       <span>
                         <span />
                       </span>
                       Мужчина
-                    </label>
+                    </GenderLabel>
                   </div>
                 </div>
-              </div>
-              <div className={styles.newsletter__bottom}>
-                <Button
-                  variant="main"
-                  type="submit"
-                  className={styles.newsletter__button}
-                  onClick={() => {}}
-                >
+              </GenderBox>
+              <div>
+                <Button variant="main" type="submit" onClick={() => {}}>
                   Подписаться
                 </Button>
-                <p className={styles.newsletter__politic}>
+                <Privacy>
                   При нажатии на кнопку подписаться вы даёте своё согласие на
-                  получение новостной рассылкипо электронной почте. Для
+                  получение новостной рассылки по электронной почте. Для
                   получения подробной информации ознакомьтесь с
                   <Link to="policy">политикой конфиденциальности</Link>.
-                </p>
+                </Privacy>
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </footer>
+            </Form>
+          </NewsLetter>
+        </Block>
+      </Container>
+    </FooterWrapper>
   );
 };
 

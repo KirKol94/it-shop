@@ -1,34 +1,18 @@
 import React, { FC, ReactNode } from "react";
-import styles from "./Button.module.scss";
-import clsx from "clsx";
+import { StyledButton } from "./styled";
 
-interface IProps {
+export interface IButtonProps {
   variant: "main" | "second" | "primary";
-  type?: "submit" | "button" | "reset" | "menu";
-  className: string;
-  children: ReactNode;
   onClick: () => void;
+  type?: "submit" | "button" | "reset" | "menu";
+  children: ReactNode;
 }
 
-const Button: FC<IProps> = ({
-  variant = "main",
-  className,
-  onClick,
-  children,
-}) => {
+const Button: FC<IButtonProps> = ({ variant = "main", onClick, children }) => {
   return (
-    <button
-      onClick={onClick}
-      className={clsx(
-        styles.button,
-        className,
-        variant === "main" && styles.button_main,
-        variant === "second" && styles.button_second,
-        variant === "primary" && styles.button_primary
-      )}
-    >
+    <StyledButton variant={variant} onClick={onClick}>
       {children}
-    </button>
+    </StyledButton>
   );
 };
 

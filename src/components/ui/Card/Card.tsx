@@ -1,8 +1,17 @@
 import React, { FC, useState } from "react";
-import styles from "./Card.module.scss";
-import Button from "../Button/Button";
 import CardModal from "../../modals/CardModal/CardModal";
 import { IProduct } from "../../../types/IProduct";
+import {
+  Wrapper,
+  Img,
+  ImgBox,
+  Price,
+  Title,
+  Body,
+  Description,
+  Footer,
+  Button,
+} from "./styled";
 
 interface IProps {
   product: IProduct;
@@ -13,29 +22,23 @@ const Card: FC<IProps> = ({ product }) => {
 
   return (
     <>
-      <div className={styles.card}>
-        <div className={styles.card__img} onClick={() => setIsOpen(true)}>
-          <img src={product.image} alt={product.name} />
-        </div>
+      <Wrapper>
+        <ImgBox onClick={() => setIsOpen(true)}>
+          <Img src={product.image} alt={product.name} />
+        </ImgBox>
 
-        <div className={styles.card__body}>
-          <h3 className={styles.card__title}>{product.name}</h3>
-          <p className={styles.card__description}>{product.description}</p>
-        </div>
+        <Body>
+          <Title>{product.name}</Title>
+          <Description>{product.description}</Description>
+        </Body>
 
-        <div className={styles.card__footer}>
-          <span className={styles.card__price}>
-            {product.price.toLocaleString("ru")} ₽
-          </span>
-          <Button
-            variant="primary"
-            onClick={() => setIsOpen(true)}
-            className={styles.card__button}
-          >
+        <Footer>
+          <Price>{product.price.toLocaleString("ru")} ₽</Price>
+          <Button variant="primary" onClick={() => setIsOpen(true)}>
             Подробнее
           </Button>
-        </div>
-      </div>
+        </Footer>
+      </Wrapper>
 
       <CardModal
         isOpenCard={isOpen}

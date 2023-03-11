@@ -1,9 +1,23 @@
 import React, { FC, useEffect, useRef, useState } from "react";
-import styles from "./CardModal.module.scss";
-import Button from "../../ui/Button/Button";
-import clsx from "clsx";
 import Modal from "../../ui/Modal/Modal";
 import { IProduct } from "../../../types/IProduct";
+import {
+  Body,
+  Button,
+  CardModalWrapper,
+  CountBox,
+  CountBtn,
+  CountInput,
+  Description,
+  Footer,
+  ImgBox,
+  Price,
+  Selected,
+  SizeInput,
+  SizeLabel,
+  Sizes,
+  Title,
+} from "./styled";
 
 interface IProps {
   product: IProduct;
@@ -44,104 +58,72 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
   };
 
   // далее код, передвигающий ползунок в размерах
-  const sizesRef = useRef<HTMLDivElement>(null);
-  const sizesSelectedRef = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState(0);
+  const labelRef = useRef<HTMLLabelElement>(null);
 
   useEffect(() => {
-    const sizesElement = sizesRef.current;
-    const sizesSelectedElement = sizesSelectedRef.current;
-
-    const handleSizeClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (
-        target.classList.contains(styles.sizes__label) &&
-        sizesSelectedElement
-      ) {
-        sizesSelectedElement.style.left = target.offsetLeft + "px";
-      }
-    };
-
-    if (sizesElement) {
-      sizesElement.addEventListener("click", handleSizeClick);
+    if (labelRef.current) {
+      setPosition(labelRef.current.offsetLeft);
     }
-
-    return () => {
-      if (sizesElement) {
-        sizesElement.removeEventListener("click", handleSizeClick);
-      }
-    };
-  });
+  }, [size]);
 
   return (
     <Modal isOpen={isOpenCard} setIsOpen={() => setIsOpenCard(false)}>
-      <div className={styles.cardModal}>
-        <div className={styles.cardModal__img}>
+      <CardModalWrapper>
+        <ImgBox>
           <img src={product.image} alt={product.name} />
-        </div>
+        </ImgBox>
 
-        <div className={styles.cardModal__body}>
-          <h3 className={styles.cardModal__title}>{product.name}</h3>
-          <p className={styles.cardModal__description}>{product.description}</p>
+        <Body>
+          <Title>{product.name}</Title>
+          <Description>{product.description}</Description>
 
-          <div className={styles.sizes} ref={sizesRef}>
-            <div
-              className={styles.sizes__selected}
-              ref={sizesSelectedRef}
-            ></div>
+          <Sizes>
+            <Selected position={position}></Selected>
             {sizes.map((value) => (
               <React.Fragment key={value}>
-                <input
-                  className={styles.sizes__input}
+                <SizeInput
                   type="radio"
                   id={`sizes__input_${value}`}
                   name={"size"}
                   value={value}
-                  onChange={() => setSize(value)}
+                  readOnly={true}
                   checked={value === size}
                 />
-                <label
-                  className={styles.sizes__label}
+                <SizeLabel
+                  ref={value === size ? labelRef : null}
+                  onClick={() => setSize(value)}
                   htmlFor={`sizes__input_${value}`}
                 >
                   {value}
-                </label>
+                </SizeLabel>
               </React.Fragment>
             ))}
-          </div>
-        </div>
+          </Sizes>
+        </Body>
 
-        <form onSubmit={handleSubmit} className={styles.cardModal__footer}>
-          <span className={styles.cardModal__price}>
-            {price.toLocaleString("ru")} ₽
-          </span>
-          <div className={styles.count}>
-            <span
-              onClick={decrement}
-              className={clsx(styles.count__btn, styles.count__btn_minus)}
-            ></span>
-            <input
-              className={styles.count__input}
+        <Footer onSubmit={handleSubmit}>
+          <Price>{price.toLocaleString("ru")} ₽</Price>
+          <CountBox>
+            <CountBtn action="minus" onClick={decrement}>
+              -
+            </CountBtn>
+            <CountInput
               type="text"
               inputMode="numeric"
               value={count}
               onChange={handleInputChange}
               maxLength={3}
             />
-            <span
-              onClick={increment}
-              className={clsx(styles.count__btn, styles.count__btn_plus)}
-            ></span>
-          </div>
-          <Button
-            type="submit"
-            variant="main"
-            className={styles.cardModal__button}
-            onClick={() => {}}
-          >
+            <CountBtn action="plus" onClick={increment}>
+              +
+            </CountBtn>
+          </CountBox>
+          <Button type="submit" variant="main" onClick={() => {}}>
             В корзину
           </Button>
-        </form>
-      </div>
+        </Footer>
+      </CardModalWrapper>
     </Modal>
   );
 };
