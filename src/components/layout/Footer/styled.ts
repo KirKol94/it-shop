@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { bgColors, borderColors, textColors } from "../../../styled/vars";
-import { StyledContainer } from "../../../styled/root";
+import { RootContainer } from "../../../styled/root";
 import Logo from "../../ui/Logo/Logo";
 import { StyledButton } from "../../ui/Button/styled";
 import VkIcon from "../../../assets/svg/vk.svg";
@@ -12,7 +12,7 @@ export const FooterWrapper = styled.footer`
   color: ${textColors.main};
 `;
 
-export const Container = styled(StyledContainer)`
+export const Container = styled(RootContainer)`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;

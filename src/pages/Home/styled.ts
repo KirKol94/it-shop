@@ -1,4 +1,4 @@
-import { StyledContainer } from "../../styled/root";
+import { RootContainer } from "../../styled/root";
 import { bgColors, fonts } from "../../styled/vars";
 import styled from "styled-components";
 import HeroSectionBg from "../../assets/img/home-page/hero-section/bg.webp";
@@ -9,7 +9,7 @@ export const HeroSection = styled.section`
     center / cover no-repeat url(${HeroSectionBg});
 `;
 
-export const HeroSectionContainer = styled(StyledContainer)`
+export const HeroSectionContainer = styled(RootContainer)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +43,7 @@ export const Cards = styled.section`
   background-color: ${bgColors.dark};
 `;
 
-export const CardsContainer = styled(StyledContainer)`
+export const CardsContainer = styled(RootContainer)`
   padding-top: 80px;
 `;
 

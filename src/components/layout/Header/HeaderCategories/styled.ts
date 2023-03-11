@@ -5,7 +5,7 @@ import {
   fonts,
   textColors,
 } from "../../../../styled/vars";
-import { StyledContainer } from "../../../../styled/root";
+import { RootContainer } from "../../../../styled/root";
 import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   background-color: ${bgColors.accent};
 `;
 
-export const Container = styled(StyledContainer)`
+export const Container = styled(RootContainer)`
   display: flex;
   min-height: 64px;
   flex-wrap: wrap;

@@ -1,6 +1,6 @@
 import React from "react";
-import { StyledContainer } from "../../styled/root";
+import { RootContainer } from "../../styled/root";
 
-const TestPage = () => <StyledContainer>test page</StyledContainer>;
+const TestPage = () => <RootContainer>test page</RootContainer>;
 
 export default TestPage;
