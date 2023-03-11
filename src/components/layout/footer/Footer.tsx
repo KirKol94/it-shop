@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC } from 'react'
 import {
   Address,
   AddressText,
@@ -21,25 +21,25 @@ import {
   Socials,
   SocialsIcon,
   Subtitle,
-} from "./styled";
-import { Link } from "react-router-dom";
+} from './styled'
+import { Link } from 'react-router-dom'
 
 const Footer: FC = () => {
   const menuLinks = [
-    { name: "Главная", url: "" },
-    { name: "Новинки", url: "new-products" },
-    { name: "Футболки", url: "t-shirts" },
-    { name: "Кепки", url: "caps" },
-    { name: "Аксессуары", url: "accessories" },
-    { name: "Чехлы", url: "covers" },
-  ];
+    { name: 'Главная', url: '' },
+    { name: 'Новинки', url: 'new-products' },
+    { name: 'Футболки', url: 't-shirts' },
+    { name: 'Кепки', url: 'caps' },
+    { name: 'Аксессуары', url: 'accessories' },
+    { name: 'Чехлы', url: 'covers' },
+  ]
 
   const socialLinks = [
-    { name: "vk", url: "https://vk.com/1" },
-    { name: "vk", url: "https://vk.com/2" },
-    { name: "vk", url: "https://vk.com/3" },
-    { name: "vk", url: "https://vk.com/4" },
-  ];
+    { name: 'vk', url: 'https://vk.com/1' },
+    { name: 'vk', url: 'https://vk.com/2' },
+    { name: 'vk', url: 'https://vk.com/3' },
+    { name: 'vk', url: 'https://vk.com/4' },
+  ]
 
   return (
     <FooterWrapper>
@@ -146,7 +146,10 @@ const Footer: FC = () => {
                 </div>
               </GenderBox>
               <div>
-                <Button variant="main" type="submit" onClick={() => {}}>
+                <Button
+                  variant="main"
+                  type="submit"
+                  onClick={() => console.log('форма отправлена')}>
                   Подписаться
                 </Button>
                 <Privacy>
@@ -161,7 +164,7 @@ const Footer: FC = () => {
         </Block>
       </Container>
     </FooterWrapper>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

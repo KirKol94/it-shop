@@ -1,6 +1,6 @@
-import React, { FC, useEffect, useRef, useState } from "react";
-import Modal from "../../ui/modal/Modal";
-import { IProduct } from "../../../types/IProduct";
+import React, { FC, useEffect, useRef, useState } from 'react'
+import Modal from '../../ui/modal/Modal'
+import { IProduct } from '../../../types/IProduct'
 import {
   Body,
   Button,
@@ -17,55 +17,55 @@ import {
   SizeLabel,
   Sizes,
   Title,
-} from "./styled";
+} from './styled'
 
 interface IProps {
-  product: IProduct;
-  isOpenCard: boolean;
-  setIsOpenCard: (isOpenCard: boolean) => void;
+  product: IProduct
+  isOpenCard: boolean
+  setIsOpenCard: (isOpenCard: boolean) => void
 }
 
 const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
-  const sizes = ["xs", "s", "m", "l", "xl"];
-  const [size, setSize] = useState(sizes[0]);
-  const [count, setCount] = useState(1);
-  const price = product.price * +count;
+  const sizes = ['xs', 's', 'm', 'l', 'xl']
+  const [size, setSize] = useState(sizes[0])
+  const [count, setCount] = useState(1)
+  const price = product.price * +count
 
   const increment = () => {
-    setCount((prev) => prev + 1);
-  };
+    setCount(prev => prev + 1)
+  }
 
   const decrement = () => {
-    if (count > 1) setCount((prev) => prev - 1);
-  };
+    if (count > 1) setCount(prev => prev - 1)
+  }
 
   // разрешаем вводить только цифры
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const regex = /^[0-9]*$/;
-    const value = e.target.value;
+    const regex = /^[0-9]*$/
+    const value = e.target.value
     if (regex.test(value) && +value !== 0) {
-      setCount(+value);
+      setCount(+value)
     }
-  };
+  }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsOpenCard(false);
-    setCount(1);
+    e.preventDefault()
+    setIsOpenCard(false)
+    setCount(1)
     console.log(
       `товар: ${product.name} на сумму: ${price}\nразмер: ${size}\nколичествр: ${count}`
-    );
-  };
+    )
+  }
 
   // далее код, передвигающий ползунок в размерах
-  const [position, setPosition] = useState(0);
-  const labelRef = useRef<HTMLLabelElement>(null);
+  const [position, setPosition] = useState(0)
+  const labelRef = useRef<HTMLLabelElement>(null)
 
   useEffect(() => {
     if (labelRef.current) {
-      setPosition(labelRef.current.offsetLeft);
+      setPosition(labelRef.current.offsetLeft)
     }
-  }, [size]);
+  }, [size])
 
   return (
     <Modal isOpen={isOpenCard} setIsOpen={() => setIsOpenCard(false)}>
@@ -80,12 +80,12 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
 
           <Sizes>
             <Selected position={position}></Selected>
-            {sizes.map((value) => (
+            {sizes.map(value => (
               <React.Fragment key={value}>
                 <SizeInput
                   type="radio"
                   id={`sizes__input_${value}`}
-                  name={"size"}
+                  name={'size'}
                   value={value}
                   readOnly={true}
                   checked={value === size}
@@ -93,8 +93,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
                 <SizeLabel
                   ref={value === size ? labelRef : null}
                   onClick={() => setSize(value)}
-                  htmlFor={`sizes__input_${value}`}
-                >
+                  htmlFor={`sizes__input_${value}`}>
                   {value}
                 </SizeLabel>
               </React.Fragment>
@@ -103,7 +102,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
         </Body>
 
         <Footer onSubmit={handleSubmit}>
-          <Price>{price.toLocaleString("ru")} ₽</Price>
+          <Price>{price.toLocaleString('ru')} ₽</Price>
           <CountBox>
             <CountBtn action="minus" onClick={decrement}>
               -
@@ -119,13 +118,13 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
               +
             </CountBtn>
           </CountBox>
-          <Button type="submit" variant="main" onClick={() => {}}>
+          <Button type="submit" variant="main">
             В корзину
           </Button>
         </Footer>
       </CardModalWrapper>
     </Modal>
-  );
-};
+  )
+}
 
-export default CardModal;
+export default CardModal

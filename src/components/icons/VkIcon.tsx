@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC } from 'react'
 
 const VkIcon: FC = () => (
   <svg
@@ -6,8 +6,7 @@ const VkIcon: FC = () => (
     height="32"
     viewBox="0 0 32 32"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+    xmlns="http://www.w3.org/2000/svg">
     <circle cx="16" cy="16" r="16" fill="#BCA67F" />
     <path
       d="M8.56052 11.03L11.2485 18.674L13.9085 11.03H15.9385L12.1725 20.97H10.3105L6.53052 11.03H8.56052Z"
@@ -18,6 +17,6 @@ const VkIcon: FC = () => (
       fill="#251E13"
     />
   </svg>
-);
+)
 
-export default VkIcon;
+export default VkIcon

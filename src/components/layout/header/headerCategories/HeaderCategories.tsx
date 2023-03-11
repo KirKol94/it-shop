@@ -1,8 +1,8 @@
-import React, { FC } from "react";
-import SearchIcon from "../../../icons/SearchIcon";
-import ArrowIcon from "../../../icons/ArrowIcon";
-import { useAppDispatch, useAppSelector } from "../../../../hooks/reduxHooks";
-import { setSearchProductValue } from "../../../../store/products/productSlice";
+import React, { FC } from 'react'
+import SearchIcon from '../../../icons/SearchIcon'
+import ArrowIcon from '../../../icons/ArrowIcon'
+import { useAppDispatch, useAppSelector } from '../../../../hooks/reduxHooks'
+import { setSearchProductValue } from '../../../../store/products/productSlice'
 import {
   CategoryLink,
   Container,
@@ -11,21 +11,21 @@ import {
   List,
   SearchIconBox,
   Wrapper,
-} from "./styled";
+} from './styled'
 
 const HeaderCategories: FC = () => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   const searchProductValue = useAppSelector(
-    (state) => state.product.searchProductValue
-  );
+    state => state.product.searchProductValue
+  )
 
   const links = [
-    { to: "", name: "Главная" },
-    { to: "catalog", name: "Каталог" },
-    { to: "home-page", name: "Доставка и оплата" },
-    { to: "unknown", name: "О нас" },
-  ];
+    { to: '', name: 'Главная' },
+    { to: 'catalog', name: 'Каталог' },
+    { to: 'home-page', name: 'Доставка и оплата' },
+    { to: 'unknown', name: 'О нас' },
+  ]
 
   return (
     <Wrapper>
@@ -36,7 +36,7 @@ const HeaderCategories: FC = () => {
               <li key={to}>
                 <CategoryLink to={to}>
                   {name}
-                  {name === "Каталог" && <ArrowIcon />}
+                  {name === 'Каталог' && <ArrowIcon />}
                 </CategoryLink>
               </li>
             ))}
@@ -47,7 +47,7 @@ const HeaderCategories: FC = () => {
           <Input
             placeholder="Поиск"
             value={searchProductValue}
-            onChange={(e) => dispatch(setSearchProductValue(e.target.value))}
+            onChange={e => dispatch(setSearchProductValue(e.target.value))}
             type="text"
           />
           <SearchIconBox>
@@ -56,7 +56,7 @@ const HeaderCategories: FC = () => {
         </InputBox>
       </Container>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default HeaderCategories;
+export default HeaderCategories

@@ -1,7 +1,7 @@
-import { StyledButton } from "../button/styled";
-import styled from "styled-components";
-import { cutLongStringStyles } from "../../../styled/mixins";
-import { fonts, gradients, textColors } from "../../../styled/vars";
+import { StyledButton } from '../button/styled'
+import styled from 'styled-components'
+import { cutLongStringStyles } from '../../../styled/mixins'
+import { fonts, gradients, textColors } from '../../../styled/vars'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
       filter: drop-shadow(0px 0px 32px rgba(255, 255, 255, 0.25));
     }
   }
-`;
+`
 
 export const ImgBox = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ export const ImgBox = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-`;
+`
 
 export const Img = styled.img`
   height: 100%;
@@ -39,11 +39,11 @@ export const Img = styled.img`
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
-`;
+`
 
 export const Body = styled.div`
   flex: 1 1 auto;
-`;
+`
 
 export const Title = styled.h3`
   margin-bottom: 12px;
@@ -52,7 +52,7 @@ export const Title = styled.h3`
   font-weight: 600;
   line-height: 1.5;
   ${cutLongStringStyles(2)}
-`;
+`
 
 export const Description = styled.p`
   color: ${textColors.main};
@@ -61,7 +61,7 @@ export const Description = styled.p`
   font-weight: 400;
   line-height: 1.5;
   ${cutLongStringStyles(4)}
-`;
+`
 
 export const Footer = styled.div`
   display: flex;
@@ -69,16 +69,16 @@ export const Footer = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-`;
+`
 
 export const Price = styled.span`
   color: ${textColors.main};
   font-size: 16px;
   font-weight: 600;
   line-height: 1.2;
-`;
+`
 
 export const Button = styled(StyledButton)`
   flex: 0 1 160px;
   color: ${textColors.main};
-`;
+`

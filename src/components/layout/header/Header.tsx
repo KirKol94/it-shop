@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import HeaderCategories from "./headerCategories/HeaderCategories";
-import HeaderTop from "./headerTop/HeaderTop";
+import React, { FC } from 'react'
+import HeaderCategories from './headerCategories/HeaderCategories'
+import HeaderTop from './headerTop/HeaderTop'
 
 const Header: FC = () => {
   return (
@@ -8,7 +8,7 @@ const Header: FC = () => {
       <HeaderTop />
       <HeaderCategories />
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { bgColors, fonts, textColors } from "../../../styled/vars";
-import { StyledButton } from "../../ui/button/styled";
+import styled from 'styled-components'
+import { bgColors, fonts, textColors } from '../../../styled/vars'
+import { StyledButton } from '../../ui/button/styled'
 
 export const CardModalWrapper = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const CardModalWrapper = styled.div`
   backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.4);
   gap: 16px;
-`;
+`
 
 export const ImgBox = styled.div`
   overflow: hidden;
@@ -22,12 +22,12 @@ export const ImgBox = styled.div`
     max-height: clamp(22.5rem, 7.955rem + 72.73vw, 30rem);
     border-radius: 32px 32px 0 0;
   }
-`;
+`
 
 export const Body = styled.div`
   padding: 16px;
   text-align: center;
-`;
+`
 
 export const Title = styled.h2`
   margin-bottom: 12px;
@@ -35,7 +35,7 @@ export const Title = styled.h2`
   font-size: 20px;
   font-weight: 600;
   line-height: 1.5;
-`;
+`
 
 export const Description = styled.p`
   margin-bottom: 16px;
@@ -44,7 +44,7 @@ export const Description = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-`;
+`
 
 export const Footer = styled.form`
   display: flex;
@@ -54,14 +54,14 @@ export const Footer = styled.form`
   padding: 0 16px 16px;
   column-gap: 16px;
   gap: clamp(0.75rem, -0.826rem + 7.88vw, 1.563rem);
-`;
+`
 
 export const Price = styled.span`
   color: ${textColors.main};
   font-size: clamp(1.125rem, 0.883rem + 1.21vw, 1.25rem);
   font-weight: 600;
   line-height: 1.2;
-`;
+`
 
 export const Sizes = styled.div`
   position: relative;
@@ -69,7 +69,7 @@ export const Sizes = styled.div`
   height: 40px;
   border-radius: 20px;
   background-color: ${bgColors.dark};
-`;
+`
 
 export const Selected = styled.div<{ position: number }>`
   position: absolute;
@@ -87,9 +87,9 @@ export const Selected = styled.div<{ position: number }>`
     border-radius: 16px;
     background-color: ${bgColors.accent};
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-    content: " ";
+    content: ' ';
   }
-`;
+`
 
 export const SizeInput = styled.input`
   position: absolute;
@@ -99,7 +99,7 @@ export const SizeInput = styled.input`
     color: ${textColors.main};
     font-weight: 500;
   }
-`;
+`
 
 export const SizeLabel = styled.label`
   position: relative;
@@ -119,12 +119,12 @@ export const SizeLabel = styled.label`
   &:hover {
     color: ${textColors.main};
   }
-`;
+`
 
 export const CountBox = styled.div`
   display: flex;
   align-items: center;
-`;
+`
 
 export const CountInput = styled.input`
   width: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
@@ -134,9 +134,9 @@ export const CountInput = styled.input`
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-`;
+`
 
-export const CountBtn = styled.span<{ action: "plus" | "minus" }>`
+export const CountBtn = styled.span<{ action: 'plus' | 'minus' }>`
   position: relative;
   width: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
   height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
@@ -146,10 +146,10 @@ export const CountBtn = styled.span<{ action: "plus" | "minus" }>`
   color: ${textColors.lightBrown};
   cursor: pointer;
   border-radius: ${({ action }) =>
-    action === "minus" ? "20px 0 0 20px" : "0 20px 20px 0"};
-`;
+    action === 'minus' ? '20px 0 0 20px' : '0 20px 20px 0'};
+`
 
 export const Button = styled(StyledButton)`
   flex: 1 1 auto;
   color: #fff;
-`;
+`

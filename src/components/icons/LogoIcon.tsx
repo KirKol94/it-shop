@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC } from 'react'
 
 const LogoIcon: FC = () => {
   return (
@@ -7,8 +7,7 @@ const LogoIcon: FC = () => {
       height="64"
       viewBox="0 0 208 64"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M32.1026 60.2599C32.0997 60.2816 32.0982 60.2926 32.0982 60.2926C32.0715 60.2845 32.0389 60.2774 32.0001 60.2715C31.9614 60.2774 31.9288 60.2845 31.9021 60.2926C31.9021 60.2926 31.9006 60.2816 31.8977 60.2599C30.8746 60.1775 27.0223 60.6855 17.8939 63.3547C5.51783 66.9734 3.12585 54.2737 5.51783 52.4983C8.35201 50.3946 10.2882 49.065 11.7104 48.0883C15.3693 45.5756 15.6259 45.3994 19.019 40.3892C21.0524 37.3866 21.4912 34.7087 21.9112 32.1459C22.258 30.0295 22.592 27.9915 23.8006 25.914C26.5416 21.2026 37.4552 21.1965 40.1997 25.914C41.4083 27.9915 41.7423 30.0295 42.0891 32.1459C42.5091 34.7087 42.9479 37.3866 44.9813 40.3892C48.3744 45.3994 48.631 45.5756 52.2899 48.0883C53.7121 49.065 55.6483 50.3946 58.4825 52.4983C60.8744 54.2737 58.4825 66.9734 46.1064 63.3547C36.978 60.6855 33.1257 60.1775 32.1026 60.2599Z"
         fill="url(#paint0_linear_256_68)"
@@ -112,8 +111,7 @@ const LogoIcon: FC = () => {
           y1="22.893"
           x2="32.0001"
           y2="64"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor="#816E4C" />
           <stop offset="1" stopColor="#715A32" />
         </linearGradient>
@@ -123,8 +121,7 @@ const LogoIcon: FC = () => {
           y1="23.7053"
           x2="56.9798"
           y2="39.4953"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor="#816E4C" />
           <stop offset="1" stopColor="#715A32" />
         </linearGradient>
@@ -134,8 +131,7 @@ const LogoIcon: FC = () => {
           y1="7.81523"
           x2="47.0311"
           y2="24.675"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor="#816E4C" />
           <stop offset="1" stopColor="#715A32" />
         </linearGradient>
@@ -145,8 +141,7 @@ const LogoIcon: FC = () => {
           y1="23.7053"
           x2="7.02038"
           y2="39.4953"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor="#816E4C" />
           <stop offset="1" stopColor="#715A32" />
         </linearGradient>
@@ -156,14 +151,13 @@ const LogoIcon: FC = () => {
           y1="7.81523"
           x2="16.9691"
           y2="24.675"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor="#816E4C" />
           <stop offset="1" stopColor="#715A32" />
         </linearGradient>
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default LogoIcon;
+export default LogoIcon

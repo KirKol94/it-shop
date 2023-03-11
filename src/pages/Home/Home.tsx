@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import Button from "../../components/ui/button/Button";
-import Card from "../../components/ui/card/Card";
-import { useAppSelector } from "../../hooks/reduxHooks";
+import React, { FC } from 'react'
+import Button from '../../components/ui/button/Button'
+import Card from '../../components/ui/card/Card'
+import { useAppSelector } from '../../hooks/reduxHooks'
 import {
   Buttons,
   Cards,
@@ -12,15 +12,15 @@ import {
   HeroSectionContainer,
   Subtitle,
   Title,
-} from "./styled";
+} from './styled'
 
 const Home: FC = () => {
   const searchProductValue = useAppSelector(
-    (state) => state.product.searchProductValue
-  );
-  const products = useAppSelector((state) => state.product.products).filter(
-    (p) => p.name.toLowerCase().includes(searchProductValue.toLowerCase())
-  );
+    state => state.product.searchProductValue
+  )
+  const products = useAppSelector(state => state.product.products).filter(p =>
+    p.name.toLowerCase().includes(searchProductValue.toLowerCase())
+  )
 
   return (
     <>
@@ -35,12 +35,8 @@ const Home: FC = () => {
           </Subtitle>
 
           <Buttons>
-            <Button variant="main" onClick={() => {}}>
-              В каталог мерча
-            </Button>
-            <Button variant="second" onClick={() => {}}>
-              Нанять талантливых джунов
-            </Button>
+            <Button variant="main">В каталог мерча</Button>
+            <Button variant="second">Нанять талантливых джунов</Button>
           </Buttons>
         </HeroSectionContainer>
       </HeroSection>
@@ -57,7 +53,7 @@ const Home: FC = () => {
         </CardsContainer>
       </Cards>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
