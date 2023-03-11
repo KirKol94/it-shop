@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Modal from "../../ui/Modal/Modal";
+import Modal from "../../ui/modal/Modal";
 import styled from "styled-components";
 import { gradients } from "../../../styled/vars";
 

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { bgColors, borderColors, textColors } from "../../../styled/vars";
 import { RootContainer } from "../../../styled/root";
-import Logo from "../../ui/Logo/Logo";
-import { StyledButton } from "../../ui/Button/styled";
+import Logo from "../../ui/logo/Logo";
+import { StyledButton } from "../../ui/button/styled";
 import VkIcon from "../../../assets/svg/vk.svg";
 
 export const FooterWrapper = styled.footer`

@@ -1,4 +1,4 @@
-import { StyledButton } from "../Button/styled";
+import { StyledButton } from "../button/styled";
 import styled from "styled-components";
 import { cutLongStringStyles } from "../../../styled/mixins";
 import { fonts, gradients, textColors } from "../../../styled/vars";
