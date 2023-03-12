@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 export const RegModalWrapper = styled.div`
   width: 480px;
   padding: 16px;
-  border-radius: 32px;
-  backdrop-filter: blur(14px);
-  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid ${borderColors.lightBrown};
+  border-radius: 16px;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;

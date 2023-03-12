@@ -10,6 +10,7 @@ export const textColors = {
 
 export const borderColors = {
   gray: '#95928f',
+  lightBrown: '#BCA67F',
   white: '#fff',
 }
 
