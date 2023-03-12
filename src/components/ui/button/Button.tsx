@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react'
-import { StyledButton } from './styled'
+import { RootButton } from '../../../styled/root'
 
 export interface IButtonProps {
   variant: 'main' | 'second' | 'primary'
@@ -10,9 +10,9 @@ export interface IButtonProps {
 
 const Button: FC<IButtonProps> = ({ variant = 'main', onClick, children }) => {
   return (
-    <StyledButton variant={variant} onClick={onClick}>
+    <RootButton variant={variant} onClick={onClick}>
       {children}
-    </StyledButton>
+    </RootButton>
   )
 }
 
