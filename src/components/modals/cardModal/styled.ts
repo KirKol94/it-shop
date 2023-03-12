@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { bgColors, fonts, textColors } from '../../../styled/vars'
-import { StyledButton } from '../../ui/button/styled'
+import { RootButton } from '../../../styled/root'
 
 export const CardModalWrapper = styled.div`
   display: flex;
@@ -149,7 +149,7 @@ export const CountBtn = styled.span<{ action: 'plus' | 'minus' }>`
     action === 'minus' ? '20px 0 0 20px' : '0 20px 20px 0'};
 `
 
-export const Button = styled(StyledButton)`
+export const Button = styled(RootButton)`
   flex: 1 1 auto;
   color: #fff;
 `

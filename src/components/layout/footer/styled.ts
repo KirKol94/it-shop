@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 import { bgColors, borderColors, textColors } from '../../../styled/vars'
-import { RootContainer } from '../../../styled/root'
+import { RootButton, RootContainer } from '../../../styled/root'
 import Logo from '../../ui/logo/Logo'
-import { StyledButton } from '../../ui/button/styled'
 import VkIcon from '../../../assets/svg/vk.svg'
 
 export const FooterWrapper = styled.footer`
@@ -29,7 +28,7 @@ export const FooterLogo = styled(Logo)`
   margin-bottom: 24px;
 `
 
-export const Button = styled(StyledButton)`
+export const Button = styled(RootButton)`
   width: 100%;
   margin-bottom: 14px;
   color: ${textColors.main};

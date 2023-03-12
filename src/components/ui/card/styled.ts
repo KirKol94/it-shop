@@ -1,7 +1,7 @@
-import { StyledButton } from '../button/styled'
 import styled from 'styled-components'
 import { cutLongStringStyles } from '../../../styled/mixins'
 import { fonts, gradients, textColors } from '../../../styled/vars'
+import { RootButton } from '../../../styled/root'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -78,7 +78,7 @@ export const Price = styled.span`
   line-height: 1.2;
 `
 
-export const Button = styled(StyledButton)`
+export const Button = styled(RootButton)`
   flex: 0 1 160px;
   color: ${textColors.main};
 `

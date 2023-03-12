@@ -1,17 +1,16 @@
 import React, { FC } from 'react'
 import Modal from '../../ui/modal/Modal'
-import Button from '../../ui/button/Button'
 import { Link } from 'react-router-dom'
+import { Privacy, PrivacyLink } from './styled'
 import {
-  Footer,
-  Form,
-  Input,
-  Privacy,
-  PrivacyLink,
-  RegModalWrapper,
-  StyledLogo,
-  Title,
-} from './styled'
+  RootAuthBtn,
+  RootAuthFooter,
+  RootAuthForm,
+  RootAuthInput,
+  RootAuthModal,
+  RootAuthTitle,
+} from '../../../styled/root'
+import Logo from '../../ui/logo/Logo'
 
 interface IProps {
   isOpen: boolean
@@ -21,27 +20,27 @@ interface IProps {
 const RegisterModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-      <RegModalWrapper>
-        <StyledLogo />
-        <Title>Регистрация аккаунта</Title>
-        <Form>
-          <Input placeholder="Имя" />
-          <Input placeholder="Эл почта" />
-          <Input placeholder="Введите пароль" />
-          <Input placeholder="Введите пароль ещё раз" />
-          <Button variant="main">Зарегистрироваться</Button>
-        </Form>
+      <RootAuthModal>
+        <Logo />
+        <RootAuthTitle>Регистрация аккаунта</RootAuthTitle>
+        <RootAuthForm>
+          <RootAuthInput placeholder="Имя" />
+          <RootAuthInput placeholder="Эл почта" />
+          <RootAuthInput placeholder="Введите пароль" />
+          <RootAuthInput placeholder="Введите пароль ещё раз" />
+          <RootAuthBtn variant="main">Зарегистрироваться</RootAuthBtn>
+        </RootAuthForm>
         <Privacy>
           При нажатии на кнопку зарегистрироваться вы даёте своё согласие на
           обработку персональных данных. Для получения подробной информации
           ознакомьтесь c{' '}
           <PrivacyLink to="privacy">политикой конфиденциальности</PrivacyLink>
         </Privacy>
-        <Footer>
+        <RootAuthFooter justify="space-between">
           <Link to="">Уже есть аккаунт</Link>
           <Link to="">Забыли пароль</Link>
-        </Footer>
-      </RegModalWrapper>
+        </RootAuthFooter>
+      </RootAuthModal>
     </Modal>
   )
 }
