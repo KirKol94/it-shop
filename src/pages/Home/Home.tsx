@@ -46,8 +46,8 @@ const Home: FC = () => {
           <CardsTitle>Футболки и свитшоты</CardsTitle>
 
           <CardsItems>
-            {products.map((product, i) => (
-              <Card key={i} product={product} />
+            {products.map(product => (
+              <Card key={product.id} product={product} />
             ))}
           </CardsItems>
         </CardsContainer>
