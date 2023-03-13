@@ -30,18 +30,16 @@ const HeaderCategories: FC = () => {
   return (
     <Wrapper>
       <Container>
-        <nav>
-          <List>
-            {links.map(({ to, name }) => (
-              <li key={to}>
-                <CategoryLink to={to}>
-                  {name}
-                  {name === 'Каталог' && <ArrowIcon />}
-                </CategoryLink>
-              </li>
-            ))}
-          </List>
-        </nav>
+        <List>
+          {links.map(({ to, name }) => (
+            <li key={to}>
+              <CategoryLink to={to}>
+                {name}
+                {name === 'Каталог' && <ArrowIcon />}
+              </CategoryLink>
+            </li>
+          ))}
+        </List>
 
         <InputBox>
           <Input
