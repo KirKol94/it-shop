@@ -13,6 +13,7 @@ export const StyledOverlay = styled.div`
   backdrop-filter: blur(20px);
   background-color: rgba(0, 0, 0, 0.5);
   will-change: opacity;
+  z-index: 100;
 
   @keyframes fade-in-overlay {
     from {
@@ -28,6 +29,7 @@ export const StyledOverlay = styled.div`
 export const StyledModal = styled.div`
   animation: fade-in-modal 200ms linear;
   will-change: opacity, transform;
+  z-index: 100;
 
   @keyframes fade-in-modal {
     from {
