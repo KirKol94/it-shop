@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   left: 0;
   border-bottom: 1px solid ${borderColors.gray};
   background-color: ${bgColors.accent};
+  z-index: 2;
 `
 
 export const Container = styled(RootContainer)`
