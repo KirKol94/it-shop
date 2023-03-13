@@ -10,8 +10,8 @@ export const StyledOverlay = styled.div`
   align-items: center;
   justify-content: center;
   animation: fade-in-overlay 300ms linear;
-  backdrop-filter: blur(10px);
-  background-color: rgba(black, 0.2);
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.5);
   will-change: opacity;
 
   @keyframes fade-in-overlay {

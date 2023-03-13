@@ -45,7 +45,8 @@ export const RootAuthModal = styled.div`
   padding: 16px;
   border: 1px solid ${borderColors.lightBrown};
   border-radius: 16px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
   align-items: center;
