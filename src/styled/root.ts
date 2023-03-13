@@ -25,7 +25,6 @@ export const RootButton = styled.button<IButtonProps>`
     if (variant === 'second') return bgColors.accent
     if (variant === 'primary') return bgColors.main
   }};
-  backdrop-filter: ${({ variant }) => variant === 'second' && 'blur(10px)'};
   box-shadow: ${({ variant }) =>
     variant === 'second' && '4px 4px 8px rgba(0, 0, 0, 0.25)'};
   font-weight: ${({ variant }) => variant === 'primary' && 600};
