@@ -41,7 +41,7 @@ export const RootButton = styled.button<IButtonProps>`
 
 // модальное окно регистрации / авторизации
 export const RootAuthModal = styled.div`
-  width: 480px;
+  max-width: 480px;
   padding: 16px;
   border: 1px solid ${borderColors.lightBrown};
   border-radius: 16px;
