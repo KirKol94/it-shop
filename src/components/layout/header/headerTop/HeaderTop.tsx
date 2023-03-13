@@ -63,6 +63,7 @@ const HeaderTop: FC = () => {
       <RegisterModal
         isOpen={isRegisterOpen}
         setIsOpen={() => setIsRegisterOpen(false)}
+        setIsAuthModal={setIsAuthOpen}
       />
     </>
   )
