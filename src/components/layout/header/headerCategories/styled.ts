@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom'
 
 export const Wrapper = styled.div`
   position: sticky;
+  top: 0;
+  left: 0;
   border-bottom: 1px solid ${borderColors.gray};
   background-color: ${bgColors.accent};
 `

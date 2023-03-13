@@ -14,10 +14,16 @@ import Logo from '../../ui/logo/Logo'
 
 interface IProps {
   isOpen: boolean
-  setIsOpen: () => void
+  setIsOpen: (isVisible?: boolean) => void
+  setIsAuthModal: (isVisible: boolean) => void
 }
 
-const RegisterModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
+const RegisterModal: FC<IProps> = ({ isOpen, setIsOpen, setIsAuthModal }) => {
+  const onClickHandlerToAlreadyExistAnAccount = () => {
+    setIsOpen(false)
+    setIsAuthModal(true)
+  }
+
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <RootAuthModal>
@@ -37,7 +43,9 @@ const RegisterModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
           <PrivacyLink to="privacy">политикой конфиденциальности</PrivacyLink>
         </Privacy>
         <RootAuthFooter justify="space-between">
-          <Link to="">Уже есть аккаунт</Link>
+          <button onClick={onClickHandlerToAlreadyExistAnAccount}>
+            Уже есть аккаунт
+          </button>
           <Link to="">Забыли пароль</Link>
         </RootAuthFooter>
       </RootAuthModal>
