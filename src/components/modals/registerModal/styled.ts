@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { fonts, textColors } from '../../../styled/vars'
+import { fonts, textColors } from '@/styled/vars'
 import { Link } from 'react-router-dom'
 
 export const Form = styled.form`

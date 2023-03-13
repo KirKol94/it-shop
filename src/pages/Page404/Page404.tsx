@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { RootContainer } from '../../styled/root'
+import { RootContainer } from '@/styled/root'
 
 const Page404: FC = () => {
   return (

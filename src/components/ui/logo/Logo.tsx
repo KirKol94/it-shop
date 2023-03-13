@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import LogoIcon from '../../icons/LogoIcon'
+import LogoIcon from '@ui/icons/LogoIcon'
 import { Link } from 'react-router-dom'
 
 interface IProps {

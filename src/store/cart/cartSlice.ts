@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { IProduct } from '../../types/IProduct'
+import { IProduct } from '@/types/IProduct'
 
 type CartSlice = {
   isLoading: boolean

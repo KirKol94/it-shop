@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { cutLongStringStyles } from '../../../styled/mixins'
-import { fonts, gradients, textColors } from '../../../styled/vars'
-import { RootButton } from '../../../styled/root'
+import { cutLongStringStyles } from '@/styled/mixins'
+import { fonts, gradients, textColors } from '@/styled/vars'
+import { RootButton } from '@/styled/root'
 
 export const Wrapper = styled.div`
   display: flex;

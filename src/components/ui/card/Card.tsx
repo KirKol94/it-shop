@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react'
-import CardModal from '../../modals/cardModal/CardModal'
-import { IProduct } from '../../../types/IProduct'
+import CardModal from '@/components/modals/cardModal/CardModal'
+import { IProduct } from '@/types/IProduct'
 import {
   Wrapper,
   Img,

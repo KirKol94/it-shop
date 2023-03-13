@@ -6,7 +6,7 @@ import {
   fonts,
   textColors,
 } from './vars'
-import { IButtonProps } from '../components/ui/button/Button'
+import { IButtonProps } from '@ui/button/Button'
 
 // основной контейнер, от которого наследуются другие контейнеры
 export const RootContainer = styled.div`

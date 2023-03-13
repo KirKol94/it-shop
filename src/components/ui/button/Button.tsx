@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react'
-import { RootButton } from '../../../styled/root'
+import { RootButton } from '@/styled/root'
 
 export interface IButtonProps {
   variant: 'main' | 'second' | 'primary'
