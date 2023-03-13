@@ -1,7 +1,7 @@
-import { AppDispatch } from '../store'
-import { $api } from '../../api/axiosInstanse'
+import { AppDispatch } from '@/store/store'
+import { $api } from '@/api/axiosInstanse'
 import { setCartProducts, setIsLoading } from './cartSlice'
-import { IProduct } from '../../types/IProduct'
+import { IProduct } from '@/types/IProduct'
 
 export const fetchProductsOfCart = () => async (dispatch: AppDispatch) => {
   dispatch(setIsLoading(true))

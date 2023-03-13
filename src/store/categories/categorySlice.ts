@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ICategory } from '../../types/ICategory'
+import { ICategory } from '@/types/ICategory'
 
 type CategoryState = {
   isLoading: boolean

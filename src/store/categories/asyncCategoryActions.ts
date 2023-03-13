@@ -1,7 +1,7 @@
-import { AppDispatch } from '../store'
+import { AppDispatch } from '@/store/store'
 import { setCategories, setIsLoading } from './categorySlice'
-import { $api } from '../../api/axiosInstanse'
-import { ICategory } from '../../types/ICategory'
+import { $api } from '@/api/axiosInstanse'
+import { ICategory } from '@/types/ICategory'
 
 export const fetchCategories = () => async (dispatch: AppDispatch) => {
   dispatch(setIsLoading(true))

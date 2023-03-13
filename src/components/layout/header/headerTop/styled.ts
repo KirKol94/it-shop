@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { bgColors, borderColors, textColors } from '../../../../styled/vars'
-import { RootContainer } from '../../../../styled/root'
+import { bgColors, borderColors, textColors } from '@/styled/vars'
+import { RootContainer } from '@/styled/root'
 
 export const Wrapper = styled.div`
   padding: 20px 0;

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import Modal from '../../ui/modal/Modal'
+import Modal from '@ui/modal/Modal'
 import {
   RootAuthBtn,
   RootAuthFooter,
@@ -7,8 +7,8 @@ import {
   RootAuthInput,
   RootAuthModal,
   RootAuthTitle,
-} from '../../../styled/root'
-import Logo from '../../ui/logo/Logo'
+} from '@/styled/root'
+import Logo from '@ui/logo/Logo'
 import { Link } from 'react-router-dom'
 
 interface IProps {

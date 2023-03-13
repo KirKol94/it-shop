@@ -1,7 +1,7 @@
-import { RootContainer } from '../../styled/root'
-import { bgColors, fonts } from '../../styled/vars'
+import { RootContainer } from '@/styled/root'
+import { bgColors, fonts } from '@/styled/vars'
 import styled from 'styled-components'
-import HeroSectionBg from '../../assets/img/home-page/hero-section/bg.webp'
+import HeroSectionBg from '@/assets/img/home-page/hero-section/bg.webp'
 
 export const HeroSection = styled.section`
   padding: 120px 0;

@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import SearchIcon from '../../../icons/SearchIcon'
-import ArrowIcon from '../../../icons/ArrowIcon'
-import { useAppDispatch, useAppSelector } from '../../../../hooks/reduxHooks'
-import { setSearchProductValue } from '../../../../store/products/productSlice'
+import SearchIcon from '@ui/icons/SearchIcon'
+import ArrowIcon from '@ui/icons/ArrowIcon'
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
+import { setSearchProductValue } from '@/store/products/productSlice'
 import {
   CategoryLink,
   Container,

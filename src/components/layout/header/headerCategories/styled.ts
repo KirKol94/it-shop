@@ -1,11 +1,6 @@
 import styled from 'styled-components'
-import {
-  bgColors,
-  borderColors,
-  fonts,
-  textColors,
-} from '../../../../styled/vars'
-import { RootContainer } from '../../../../styled/root'
+import { bgColors, borderColors, fonts, textColors } from '@/styled/vars'
+import { RootContainer } from '@/styled/root'
 import { Link } from 'react-router-dom'
 
 export const Wrapper = styled.div`
