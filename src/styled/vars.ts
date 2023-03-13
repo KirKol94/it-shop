@@ -33,3 +33,10 @@ export const gradients = {
   hover:
     'radial-gradient(70.18% 70.18% at 16.7% 11.77%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.066) 100%), radial-gradient(48.75% 48.75% at 50% 32.66%, #495449 0%, #1A1B1A 100%)',
 }
+
+export const bp = {
+  xs: 480,
+  sm: 768,
+  md: 1024,
+  lg: 1200,
+}
