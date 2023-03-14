@@ -13,6 +13,7 @@ import {
   ProfileBox,
   Wrapper,
 } from './styled'
+import CartModal from '@/components/modals/cartModal/CartModal'
 
 const HeaderTop: FC = () => {
   const media = [
@@ -24,6 +25,7 @@ const HeaderTop: FC = () => {
 
   const [isAuthOpen, setIsAuthOpen] = useState(false)
   const [isRegisterOpen, setIsRegisterOpen] = useState(false)
+  const [isCartOpen, setIsCartOpen] = useState(false)
 
   return (
     <>
@@ -51,7 +53,7 @@ const HeaderTop: FC = () => {
                 Регистрация
               </HeaderAuthBtn>
             </LoginBox>
-            <CartBox to="cart">
+            <CartBox onClick={() => setIsCartOpen(true)}>
               <VkIcon />
               <CartText>Корзина</CartText>
             </CartBox>
@@ -65,6 +67,7 @@ const HeaderTop: FC = () => {
         setIsOpen={() => setIsRegisterOpen(false)}
         setIsAuthModal={setIsAuthOpen}
       />
+      <CartModal isOpen={isCartOpen} setIsOpen={setIsCartOpen} />
     </>
   )
 }
