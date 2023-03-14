@@ -8,6 +8,7 @@ import {
   CartFooterTitle,
   CartInfoRow,
   CartTop,
+  Close,
   InfoFinal,
   PromoInput,
   PromoLabel,
@@ -15,6 +16,8 @@ import {
   Title,
   Wrapper,
 } from './styled'
+import CartItem from '@ui/cartItem/CartItem'
+import CloseIcon from '@ui/icons/CloseIcon'
 
 interface IProps {
   isOpen: boolean
@@ -29,8 +32,19 @@ const CartModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
       <Wrapper>
         <CartTop>
           <Title>Корзина</Title>
+          <Close>
+            <button>
+              <CloseIcon size={32} />
+            </button>
+          </Close>
         </CartTop>
-        <CartBody></CartBody>
+
+        <CartBody>
+          <CartItem />
+          <CartItem />
+          <CartItem />
+        </CartBody>
+
         <CartFooter>
           <CartFooterInfo>
             <CartFooterTitle>Ваша корзина</CartFooterTitle>

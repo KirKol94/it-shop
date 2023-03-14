@@ -22,6 +22,7 @@ export const bgColors = {
   lightBrown: '#816e4c',
   dark: '#191919',
   menu: '#1E1E1E',
+  darkBlock: '#121212',
 }
 
 export const fonts = {
