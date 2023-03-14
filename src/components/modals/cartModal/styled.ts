@@ -59,6 +59,8 @@ export const CartFooterInfo = styled.div`
 export const CartFooterTitle = styled(Title)`
   font-size: 24px;
   font-weight: 600;
+  padding: 0;
+  border: 0;
 `
 
 export const CartInfoRow = styled.div`
