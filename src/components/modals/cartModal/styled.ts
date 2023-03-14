@@ -35,7 +35,7 @@ export const CartFooterInfo = styled.div`
   flex-direction: column;
   gap: 16px;
   border-radius: 16px;
-  background-color: ${bgColors.dark};
+  background-color: ${bgColors.darkBlock};
   padding: 16px;
 `
 
