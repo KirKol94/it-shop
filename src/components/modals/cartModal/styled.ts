@@ -9,20 +9,31 @@ export const Wrapper = styled.div`
   padding: 20px;
   background-color: ${bgColors.menu};
   display: flex;
+  gap: 20px;
   flex-direction: column;
   justify-content: space-between;
 `
 
-export const CartTop = styled.div``
+export const CartTop = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`
 
 export const Title = styled.h2`
   font-family: ${fonts.second};
   font-weight: 700;
   font-size: 40px;
   line-height: 125%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid ${borderColors.lightBrown};
 `
 
-export const CartBody = styled.div``
+export const CartBody = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`
 
 export const CartFooter = styled.div`
   display: flex;

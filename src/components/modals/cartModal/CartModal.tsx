@@ -15,6 +15,7 @@ import {
   Title,
   Wrapper,
 } from './styled'
+import CartItem from '@ui/cartItem/CartItem'
 
 interface IProps {
   isOpen: boolean
@@ -30,7 +31,11 @@ const CartModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
         <CartTop>
           <Title>Корзина</Title>
         </CartTop>
-        <CartBody></CartBody>
+        <CartBody>
+          <CartItem />
+          <CartItem />
+          <CartItem />
+        </CartBody>
         <CartFooter>
           <CartFooterInfo>
             <CartFooterTitle>Ваша корзина</CartFooterTitle>
