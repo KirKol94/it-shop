@@ -33,7 +33,7 @@ const CartModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
         <CartTop>
           <Title>Корзина</Title>
           <Close>
-            <button>
+            <button onClick={() => setIsOpen(false)}>
               <CloseIcon size={32} />
             </button>
           </Close>

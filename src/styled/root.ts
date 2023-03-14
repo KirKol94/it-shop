@@ -142,3 +142,32 @@ export const RootAuthFooter = styled.div<{ justify: 'space-between' | 'end' }>`
   line-height: 17px;
   color: ${textColors.gray};
 `
+
+// количество товара + / -
+export const RootCountBox = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const RootCountInput = styled.input`
+  width: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
+  height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
+  background-color: ${bgColors.accent};
+  color: ${textColors.main};
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+`
+
+export const RootCountBtn = styled.span<{ action: 'plus' | 'minus' }>`
+  position: relative;
+  width: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
+  height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
+  padding: 10.5px 14.5px;
+  user-select: none;
+  background-color: ${bgColors.dark};
+  color: ${textColors.lightBrown};
+  cursor: pointer;
+  border-radius: ${({ action }) =>
+    action === 'minus' ? '20px 0 0 20px' : '0 20px 20px 0'};
+`
