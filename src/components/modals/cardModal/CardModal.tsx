@@ -5,9 +5,6 @@ import {
   Body,
   Button,
   CardModalWrapper,
-  CountBox,
-  CountBtn,
-  CountInput,
   Description,
   Footer,
   ImgBox,
@@ -18,6 +15,7 @@ import {
   Sizes,
   Title,
 } from './styled'
+import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
 
 interface IProps {
   product: IProduct
@@ -103,21 +101,21 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
 
         <Footer onSubmit={handleSubmit}>
           <Price>{price.toLocaleString('ru')} ₽</Price>
-          <CountBox>
-            <CountBtn action="minus" onClick={decrement}>
+          <RootCountBox>
+            <RootCountBtn action="minus" onClick={decrement}>
               -
-            </CountBtn>
-            <CountInput
+            </RootCountBtn>
+            <RootCountInput
               type="text"
               inputMode="numeric"
               value={count}
               onChange={handleInputChange}
               maxLength={3}
             />
-            <CountBtn action="plus" onClick={increment}>
+            <RootCountBtn action="plus" onClick={increment}>
               +
-            </CountBtn>
-          </CountBox>
+            </RootCountBtn>
+          </RootCountBox>
           <Button type="submit" variant="main">
             В корзину
           </Button>
