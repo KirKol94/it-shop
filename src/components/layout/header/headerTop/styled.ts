@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { bgColors, borderColors, textColors } from '@/styled/vars'
 import { RootContainer } from '@/styled/root'
 
@@ -49,7 +48,7 @@ export const HeaderAuthBtn = styled.button`
   }
 `
 
-export const CartBox = styled(Link)`
+export const CartBox = styled.button`
   display: flex;
   align-items: center;
   color: ${textColors.main};

@@ -11,6 +11,7 @@ export const textColors = {
 export const borderColors = {
   gray: '#95928f',
   lightBrown: '#BCA67F',
+  brown: '#BCA67F',
   white: '#fff',
 }
 
@@ -20,6 +21,7 @@ export const bgColors = {
   accent: '#2c2c2c',
   lightBrown: '#816e4c',
   dark: '#191919',
+  menu: '#1E1E1E',
 }
 
 export const fonts = {
@@ -32,4 +34,11 @@ export const gradients = {
   main: 'linear-gradient(180deg, #1d1e1e 0%, #1a1b1a 100%)',
   hover:
     'radial-gradient(70.18% 70.18% at 16.7% 11.77%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.066) 100%), radial-gradient(48.75% 48.75% at 50% 32.66%, #495449 0%, #1A1B1A 100%)',
+}
+
+export const bp = {
+  xs: 480,
+  sm: 768,
+  md: 1024,
+  lg: 1200,
 }
