@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from 'react'
 import { Dialog } from '@headlessui/react'
-import { StyledModal, StyledOverlay } from './styled'
+import { StyledModal } from './styled'
+import { RootModalOverlay } from '@/styled/root'
 
 interface IProps {
   isOpen: boolean
@@ -16,11 +17,11 @@ const Modal: FC<IProps> = ({ isOpen, setIsOpen, children }) => {
 
   return (
     <Dialog open={isOpen} onClose={onClose}>
-      <StyledOverlay>
+      <RootModalOverlay>
         <Dialog.Panel>
           <StyledModal>{children}</StyledModal>
         </Dialog.Panel>
-      </StyledOverlay>
+      </RootModalOverlay>
     </Dialog>
   )
 }
