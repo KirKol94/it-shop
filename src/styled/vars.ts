@@ -11,6 +11,7 @@ export const textColors = {
 export const borderColors = {
   gray: '#95928f',
   lightBrown: '#BCA67F',
+  brown: '#BCA67F',
   white: '#fff',
 }
 
@@ -20,6 +21,7 @@ export const bgColors = {
   accent: '#2c2c2c',
   lightBrown: '#816e4c',
   dark: '#191919',
+  menu: '#1E1E1E',
 }
 
 export const fonts = {
