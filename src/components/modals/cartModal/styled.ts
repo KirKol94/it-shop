@@ -28,6 +28,12 @@ export const Title = styled.h2`
   border-bottom: 1px solid ${borderColors.lightBrown};
 `
 
+export const Close = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: end;
+`
+
 export const CartBody = styled.div`
   height: 100%;
   display: flex;
