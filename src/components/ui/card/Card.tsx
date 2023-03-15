@@ -40,11 +40,13 @@ const Card: FC<IProps> = ({ product }) => {
         </Footer>
       </Wrapper>
 
-      <CardModal
-        isOpenCard={isOpen}
-        setIsOpenCard={setIsOpen}
-        product={product}
-      />
+      {isOpen && (
+        <CardModal
+          isOpenCard={isOpen}
+          setIsOpenCard={setIsOpen}
+          product={product}
+        />
+      )}
     </>
   )
 }
