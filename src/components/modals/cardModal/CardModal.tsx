@@ -40,9 +40,15 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
     e.preventDefault()
     setIsOpenCard(false)
     setCount(1)
-    console.log(
-      `товар: ${product.name} на сумму: ${price}\nразмер: ${size}\nколичествр: ${count}`
-    )
+    console.log({
+      id: product.id,
+      img: product.image,
+      product: product.name,
+      productPrice: product.price,
+      count: count,
+      size: size,
+      totalPrice: price,
+    })
   }
 
   // далее код, передвигающий ползунок в размерах
