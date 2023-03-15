@@ -132,11 +132,7 @@ export const SocialsIcon = styled.span`
   position: relative;
   padding: 6px 16px;
   border-radius: 50%;
-  background: linear-gradient(
-    91.06deg,
-    ${bgColors.lightBrown} 0%,
-    #6f5b39 100%
-  );
+  background: linear-gradient(91.06deg, ${bgColors.pink} 0%, #6f5b39 100%);
   box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.25);
 
   &::before {

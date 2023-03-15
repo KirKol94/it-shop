@@ -11,15 +11,6 @@ export const Wrapper = styled.div`
   border-radius: 16px;
   background: ${gradients.main};
   transition: all 0.5s;
-
-  &:hover {
-    background: linear-gradient(180deg, #1d1e1e 0%, #6222b791 100%);
-
-    img {
-      transform: scale(1.05);
-      filter: drop-shadow(0px 0px 32px rgba(255, 255, 255, 0.25));
-    }
-  }
 `
 
 export const ImgBox = styled.div`
@@ -31,7 +22,6 @@ export const Img = styled.img`
   height: 100%;
   border-radius: 16px;
   object-fit: cover;
-  cursor: pointer;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
 `
 

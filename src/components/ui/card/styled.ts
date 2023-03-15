@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { cutLongStringStyles } from '@/styled/mixins'
-import { fonts, gradients, textColors } from '@/styled/vars'
+import { bgColors, gradients, textColors } from '@/styled/vars'
 import { RootButton } from '@/styled/root'
 
 export const Wrapper = styled.div`
@@ -9,13 +9,13 @@ export const Wrapper = styled.div`
   max-width: 280px;
   flex-direction: column;
   gap: 12px;
-  padding: 16px;
+  padding: 20px;
   border-radius: 16px;
   background: ${gradients.main};
-  transition: all 0.5s;
+  transition: all 0.3s;
 
   &:hover {
-    background: linear-gradient(180deg, #1d1e1e 0%, #6222b791 100%);
+    box-shadow: 4px 4px 8px ${bgColors.pink};
 
     img {
       transform: scale(1.05);
@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
 
 export const ImgBox = styled.div`
   display: flex;
-  height: 300px;
+  height: 200px;
   align-items: center;
   justify-content: center;
   border-radius: 16px;
@@ -35,7 +35,6 @@ export const ImgBox = styled.div`
 export const Img = styled.img`
   height: 100%;
   flex: 1 0 auto;
-  border-radius: 16px;
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
@@ -43,42 +42,65 @@ export const Img = styled.img`
 
 export const Body = styled.div`
   flex: 1 1 auto;
+  text-align: center;
+`
+
+export const Subtitle = styled.p`
+  margin-bottom: 12px;
+  color: ${textColors.gray};
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+  ${cutLongStringStyles(2)}
 `
 
 export const Title = styled.h3`
   margin-bottom: 12px;
   color: ${textColors.main};
-  font-size: 20px;
   font-weight: 600;
-  line-height: 1.5;
+  font-size: 24px;
+  line-height: 1.25;
   ${cutLongStringStyles(2)}
-`
-
-export const Description = styled.p`
-  color: ${textColors.main};
-  font-family: ${fonts.second};
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  ${cutLongStringStyles(4)}
 `
 
 export const Footer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  flex-direction: column;
+  gap: 12px;
+`
+export const FooterPrices = styled.div`
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: flex-end;
 `
 
 export const Price = styled.span`
   color: ${textColors.main};
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1;
+`
+export const OldPrice = styled.span`
+  position: relative;
+  color: ${textColors.gray};
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.25;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    transform: translateY(-50%);
+    background-color: ${textColors.gray};
+  }
 `
 
 export const Button = styled(RootButton)`
-  flex: 0 1 160px;
   color: ${textColors.main};
 `
