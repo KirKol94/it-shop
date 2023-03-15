@@ -4,6 +4,6 @@ export interface ICartProduct {
   product: string
   productPrice: number
   count: number
-  size: 'xs' | 's' | 'm' | 'l' | 'xl'
+  size: string
   totalPrice: number
 }

@@ -17,6 +17,8 @@ import {
 } from './styled'
 import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
 import { useCountBox } from '@/hooks/useCountBox'
+import { useAppDispatch } from '@/hooks/reduxHooks'
+import { addProduct } from '@/store/cart/cartSlice'
 
 interface IProps {
   product: IProduct
@@ -25,6 +27,8 @@ interface IProps {
 }
 
 const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
+  const dispatch = useAppDispatch()
+
   const sizes = ['xs', 's', 'm', 'l', 'xl']
   const [size, setSize] = useState(sizes[0])
   const {
@@ -40,15 +44,16 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
     e.preventDefault()
     setIsOpenCard(false)
     setCount(1)
-    console.log({
+    const productToCart = {
       id: product.id,
       img: product.image,
       product: product.name,
       productPrice: product.price,
-      count: count,
-      size: size,
+      count,
+      size,
       totalPrice: price,
-    })
+    }
+    dispatch(addProduct(productToCart))
   }
 
   // далее код, передвигающий ползунок в размерах

@@ -3,10 +3,14 @@ import { ICartProduct } from '@/types/ICartProduct'
 
 type CartSlice = {
   items: ICartProduct[]
+  discountSize: number
+  totalPriceWithDiscount: number
 }
 
 const initialState: CartSlice = {
   items: [],
+  discountSize: 0,
+  totalPriceWithDiscount: 0,
 }
 
 export const cartSlice = createSlice({
@@ -27,6 +31,11 @@ export const cartSlice = createSlice({
     // Удалить товар из корзины по его id
     deleteProduct(state, action: PayloadAction<string>) {
       state.items = state.items.filter(item => item.id !== action.payload)
+    },
+
+    // изменить размер скидки
+    changeDiscountSize(state, action: PayloadAction<number>) {
+      state.discountSize = action.payload
     },
 
     // увеличиваем количество выборанного товара в корзине
@@ -59,6 +68,7 @@ export const {
   deleteProduct,
   incrementCartItemCount,
   decrementCartItemCount,
+  changeDiscountSize,
 } = cartSlice.actions
 
 export default cartSlice.reducer
