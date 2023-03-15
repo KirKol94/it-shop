@@ -1,6 +1,5 @@
 import React from 'react'
 import CloseIcon from '@ui/icons/CloseIcon'
-
 import {
   Wrapper,
   Img,
@@ -12,46 +11,61 @@ import {
   Sizes,
   SizeName,
   Footer,
+  CountBox,
+  CountBtn,
+  CountInput,
+  Close,
+  Line,
 } from './styled'
 
 const CartItem = () => {
-  const sizes = ['l', 'xl']
-
   return (
     <Wrapper>
       <ImgBox>
-        <Img />
+        <Img src="https://thumb.tildacdn.com/stor3666-3538-4430-b532-646533653362/-/cover/432x432/center/center/-/format/webp/87004213.jpg" />
       </ImgBox>
       <Inner>
         <Header>
-          <Title></Title>
-          <CloseIcon size={20} />
+          <Title>Футболка от Louis Betton</Title>
+          <Close>
+            <button //onClick={() => setIsOpen(false)}
+            >
+              <CloseIcon size={32} />
+            </button>
+          </Close>
         </Header>
 
         <Sizes>
           <p>Размер:</p>
-          {sizes.map(size => {
-            ;<SizeName key={size}>{size}</SizeName>
-          })}
+          <SizeName>XL</SizeName>
         </Sizes>
 
         <Footer>
           <CountBox>
-            <CountBtn action="minus" onClick={decrement}>
+            <CountBtn
+              action="minus"
+              // onClick={decrement}
+            >
               -
             </CountBtn>
             <CountInput
               type="text"
               inputMode="numeric"
-              value={count}
-              onChange={handleInputChange}
+              value={1}
+              // value={count}
+              // onChange={handleInputChange}
               maxLength={3}
             />
-            <CountBtn action="plus" onClick={increment}>
+            <CountBtn
+              action="plus"
+              // onClick={increment}
+            >
               +
             </CountBtn>
           </CountBox>
-          <Price>₽</Price>
+          <Price>9000 ₽</Price>
+          <Line></Line>
+          <Price>9000 ₽</Price>
         </Footer>
       </Inner>
     </Wrapper>

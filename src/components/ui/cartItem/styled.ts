@@ -1,14 +1,12 @@
 import styled from 'styled-components'
 import { cutLongStringStyles } from '@/styled/mixins'
-import { fonts, gradients, textColors } from '@/styled/vars'
-import { RootButton } from '@/styled/root'
+import { gradients, textColors } from '@/styled/vars'
+import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
 
 export const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  max-width: 280px;
-  flex-direction: column;
-  gap: 12px;
+  gap: 24px;
   padding: 16px;
   border-radius: 16px;
   background: ${gradients.main};
@@ -25,16 +23,12 @@ export const Wrapper = styled.div`
 `
 
 export const ImgBox = styled.div`
-  display: flex;
-  height: 300px;
-  align-items: center;
-  justify-content: center;
   border-radius: 16px;
+  flex: 0 1 128px;
 `
 
 export const Img = styled.img`
   height: 100%;
-  flex: 1 0 auto;
   border-radius: 16px;
   object-fit: cover;
   cursor: pointer;
@@ -42,40 +36,64 @@ export const Img = styled.img`
 `
 
 export const Inner = styled.div`
-  flex: 1 1 auto;
+  display: flex;
+  flex: 1 0 230px;
+  flex-direction: column;
+  gap: 21.5px;
 `
-export const Sizes = styled.div`
-  flex: 1 1 auto;
-`
-
-export const SizeName = styled.div`
-  flex: 1 1 auto;
+export const Header = styled.p`
+  position: relative;
+  padding-right: 30px;
 `
 
 export const Title = styled.h3`
-  margin-bottom: 12px;
   color: ${textColors.main};
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   line-height: 1.5;
   ${cutLongStringStyles(2)}
 `
 
-export const Header = styled.p`
-  color: ${textColors.main};
-  font-family: ${fonts.second};
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  ${cutLongStringStyles(4)}
+export const Close = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  & svg {
+    width: 22px;
+  }
+`
+export const Sizes = styled.div`
+  display: flex;
+  align-content: center;
+  gap: 5px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 125%;
+`
+
+export const SizeName = styled.div`
+  text-transform: uppercase;
+  &:not(:last-child)::after {
+    content: ',';
+  }
 `
 
 export const Footer = styled.div`
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  gap: 18px;
+`
+
+export const CountBox = styled(RootCountBox)``
+export const CountBtn = styled(RootCountBtn)`
+  padding: 6.5px 12px;
+  width: 32px;
+  height: 32px;
+`
+export const CountInput = styled(RootCountInput)`
+  width: 32px;
+  height: 32px;
 `
 
 export const Price = styled.span`
@@ -84,8 +102,19 @@ export const Price = styled.span`
   font-weight: 600;
   line-height: 1.2;
 `
+export const Line = styled.span`
+  position: relative;
+  height: 1px;
+  flex: 1 1 auto;
 
-export const Button = styled(RootButton)`
-  flex: 0 1 160px;
-  color: ${textColors.main};
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    transform: translateY(-50%);
+    background-color: ${textColors.brown};
+  }
 `
