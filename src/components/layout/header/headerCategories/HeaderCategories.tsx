@@ -24,7 +24,7 @@ const HeaderCategories: FC = () => {
     { to: '', name: 'Главная' },
     { to: 'catalog', name: 'Каталог' },
     { to: 'home-page', name: 'Доставка и оплата' },
-    { to: 'unknown', name: 'О нас' },
+    { to: 'about', name: 'О нас' },
   ]
 
   return (
