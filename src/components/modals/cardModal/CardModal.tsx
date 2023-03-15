@@ -16,6 +16,7 @@ import {
   Title,
 } from './styled'
 import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
+import { useCountBox } from '@/hooks/useCountBox'
 
 interface IProps {
   product: IProduct
@@ -26,25 +27,14 @@ interface IProps {
 const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
   const sizes = ['xs', 's', 'm', 'l', 'xl']
   const [size, setSize] = useState(sizes[0])
-  const [count, setCount] = useState(1)
-  const price = product.price * +count
-
-  const increment = () => {
-    setCount(prev => prev + 1)
-  }
-
-  const decrement = () => {
-    if (count > 1) setCount(prev => prev - 1)
-  }
-
-  // разрешаем вводить только цифры
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const regex = /^[0-9]*$/
-    const value = e.target.value
-    if (regex.test(value) && +value !== 0) {
-      setCount(+value)
-    }
-  }
+  const {
+    count,
+    setCount,
+    price,
+    increment,
+    decrement,
+    handleCountInputChange,
+  } = useCountBox(product)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -109,7 +99,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
               type="text"
               inputMode="numeric"
               value={count}
-              onChange={handleInputChange}
+              onChange={handleCountInputChange}
               maxLength={3}
             />
             <RootCountBtn action="plus" onClick={increment}>
