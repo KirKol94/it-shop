@@ -61,13 +61,21 @@ const HeaderTop: FC = () => {
         </Container>
       </Wrapper>
 
-      <AuthModal isOpen={isAuthOpen} setIsOpen={() => setIsAuthOpen(false)} />
-      <RegisterModal
-        isOpen={isRegisterOpen}
-        setIsOpen={() => setIsRegisterOpen(false)}
-        setIsAuthModal={setIsAuthOpen}
-      />
-      <CartModal isOpen={isCartOpen} setIsOpen={setIsCartOpen} />
+      {isAuthOpen && (
+        <AuthModal isOpen={isAuthOpen} setIsOpen={() => setIsAuthOpen(false)} />
+      )}
+
+      {isRegisterOpen && (
+        <RegisterModal
+          isOpen={isRegisterOpen}
+          setIsOpen={() => setIsRegisterOpen(false)}
+          setIsAuthModal={setIsAuthOpen}
+        />
+      )}
+
+      {isCartOpen && (
+        <CartModal isOpen={isCartOpen} setIsOpen={setIsCartOpen} />
+      )}
     </>
   )
 }
