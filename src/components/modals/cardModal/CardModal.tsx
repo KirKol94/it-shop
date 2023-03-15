@@ -18,7 +18,7 @@ import {
 import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
 import { useCountBox } from '@/hooks/useCountBox'
 import { useAppDispatch } from '@/hooks/reduxHooks'
-import { addProduct } from '@/store/cart/cartSlice'
+import { addProduct, setIsOpenCart } from '@/store/cart/cartSlice'
 
 interface IProps {
   product: IProduct
@@ -54,6 +54,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
       totalPrice: price,
     }
     dispatch(addProduct(productToCart))
+    dispatch(setIsOpenCart(true))
   }
 
   // далее код, передвигающий ползунок в размерах

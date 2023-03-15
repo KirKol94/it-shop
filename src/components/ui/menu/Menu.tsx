@@ -5,12 +5,12 @@ import { MenuContent } from './styled'
 
 interface IProps {
   isOpen: boolean
-  setIsOpen: (isOpen: boolean) => void
+  setIsOpen: () => void
   children: ReactNode
 }
 
 const Menu: FC<IProps> = ({ isOpen, setIsOpen, children }) => {
-  const onClose = () => setIsOpen(false)
+  const onClose = () => setIsOpen()
 
   return (
     <Dialog open={isOpen} onClose={onClose}>

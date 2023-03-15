@@ -19,14 +19,13 @@ import {
 import CartItem from '@ui/cartItem/CartItem'
 import CloseIcon from '@ui/icons/CloseIcon'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
-import { changeDiscountSize } from '@/store/cart/cartSlice'
+import { changeDiscountSize, setIsOpenCart } from '@/store/cart/cartSlice'
 
 interface IProps {
   isOpen: boolean
-  setIsOpen: (bool: boolean) => void
 }
 
-const CartModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
+const CartModal: FC<IProps> = ({ isOpen }) => {
   const dispatch = useAppDispatch()
 
   const cartItems = useAppSelector(state => state.cart.items)
@@ -50,13 +49,15 @@ const CartModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
   const totalPriceWithDiscount = price - discountSize
   const productCount = cartItems.reduce((acc, cur) => (acc += cur.count), 0)
 
+  const setIsOpen = () => dispatch(setIsOpenCart(false))
+
   return (
     <Menu isOpen={isOpen} setIsOpen={setIsOpen}>
       <Wrapper>
         <CartTop>
           <Title>Корзина</Title>
           <Close>
-            <button onClick={() => setIsOpen(false)}>
+            <button onClick={setIsOpen}>
               <CloseIcon size={32} />
             </button>
           </Close>

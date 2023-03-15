@@ -14,8 +14,13 @@ import {
   Wrapper,
 } from './styled'
 import CartModal from '@/components/modals/cartModal/CartModal'
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
+import { setIsOpenCart } from '@/store/cart/cartSlice'
 
 const HeaderTop: FC = () => {
+  const dispatch = useAppDispatch()
+  const isCartOpen = useAppSelector(state => state.cart.isOpenCart)
+
   const media = [
     { name: 'vk', link: 'https://vk.com/1' },
     { name: 'vk', link: 'https://vk.com/2' },
@@ -25,7 +30,6 @@ const HeaderTop: FC = () => {
 
   const [isAuthOpen, setIsAuthOpen] = useState(false)
   const [isRegisterOpen, setIsRegisterOpen] = useState(false)
-  const [isCartOpen, setIsCartOpen] = useState(false)
 
   return (
     <>
@@ -53,7 +57,7 @@ const HeaderTop: FC = () => {
                 Регистрация
               </HeaderAuthBtn>
             </LoginBox>
-            <CartBox onClick={() => setIsCartOpen(true)}>
+            <CartBox onClick={() => dispatch(setIsOpenCart(true))}>
               <VkIcon />
               <CartText>Корзина</CartText>
             </CartBox>
@@ -73,9 +77,7 @@ const HeaderTop: FC = () => {
         />
       )}
 
-      {isCartOpen && (
-        <CartModal isOpen={isCartOpen} setIsOpen={setIsCartOpen} />
-      )}
+      {isCartOpen && <CartModal isOpen={isCartOpen} />}
     </>
   )
 }
