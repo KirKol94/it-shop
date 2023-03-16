@@ -68,7 +68,7 @@ export const Sizes = styled.div`
   display: flex;
   height: 40px;
   border-radius: 20px;
-  background-color: ${bgColors.dark};
+  background-color: ${bgColors.darkViolet};
 `
 
 export const Selected = styled.div<{ position: number }>`

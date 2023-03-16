@@ -40,7 +40,7 @@ export const Buttons = styled.div`
 `
 
 export const Cards = styled.section`
-  background-color: ${bgColors.dark};
+  background-color: ${bgColors.darkViolet};
 `
 
 export const CardsContainer = styled(RootContainer)`
@@ -59,5 +59,5 @@ export const CardsItems = styled.div`
   flex-wrap: wrap;
   padding: 20px 0 80px;
   column-gap: 20px;
-  row-gap: 32px;
+  row-gap: 24px;
 `

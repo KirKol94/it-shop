@@ -18,13 +18,12 @@ export const RootContainer = styled.div`
 // стили кнопки
 export const RootButton = styled.button<IButtonProps>`
   padding: ${({ variant }) => (variant === 'primary' ? '4px 0' : '10px 22px')};
-  border-radius: ${({ variant }) => (variant === 'primary' ? '4px' : '16px')};
+  border: ${({ variant }) =>
+    variant === 'main'
+      ? `2px solid ${bgColors.blue}`
+      : `2px solid ${bgColors.white}`};
+  border-radius: 10px;
   transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
-  background-color: ${({ variant }) => {
-    if (variant === 'main') return bgColors.lightBrown
-    if (variant === 'second') return bgColors.accent
-    if (variant === 'primary') return bgColors.main
-  }};
   box-shadow: ${({ variant }) =>
     variant === 'second' && '4px 4px 8px rgba(0, 0, 0, 0.25)'};
   font-weight: ${({ variant }) => variant === 'primary' && 600};
@@ -36,7 +35,11 @@ export const RootButton = styled.button<IButtonProps>`
       if (variant === 'main') return 'inset 4px 4px 8px rgba(0, 0, 0, 0.25)'
       if (variant === 'second') return 'inset 4px 4px 8px rgba(0, 0, 0, 0.25)'
       if (variant === 'primary') return '8px 8px 16px rgba(0, 0, 0, 0.25)'
-    }}
+    }};
+    background-color: ${({ variant }) => {
+      if (variant === 'main') return bgColors.pink
+    }};
+  }
 `
 
 // задник модального окна
@@ -152,7 +155,7 @@ export const RootCountBox = styled.div`
 export const RootCountInput = styled.input`
   width: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
   height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
-  background-color: ${bgColors.accent};
+  background-color: ${bgColors.indigo};
   color: ${textColors.main};
   font-size: 16px;
   line-height: 19px;
@@ -165,7 +168,7 @@ export const RootCountBtn = styled.span<{ action: 'plus' | 'minus' }>`
   height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
   padding: 10.5px 14.5px;
   user-select: none;
-  background-color: ${bgColors.dark};
+  background-color: ${bgColors.lightPink};
   color: ${textColors.lightBrown};
   cursor: pointer;
   border-radius: ${({ action }) =>
