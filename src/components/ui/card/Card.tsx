@@ -6,10 +6,12 @@ import {
   Img,
   ImgBox,
   Price,
+  OldPrice,
+  Subtitle,
   Title,
   Body,
-  Description,
   Footer,
+  FooterPrices,
   Button,
 } from './styled'
 
@@ -28,13 +30,16 @@ const Card: FC<IProps> = ({ product }) => {
         </ImgBox>
 
         <Body>
+          <Subtitle>Футболка</Subtitle>
           <Title>{product.name}</Title>
-          <Description>{product.description}</Description>
         </Body>
 
         <Footer>
-          <Price>{product.price.toLocaleString('ru')} ₽</Price>
-          <Button variant="primary" onClick={() => setIsOpen(true)}>
+          <FooterPrices>
+            <Price>{product.price.toLocaleString('ru')} ₽</Price>
+            <OldPrice>{product.price.toLocaleString('ru')} ₽</OldPrice>
+          </FooterPrices>
+          <Button variant="main" onClick={() => setIsOpen(true)}>
             Подробнее
           </Button>
         </Footer>
