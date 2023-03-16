@@ -105,6 +105,6 @@ export const Line = styled.span`
     height: 1px;
     width: 100%;
     transform: translateY(-50%);
-    background-color: ${textColors.brown};
+    background-color: ${textColors.neon};
   }
 `

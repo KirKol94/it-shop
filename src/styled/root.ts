@@ -17,27 +17,28 @@ export const RootContainer = styled.div`
 
 // стили кнопки
 export const RootButton = styled.button<IButtonProps>`
-  padding: ${({ variant }) => (variant === 'primary' ? '4px 0' : '10px 22px')};
-  border: ${({ variant }) =>
-    variant === 'main'
-      ? `2px solid ${bgColors.blue}`
-      : `2px solid ${bgColors.white}`};
+  padding: 10px 22px;
+  background-color: ${({ variant }) => {
+    if (variant === 'outlined') return bgColors.main
+    if (variant === 'solid') return bgColors.pink
+  }};
+  border: ${({ variant }) => {
+    if (variant === 'outlined') return '2px solid #32B5E3'
+    if (variant === 'solid') return '2px solid #FFFFFF'
+  }};
   border-radius: 10px;
   transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
-  box-shadow: ${({ variant }) =>
-    variant === 'second' && '4px 4px 8px rgba(0, 0, 0, 0.25)'};
-  font-weight: ${({ variant }) => variant === 'primary' && 600};
-  font-size: ${({ variant }) => variant === 'primary' && '14px'};
-  line-height: ${({ variant }) => variant === 'primary' && '1.5'};
+  font-weight: 400;
+  font-size: 16px;
+  font-family: ${fonts.exo};
 
   &:hover {
     box-shadow: ${({ variant }) => {
-      if (variant === 'main') return 'inset 4px 4px 8px rgba(0, 0, 0, 0.25)'
-      if (variant === 'second') return 'inset 4px 4px 8px rgba(0, 0, 0, 0.25)'
-      if (variant === 'primary') return '8px 8px 16px rgba(0, 0, 0, 0.25)'
+      if (variant === 'solid') return 'inset 4px 4px 8px rgba(0, 0, 0, 0.25)'
+      if (variant === 'outlined') return 'inset 4px 4px 8px rgba(0, 0, 0, 0.25)'
     }};
     background-color: ${({ variant }) => {
-      if (variant === 'main') return bgColors.pink
+      if (variant === 'outlined') return bgColors.pink
     }};
   }
 `
@@ -169,7 +170,7 @@ export const RootCountBtn = styled.span<{ action: 'plus' | 'minus' }>`
   padding: 10.5px 14.5px;
   user-select: none;
   background-color: ${bgColors.lightPink};
-  color: ${textColors.lightBrown};
+  color: ${textColors.main};
   cursor: pointer;
   border-radius: ${({ action }) =>
     action === 'minus' ? '20px 0 0 20px' : '0 20px 20px 0'};

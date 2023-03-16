@@ -118,7 +118,7 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
               +
             </RootCountBtn>
           </RootCountBox>
-          <Button type="submit" variant="main">
+          <Button type="submit" variant="outlined">
             В корзину
           </Button>
         </Footer>

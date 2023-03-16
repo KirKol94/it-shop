@@ -55,7 +55,7 @@ const AuthModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
             type="password"
             autoComplete="off"
           />
-          <RootAuthBtn variant="main" type="submit">
+          <RootAuthBtn variant="outlined" type="submit">
             Авторизоваться
           </RootAuthBtn>
         </RootAuthForm>

@@ -147,7 +147,7 @@ const Footer: FC = () => {
               </GenderBox>
               <div>
                 <Button
-                  variant="main"
+                  variant="outlined"
                   type="submit"
                   onClick={() => console.log('форма отправлена')}>
                   Подписаться

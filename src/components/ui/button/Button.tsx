@@ -2,13 +2,13 @@ import React, { FC, ReactNode } from 'react'
 import { RootButton } from '@/styled/root'
 
 export interface IButtonProps {
-  variant: 'main' | 'second' | 'primary'
+  variant: 'solid' | 'outlined'
   onClick?: () => void
   type?: 'submit' | 'button' | 'reset' | 'menu'
   children: ReactNode
 }
 
-const Button: FC<IButtonProps> = ({ variant = 'main', onClick, children }) => {
+const Button: FC<IButtonProps> = ({ variant, onClick, children }) => {
   return (
     <RootButton variant={variant} onClick={onClick}>
       {children}

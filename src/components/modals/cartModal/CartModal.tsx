@@ -45,9 +45,9 @@ const CartModal: FC<IProps> = ({ isOpen }) => {
     }
   }
 
-  const price = cartItems.reduce((acc, cur) => (acc += cur.totalPrice), 0)
+  const price = cartItems.reduce((acc, cur) => acc + cur.totalPrice, 0)
   const totalPriceWithDiscount = price - discountSize
-  const productCount = cartItems.reduce((acc, cur) => (acc += cur.count), 0)
+  const productCount = cartItems.reduce((acc, cur) => acc + cur.count, 0)
 
   const setIsOpen = () => dispatch(setIsOpenCart(false))
 
@@ -101,7 +101,7 @@ const CartModal: FC<IProps> = ({ isOpen }) => {
               <span>{totalPriceWithDiscount.toLocaleString('ru')}₽</span>
             </InfoFinal>
           </CartFooterInfo>
-          <CartFooterAction variant="main">Оформить заказ</CartFooterAction>
+          <CartFooterAction variant="solid">Оформить заказ</CartFooterAction>
         </CartFooter>
       </Wrapper>
     </Menu>

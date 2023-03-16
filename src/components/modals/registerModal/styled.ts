@@ -23,5 +23,5 @@ export const Privacy = styled.p`
 
 export const PrivacyLink = styled(Link)`
   font-weight: 700;
-  color: ${textColors.brown};
+  color: ${textColors.gray};
 `

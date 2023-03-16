@@ -11,6 +11,7 @@ import JuraLight from '@/assets/fonts/Jura/Jura-Light.ttf'
 import JuraRegular from '@/assets/fonts/Jura/Jura-Regular.ttf'
 import JuraMedium from '@/assets/fonts/Jura/Jura-Medium.ttf'
 import JuraSemiBold from '@/assets/fonts/Jura/Jura-SemiBold.ttf'
+import Exo2Light from '@/assets/fonts/Exo_2/Exo2-Light.ttf'
 
 export const GlobalFonts = createGlobalStyle`
   @font-face {
@@ -98,9 +99,16 @@ export const GlobalFonts = createGlobalStyle`
   }
 
   @font-face {
-    font-family: " Jura ";
+    font-family: "Jura";
     font-style: normal;
     font-weight: 700;
     src: url(${JuraSemiBold});
+  }
+
+  @font-face {
+    font-family: "Exo 2";
+    font-style: normal;
+    font-weight: 300;
+    src: url(${Exo2Light});
   }
 `

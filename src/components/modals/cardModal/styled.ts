@@ -8,8 +8,7 @@ export const CardModalWrapper = styled.div`
   max-width: 480px;
   flex-direction: column;
   border-radius: 32px;
-  backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(180deg, #1a0534 0%, #0c011a 100%);
   gap: 16px;
 `
 
@@ -68,7 +67,7 @@ export const Sizes = styled.div`
   display: flex;
   height: 40px;
   border-radius: 20px;
-  background-color: ${bgColors.darkViolet};
+  background-color: ${bgColors.lightPink};
 `
 
 export const Selected = styled.div<{ position: number }>`
@@ -85,7 +84,7 @@ export const Selected = styled.div<{ position: number }>`
     width: 100%;
     height: 100%;
     border-radius: 16px;
-    background-color: ${bgColors.accent};
+    background-color: ${bgColors.indigo};
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
     content: ' ';
   }
@@ -106,7 +105,7 @@ export const SizeLabel = styled.label`
   display: block;
   flex: 1 1 0;
   border-radius: 9999px;
-  color: ${textColors.lightBrown};
+  color: ${textColors.main};
   cursor: pointer;
   font-size: 12px;
   font-weight: 400;

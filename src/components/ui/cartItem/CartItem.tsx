@@ -1,24 +1,24 @@
-import React from 'react'
+import React, { FC } from 'react'
 import CloseIcon from '@ui/icons/CloseIcon'
 import {
-  Wrapper,
-  Img,
-  ImgBox,
-  Inner,
-  Header,
-  Price,
-  Title,
-  Sizes,
-  SizeName,
-  Footer,
+  Close,
   CountBox,
   CountBtn,
   CountInput,
-  Close,
+  Footer,
+  Header,
+  Img,
+  ImgBox,
+  Inner,
   Line,
+  Price,
+  SizeName,
+  Sizes,
+  Title,
+  Wrapper,
 } from './styled'
 
-const CartItem = () => {
+const CartItem: FC = () => {
   return (
     <Wrapper>
       <ImgBox>

@@ -85,7 +85,7 @@ const RegisterModal: FC<IProps> = ({ isOpen, setIsOpen, setIsAuthModal }) => {
             value={registerData.rememberPassword}
             onChange={onChangeHandler}
           />
-          <RootAuthBtn variant="main">Зарегистрироваться</RootAuthBtn>
+          <RootAuthBtn variant="outlined">Зарегистрироваться</RootAuthBtn>
         </RootAuthForm>
 
         <Privacy>
