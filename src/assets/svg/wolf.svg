@@ -29,11 +29,21 @@
     d="M367.742 133.314C367.742 133.314 365.09 137.561 358.194 135.968C356.638 135.222 358.05 132.287 359.552 129.149C361.054 126.011 363.533 124.073 365.09 124.819C376.759 129.066 367.742 133.314 367.742 133.314Z"
     fill="white" />
   <g filter="url(#filter1_f_14_295)">
-    <path class="wolfIconMoneyPath"
+    <path class="wolfIconMoneyPath" style="filter:url(#shadow);"
       d="M158.42 194.802C158.42 194.802 151.238 191.616 147.27 194.154C143.303 196.692 142.029 200.525 150.156 203.551C158.282 206.577 164.52 208.7 157.921 211.227C151.323 213.754 142.846 216.292 138.062 215.751M144.83 221.983C144.83 221.983 157.285 191.436 158.006 187.465M152.235 189.546C152.235 189.546 141.669 218.012 140.672 220.178"
       stroke="#00A807" stroke-width="6" stroke-miterlimit="10" />
   </g>
-  <path class="wolfIconMoneyPath"
+  <filter id="shadow">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+    <feOffset dx="0" dy="0" />
+    <feFlood flood-color="#b6ff00" />
+    <feComposite in2="SourceAlpha" operator="in" />
+    <feMerge>
+      <feMergeNode />
+      <feMergeNode in="SourceGraphic" />
+    </feMerge>
+  </filter>
+  <path class="wolfIconMoneyPath" style="filter:url(#shadow);"
     d="M158.42 194.802C158.42 194.802 151.238 191.616 147.27 194.154C143.303 196.692 142.029 200.525 150.156 203.551C158.282 206.577 164.52 208.7 157.921 211.227C151.323 213.754 142.846 216.292 138.062 215.751M144.83 221.983C144.83 221.983 157.285 191.436 158.006 187.465M152.235 189.546C152.235 189.546 141.669 218.012 140.672 220.178"
     stroke="#00A807" stroke-width="2" stroke-miterlimit="10" />
   <path class="wolfIconMoneyPath"
