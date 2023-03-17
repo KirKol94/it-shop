@@ -6,11 +6,12 @@ import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
 
 export const Wrapper = styled.div`
   display: flex;
+  align-items: center;
   width: 100%;
   max-height: 120px;
   height: 100%;
   gap: 20px;
-  padding: 15px;
+  padding: 10px;
   border-radius: 16px;
   background: ${gradients.main};
   transition: all 0.5s;
@@ -34,7 +35,8 @@ export const Inner = styled.div`
   flex: 1 1 230px;
   flex-direction: column;
   justify-content: space-between;
-  gap: 3.5px;
+  gap: 5.5px;
+  height: 100%;
 `
 export const Header = styled.div`
   position: relative;
