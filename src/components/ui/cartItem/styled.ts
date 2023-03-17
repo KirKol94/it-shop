@@ -7,6 +7,7 @@ import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
 export const Wrapper = styled.div`
   display: flex;
   width: 100%;
+  max-height: 168px;
   gap: 24px;
   padding: 16px;
   border-radius: 16px;
@@ -21,6 +22,7 @@ export const ImgBox = styled.div`
 
 export const Img = styled.img`
   height: 100%;
+  width: 100%;
   border-radius: 16px;
   object-fit: cover;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
@@ -31,7 +33,7 @@ export const Inner = styled.div`
   flex: 1 1 230px;
   flex-direction: column;
   justify-content: space-between;
-  gap: 21.5px;
+  gap: 7.5px;
 `
 export const Header = styled.div`
   position: relative;
