@@ -35,6 +35,7 @@ export const Close = styled.div`
 `
 
 export const CartBody = styled.div`
+  overflow-y: auto;
   height: 100%;
   display: flex;
   flex-direction: column;
