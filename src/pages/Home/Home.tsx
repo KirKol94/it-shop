@@ -14,7 +14,7 @@ import {
   Subtitle,
   Title,
 } from './styled'
-import WolfIcon from '@ui/icons/WolfIcon'
+import { ReactComponent as WolfIcon } from '@/assets/svg/wolf.svg'
 
 const Home: FC = () => {
   const searchProductValue = useAppSelector(
@@ -42,7 +42,7 @@ const Home: FC = () => {
           </HeroSectionInfo>
 
           <HeroSectionLogo>
-            <WolfIcon width={390} height={365} />
+            <WolfIcon />
           </HeroSectionLogo>
         </HeroSectionContainer>
       </HeroSection>
