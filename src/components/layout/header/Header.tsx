@@ -15,6 +15,7 @@ import CartModal from '@/components/modals/cartModal/CartModal'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 import { setIsOpenCart } from '@/store/cart/cartSlice'
 import CartIcon from '@ui/icons/CartIcon'
+import useScroll from '@/hooks/useScroll'
 
 const Header: FC = () => {
   const dispatch = useAppDispatch()
@@ -22,10 +23,11 @@ const Header: FC = () => {
   const isCartOpen = useAppSelector(state => state.cart.isOpenCart)
   const [isAuthOpen, setIsAuthOpen] = useState(false)
   const [isRegisterOpen, setIsRegisterOpen] = useState(false)
+  const isScrolled = useScroll()
 
   return (
     <>
-      <Wrapper>
+      <Wrapper isScrolled={isScrolled}>
         <Container>
           <Logo />
 

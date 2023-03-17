@@ -2,15 +2,16 @@ import styled from 'styled-components'
 import { textColors } from '@/styled/vars'
 import { RootContainer } from '@/styled/root'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.header<{ isScrolled: boolean }>`
   position: fixed;
   width: 100%;
   padding: 20px 0;
-  background: linear-gradient(
-    180deg,
-    rgba(12, 1, 26, 0.5) 0%,
-    rgba(12, 1, 26, 0) 100%
-  );
+  background: ${({ isScrolled }) => {
+    if (!isScrolled)
+      return 'linear-gradient(180deg, rgba(12, 1, 26, 0.5) 0%, rgba(12, 1, 26, 0) 100%)'
+    if (isScrolled) return '#0C011A'
+  }};
+  transition: background 150ms;
 `
 
 export const Container = styled(RootContainer)`
