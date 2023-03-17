@@ -3,7 +3,7 @@ import { textColors } from '@/styled/vars'
 import { RootContainer } from '@/styled/root'
 
 export const Wrapper = styled.header<{ isScrolled: boolean }>`
-  z-index: 5;
+  z-index: 1;
   position: fixed;
   width: 100%;
   padding: 20px 0;
