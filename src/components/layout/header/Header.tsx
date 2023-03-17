@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react'
-import VkIcon from '@ui/icons/VkIcon'
 import Logo from '@ui/logo/Logo'
 import AuthModal from '@/components/modals/authModal/AuthModal'
 import RegisterModal from '@/components/modals/registerModal/RegisterModal'
@@ -9,25 +8,18 @@ import {
   Container,
   HeaderAuthBtn,
   LoginBox,
-  Media,
   ProfileBox,
   Wrapper,
 } from './styled'
 import CartModal from '@/components/modals/cartModal/CartModal'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 import { setIsOpenCart } from '@/store/cart/cartSlice'
+import CartIcon from '@ui/icons/CartIcon'
 
-const HeaderTop: FC = () => {
+const Header: FC = () => {
   const dispatch = useAppDispatch()
+
   const isCartOpen = useAppSelector(state => state.cart.isOpenCart)
-
-  const media = [
-    { name: 'vk', link: 'https://vk.com/1' },
-    { name: 'vk', link: 'https://vk.com/2' },
-    { name: 'vk', link: 'https://vk.com/3' },
-    { name: 'vk', link: 'https://vk.com/4' },
-  ]
-
   const [isAuthOpen, setIsAuthOpen] = useState(false)
   const [isRegisterOpen, setIsRegisterOpen] = useState(false)
 
@@ -35,16 +27,6 @@ const HeaderTop: FC = () => {
     <>
       <Wrapper>
         <Container>
-          <Media>
-            {media.map(({ name, link }) => (
-              <li key={link}>
-                <a href={link} target="_blank" title={name} rel="noreferrer">
-                  <VkIcon />
-                </a>
-              </li>
-            ))}
-          </Media>
-
           <Logo />
 
           <ProfileBox>
@@ -57,8 +39,9 @@ const HeaderTop: FC = () => {
                 Регистрация
               </HeaderAuthBtn>
             </LoginBox>
+
             <CartBox onClick={() => dispatch(setIsOpenCart(true))}>
-              <VkIcon />
+              <CartIcon />
               <CartText>Корзина</CartText>
             </CartBox>
           </ProfileBox>
@@ -82,4 +65,4 @@ const HeaderTop: FC = () => {
   )
 }
 
-export default HeaderTop
+export default Header
