@@ -5,7 +5,8 @@ import { RootButton } from '@/styled/root'
 export const Wrapper = styled.div`
   height: 100%;
   border-radius: 16px;
-  width: 750px;
+  max-width: 560px;
+  width: 100%;
   padding: 20px;
   background-color: ${bgColors.darkViolet};
   display: flex;
@@ -38,7 +39,7 @@ export const CartBody = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 8px;
 `
 
 export const CartFooter = styled.div`
