@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   padding: 20px;
   border-radius: 16px;
   background: ${gradients.main};
+  z-index: 4;
   transition: all 0.3s;
 
   &:hover {
