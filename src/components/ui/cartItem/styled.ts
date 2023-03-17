@@ -6,11 +6,12 @@ import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
 
 export const Wrapper = styled.div`
   display: flex;
+  align-items: center;
   width: 100%;
-  max-height: 168px;
+  max-height: 120px;
   height: 100%;
-  gap: 24px;
-  padding: 16px;
+  gap: 20px;
+  padding: 10px;
   border-radius: 16px;
   background: ${gradients.main};
   transition: all 0.5s;
@@ -18,7 +19,7 @@ export const Wrapper = styled.div`
 
 export const ImgBox = styled.div`
   border-radius: 16px;
-  flex: 0 1 128px;
+  flex: 0 1 70px;
 `
 
 export const Img = styled.img`
@@ -34,7 +35,8 @@ export const Inner = styled.div`
   flex: 1 1 230px;
   flex-direction: column;
   justify-content: space-between;
-  gap: 7.5px;
+  gap: 5.5px;
+  height: 100%;
 `
 export const Header = styled.div`
   position: relative;
@@ -43,10 +45,10 @@ export const Header = styled.div`
 
 export const Title = styled.h3`
   color: ${textColors.main};
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
-  ${cutLongStringStyles(2)}
+  ${cutLongStringStyles(1)}
 `
 
 export const Delete = styled.div`
@@ -59,7 +61,7 @@ export const Sizes = styled.div`
   align-content: center;
   gap: 5px;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 125%;
 `
 
