@@ -81,6 +81,7 @@ export const InputBox = styled.div`
   & > input:focus + label,
   & > input:not(:placeholder-shown) + label {
     transform: translateY(-20px) scale(0.75);
+    color: ${textColors.main};
   }
 `
 
