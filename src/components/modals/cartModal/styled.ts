@@ -1,11 +1,17 @@
 import styled from 'styled-components'
-import { bgColors, borderColors, fonts, textColors } from '@/styled/vars'
+import {
+  bgColors,
+  borderColors,
+  fonts,
+  textColors,
+  gradients,
+} from '@/styled/vars'
 import { RootButton } from '@/styled/root'
 
 export const Wrapper = styled.div`
   height: 100%;
   border-radius: 16px;
-  width: 750px;
+  width: 560px;
   padding: 20px;
   background-color: ${bgColors.darkViolet};
   display: flex;
@@ -39,7 +45,22 @@ export const CartBody = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 8px;
+  padding-right: 10px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 30px;
+  }
+  &::-webkit-scrollbar-track {
+    background: ${gradients.main};
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${bgColors.indigo};
+    border-radius: 6px;
+    border: 3px solid #18042f;
+  }
 `
 
 export const CartFooter = styled.div`
@@ -74,10 +95,17 @@ export const CartInfoRow = styled.div`
   &:last-child {
     font-weight: 600;
   }
+
+  & > div {
+    flex: 1 1 auto;
+  }
 `
 
 export const PromoLabel = styled.label`
   color: ${textColors.gray};
+  width: 100%;
+  display: flex;
+  align-items: center;
 `
 
 export const PromoSaleSize = styled.span`
@@ -93,7 +121,7 @@ export const InfoFinal = styled(CartInfoRow)`
 `
 
 export const PromoInput = styled.input`
-  width: 380px;
+  flex: 1 1 auto;
   border-bottom: 1px solid ${borderColors.neon};
   color: ${textColors.main};
   padding: 16px;
