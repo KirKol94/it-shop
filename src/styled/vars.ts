@@ -9,9 +9,7 @@ export const textColors = {
 
 export const borderColors = {
   neon: '#EB00FF',
-  gray: '#8D8D8D',
-  lightBrown: '#BCA67F',
-  brown: '#BCA67F',
+  gray: '#95928F',
   white: '#fff',
 }
 

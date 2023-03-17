@@ -1,14 +1,13 @@
 import React, { FC } from 'react'
-import Button from '@ui/button/Button'
 import Card from '@ui/card/Card'
 import { useAppSelector } from '@/hooks/reduxHooks'
 import {
-  Buttons,
   Cards,
   CardsContainer,
   CardsItems,
   CardsTitle,
   HeroSection,
+  HeroSectionButton,
   HeroSectionContainer,
   HeroSectionInfo,
   HeroSectionLogo,
@@ -37,9 +36,9 @@ const Home: FC = () => {
               отчаявшимися найти валютную удалёнку джунами для таких же джунов В
               каталог мерча Нанять талантливых джунов
             </Subtitle>
-            <Buttons>
-              <Button variant="solid">В каталог мерча</Button>
-            </Buttons>
+            <HeroSectionButton variant="solid">
+              В каталог мерча
+            </HeroSectionButton>
           </HeroSectionInfo>
 
           <HeroSectionLogo>

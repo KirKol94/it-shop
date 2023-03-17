@@ -31,8 +31,12 @@ export const cartSlice = createSlice({
 
     // Добавляем товар в корзину
     addProduct(state, action: PayloadAction<ICartProduct>) {
-      state.items.push(action.payload)
-      console.log(state.items)
+      const existsProduct = state.items.find(
+        product => product.id === action.payload.id
+      )
+      if (existsProduct) {
+        existsProduct.count += action.payload.count
+      } else state.items.push(action.payload)
     },
 
     // Удалить товар из корзины по его id
@@ -45,7 +49,7 @@ export const cartSlice = createSlice({
       state.discountSize = action.payload
     },
 
-    // увеличиваем количество выборанного товара в корзине
+    // увеличиваем количество выбранного товара в корзине
     incrementCartItemCount(state, action: PayloadAction<string>) {
       state.items.map(item => {
         if (item.id === action.payload) {
@@ -59,7 +63,7 @@ export const cartSlice = createSlice({
     // уменьшаем количество выборанного товара в корзине
     decrementCartItemCount(state, action: PayloadAction<string>) {
       state.items.map(item => {
-        if (item.id === action.payload) {
+        if (item.id === action.payload && item.count > 1) {
           item.count--
         }
 

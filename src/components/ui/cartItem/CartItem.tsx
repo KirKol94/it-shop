@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 import CloseIcon from '@ui/icons/CloseIcon'
 import {
-  Close,
   CountBox,
   CountBtn,
   CountInput,
+  Delete,
   Footer,
   Header,
   Img,
@@ -17,55 +17,73 @@ import {
   Title,
   Wrapper,
 } from './styled'
+import { ICartProduct } from '@/types/ICartProduct'
+import { useCountBox } from '@/hooks/useCountBox'
+import { useAppDispatch } from '@/hooks/reduxHooks'
+import {
+  decrementCartItemCount,
+  deleteProduct,
+  incrementCartItemCount,
+} from '@/store/cart/cartSlice'
 
-const CartItem: FC = () => {
+interface IProps {
+  product: ICartProduct
+}
+
+const CartItem: FC<IProps> = ({ product }) => {
+  const dispatch = useAppDispatch()
+
+  const { increment, decrement, handleCountInputChange } = useCountBox(product)
+
+  const onDeleteItem = () => dispatch(deleteProduct(product.id))
+  const onDecrement = () => {
+    decrement()
+    dispatch(decrementCartItemCount(product.id))
+  }
+  const onIncrement = () => {
+    increment()
+    dispatch(incrementCartItemCount(product.id))
+  }
+
   return (
     <Wrapper>
       <ImgBox>
-        <Img src="https://thumb.tildacdn.com/stor3666-3538-4430-b532-646533653362/-/cover/432x432/center/center/-/format/webp/87004213.jpg" />
+        <Img src={product.img} />
       </ImgBox>
       <Inner>
         <Header>
-          <Title>Футболка от Louis Betton</Title>
-          <Close>
-            <button //onClick={() => setIsOpen(false)}
-            >
-              <CloseIcon size={32} />
+          <Title>{product.name}</Title>
+          <Delete>
+            <button onClick={onDeleteItem}>
+              <CloseIcon size={22} />
             </button>
-          </Close>
+          </Delete>
         </Header>
 
         <Sizes>
           <p>Размер:</p>
-          <SizeName>XL</SizeName>
+          <SizeName>{product.size}</SizeName>
         </Sizes>
 
         <Footer>
           <CountBox>
-            <CountBtn
-              action="minus"
-              // onClick={decrement}
-            >
+            <CountBtn action="minus" onClick={onDecrement}>
               -
             </CountBtn>
             <CountInput
               type="text"
               inputMode="numeric"
-              value={1}
-              // value={count}
-              // onChange={handleInputChange}
+              value={product.count}
+              onChange={handleCountInputChange}
               maxLength={3}
             />
-            <CountBtn
-              action="plus"
-              // onClick={increment}
-            >
+            <CountBtn action="plus" onClick={onIncrement}>
               +
             </CountBtn>
           </CountBox>
-          <Price>9000 ₽</Price>
+          <Price>{product.price} ₽</Price>
           <Line></Line>
-          <Price>9000 ₽</Price>
+          <Price>{product.price * product.count} ₽</Price>
         </Footer>
       </Inner>
     </Wrapper>

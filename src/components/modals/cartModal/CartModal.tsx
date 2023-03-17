@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useState } from 'react'
+import React, { ChangeEvent, FC, useEffect, useState } from 'react'
 import Menu from '@ui/menu/Menu'
 import {
   CartBody,
@@ -32,6 +32,8 @@ const CartModal: FC<IProps> = ({ isOpen }) => {
   const discountSize = useAppSelector(state => state.cart.discountSize)
 
   const [promoCode, setPromoCode] = useState('')
+  const [totalPrice, setTotalPrice] = useState(0)
+
   const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target
     const conditionForDiscount =
@@ -45,11 +47,16 @@ const CartModal: FC<IProps> = ({ isOpen }) => {
     }
   }
 
-  const price = cartItems.reduce((acc, cur) => acc + cur.totalPrice, 0)
-  const totalPriceWithDiscount = price - discountSize
+  const totalPriceWithDiscount = totalPrice - discountSize
   const productCount = cartItems.reduce((acc, cur) => acc + cur.count, 0)
 
   const setIsOpen = () => dispatch(setIsOpenCart(false))
+
+  useEffect(() => {
+    setTotalPrice(
+      cartItems.reduce((acc, cur) => acc + cur.price * cur.count, 0)
+    )
+  }, [cartItems])
 
   return (
     <Menu isOpen={isOpen} setIsOpen={setIsOpen}>
@@ -64,9 +71,9 @@ const CartModal: FC<IProps> = ({ isOpen }) => {
         </CartTop>
 
         <CartBody>
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          {cartItems.map(product => (
+            <CartItem product={product} key={product.id} />
+          ))}
         </CartBody>
 
         <CartFooter>
@@ -74,7 +81,7 @@ const CartModal: FC<IProps> = ({ isOpen }) => {
             <CartFooterTitle>Ваша корзина</CartFooterTitle>
             <CartInfoRow>
               <span>Товары({productCount})</span>
-              <span>{price.toLocaleString('ru')}₽</span>
+              <span>{totalPrice.toLocaleString()}₽</span>
             </CartInfoRow>
             <CartInfoRow>
               <span>Доставка</span>

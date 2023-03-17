@@ -34,8 +34,10 @@ export const RootButton = styled.button<IButtonProps>`
 
   &:hover {
     box-shadow: ${({ variant }) => {
-      if (variant === 'solid') return 'inset 4px 4px 8px rgba(0, 0, 0, 0.25)'
-      if (variant === 'outlined') return 'inset 4px 4px 8px rgba(0, 0, 0, 0.25)'
+      if (variant === 'solid')
+        return '2px 2px 0px #FFFFFF, inset 2px 2px 4px rgba(0, 0, 0, 0.5);'
+      if (variant === 'outlined')
+        return '2px 2px 0px #32B5E3, inset 2px 2px 4px rgba(0, 0, 0, 0.5)'
     }};
     background-color: ${({ variant }) => {
       if (variant === 'outlined') return bgColors.pink
@@ -74,10 +76,9 @@ export const RootModalOverlay = styled.div`
 export const RootAuthModal = styled.div`
   max-width: 480px;
   padding: 16px;
-  border: 1px solid ${borderColors.lightBrown};
   border-radius: 16px;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
+  background: linear-gradient(180deg, #1a0534 0%, #0c011a 100%);
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.66);
   display: flex;
   flex-direction: column;
   align-items: center;

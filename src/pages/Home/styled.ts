@@ -1,4 +1,4 @@
-import { RootContainer } from '@/styled/root'
+import { RootButton, RootContainer } from '@/styled/root'
 import { bgColors, borders, fonts } from '@/styled/vars'
 import styled from 'styled-components'
 import HeroSectionBg from '@/assets/img/home-page/hero-section/bg.webp'
@@ -41,9 +41,8 @@ export const Subtitle = styled.p`
   line-height: 125%;
 `
 
-export const Buttons = styled.div`
-  display: flex;
-  gap: 20px;
+export const HeroSectionButton = styled(RootButton)`
+  width: 380px;
 `
 
 export const Cards = styled.section`

@@ -25,7 +25,7 @@ export const Title = styled.h2`
   font-size: 40px;
   line-height: 125%;
   padding-bottom: 20px;
-  border-bottom: 1px solid ${borderColors.lightBrown};
+  border-bottom: 1px solid ${borderColors.neon};
 `
 
 export const Close = styled.div`

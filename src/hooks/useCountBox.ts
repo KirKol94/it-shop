@@ -1,8 +1,9 @@
 import { IProduct } from '@/types/IProduct'
 import React, { useState } from 'react'
+import { ICartProduct } from '@/types/ICartProduct'
 
-export const useCountBox = (product: IProduct) => {
-  const [count, setCount] = useState(1)
+export const useCountBox = (product: IProduct | ICartProduct) => {
+  const [count, setCount] = useState(product.count || 1)
   const price = product.price * +count
 
   const increment = () => {

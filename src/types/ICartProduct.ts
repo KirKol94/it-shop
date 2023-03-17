@@ -1,9 +1,8 @@
 export interface ICartProduct {
   id: string
   img: string
-  product: string
-  productPrice: number
+  name: string
+  price: number
   count: number
   size: string
-  totalPrice: number
 }

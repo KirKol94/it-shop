@@ -43,18 +43,17 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsOpenCard(false)
-    setCount(1)
     const productToCart = {
-      id: product.id,
+      id: product.id + size,
       img: product.image,
-      product: product.name,
-      productPrice: product.price,
+      name: product.name,
+      price: product.price,
       count,
       size,
-      totalPrice: price,
     }
     dispatch(addProduct(productToCart))
     dispatch(setIsOpenCart(true))
+    setCount(1)
   }
 
   // далее код, передвигающий ползунок в размерах
