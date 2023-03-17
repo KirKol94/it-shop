@@ -31,7 +31,7 @@ export const Inner = styled.div`
   flex-direction: column;
   gap: 21.5px;
 `
-export const Header = styled.p`
+export const Header = styled.div`
   position: relative;
   padding-right: 30px;
 `
@@ -44,14 +44,10 @@ export const Title = styled.h3`
   ${cutLongStringStyles(2)}
 `
 
-export const Close = styled.div`
+export const Delete = styled.div`
   position: absolute;
   top: 0;
   right: 0;
-
-  & svg {
-    width: 22px;
-  }
 `
 export const Sizes = styled.div`
   display: flex;
@@ -105,6 +101,6 @@ export const Line = styled.span`
     height: 1px;
     width: 100%;
     transform: translateY(-50%);
-    background-color: ${textColors.brown};
+    background-color: ${textColors.neon};
   }
 `

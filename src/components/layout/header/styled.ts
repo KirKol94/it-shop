@@ -1,11 +1,16 @@
 import styled from 'styled-components'
-import { bgColors, borderColors, textColors } from '@/styled/vars'
+import { textColors } from '@/styled/vars'
 import { RootContainer } from '@/styled/root'
 
 export const Wrapper = styled.div`
+  position: fixed;
+  width: 100%;
   padding: 20px 0;
-  border-bottom: 1px solid ${borderColors.gray};
-  background-color: ${bgColors.accent};
+  background: linear-gradient(
+    180deg,
+    rgba(12, 1, 26, 0.5) 0%,
+    rgba(12, 1, 26, 0) 100%
+  );
 `
 
 export const Container = styled(RootContainer)`

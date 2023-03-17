@@ -147,7 +147,7 @@ const Footer: FC = () => {
               </GenderBox>
               <div>
                 <Button
-                  variant="main"
+                  variant="outlined"
                   type="submit"
                   onClick={() => console.log('форма отправлена')}>
                   Подписаться
@@ -156,7 +156,8 @@ const Footer: FC = () => {
                   При нажатии на кнопку подписаться вы даёте своё согласие на
                   получение новостной рассылки по электронной почте. Для
                   получения подробной информации ознакомьтесь с
-                  <Link to="policy">политикой конфиденциальности</Link>.
+                  <Link to="privacy-policy"> политикой конфиденциальности</Link>
+                  .
                 </Privacy>
               </div>
             </Form>

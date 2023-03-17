@@ -1,13 +1,14 @@
 import styled from 'styled-components'
-import { bgColors, borderColors, textColors } from '@/styled/vars'
+import { bgColors, borderColors, borders, textColors } from '@/styled/vars'
 import { RootButton, RootContainer } from '@/styled/root'
 import Logo from '@ui/logo/Logo'
 import VkIcon from '@/assets/svg/vk.svg'
 
 export const FooterWrapper = styled.footer`
   width: 100%;
+  border-top: ${borders.delimeter};
   padding: 80px 0;
-  background-color: ${bgColors.accent};
+  background-color: ${bgColors.main};
   color: ${textColors.main};
 `
 
@@ -88,7 +89,7 @@ export const Label = styled.label`
   top: 50%;
   left: 10px;
   display: block;
-  background-color: ${bgColors.white};
+  background-color: transparent;
   color: ${textColors.gray};
   font-size: 16px;
   font-weight: 400;
@@ -113,6 +114,8 @@ export const InputText = styled.input`
   font-weight: 500;
   line-height: 20px;
   transition: border-color 0.3s;
+  color: ${textColors.main};
+  background-color: transparent;
 `
 
 export const FooterList = styled.ul`
@@ -157,7 +160,7 @@ export const Privacy = styled.p`
   text-align: center;
 
   & > a {
-    color: ${textColors.brown};
+    color: ${textColors.neon};
     text-decoration-line: underline;
   }
 `

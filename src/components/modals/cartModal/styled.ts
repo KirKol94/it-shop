@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   border-radius: 16px;
   width: 750px;
   padding: 20px;
-  background-color: ${bgColors.menu};
+  background-color: ${bgColors.darkViolet};
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -25,7 +25,7 @@ export const Title = styled.h2`
   font-size: 40px;
   line-height: 125%;
   padding-bottom: 20px;
-  border-bottom: 1px solid ${borderColors.lightBrown};
+  border-bottom: 1px solid ${borderColors.neon};
 `
 
 export const Close = styled.div`
@@ -52,7 +52,6 @@ export const CartFooterInfo = styled.div`
   flex-direction: column;
   gap: 16px;
   border-radius: 16px;
-  background-color: ${bgColors.darkBlock};
   padding: 16px;
 `
 
@@ -77,11 +76,11 @@ export const CartInfoRow = styled.div`
 `
 
 export const PromoLabel = styled.label`
-  color: ${textColors.brown};
+  color: ${textColors.gray};
 `
 
 export const PromoSaleSize = styled.span`
-  color: ${textColors.brown};
+  color: ${textColors.neon};
 `
 
 export const InfoFinal = styled(CartInfoRow)`
@@ -94,7 +93,7 @@ export const InfoFinal = styled(CartInfoRow)`
 
 export const PromoInput = styled.input`
   width: 380px;
-  border-bottom: 1px solid ${borderColors.brown};
+  border-bottom: 1px solid ${borderColors.neon};
   color: ${textColors.main};
   padding: 16px;
   background-color: transparent;

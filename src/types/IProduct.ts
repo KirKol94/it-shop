@@ -5,6 +5,7 @@ export interface IProduct {
   category?: ICategory
   name: string
   image: string
+  count?: 1
   description: string
   price: number
   available?: boolean

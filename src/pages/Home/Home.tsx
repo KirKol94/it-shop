@@ -1,18 +1,20 @@
 import React, { FC } from 'react'
-import Button from '@ui/button/Button'
 import Card from '@ui/card/Card'
 import { useAppSelector } from '@/hooks/reduxHooks'
 import {
-  Buttons,
   Cards,
   CardsContainer,
   CardsItems,
   CardsTitle,
   HeroSection,
+  HeroSectionButton,
   HeroSectionContainer,
+  HeroSectionInfo,
+  HeroSectionLogo,
   Subtitle,
   Title,
 } from './styled'
+import WolfIcon from '@ui/icons/WolfIcon'
 
 const Home: FC = () => {
   const searchProductValue = useAppSelector(
@@ -26,18 +28,22 @@ const Home: FC = () => {
     <>
       <HeroSection>
         <HeroSectionContainer>
-          <Title>Первый мерч-шоп осознанной меркантильности</Title>
+          <HeroSectionInfo>
+            <Title>Первый мерч-шоп осознанной меркантильности</Title>
 
-          <Subtitle>
-            Первый мерч-шоп осознанной меркантильности (h1) Создано отчаявшимися
-            найти валютную удалёнку джунами для таких же джунов В каталог мерча
-            Нанять талантливых джунов
-          </Subtitle>
+            <Subtitle>
+              Первый мерч-шоп осознанной меркантильности (h1) Создано
+              отчаявшимися найти валютную удалёнку джунами для таких же джунов В
+              каталог мерча Нанять талантливых джунов
+            </Subtitle>
+            <HeroSectionButton variant="solid">
+              В каталог мерча
+            </HeroSectionButton>
+          </HeroSectionInfo>
 
-          <Buttons>
-            <Button variant="main">В каталог мерча</Button>
-            <Button variant="second">Нанять талантливых джунов</Button>
-          </Buttons>
+          <HeroSectionLogo>
+            <WolfIcon />
+          </HeroSectionLogo>
         </HeroSectionContainer>
       </HeroSection>
 

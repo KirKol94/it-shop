@@ -39,17 +39,19 @@ const Card: FC<IProps> = ({ product }) => {
             <Price>{product.price.toLocaleString('ru')} ₽</Price>
             <OldPrice>{product.price.toLocaleString('ru')} ₽</OldPrice>
           </FooterPrices>
-          <Button variant="main" onClick={() => setIsOpen(true)}>
+          <Button variant="outlined" onClick={() => setIsOpen(true)}>
             Подробнее
           </Button>
         </Footer>
       </Wrapper>
 
-      <CardModal
-        isOpenCard={isOpen}
-        setIsOpenCard={setIsOpen}
-        product={product}
-      />
+      {isOpen && (
+        <CardModal
+          isOpenCard={isOpen}
+          setIsOpenCard={setIsOpen}
+          product={product}
+        />
+      )}
     </>
   )
 }

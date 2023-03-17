@@ -16,6 +16,9 @@ import {
   Title,
 } from './styled'
 import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
+import { useCountBox } from '@/hooks/useCountBox'
+import { useAppDispatch } from '@/hooks/reduxHooks'
+import { addProduct, setIsOpenCart } from '@/store/cart/cartSlice'
 
 interface IProps {
   product: IProduct
@@ -24,35 +27,33 @@ interface IProps {
 }
 
 const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
+  const dispatch = useAppDispatch()
+
   const sizes = ['xs', 's', 'm', 'l', 'xl']
   const [size, setSize] = useState(sizes[0])
-  const [count, setCount] = useState(1)
-  const price = product.price * +count
-
-  const increment = () => {
-    setCount(prev => prev + 1)
-  }
-
-  const decrement = () => {
-    if (count > 1) setCount(prev => prev - 1)
-  }
-
-  // разрешаем вводить только цифры
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const regex = /^[0-9]*$/
-    const value = e.target.value
-    if (regex.test(value) && +value !== 0) {
-      setCount(+value)
-    }
-  }
+  const {
+    count,
+    setCount,
+    price,
+    increment,
+    decrement,
+    handleCountInputChange,
+  } = useCountBox(product)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsOpenCard(false)
+    const productToCart = {
+      id: product.id + size,
+      img: product.image,
+      name: product.name,
+      price: product.price,
+      count,
+      size,
+    }
+    dispatch(addProduct(productToCart))
+    dispatch(setIsOpenCart(true))
     setCount(1)
-    console.log(
-      `товар: ${product.name} на сумму: ${price}\nразмер: ${size}\nколичествр: ${count}`
-    )
   }
 
   // далее код, передвигающий ползунок в размерах
@@ -109,14 +110,14 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
               type="text"
               inputMode="numeric"
               value={count}
-              onChange={handleInputChange}
+              onChange={handleCountInputChange}
               maxLength={3}
             />
             <RootCountBtn action="plus" onClick={increment}>
               +
             </RootCountBtn>
           </RootCountBox>
-          <Button type="submit" variant="main">
+          <Button type="submit" variant="outlined">
             В корзину
           </Button>
         </Footer>
