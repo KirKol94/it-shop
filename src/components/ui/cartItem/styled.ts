@@ -1,3 +1,4 @@
+import { $api } from '@/api/axiosInstanse'
 import styled from 'styled-components'
 import { cutLongStringStyles } from '@/styled/mixins'
 import { gradients, textColors } from '@/styled/vars'
@@ -6,6 +7,7 @@ import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
 export const Wrapper = styled.div`
   display: flex;
   width: 100%;
+  max-height: 168px;
   gap: 24px;
   padding: 16px;
   border-radius: 16px;
@@ -20,6 +22,7 @@ export const ImgBox = styled.div`
 
 export const Img = styled.img`
   height: 100%;
+  width: 100%;
   border-radius: 16px;
   object-fit: cover;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
@@ -27,9 +30,10 @@ export const Img = styled.img`
 
 export const Inner = styled.div`
   display: flex;
-  flex: 1 0 230px;
+  flex: 1 1 230px;
   flex-direction: column;
-  gap: 21.5px;
+  justify-content: space-between;
+  gap: 7.5px;
 `
 export const Header = styled.div`
   position: relative;
@@ -73,7 +77,7 @@ export const Footer = styled.div`
 
 export const CountBox = styled(RootCountBox)``
 export const CountBtn = styled(RootCountBtn)`
-  padding: 6.5px 12px;
+  padding: 5.5px 12px;
   width: 32px;
   height: 32px;
 `
@@ -103,4 +107,12 @@ export const Line = styled.span`
     transform: translateY(-50%);
     background-color: ${textColors.neon};
   }
+`
+
+export const Multiply = styled.div`
+  position: relative;
+  font-weight: 300;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 1;
 `
