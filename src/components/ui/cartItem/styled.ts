@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   display: flex;
   width: 100%;
   max-height: 168px;
+  height: 100%;
   gap: 24px;
   padding: 16px;
   border-radius: 16px;
