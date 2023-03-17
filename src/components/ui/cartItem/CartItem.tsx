@@ -16,6 +16,7 @@ import {
   Sizes,
   Title,
   Wrapper,
+  Multiply,
 } from './styled'
 import { ICartProduct } from '@/types/ICartProduct'
 import { useCountBox } from '@/hooks/useCountBox'
@@ -81,6 +82,7 @@ const CartItem: FC<IProps> = ({ product }) => {
               +
             </CountBtn>
           </CountBox>
+          <Multiply>x</Multiply>
           <Price>{product.price} ₽</Price>
           <Line></Line>
           <Price>{product.price * product.count} ₽</Price>
