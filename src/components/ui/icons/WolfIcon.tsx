@@ -1,11 +1,16 @@
 import React, { FC } from 'react'
+import styled from 'styled-components'
 
-const WolfIcon: FC = () => {
+interface IProps {
+  width: number
+  height: number
+}
+
+const WolfIcon: FC<IProps> = ({ width, height }) => {
   return (
     <svg
-      width="390"
-      height="365"
-      viewBox="0 0 390 365"
+      width={width}
+      height={height}
       fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_f_14_295)">

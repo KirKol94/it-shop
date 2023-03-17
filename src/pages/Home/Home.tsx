@@ -42,7 +42,7 @@ const Home: FC = () => {
           </HeroSectionInfo>
 
           <HeroSectionLogo>
-            <WolfIcon />
+            <WolfIcon width={390} height={365} />
           </HeroSectionLogo>
         </HeroSectionContainer>
       </HeroSection>
