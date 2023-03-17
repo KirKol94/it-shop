@@ -25,6 +25,19 @@ export const HeroSectionLogo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  & > svg > path {
+    animation: wolf-animation 1s infinite alternate;
+
+    @keyframes wolf-animation {
+      from {
+        stroke: #eb00ff;
+      }
+      to {
+        stroke: #fff;
+      }
+    }
+  }
 `
 
 export const Title = styled.h1`
