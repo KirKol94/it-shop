@@ -1,12 +1,17 @@
 import styled from 'styled-components'
-import { bgColors, borderColors, fonts, textColors } from '@/styled/vars'
+import {
+  bgColors,
+  borderColors,
+  fonts,
+  textColors,
+  gradients,
+} from '@/styled/vars'
 import { RootButton } from '@/styled/root'
 
 export const Wrapper = styled.div`
   height: 100%;
   border-radius: 16px;
-  max-width: 560px;
-  width: 100%;
+  width: 560px;
   padding: 20px;
   background-color: ${bgColors.darkViolet};
   display: flex;
@@ -40,6 +45,21 @@ export const CartBody = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding-right: 10px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 30px;
+  }
+  &::-webkit-scrollbar-track {
+    background: ${gradients.main};
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${bgColors.indigo};
+    border-radius: 6px;
+    border: 3px solid #18042f;
+  }
 `
 
 export const CartFooter = styled.div`
