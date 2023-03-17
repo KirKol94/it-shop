@@ -14,7 +14,7 @@ const initialState: ProductState = {
     {
       id: '1',
       image:
-        'https://uhd.name/uploads/posts/2022-01/thumbs/1643228396_2-uhd-name-p-futbolka-na-veshalke-devushka-krasivo-foto-3.jpg',
+        'https://cdn.discordapp.com/attachments/1080428490379247716/1086233923924791328/image.png',
       name: 'Футболка на плечиках',
       description: 'Её позволит только айтишник',
       price: 1399,
@@ -22,7 +22,7 @@ const initialState: ProductState = {
     {
       id: '2',
       image:
-        'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80',
+        'https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png',
       name: 'Футболка с рукой',
       description: 'Рука, плечики, футболка',
       price: 1299,
@@ -30,7 +30,7 @@ const initialState: ProductState = {
     {
       id: '3',
       image:
-        'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3725&q=80',
+        'https://cdn.discordapp.com/attachments/1080428490379247716/1086234758331252776/image.png',
       name: 'Рубашка с галстуком',
       description:
         'Очень крутая рубашка белого цвета для очень успешных людей, которые знают толк в хороших вещах и имеют потрясающий вкус, а ещё она доступна каждому  Купи - и будь пиздат!',
@@ -39,7 +39,7 @@ const initialState: ProductState = {
     {
       id: '4',
       image:
-        'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2215&q=80',
+        'https://cdn.discordapp.com/attachments/1080428490379247716/1086233923924791328/image.png',
       name: 'Футболка с циферками',
       description: 'Шляпа, если честно',
       price: 0,
@@ -47,21 +47,23 @@ const initialState: ProductState = {
     {
       id: '5',
       image:
-        'https://images.unsplash.com/photo-1622445275463-afa2ab738c34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80',
+        'https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png',
       name: 'Кепка-кастрюля',
       description: 'Чисто шапка для волка',
       price: 1699,
     },
     {
       id: '6',
-      image: 'https://ae01.alicdn.com/kf/HTB1vR_OqwMPMeJjy1Xdq6ysrXXaY.jpg',
+      image:
+        'https://cdn.discordapp.com/attachments/1080428490379247716/1086234758331252776/image.png',
       name: 'Свитер разной расцветки',
       description: 'Вязанная кофта',
       price: 10999,
     },
     {
       id: '7',
-      image: 'https://sloot.ru/images/mujskoy_sviter_s_olenyami.jpg',
+      image:
+        'https://cdn.discordapp.com/attachments/1080428490379247716/1086233923924791328/image.png',
       name: 'Свитер сисадмина',
       description: 'Ты не тру сисадмин, если нет такого шмота',
       price: 1984,
@@ -69,7 +71,7 @@ const initialState: ProductState = {
     {
       id: '8',
       image:
-        'https://avatars.mds.yandex.net/get-znatoki/1506847/2a000001823dcc9560614c9df0bd1940c5eb/orig',
+        'https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png',
       name: 'Сорочка для Си-разработчика',
       description: 'Ну тут не надо описание даже',
       price: 1905,
