@@ -101,5 +101,7 @@ export const PromoInput = styled.input`
 `
 
 export const CartFooterAction = styled(RootButton)`
+  align-self: center;
   width: 100%;
+  max-width: 380px;
 `
