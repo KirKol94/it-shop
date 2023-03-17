@@ -94,10 +94,17 @@ export const CartInfoRow = styled.div`
   &:last-child {
     font-weight: 600;
   }
+
+  & > div {
+    flex: 1 1 auto;
+  }
 `
 
 export const PromoLabel = styled.label`
   color: ${textColors.gray};
+  width: 100%;
+  display: flex;
+  align-items: center;
 `
 
 export const PromoSaleSize = styled.span`
@@ -113,7 +120,7 @@ export const InfoFinal = styled(CartInfoRow)`
 `
 
 export const PromoInput = styled.input`
-  width: 380px;
+  flex: 1 1 auto;
   border-bottom: 1px solid ${borderColors.neon};
   color: ${textColors.main};
   padding: 16px;
