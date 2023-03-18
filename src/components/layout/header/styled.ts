@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import { textColors } from '@/styled/vars'
+import { bp, fonts, textColors } from '@/styled/vars'
 import { RootContainer } from '@/styled/root'
+import { ReactComponent as Logo } from '@/assets/svg/logo.svg'
 
 export const Wrapper = styled.header<{ isScrolled: boolean }>`
   z-index: 1;
@@ -13,20 +14,53 @@ export const Wrapper = styled.header<{ isScrolled: boolean }>`
     if (isScrolled) return '#0C011A'
   }};
   transition: background 150ms;
+  font-family: ${fonts.exo};
+
+  @media (max-width: ${bp.sm}px) {
+    padding: 25px 0;
+  }
 `
 
 export const Container = styled(RootContainer)`
   display: flex;
   height: 100%;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
 `
 
-export const Media = styled.ul`
+export const LogoBox = styled(Logo)`
+  width: clamp(10.938rem, 9.423rem + 5.77vw, 13.75rem);
+`
+
+export const IconsBox = styled.div`
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 20px;
+
+  @media (min-width: ${bp.md}px) {
+    display: none;
+  }
+`
+
+export const Nav = styled.nav`
+  @media (max-width: ${bp.md}px) {
+    display: none;
+  }
+`
+
+export const NavList = styled.ul`
+  display: flex;
+  gap: 32px;
+`
+
+export const NavItem = styled.li`
+  transition: all 150ms;
+
+  &:hover {
+    color: ${textColors.neon};
+    text-decoration: underline;
+  }
 `
 
 export const ProfileBox = styled.div`
@@ -34,6 +68,10 @@ export const ProfileBox = styled.div`
   flex-wrap: wrap;
   align-items: center;
   gap: 27px;
+
+  @media (max-width: ${bp.md}px) {
+    display: none;
+  }
 `
 
 export const LoginBox = styled.div`
