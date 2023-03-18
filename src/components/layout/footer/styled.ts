@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { bgColors, borderColors, borders, textColors } from '@/styled/vars'
+import { bgColors, borderColors, borders, textColors, bp } from '@/styled/vars'
 import { RootButton, RootContainer } from '@/styled/root'
 import Logo from '@ui/logo/Logo'
 import VkIcon from '@/assets/svg/vk.svg'

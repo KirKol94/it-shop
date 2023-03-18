@@ -45,6 +45,6 @@ export const borders = {
 export const bp = {
   xs: 480,
   sm: 768,
-  md: 1024,
+  md: 991,
   lg: 1200,
 }

@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   transition: all 0.3s;
 
   &:hover {
-    box-shadow: 4px 4px 8px ${bgColors.pink};
+    box-shadow: 0px -3px 8px ${bgColors.pink};
 
     img {
       transform: scale(1.05);
