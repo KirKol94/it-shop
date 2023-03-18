@@ -1,30 +1,57 @@
 import { RootButton, RootContainer } from '@/styled/root'
-import { bgColors, borders, fonts } from '@/styled/vars'
+import { bgColors, borders, bp, fonts, textColors } from '@/styled/vars'
 import styled from 'styled-components'
 import HeroSectionBg from '@/assets/img/home-page/hero-section/bg.webp'
 
 export const HeroSection = styled.section`
-  padding: 120px 0;
+  overflow-x: hidden;
+  padding: clamp(3rem, 0.577rem + 9.23vw, 7.5rem) 0;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     center / cover no-repeat url(${HeroSectionBg});
   border-bottom: ${borders.delimeter};
+
+  @media (max-width: ${bp.sm}px) {
+    background-position: 100% 100%;
+  }
 `
 
 export const HeroSectionContainer = styled(RootContainer)`
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media (max-width: ${bp.sm}px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const HeroSectionInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(1rem, 0.865rem + 0.51vw, 1.25rem);
+  order: 1;
+
+  @media (max-width: ${bp.sm}px) {
+    order: 2;
+  }
 `
 
 export const HeroSectionLogo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  order: 2;
+  margin-top: 60px;
+
+  @media (max-width: ${bp.sm}px) {
+    height: 100%;
+    max-height: 250px;
+    order: 1;
+  }
+
+  & > svg {
+    width: 100%;
+    max-width: clamp(11.25rem, 5.192rem + 23.08vw, 22.5rem);
+  }
 
   & .wolfIconMoneyPath {
     animation: flicker 8s linear infinite;
@@ -113,21 +140,34 @@ export const HeroSectionLogo = styled.div`
 `
 
 export const Title = styled.h1`
-  font-family: ${fonts.exo};
+  font-family: ${fonts.primary};
   font-weight: 700;
-  font-size: 64px;
+  font-size: clamp(2rem, 0.923rem + 4.1vw, 4rem);
   line-height: 125%;
+
+  & > span {
+    color: ${textColors.neon};
+  }
+
+  @media (max-width: ${bp.sm}px) {
+    text-align: center;
+  }
 `
 
 export const Subtitle = styled.p`
-  font-family: ${fonts.second};
+  font-family: ${fonts.exo};
   font-weight: 300;
-  font-size: 20px;
+  font-size: clamp(0.875rem, 0.673rem + 0.77vw, 1.25rem);
   line-height: 125%;
+
+  @media (max-width: ${bp.sm}px) {
+    text-align: center;
+  }
 `
 
 export const HeroSectionButton = styled(RootButton)`
-  width: 380px;
+  width: 100%;
+  max-width: 380px;
 `
 
 export const Cards = styled.section`
@@ -135,20 +175,24 @@ export const Cards = styled.section`
 `
 
 export const CardsContainer = styled(RootContainer)`
-  padding-top: 80px;
+  padding: clamp(3rem, 1.923rem + 4.1vw, 5rem) 0;
 `
 
 export const CardsTitle = styled.h2`
-  font-size: 40px;
+  font-size: clamp(2.25rem, 2.115rem + 0.51vw, 2.5rem);
   font-weight: 700;
   line-height: 125%;
   text-align: center;
 `
 
 export const CardsItems = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px 0 80px;
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   row-gap: 24px;
+
+  @media (max-width: ${bp.sm}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `
