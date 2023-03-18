@@ -14,11 +14,13 @@ import {
   SizeLabel,
   Sizes,
   Title,
+  CloseModal,
 } from './styled'
 import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
 import { useCountBox } from '@/hooks/useCountBox'
 import { useAppDispatch } from '@/hooks/reduxHooks'
 import { addProduct, setIsOpenCart } from '@/store/cart/cartSlice'
+import CloseIcon from '@ui/icons/CloseIcon'
 
 interface IProps {
   product: IProduct
@@ -72,6 +74,10 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
         <ImgBox>
           <img src={product.image} alt={product.name} />
         </ImgBox>
+
+        <CloseModal onClick={() => setIsOpenCard(false)}>
+          <CloseIcon size={24} />
+        </CloseModal>
 
         <Body>
           <Title>{product.name}</Title>

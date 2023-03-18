@@ -45,7 +45,7 @@ export const Header = styled.div`
 
 export const Title = styled.h3`
   color: ${textColors.main};
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
   ${cutLongStringStyles(1)}
@@ -61,8 +61,8 @@ export const Sizes = styled.div`
   align-content: center;
   gap: 5px;
   font-weight: 600;
-  font-size: 12px;
-  line-height: 125%;
+  font-size: 11px;
+  line-height: 1.25;
 `
 
 export const SizeName = styled.div`
@@ -80,13 +80,14 @@ export const Footer = styled.div`
 
 export const CountBox = styled(RootCountBox)``
 export const CountBtn = styled(RootCountBtn)`
-  padding: 5.5px 12px;
-  width: 32px;
-  height: 32px;
+  padding: 2.5px 9px;
+  width: 26px;
+  height: 26px;
 `
 export const CountInput = styled(RootCountInput)`
-  width: 32px;
-  height: 32px;
+  width: 26px;
+  height: 26px;
+  font-size: 14px;
 `
 
 export const Price = styled.span`

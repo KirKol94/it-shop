@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   padding: 20px;
   background-color: ${bgColors.darkViolet};
   display: flex;
-  gap: 20px;
+  gap: 10px;
   flex-direction: column;
   justify-content: space-between;
 `
@@ -28,9 +28,9 @@ export const CartTop = styled.div`
 export const Title = styled.h2`
   font-family: ${fonts.second};
   font-weight: 700;
-  font-size: 40px;
+  font-size: 26px;
   line-height: 125%;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   border-bottom: 1px solid ${borderColors.neon};
 `
 
@@ -71,16 +71,9 @@ export const CartFooter = styled.div`
 export const CartFooterInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
   border-radius: 16px;
-  padding: 16px;
-`
-
-export const CartFooterTitle = styled(Title)`
-  font-size: 24px;
-  font-weight: 600;
-  padding: 0;
-  border: 0;
+  padding: 0 16px;
 `
 
 export const CartInfoRow = styled.div`
@@ -91,8 +84,8 @@ export const CartInfoRow = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  &:last-child {
-    font-weight: 600;
+  & > span:last-child {
+    font-weight: 700;
   }
 
   & > div {
@@ -108,6 +101,7 @@ export const PromoLabel = styled.label`
 `
 
 export const PromoSaleSize = styled.span`
+  align-self: flex-start;
   color: ${textColors.neon};
 `
 
@@ -115,7 +109,7 @@ export const InfoFinal = styled(CartInfoRow)`
   font-size: 20px;
 
   &:last-child {
-    font-size: 24px;
+    font-size: 20px;
   }
 `
 
@@ -123,7 +117,7 @@ export const PromoInput = styled.input`
   flex: 1 1 auto;
   border-bottom: 1px solid ${borderColors.neon};
   color: ${textColors.main};
-  padding: 16px;
+  padding: 8px;
   background-color: transparent;
 `
 
