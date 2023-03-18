@@ -40,11 +40,11 @@ export const HeroSectionLogo = styled.div`
   align-items: center;
   justify-content: center;
   order: 2;
-  margin-top: 60px;
 
   @media (max-width: ${bp.sm}px) {
+    margin-top: 20px;
     height: 100%;
-    max-height: 250px;
+    max-height: 220px;
     order: 1;
   }
 
@@ -168,6 +168,10 @@ export const Subtitle = styled.p`
 export const HeroSectionButton = styled(RootButton)`
   width: 100%;
   max-width: 380px;
+
+  @media (max-width: ${bp.sm}px) {
+    align-self: center;
+  }
 `
 
 export const Cards = styled.section`
@@ -191,6 +195,10 @@ export const CardsItems = styled.div`
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   row-gap: 24px;
+
+  & > * {
+    margin: 0 auto;
+  }
 
   @media (max-width: ${bp.sm}px) {
     grid-template-columns: repeat(2, 1fr);
