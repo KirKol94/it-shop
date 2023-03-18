@@ -26,8 +26,8 @@ export const CartTop = styled.div`
 `
 
 export const Title = styled.h2`
-  font-family: ${fonts.second};
-  font-weight: 700;
+  font-family: ${fonts.primary};
+  font-weight: 500;
   font-size: 26px;
   line-height: 125%;
   padding-bottom: 10px;
@@ -77,7 +77,7 @@ export const CartFooterInfo = styled.div`
 `
 
 export const CartInfoRow = styled.div`
-  font-family: ${fonts.main};
+  font-family: ${fonts.exo};
   font-weight: 300;
   font-size: 16px;
   display: flex;
@@ -95,6 +95,8 @@ export const CartInfoRow = styled.div`
 
 export const PromoLabel = styled.label`
   color: ${textColors.gray};
+  font-family: ${fonts.exo};
+  font-weight: 700;
   width: 100%;
   display: flex;
   align-items: center;
@@ -102,15 +104,15 @@ export const PromoLabel = styled.label`
 
 export const PromoSaleSize = styled.span`
   align-self: flex-start;
+  font-family: ${fonts.exo};
+  font-weight: 700;
   color: ${textColors.neon};
 `
 
 export const InfoFinal = styled(CartInfoRow)`
+  font-family: ${fonts.exo};
+  font-weight: 700;
   font-size: 20px;
-
-  &:last-child {
-    font-size: 20px;
-  }
 `
 
 export const PromoInput = styled.input`

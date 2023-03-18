@@ -55,6 +55,7 @@ export const NavList = styled.ul`
 `
 
 export const NavItem = styled.li`
+  font-weight: 600;
   transition: all 150ms;
 
   &:hover {
@@ -86,6 +87,7 @@ export const HeaderAuthBtn = styled.button`
   color: ${textColors.gray};
   cursor: pointer;
   font-size: 20px;
+  font-weight: 300;
   line-height: 24px;
 
   &:hover {
@@ -102,5 +104,6 @@ export const CartBox = styled.button`
 
 export const CartText = styled.span`
   font-size: 20px;
+  font-weight: 300;
   line-height: 24px;
 `
