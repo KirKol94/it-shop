@@ -60,6 +60,7 @@ export const RootModalOverlay = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   will-change: opacity;
   z-index: 100;
+  padding: 0 20px;
 
   @keyframes fade-in-overlay {
     from {

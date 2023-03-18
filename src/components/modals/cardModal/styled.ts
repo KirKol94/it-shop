@@ -7,12 +7,14 @@ export const CardModalWrapper = styled.div`
   width: 100%;
   max-width: 480px;
   flex-direction: column;
+  gap: 16px;
+  padding-top: 10px;
   border-radius: 32px;
   background: linear-gradient(180deg, #1a0534 0%, #0c011a 100%);
-  gap: 16px;
 `
 
 export const ImgBox = styled.div`
+  position: relative;
   overflow: hidden;
   border-radius: 16px 16px 0 0;
 
@@ -21,6 +23,12 @@ export const ImgBox = styled.div`
     max-height: clamp(22.5rem, 7.955rem + 72.73vw, 30rem);
     border-radius: 32px 32px 0 0;
   }
+`
+
+export const CloseModal = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
 `
 
 export const Body = styled.div`

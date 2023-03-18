@@ -34,7 +34,6 @@ export const ImgBox = styled.div`
 
 export const Img = styled.img`
   height: 100%;
-  flex: 1 0 auto;
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
