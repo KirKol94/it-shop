@@ -47,7 +47,7 @@ export const Title = styled.h2`
 export const Description = styled.p`
   margin-bottom: 16px;
   color: ${textColors.main};
-  font-family: ${fonts.second};
+  font-family: ${fonts.exo};
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
@@ -66,7 +66,7 @@ export const Footer = styled.form`
 export const Price = styled.span`
   color: ${textColors.main};
   font-size: clamp(1.125rem, 0.883rem + 1.21vw, 1.25rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
 `
 

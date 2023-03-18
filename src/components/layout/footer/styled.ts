@@ -1,5 +1,11 @@
 import styled from 'styled-components'
-import { bgColors, borderColors, borders, textColors, bp } from '@/styled/vars'
+import {
+  bgColors,
+  borderColors,
+  borders,
+  fonts,
+  textColors,
+} from '@/styled/vars'
 import { RootButton, RootContainer } from '@/styled/root'
 import Logo from '@ui/logo/Logo'
 import VkIcon from '@/assets/svg/vk.svg'
@@ -43,12 +49,14 @@ export const Address = styled.address`
 `
 
 export const AddressText = styled.p`
+  font-family: ${fonts.exo};
   font-size: 16px;
   font-weight: 300;
   line-height: 19px;
 `
 
 export const Subtitle = styled.p<{ mod: 'nav' | 'social' }>`
+  font-family: ${fonts.primary};
   font-size: 18px;
   font-weight: 700;
   line-height: 21px;
@@ -77,6 +85,8 @@ export const Form = styled.form`
 export const InputBox = styled.div`
   position: relative;
   width: 100%;
+  font-family: ${fonts.exo};
+  font-weight: 400;
 
   & > input:focus + label,
   & > input:not(:placeholder-shown) + label {
@@ -123,6 +133,8 @@ export const FooterList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  font-family: ${fonts.exo};
+  font-weight: 300;
 `
 
 export const Socials = styled.ul`
@@ -156,6 +168,7 @@ export const SocialsIcon = styled.span`
 
 export const Privacy = styled.p`
   color: ${textColors.gray};
+  font-family: ${fonts.exo};
   font-size: 10px;
   font-weight: 400;
   text-align: center;
@@ -208,5 +221,7 @@ export const GenderInput = styled.input`
 `
 
 export const GenderLabel = styled.label`
+  font-family: ${fonts.exo};
+  font-weight: 400;
   cursor: pointer;
 `

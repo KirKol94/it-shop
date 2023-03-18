@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import {
   bgColors,
   borderColors,
+  bp,
   containerWidth,
   fonts,
   textColors,
@@ -28,9 +29,13 @@ export const RootButton = styled.button<IButtonProps>`
   }};
   border-radius: 10px;
   transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
+  font-family: ${fonts.exo};
   font-weight: 400;
   font-size: 16px;
-  font-family: ${fonts.exo};
+
+  @media (max-width: ${bp.sm}px) {
+    font-weight: 600;
+  }
 
   &:hover {
     box-shadow: ${({ variant }) => {
@@ -91,7 +96,7 @@ export const RootAuthModal = styled.div`
 export const RootAuthTitle = styled.p`
   text-align: center;
   color: ${textColors.main};
-  font-family: ${fonts.main};
+  font-family: ${fonts.exo};
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -116,7 +121,7 @@ export const RootAuthInput = styled.input`
   display: block;
   padding: 18px 22px;
   background-color: transparent;
-  font-family: ${fonts.main};
+  font-family: ${fonts.exo};
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -141,7 +146,7 @@ export const RootAuthFooter = styled.div<{ justify: 'space-between' | 'end' }>`
   display: flex;
   align-items: center;
   justify-content: ${({ justify }) => justify};
-  font-family: ${fonts.main};
+  font-family: ${fonts.exo};
   font-style: normal;
   font-weight: 400;
   font-size: 14px;

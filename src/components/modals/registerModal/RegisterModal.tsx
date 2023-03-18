@@ -91,7 +91,7 @@ const RegisterModal: FC<IProps> = ({ isOpen, setIsOpen, setIsAuthModal }) => {
         <Privacy>
           При нажатии на кнопку зарегистрироваться вы даёте своё согласие на
           обработку персональных данных. Для получения подробной информации
-          ознакомьтесь c{' '}
+          ознакомьтесь c
           <PrivacyLink to="privacy">политикой конфиденциальности</PrivacyLink>
         </Privacy>
         <RootAuthFooter justify="space-between">

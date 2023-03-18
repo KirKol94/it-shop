@@ -12,7 +12,7 @@ export const Form = styled.form`
 `
 
 export const Privacy = styled.p`
-  font-family: ${fonts.second};
+  font-family: ${fonts.exo};
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -22,6 +22,7 @@ export const Privacy = styled.p`
 `
 
 export const PrivacyLink = styled(Link)`
-  font-weight: 700;
+  font-family: ${fonts.exo};
+  font-weight: 400;
   color: ${textColors.gray};
 `
