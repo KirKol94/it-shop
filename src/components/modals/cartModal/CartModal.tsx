@@ -5,7 +5,6 @@ import {
   CartFooter,
   CartFooterAction,
   CartFooterInfo,
-  CartFooterTitle,
   CartInfoRow,
   CartTop,
   Close,
@@ -78,7 +77,6 @@ const CartModal: FC<IProps> = ({ isOpen }) => {
 
         <CartFooter>
           <CartFooterInfo>
-            <CartFooterTitle>Ваша корзина</CartFooterTitle>
             <CartInfoRow>
               <span>Товары({productCount})</span>
               <span>{totalPrice.toLocaleString()}₽</span>
