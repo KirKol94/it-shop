@@ -29,7 +29,9 @@ const Home: FC = () => {
       <HeroSection>
         <HeroSectionContainer>
           <HeroSectionInfo>
-            <Title>Первый мерч-шоп осознанной меркантильности</Title>
+            <Title>
+              Первый <span>мерч-шоп</span> осознанной меркантильности
+            </Title>
 
             <Subtitle>
               Первый мерч-шоп осознанной меркантильности (h1) Создано

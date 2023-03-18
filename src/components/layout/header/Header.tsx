@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react'
-import Logo from '@ui/logo/Logo'
 import AuthModal from '@/components/modals/authModal/AuthModal'
 import RegisterModal from '@/components/modals/registerModal/RegisterModal'
 import {
@@ -7,15 +6,22 @@ import {
   CartText,
   Container,
   HeaderAuthBtn,
+  IconsBox,
   LoginBox,
+  LogoBox,
+  Nav,
+  NavItem,
+  NavList,
   ProfileBox,
   Wrapper,
 } from './styled'
 import CartModal from '@/components/modals/cartModal/CartModal'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 import { setIsOpenCart } from '@/store/cart/cartSlice'
-import CartIcon from '@ui/icons/CartIcon'
 import useScroll from '@/hooks/useScroll'
+import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
+import { ReactComponent as Burger } from '@/assets/svg/burger.svg'
+import { Link } from 'react-router-dom'
 
 const Header: FC = () => {
   const dispatch = useAppDispatch()
@@ -25,11 +31,37 @@ const Header: FC = () => {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false)
   const isScrolled = useScroll()
 
+  const links = [
+    { name: 'Главная', url: '' },
+    { name: 'Каталог', url: '' },
+    { name: 'О нас', url: 'about' },
+    { name: 'Оплата и доставка', url: '' },
+  ]
+
   return (
     <>
       <Wrapper isScrolled={isScrolled}>
         <Container>
-          <Logo />
+          <Link to="">
+            <LogoBox />
+          </Link>
+
+          <Nav>
+            <NavList>
+              {links.map((link, i) => (
+                <NavItem key={i}>
+                  <Link to={link.url}>{link.name}</Link>
+                </NavItem>
+              ))}
+            </NavList>
+          </Nav>
+
+          <IconsBox>
+            <button onClick={() => dispatch(setIsOpenCart(true))}>
+              <Cart />
+            </button>
+            <Burger />
+          </IconsBox>
 
           <ProfileBox>
             <LoginBox>
@@ -43,7 +75,7 @@ const Header: FC = () => {
             </LoginBox>
 
             <CartBox onClick={() => dispatch(setIsOpenCart(true))}>
-              <CartIcon />
+              <Cart />
               <CartText>Корзина</CartText>
             </CartBox>
           </ProfileBox>

@@ -2,17 +2,17 @@ import React, { FC, useState } from 'react'
 import CardModal from '@/components/modals/cardModal/CardModal'
 import { IProduct } from '@/types/IProduct'
 import {
-  Wrapper,
-  Img,
-  ImgBox,
-  Price,
-  OldPrice,
-  Subtitle,
-  Title,
   Body,
+  CardButton,
   Footer,
   FooterPrices,
-  Button,
+  Img,
+  ImgBox,
+  OldPrice,
+  Price,
+  Subtitle,
+  Title,
+  Wrapper,
 } from './styled'
 
 interface IProps {
@@ -39,9 +39,9 @@ const Card: FC<IProps> = ({ product }) => {
             <Price>{product.price.toLocaleString('ru')} ₽</Price>
             <OldPrice>{product.price.toLocaleString('ru')} ₽</OldPrice>
           </FooterPrices>
-          <Button variant="outlined" onClick={() => setIsOpen(true)}>
+          <CardButton variant="outlined" onClick={() => setIsOpen(true)}>
             Подробнее
-          </Button>
+          </CardButton>
         </Footer>
       </Wrapper>
 

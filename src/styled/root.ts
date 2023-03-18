@@ -17,7 +17,7 @@ export const RootContainer = styled.div`
 
 // стили кнопки
 export const RootButton = styled.button<IButtonProps>`
-  padding: 10px 22px;
+  padding: 14px 22px;
   background-color: ${({ variant }) => {
     if (variant === 'outlined') return bgColors.main
     if (variant === 'solid') return bgColors.pink
