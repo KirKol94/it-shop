@@ -18,6 +18,7 @@ export const GlobalCss = createGlobalStyle`
     color: ${textColors.main};
     font-style: normal;
     line-height: 1.2;
+    scroll-behavior: smooth;
   }
 
   ul, ol {
