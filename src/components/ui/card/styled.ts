@@ -8,8 +8,9 @@ export const Wrapper = styled.div`
   width: 100%;
   max-width: clamp(11.25rem, 7.885rem + 12.82vw, 17.5rem);
   flex-direction: column;
-  gap: 12px;
-  padding: 20px;
+  gap: clamp(0.5rem, 0.365rem + 0.51vw, 0.75rem);
+  padding: clamp(0.625rem, 0.288rem + 1.28vw, 1.25rem)
+    clamp(0rem, -0.673rem + 2.56vw, 1.25rem);
   border-radius: 16px;
   background: ${gradients.main};
   transition: all 0.3s;
@@ -26,7 +27,7 @@ export const Wrapper = styled.div`
 
 export const ImgBox = styled.div`
   display: flex;
-  height: clamp(8rem, 5.745rem + 8.59vw, 12.188rem);
+  height: clamp(6.875rem, 3.308rem + 13.59vw, 13.5rem);
   align-items: center;
   justify-content: center;
   border-radius: 16px;
@@ -44,7 +45,7 @@ export const Body = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: clamp(0.5rem, 0.365rem + 0.51vw, 0.75rem);
 `
 
 export const Subtitle = styled.p`
@@ -67,7 +68,7 @@ export const Footer = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  gap: 12px;
+  gap: clamp(0.5rem, 0.365rem + 0.51vw, 0.75rem);
 `
 
 export const FooterPrices = styled.div`
@@ -79,7 +80,7 @@ export const FooterPrices = styled.div`
 
 export const Price = styled.span`
   color: ${colors.white};
-  font-size: clamp(0.688rem, 0.483rem + 1.02vw, 1.25rem);
+  font-size: clamp(0.813rem, 0.712rem + 0.38vw, 1rem);
   font-weight: 600;
   line-height: 1;
 `
@@ -88,7 +89,7 @@ export const OldPrice = styled.span`
   position: relative;
   color: ${colors.gray};
   font-weight: 600;
-  font-size: clamp(0.688rem, 0.619rem + 0.34vw, 0.875rem);
+  font-size: clamp(0.688rem, 0.587rem + 0.38vw, 0.875rem);
   line-height: 1.25;
 
   &::before {
@@ -104,5 +105,7 @@ export const OldPrice = styled.span`
 `
 
 export const CardButton = styled(RootButton)`
+  width: 120px;
+  margin: 0 auto;
   padding: clamp(0.281rem, 0.096rem + 0.71vw, 0.625rem) 0;
 `

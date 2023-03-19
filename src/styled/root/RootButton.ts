@@ -16,7 +16,7 @@ export const RootButton = styled.button<IButton>`
   transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
   font-family: ${fonts.exo};
   font-weight: 400;
-  font-size: 16px;
+  font-size: clamp(0.75rem, 0.615rem + 0.51vw, 1rem);
 
   @media (max-width: ${bp.md}px) {
     font-weight: 600;
