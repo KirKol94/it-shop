@@ -79,7 +79,7 @@ export const FooterPrices = styled.div`
 
 export const Price = styled.span`
   color: ${colors.white};
-  font-size: clamp(0.875rem, 0.673rem + 0.77vw, 1.25rem);
+  font-size: clamp(0.688rem, 0.483rem + 1.02vw, 1.25rem);
   font-weight: 600;
   line-height: 1;
 `
@@ -88,7 +88,7 @@ export const OldPrice = styled.span`
   position: relative;
   color: ${colors.gray};
   font-weight: 600;
-  font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+  font-size: clamp(0.688rem, 0.619rem + 0.34vw, 0.875rem);
   line-height: 1.25;
 
   &::before {
