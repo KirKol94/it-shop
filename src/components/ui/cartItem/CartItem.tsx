@@ -25,7 +25,7 @@ import {
   deleteProduct,
   incrementCartItemCount,
 } from '@/store/cart/cartSlice'
-import { RootCountBox } from '@/styled/root'
+import { RootCountBox } from '@root/RootCountBox'
 
 interface IProps {
   product: ICartProduct

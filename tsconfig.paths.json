@@ -7,6 +7,9 @@
       ],
       "@ui/*": [
         "./src/components/ui/*"
+      ],
+      "@root/*": [
+        "./src/styled/root/*"
       ]
     }
   }

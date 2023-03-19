@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import Card from '@ui/card/Card'
-import { RootContainer, RootTitle } from '@/styled/root'
+import { RootTitle } from '@root/RootTitle'
 import RecommendCard from '@/components/ui/recommendCard/RecommendCard'
 import { useAppSelector } from '@/hooks/reduxHooks'
 import {
@@ -16,6 +16,7 @@ import {
   Title,
 } from './styled'
 import { ReactComponent as WolfIcon } from '@/assets/svg/wolf.svg'
+import { RootContainer } from '@root/RootContainer'
 
 const Home: FC = () => {
   const products = useAppSelector(state => state.product.products)

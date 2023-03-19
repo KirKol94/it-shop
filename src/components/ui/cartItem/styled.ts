@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { cutLongStringStyles } from '@/styled/mixins'
 import { colors, gradients } from '@/styled/vars'
-import { RootCountBtn, RootCountInput } from '@/styled/root'
+import { RootCountInput } from '@root/RootCountInput'
+import { RootCountBtn } from '@root/RootCountBtn'
 
 export const Wrapper = styled.div`
   display: flex;

@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react'
 import { Dialog } from '@headlessui/react'
-import { RootModalOverlay } from '@/styled/root'
 import { MenuContent } from './styled'
+import { RootModalOverlay } from '@root/RootModalOverlay'
 
 interface IProps {
   isOpen: boolean

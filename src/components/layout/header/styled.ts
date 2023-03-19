@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { bp, fonts, colors } from '@/styled/vars'
-import { RootContainer } from '@/styled/root'
+import { RootContainer } from '@root/RootContainer'
 import { ReactComponent as Logo } from '@/assets/svg/logo.svg'
 
 export const Wrapper = styled.header<{ isScrolled: boolean }>`

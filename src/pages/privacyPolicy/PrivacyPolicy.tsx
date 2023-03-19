@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { RootContainer } from '@/styled/root'
+import { RootContainer } from '@root/RootContainer'
 import styled from 'styled-components'
 
 const Wrapper = styled(RootContainer)`
