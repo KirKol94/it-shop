@@ -23,10 +23,11 @@ const Home: FC = () => {
   const products = useAppSelector(state => state.product.products).filter(p =>
     p.name.toLowerCase().includes(searchProductValue.toLowerCase())
   )
+  const headerHeight = useAppSelector(state => state.header.height)
 
   return (
     <>
-      <HeroSection>
+      <HeroSection headerHeight={headerHeight}>
         <HeroSectionContainer>
           <HeroSectionInfo>
             <Title>

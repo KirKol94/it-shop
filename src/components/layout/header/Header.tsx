@@ -22,12 +22,9 @@ import useScroll from '@/hooks/useScroll'
 import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
 import { ReactComponent as Burger } from '@/assets/svg/burger.svg'
 import { Link } from 'react-router-dom'
+import { setHeight } from '@/store/header/headerSlice'
 
-interface IProps {
-  setHeaderHeight: (height: number) => void
-}
-
-const Header: FC<IProps> = ({ setHeaderHeight }) => {
+const Header: FC = () => {
   const dispatch = useAppDispatch()
 
   const isCartOpen = useAppSelector(state => state.cart.isOpenCart)
@@ -47,7 +44,7 @@ const Header: FC<IProps> = ({ setHeaderHeight }) => {
   useEffect(() => {
     const handleResize = () => {
       if (headerRef.current) {
-        setHeaderHeight(headerRef.current.offsetHeight)
+        dispatch(setHeight(headerRef.current.offsetHeight))
       }
     }
 
