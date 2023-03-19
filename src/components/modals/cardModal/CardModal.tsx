@@ -25,7 +25,7 @@ import CloseIcon from '@ui/icons/CloseIcon'
 interface IProps {
   product: IProduct
   isOpenCard: boolean
-  setIsOpenCard: (isOpenCard: boolean) => void
+  setIsOpenCard: (isOpen: boolean) => void | typeof isOpen
 }
 
 const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {

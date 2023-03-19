@@ -14,8 +14,8 @@ import Logo from '@ui/logo/Logo'
 
 interface IProps {
   isOpen: boolean
-  setIsOpen: (isVisible?: boolean) => void
-  setIsAuthModal: (isVisible: boolean) => void
+  setIsOpen: (isOpen?: boolean) => void | typeof isOpen
+  setIsAuthModal: (isOpen: boolean) => void | typeof isOpen
 }
 
 const RegisterModal: FC<IProps> = ({ isOpen, setIsOpen, setIsAuthModal }) => {

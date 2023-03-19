@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 
 interface IProps {
   isOpen: boolean
-  setIsOpen: (isVisible?: boolean) => void
+  setIsOpen: (isOpen?: boolean) => void | typeof isOpen
 }
 
 const AuthModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
