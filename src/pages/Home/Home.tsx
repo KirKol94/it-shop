@@ -21,12 +21,7 @@ import {
 import { ReactComponent as WolfIcon } from '@/assets/svg/wolf.svg'
 
 const Home: FC = () => {
-  const searchProductValue = useAppSelector(
-    state => state.product.searchProductValue
-  )
-  const products = useAppSelector(state => state.product.products).filter(p =>
-    p.name.toLowerCase().includes(searchProductValue.toLowerCase())
-  )
+  const products = useAppSelector(state => state.product.products)
   const headerHeight = useAppSelector(state => state.header.height)
 
   return (

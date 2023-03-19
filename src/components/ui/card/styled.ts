@@ -103,10 +103,6 @@ export const OldPrice = styled.span`
   }
 `
 
-export const Button = styled(RootButton)`
-  color: ${colors.white};
-`
-
 export const CardButton = styled(RootButton)`
   padding: clamp(0.281rem, 0.096rem + 0.71vw, 0.625rem) 0;
 `

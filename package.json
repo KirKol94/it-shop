@@ -63,6 +63,7 @@
     "dev": "node scripts/start.js",
     "build": "node scripts/build.js && echo '/* /index.html 200' > build/_redirects ",
     "test": "node scripts/test.js",
+    "dead-exports": "ts-prune",
     "lint": "npx eslint --fix src && npx prettier --write ."
   },
   "eslintConfig": {
@@ -97,7 +98,8 @@
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
-    "prettier": "2.8.4"
+    "prettier": "2.8.4",
+    "ts-prune": "^0.10.3"
   },
   "jest": {
     "roots": [
@@ -159,7 +161,9 @@
           "namespace": "sc",
           "displayName": true,
           "fileName": true,
-          "meaninglessFileNames": ["styled"]
+          "meaninglessFileNames": [
+            "styled"
+          ]
         }
       ]
     ]

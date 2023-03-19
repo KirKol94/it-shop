@@ -2,15 +2,6 @@ import styled from 'styled-components'
 import { fonts, colors } from '@/styled/vars'
 import { Link } from 'react-router-dom'
 
-export const Form = styled.form`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-`
-
 export const Privacy = styled.p`
   font-family: ${fonts.exo};
   font-style: normal;

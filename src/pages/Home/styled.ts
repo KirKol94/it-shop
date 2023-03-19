@@ -210,18 +210,6 @@ export const ProductCards = styled.section``
 
 export const CardsContainer = styled(RootContainer)``
 
-export const CardsTitle = styled.h2`
-  font-size: clamp(2.25rem, 2.115rem + 0.51vw, 2.5rem);
-  font-family: ${fonts.primary};
-  font-weight: 500;
-  line-height: 125%;
-  text-align: center;
-
-  @media (max-width: ${bp.md}px) {
-    font-weight: 600;
-  }
-`
-
 export const CardsItems = styled.div`
   margin-top: 24px;
   display: grid;

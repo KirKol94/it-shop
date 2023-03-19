@@ -8,7 +8,7 @@ const initialState: HeaderSlice = {
   height: 0,
 }
 
-export const headerSlice = createSlice({
+const headerSlice = createSlice({
   name: 'header',
   initialState,
   reducers: {

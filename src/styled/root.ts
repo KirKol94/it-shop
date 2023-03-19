@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { bp, colors, containerWidth, fonts } from './vars'
-import { IButtonProps } from '@ui/button/Button'
+import { IButton } from '@/types/IButton'
 
 // основной контейнер, от которого наследуются другие контейнеры
 export const RootContainer = styled.div`
@@ -22,7 +22,7 @@ export const RootTitle = styled.h2`
 `
 
 // стили кнопки
-export const RootButton = styled.button<IButtonProps>`
+export const RootButton = styled.button<IButton>`
   padding: 14px 22px;
   background-color: ${({ variant }) => {
     if (variant === 'outlined') return colors.violet
