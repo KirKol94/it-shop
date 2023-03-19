@@ -1,7 +1,6 @@
-import { $api } from '@/api/axiosInstanse'
 import styled from 'styled-components'
 import { cutLongStringStyles } from '@/styled/mixins'
-import { gradients, textColors } from '@/styled/vars'
+import { colors, gradients } from '@/styled/vars'
 import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
 
 export const Wrapper = styled.div`
@@ -44,7 +43,7 @@ export const Header = styled.div`
 `
 
 export const Title = styled.h3`
-  color: ${textColors.main};
+  color: ${colors.white};
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
@@ -91,7 +90,7 @@ export const CountInput = styled(RootCountInput)`
 `
 
 export const Price = styled.span`
-  color: ${textColors.main};
+  color: ${colors.white};
   font-size: 16px;
   font-weight: 600;
   line-height: 1.2;
@@ -109,7 +108,7 @@ export const Line = styled.span`
     height: 1px;
     width: 100%;
     transform: translateY(-50%);
-    background-color: ${textColors.neon};
+    background-color: ${colors.neon};
   }
 `
 

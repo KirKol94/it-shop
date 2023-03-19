@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { cutLongStringStyles } from '@/styled/mixins'
-import { bp, gradients, textColors } from '@/styled/vars'
+import { colors, gradients } from '@/styled/vars'
 
 export const Wrapper = styled.div`
   flex: 1 1 clamp(11.25rem, 10rem + 6.25vw, 17.5rem);
@@ -16,7 +16,7 @@ export const ProductName = styled.p`
   font-weight: 300;
   font-size: clamp(0.688rem, 0.65rem + 0.19vw, 0.875rem);
   line-height: 1.5;
-  color: ${textColors.gray};
+  color: ${colors.gray};
 `
 export const ImgBox = styled.div`
   flex: 0 1 clamp(3.75rem, 3.25rem + 2.5vw, 6.25rem);
@@ -42,7 +42,7 @@ export const Footer = styled.div`
 `
 
 export const Price = styled.span`
-  color: ${textColors.main};
+  color: ${colors.white};
   font-size: clamp(0.875rem, 0.85rem + 0.13vw, 1rem);
   font-weight: 600;
   line-height: 1;
@@ -51,7 +51,7 @@ export const Price = styled.span`
 export const OldPrice = styled.span`
   align-self: flex-end;
   position: relative;
-  color: ${textColors.gray};
+  color: ${colors.gray};
   font-weight: 600;
   font-size: clamp(0.688rem, 0.65rem + 0.19vw, 0.875rem);
   line-height: 1.25;
@@ -64,6 +64,6 @@ export const OldPrice = styled.span`
     height: 1px;
     width: 100%;
     transform: translateY(-50%);
-    background-color: ${textColors.gray};
+    background-color: ${colors.gray};
   }
 `

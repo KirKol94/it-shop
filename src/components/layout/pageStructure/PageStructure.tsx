@@ -3,15 +3,17 @@ import { Outlet } from 'react-router-dom'
 import Footer from '../footer/Footer'
 import Header from '@/components/layout/header/Header'
 
-const PageStructure: FC = () => (
-  <>
-    <Header />
+const PageStructure: FC = () => {
+  return (
+    <>
+      <Header />
 
-    {/* тут будет меняться контент в зависимости от роута */}
-    <Outlet />
+      {/* тут будет меняться контент в зависимости от роута */}
+      <Outlet />
 
-    <Footer />
-  </>
-)
+      <Footer />
+    </>
+  )
+}
 
 export default PageStructure

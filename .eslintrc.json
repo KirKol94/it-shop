@@ -19,6 +19,7 @@
     "indent": 0,
     "quotes": ["error", "single"],
     "semi": ["error", "never"],
+    "no-unused-vars": 2,
     "prettier/prettier": "error",
     "react/jsx-closing-tag-location": ["error", "last"],
     "react/jsx-equals-spacing": ["error", "never"],

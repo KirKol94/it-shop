@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import AuthModal from '@/components/modals/authModal/AuthModal'
 import RegisterModal from '@/components/modals/registerModal/RegisterModal'
 import {
@@ -22,6 +22,7 @@ import useScroll from '@/hooks/useScroll'
 import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
 import { ReactComponent as Burger } from '@/assets/svg/burger.svg'
 import { Link } from 'react-router-dom'
+import { setHeight } from '@/store/header/headerSlice'
 
 const Header: FC = () => {
   const dispatch = useAppDispatch()
@@ -38,9 +39,27 @@ const Header: FC = () => {
     { name: 'Оплата и доставка', url: '' },
   ]
 
+  // отдаём высоту хедера в PageStructure
+  const headerRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const handleResize = () => {
+      if (headerRef.current) {
+        dispatch(setHeight(headerRef.current.offsetHeight))
+      }
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [headerRef])
+
   return (
     <>
-      <Wrapper isScrolled={isScrolled}>
+      <Wrapper ref={headerRef} isScrolled={isScrolled}>
         <Container>
           <Link to="">
             <LogoBox />

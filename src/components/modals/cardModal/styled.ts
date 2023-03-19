@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { bgColors, fonts, textColors } from '@/styled/vars'
+import { colors, fonts } from '@/styled/vars'
 import { RootButton } from '@/styled/root'
 
 export const CardModalWrapper = styled.div`
@@ -38,7 +38,7 @@ export const Body = styled.div`
 
 export const Title = styled.h2`
   margin-bottom: 12px;
-  color: ${textColors.main};
+  color: ${colors.white};
   font-size: 20px;
   font-weight: 600;
   line-height: 1.5;
@@ -46,7 +46,7 @@ export const Title = styled.h2`
 
 export const Description = styled.p`
   margin-bottom: 16px;
-  color: ${textColors.main};
+  color: ${colors.white};
   font-family: ${fonts.exo};
   font-size: 14px;
   font-weight: 400;
@@ -64,7 +64,7 @@ export const Footer = styled.form`
 `
 
 export const Price = styled.span`
-  color: ${textColors.main};
+  color: ${colors.white};
   font-size: clamp(1.125rem, 0.883rem + 1.21vw, 1.25rem);
   font-weight: 700;
   line-height: 1.2;
@@ -75,7 +75,7 @@ export const Sizes = styled.div`
   display: flex;
   height: 40px;
   border-radius: 20px;
-  background-color: ${bgColors.lightPink};
+  background-color: ${colors.lightNeon};
 `
 
 export const Selected = styled.div<{ position: number }>`
@@ -92,7 +92,7 @@ export const Selected = styled.div<{ position: number }>`
     width: 100%;
     height: 100%;
     border-radius: 16px;
-    background-color: ${bgColors.indigo};
+    background-color: ${colors.indigo};
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
     content: ' ';
   }
@@ -103,7 +103,7 @@ export const SizeInput = styled.input`
   display: none;
 
   &:checked + label {
-    color: ${textColors.main};
+    color: ${colors.white};
     font-weight: 500;
   }
 `
@@ -113,7 +113,7 @@ export const SizeLabel = styled.label`
   display: block;
   flex: 1 1 0;
   border-radius: 9999px;
-  color: ${textColors.main};
+  color: ${colors.white};
   cursor: pointer;
   font-size: 12px;
   font-weight: 400;
@@ -124,7 +124,7 @@ export const SizeLabel = styled.label`
   user-select: none;
 
   &:hover {
-    color: ${textColors.main};
+    color: ${colors.white};
   }
 `
 

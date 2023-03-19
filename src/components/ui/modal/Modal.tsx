@@ -5,7 +5,7 @@ import { RootModalOverlay } from '@/styled/root'
 
 interface IProps {
   isOpen: boolean
-  setIsOpen: (isOpen: boolean) => void
+  setIsOpen: (isOpen: boolean) => void | typeof isOpen
   children: ReactNode
 }
 

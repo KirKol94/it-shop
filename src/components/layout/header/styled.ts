@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { bp, fonts, textColors } from '@/styled/vars'
+import { bp, fonts, colors } from '@/styled/vars'
 import { RootContainer } from '@/styled/root'
 import { ReactComponent as Logo } from '@/assets/svg/logo.svg'
 
@@ -16,7 +16,7 @@ export const Wrapper = styled.header<{ isScrolled: boolean }>`
   transition: background 150ms;
   font-family: ${fonts.exo};
 
-  @media (max-width: ${bp.sm}px) {
+  @media (max-width: ${bp.md}px) {
     padding: 25px 0;
   }
 `
@@ -38,13 +38,13 @@ export const IconsBox = styled.div`
   align-items: center;
   gap: 20px;
 
-  @media (min-width: ${bp.md}px) {
+  @media (min-width: ${bp.lg}px) {
     display: none;
   }
 `
 
 export const Nav = styled.nav`
-  @media (max-width: ${bp.md}px) {
+  @media (max-width: ${bp.lg}px) {
     display: none;
   }
 `
@@ -59,7 +59,7 @@ export const NavItem = styled.li`
   transition: all 150ms;
 
   &:hover {
-    color: ${textColors.neon};
+    color: ${colors.neon};
     text-decoration: underline;
   }
 `
@@ -70,36 +70,41 @@ export const ProfileBox = styled.div`
   align-items: center;
   gap: 27px;
 
-  @media (max-width: ${bp.md}px) {
+  @media (max-width: ${bp.lg}px) {
     display: none;
   }
 `
 
 export const LoginBox = styled.div`
   display: flex;
-  color: ${textColors.gray};
+  color: ${colors.gray};
   font-size: 20px;
   gap: 4px;
   line-height: 24px;
 `
 
 export const HeaderAuthBtn = styled.button`
-  color: ${textColors.gray};
+  color: ${colors.gray};
   cursor: pointer;
   font-size: 20px;
   font-weight: 300;
   line-height: 24px;
 
   &:hover {
-    color: ${textColors.main};
+    color: ${colors.white};
   }
 `
 
 export const CartBox = styled.button`
   display: flex;
   align-items: center;
-  color: ${textColors.main};
+  color: ${colors.white};
   gap: 8px;
+  color: ${colors.gray};
+
+  &:hover {
+    color: ${colors.white};
+  }
 `
 
 export const CartText = styled.span`

@@ -1,19 +1,13 @@
 import styled from 'styled-components'
-import {
-  bgColors,
-  borderColors,
-  fonts,
-  textColors,
-  gradients,
-} from '@/styled/vars'
+import { colors, fonts, gradients } from '@/styled/vars'
 import { RootButton } from '@/styled/root'
 
 export const Wrapper = styled.div`
   height: 100%;
   border-radius: 16px;
-  width: 560px;
+  width: clamp(18.75rem, 12.841rem + 29.55vw, 35rem);
   padding: 20px;
-  background-color: ${bgColors.darkViolet};
+  background-color: ${colors.violet};
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -31,7 +25,7 @@ export const Title = styled.h2`
   font-size: 26px;
   line-height: 125%;
   padding-bottom: 10px;
-  border-bottom: 1px solid ${borderColors.neon};
+  border-bottom: 1px solid ${colors.neon};
 `
 
 export const Close = styled.div`
@@ -56,7 +50,7 @@ export const CartBody = styled.div`
     background: ${gradients.main};
   }
   &::-webkit-scrollbar-thumb {
-    background-color: ${bgColors.indigo};
+    background-color: ${colors.indigo};
     border-radius: 6px;
     border: 3px solid #18042f;
   }
@@ -94,7 +88,7 @@ export const CartInfoRow = styled.div`
 `
 
 export const PromoLabel = styled.label`
-  color: ${textColors.gray};
+  color: ${colors.gray};
   font-family: ${fonts.exo};
   font-weight: 700;
   width: 100%;
@@ -106,7 +100,7 @@ export const PromoSaleSize = styled.span`
   align-self: flex-start;
   font-family: ${fonts.exo};
   font-weight: 700;
-  color: ${textColors.neon};
+  color: ${colors.neon};
 `
 
 export const InfoFinal = styled(CartInfoRow)`
@@ -117,8 +111,8 @@ export const InfoFinal = styled(CartInfoRow)`
 
 export const PromoInput = styled.input`
   flex: 1 1 auto;
-  border-bottom: 1px solid ${borderColors.neon};
-  color: ${textColors.main};
+  border-bottom: 1px solid ${colors.neon};
+  color: ${colors.white};
   padding: 8px;
   background-color: transparent;
 `

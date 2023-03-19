@@ -1,17 +1,16 @@
 import React, { FC } from 'react'
-import { IProduct } from '@/types/IProduct'
 import {
-  Wrapper,
-  Header,
-  ProductName,
-  ImgBox,
-  Img,
-  Inner,
   Body,
-  Title,
   Footer,
-  Price,
+  Header,
+  Img,
+  ImgBox,
+  Inner,
   OldPrice,
+  Price,
+  ProductName,
+  Title,
+  Wrapper,
 } from './styled'
 
 const RecommendCard: FC = () => {

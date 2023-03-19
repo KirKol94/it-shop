@@ -4,7 +4,7 @@ import { RootTitle } from '@/styled/root'
 import RecommendCard from '@/components/ui/recommendCard/RecommendCard'
 import { useAppSelector } from '@/hooks/reduxHooks'
 import {
-  Cards,
+  ProductCards,
   CardsContainer,
   CardsItems,
   HeroSection,
@@ -16,20 +16,17 @@ import {
   Title,
   RecommendCards,
   RecommendCardsContainer,
+  Catalog,
 } from './styled'
 import { ReactComponent as WolfIcon } from '@/assets/svg/wolf.svg'
 
 const Home: FC = () => {
-  const searchProductValue = useAppSelector(
-    state => state.product.searchProductValue
-  )
-  const products = useAppSelector(state => state.product.products).filter(p =>
-    p.name.toLowerCase().includes(searchProductValue.toLowerCase())
-  )
+  const products = useAppSelector(state => state.product.products)
+  const headerHeight = useAppSelector(state => state.header.height)
 
   return (
     <>
-      <HeroSection>
+      <HeroSection headerHeight={headerHeight}>
         <HeroSectionContainer>
           <HeroSectionInfo>
             <Title>
@@ -52,28 +49,30 @@ const Home: FC = () => {
         </HeroSectionContainer>
       </HeroSection>
 
-      <RecommendCards>
-        <RootTitle>Рекомендованые товары</RootTitle>
+      <Catalog>
+        <RecommendCards>
+          <RootTitle>Рекомендованные товары</RootTitle>
 
-        <RecommendCardsContainer>
-          <RecommendCard></RecommendCard>
-          <RecommendCard></RecommendCard>
-          <RecommendCard></RecommendCard>
-          <RecommendCard></RecommendCard>
-        </RecommendCardsContainer>
-      </RecommendCards>
+          <RecommendCardsContainer>
+            <RecommendCard />
+            <RecommendCard />
+            <RecommendCard />
+            <RecommendCard />
+          </RecommendCardsContainer>
+        </RecommendCards>
 
-      <Cards>
-        <CardsContainer>
-          <RootTitle>Футболки и свитшоты</RootTitle>
+        <ProductCards>
+          <CardsContainer>
+            <RootTitle>Футболки и свитшоты</RootTitle>
 
-          <CardsItems>
-            {products.map(product => (
-              <Card key={product.id} product={product} />
-            ))}
-          </CardsItems>
-        </CardsContainer>
-      </Cards>
+            <CardsItems>
+              {products.map(product => (
+                <Card key={product.id} product={product} />
+              ))}
+            </CardsItems>
+          </CardsContainer>
+        </ProductCards>
+      </Catalog>
     </>
   )
 }
