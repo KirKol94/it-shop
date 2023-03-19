@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import CloseIcon from '@ui/icons/CloseIcon'
 import {
-  CountBox,
   CountBtn,
   CountInput,
   Delete,
@@ -11,12 +10,12 @@ import {
   ImgBox,
   Inner,
   Line,
+  Multiply,
   Price,
   SizeName,
   Sizes,
   Title,
   Wrapper,
-  Multiply,
 } from './styled'
 import { ICartProduct } from '@/types/ICartProduct'
 import { useCountBox } from '@/hooks/useCountBox'
@@ -26,6 +25,7 @@ import {
   deleteProduct,
   incrementCartItemCount,
 } from '@/store/cart/cartSlice'
+import { RootCountBox } from '@/styled/root'
 
 interface IProps {
   product: ICartProduct
@@ -67,7 +67,7 @@ const CartItem: FC<IProps> = ({ product }) => {
         </Sizes>
 
         <Footer>
-          <CountBox>
+          <RootCountBox>
             <CountBtn action="minus" onClick={onDecrement}>
               -
             </CountBtn>
@@ -81,7 +81,7 @@ const CartItem: FC<IProps> = ({ product }) => {
             <CountBtn action="plus" onClick={onIncrement}>
               +
             </CountBtn>
-          </CountBox>
+          </RootCountBox>
           <Multiply>x</Multiply>
           <Price>{product.price.toLocaleString('ru')} ₽</Price>
           <Line></Line>

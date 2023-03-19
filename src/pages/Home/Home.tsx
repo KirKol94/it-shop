@@ -1,22 +1,19 @@
 import React, { FC } from 'react'
 import Card from '@ui/card/Card'
-import { RootTitle } from '@/styled/root'
+import { RootContainer, RootTitle } from '@/styled/root'
 import RecommendCard from '@/components/ui/recommendCard/RecommendCard'
 import { useAppSelector } from '@/hooks/reduxHooks'
 import {
-  ProductCards,
-  CardsContainer,
   CardsItems,
+  Catalog,
   HeroSection,
   HeroSectionButton,
   HeroSectionContainer,
   HeroSectionInfo,
   HeroSectionLogo,
+  RecommendCardsContainer,
   Subtitle,
   Title,
-  RecommendCards,
-  RecommendCardsContainer,
-  Catalog,
 } from './styled'
 import { ReactComponent as WolfIcon } from '@/assets/svg/wolf.svg'
 
@@ -50,7 +47,7 @@ const Home: FC = () => {
       </HeroSection>
 
       <Catalog>
-        <RecommendCards>
+        <section>
           <RootTitle>Рекомендованные товары</RootTitle>
 
           <RecommendCardsContainer>
@@ -59,10 +56,10 @@ const Home: FC = () => {
             <RecommendCard />
             <RecommendCard />
           </RecommendCardsContainer>
-        </RecommendCards>
+        </section>
 
-        <ProductCards>
-          <CardsContainer>
+        <section>
+          <RootContainer>
             <RootTitle>Футболки и свитшоты</RootTitle>
 
             <CardsItems>
@@ -70,8 +67,8 @@ const Home: FC = () => {
                 <Card key={product.id} product={product} />
               ))}
             </CardsItems>
-          </CardsContainer>
-        </ProductCards>
+          </RootContainer>
+        </section>
       </Catalog>
     </>
   )

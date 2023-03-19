@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { cutLongStringStyles } from '@/styled/mixins'
 import { colors, gradients } from '@/styled/vars'
-import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
+import { RootCountBtn, RootCountInput } from '@/styled/root'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -77,7 +77,6 @@ export const Footer = styled.div`
   gap: 18px;
 `
 
-export const CountBox = styled(RootCountBox)``
 export const CountBtn = styled(RootCountBtn)`
   padding: 2.5px 9px;
   width: 26px;

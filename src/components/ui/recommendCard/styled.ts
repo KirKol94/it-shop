@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   background: ${gradients.main};
   border-radius: 16px;
 `
-export const Header = styled.div``
+
 export const ProductName = styled.p`
   font-weight: 300;
   font-size: clamp(0.688rem, 0.65rem + 0.19vw, 0.875rem);
@@ -21,7 +21,7 @@ export const ProductName = styled.p`
 export const ImgBox = styled.div`
   flex: 0 1 clamp(3.75rem, 3.25rem + 2.5vw, 6.25rem);
 `
-export const Img = styled.img``
+
 export const Inner = styled.div`
   flex: 1 1 150px;
   display: flex;
@@ -29,7 +29,7 @@ export const Inner = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `
-export const Body = styled.div``
+
 export const Title = styled.h3`
   font-weight: 600;
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);

@@ -1,9 +1,6 @@
 import React, { FC } from 'react'
 import {
-  Body,
   Footer,
-  Header,
-  Img,
   ImgBox,
   Inner,
   OldPrice,
@@ -17,18 +14,18 @@ const RecommendCard: FC = () => {
   return (
     <Wrapper>
       <ImgBox>
-        <Img
+        <img
           src="https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png"
           alt=""
         />
       </ImgBox>
       <Inner>
-        <Header>
+        <div>
           <ProductName>Кепка</ProductName>
-        </Header>
-        <Body>
+        </div>
+        <div>
           <Title>IT-пузырь</Title>
-        </Body>
+        </div>
         <Footer>
           <Price>800 ₽</Price>
           <OldPrice>1500 ₽</OldPrice>
