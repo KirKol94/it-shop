@@ -16,6 +16,18 @@ export const RootContainer = styled.div`
   margin: 0 auto;
 `
 
+export const RootTitle = styled.h2`
+  font-size: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+  font-family: ${fonts.primary};
+  font-weight: 500;
+  line-height: 125%;
+  text-align: center;
+
+  @media (max-width: ${bp.sm}px) {
+    font-weight: 600;
+  }
+`
+
 // стили кнопки
 export const RootButton = styled.button<IButtonProps>`
   padding: 14px 22px;

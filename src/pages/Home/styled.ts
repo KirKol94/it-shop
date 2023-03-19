@@ -174,24 +174,32 @@ export const HeroSectionButton = styled(RootButton)`
   }
 `
 
+export const RecommendCards = styled.section`
+  padding-top: clamp(3rem, 1.923rem + 4.1vw, 5rem);
+`
+
+export const RecommendCardsContainer = styled(RootContainer)`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 24px;
+
+  @media (max-width: ${bp.sm}px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: ${bp.xm}px) {
+    grid-template-columns: 1fr;
+  }
+`
+
 export const Cards = styled.section`
   background-color: ${bgColors.darkViolet};
 `
 
 export const CardsContainer = styled(RootContainer)`
-  padding: clamp(3rem, 1.923rem + 4.1vw, 5rem) 0;
-`
-
-export const CardsTitle = styled.h2`
-  font-size: clamp(2.25rem, 2.115rem + 0.51vw, 2.5rem);
-  font-family: ${fonts.primary};
-  font-weight: 500;
-  line-height: 125%;
-  text-align: center;
-
-  @media (max-width: ${bp.sm}px) {
-    font-weight: 600;
-  }
+  padding: clamp(1.5rem, 1.2rem + 1.5vw, 3rem) 0;
 `
 
 export const CardsItems = styled.div`
