@@ -4,8 +4,7 @@ import styled from 'styled-components'
 import HeroSectionBg from '@/assets/img/home-page/hero-section/bg.webp'
 
 export const HeroSection = styled.section`
-  overflow-x: hidden;
-  padding: clamp(3rem, 0.577rem + 9.23vw, 7.5rem) 0;
+  padding: clamp(3rem, 1.923rem + 4.1vw, 5rem) 0;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     center / cover no-repeat url(${HeroSectionBg});
   border-bottom: ${borders.delimeter};
@@ -21,6 +20,7 @@ export const HeroSectionContainer = styled(RootContainer)`
 
   @media (max-width: ${bp.sm}px) {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 `
 
@@ -42,9 +42,8 @@ export const HeroSectionLogo = styled.div`
   order: 2;
 
   @media (max-width: ${bp.sm}px) {
-    margin-top: 20px;
     height: 100%;
-    max-height: 220px;
+    max-height: 154px;
     order: 1;
   }
 
@@ -179,7 +178,8 @@ export const Cards = styled.section`
 `
 
 export const CardsContainer = styled(RootContainer)`
-  padding: clamp(3rem, 1.923rem + 4.1vw, 5rem) 0;
+  padding: clamp(3rem, 1.923rem + 4.1vw, 5rem)
+    clamp(0.5rem, 0.341rem + 0.8vw, 0.938rem);
 `
 
 export const CardsTitle = styled.h2`
@@ -201,11 +201,27 @@ export const CardsItems = styled.div`
   column-gap: 20px;
   row-gap: 24px;
 
+  & > :nth-child(9n) {
+    display: none;
+  }
+
   & > * {
     margin: 0 auto;
   }
 
+  @media (max-width: ${bp.md}px) {
+    grid-template-columns: repeat(3, 1fr);
+
+    & > :nth-child(9n) {
+      display: block;
+    }
+  }
+
   @media (max-width: ${bp.sm}px) {
     grid-template-columns: repeat(2, 1fr);
+
+    & > :nth-child(9n) {
+      display: none;
+    }
   }
 `

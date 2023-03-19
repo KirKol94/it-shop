@@ -11,7 +11,7 @@ import { RootButton } from '@/styled/root'
 export const Wrapper = styled.div`
   height: 100%;
   border-radius: 16px;
-  width: 560px;
+  width: clamp(18.75rem, 12.841rem + 29.55vw, 35rem);
   padding: 20px;
   background-color: ${bgColors.darkViolet};
   display: flex;
