@@ -47,7 +47,7 @@ export const HeroSectionLogo = styled.div`
 
   @media (max-width: ${bp.sm}px) {
     height: 100%;
-    max-height: 154px;
+    max-height: 178px;
     order: 1;
   }
 
