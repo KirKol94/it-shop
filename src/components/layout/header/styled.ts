@@ -100,6 +100,11 @@ export const CartBox = styled.button`
   align-items: center;
   color: ${textColors.main};
   gap: 8px;
+  color: ${textColors.gray};
+
+  &:hover {
+    color: ${textColors.main};
+  }
 `
 
 export const CartText = styled.span`

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import AuthModal from '@/components/modals/authModal/AuthModal'
 import RegisterModal from '@/components/modals/registerModal/RegisterModal'
 import {
@@ -23,7 +23,11 @@ import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
 import { ReactComponent as Burger } from '@/assets/svg/burger.svg'
 import { Link } from 'react-router-dom'
 
-const Header: FC = () => {
+interface IProps {
+  setHeaderHeight: (height: number) => void
+}
+
+const Header: FC<IProps> = ({ setHeaderHeight }) => {
   const dispatch = useAppDispatch()
 
   const isCartOpen = useAppSelector(state => state.cart.isOpenCart)
@@ -38,9 +42,27 @@ const Header: FC = () => {
     { name: 'Оплата и доставка', url: '' },
   ]
 
+  // отдаём высоту хедера в PageStructure
+  const headerRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const handleResize = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.offsetHeight)
+      }
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [headerRef])
+
   return (
     <>
-      <Wrapper isScrolled={isScrolled}>
+      <Wrapper ref={headerRef} isScrolled={isScrolled}>
         <Container>
           <Link to="">
             <LogoBox />
