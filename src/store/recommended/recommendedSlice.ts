@@ -10,7 +10,7 @@ const initialState: recommendedState = {
   isLoading: false,
   products: [
     {
-      id: '1',
+      id: '11',
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086233923924791328/image.png',
       name: 'Футболка на плечиках',
@@ -18,7 +18,7 @@ const initialState: recommendedState = {
       price: 1399,
     },
     {
-      id: '2',
+      id: 'r2',
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png',
       name: 'Футболка с рукой',
@@ -26,7 +26,7 @@ const initialState: recommendedState = {
       price: 1299,
     },
     {
-      id: '3',
+      id: 'r3',
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086234758331252776/image.png',
       name: 'Рубашка с галстуком',
@@ -35,7 +35,7 @@ const initialState: recommendedState = {
       price: 5999,
     },
     {
-      id: '4',
+      id: 'r4',
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086233923924791328/image.png',
       name: 'Футболка на плечиках',
