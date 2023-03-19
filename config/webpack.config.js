@@ -400,7 +400,7 @@ module.exports = function (webpackEnv) {
                 },
               ],
               issuer: {
-                and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
+                and: [/\.(ts|tsx|js|jsx|lg|mdx)$/],
               },
             },
             // Process application JS with Babel.

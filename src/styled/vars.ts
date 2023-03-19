@@ -1,28 +1,12 @@
 export const containerWidth = '1230px'
 
-export const textColors = {
-  main: '#fff',
-  neon: '#EB00FF',
+export const colors = {
+  white: '#FFFFFF',
   gray: '#8D8D8D',
-  accent: '#2c2c2c',
-}
-
-export const borderColors = {
   neon: '#EB00FF',
-  gray: '#95928F',
-  white: '#fff',
-}
-
-export const bgColors = {
-  white: '#fff',
-  main: '#0C011A',
-  accent: '#2c2c2c',
-  pink: '#EB00FF',
-  lightPink: '#190434',
-  blue: '#32B5E3',
-  darkViolet: '#0C011A',
+  lightNeon: '#190434',
+  violet: '#0C011A',
   indigo: '#3A1170',
-  darkBlock: '#121212',
 }
 
 export const fonts = {
@@ -32,8 +16,6 @@ export const fonts = {
 
 export const gradients = {
   main: 'linear-gradient(180deg, #1A0534 0%, #0C011A 100%);',
-  hover:
-    'radial-gradient(70.18% 70.18% at 16.7% 11.77%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.066) 100%), radial-gradient(48.75% 48.75% at 50% 32.66%, #495449 0%, #1A1B1A 100%)',
 }
 
 export const borders = {
@@ -41,8 +23,9 @@ export const borders = {
 }
 
 export const bp = {
-  xs: 480,
-  sm: 768,
-  md: 991,
-  lg: 1200,
+  xs: 380,
+  s: 568,
+  md: 768,
+  lg: 991,
+  xl: 1200,
 }

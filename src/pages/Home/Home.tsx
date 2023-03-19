@@ -1,11 +1,12 @@
 import React, { FC } from 'react'
 import Card from '@ui/card/Card'
+import { RootTitle } from '@/styled/root'
+import RecommendCard from '@/components/ui/recommendCard/RecommendCard'
 import { useAppSelector } from '@/hooks/reduxHooks'
 import {
-  Cards,
+  ProductCards,
   CardsContainer,
   CardsItems,
-  CardsTitle,
   HeroSection,
   HeroSectionButton,
   HeroSectionContainer,
@@ -13,6 +14,9 @@ import {
   HeroSectionLogo,
   Subtitle,
   Title,
+  RecommendCards,
+  RecommendCardsContainer,
+  Catalog,
 } from './styled'
 import { ReactComponent as WolfIcon } from '@/assets/svg/wolf.svg'
 
@@ -50,17 +54,30 @@ const Home: FC = () => {
         </HeroSectionContainer>
       </HeroSection>
 
-      <Cards>
-        <CardsContainer>
-          <CardsTitle>Футболки и свитшоты</CardsTitle>
+      <Catalog>
+        <RecommendCards>
+          <RootTitle>Рекомендованные товары</RootTitle>
 
-          <CardsItems>
-            {products.map(product => (
-              <Card key={product.id} product={product} />
-            ))}
-          </CardsItems>
-        </CardsContainer>
-      </Cards>
+          <RecommendCardsContainer>
+            <RecommendCard />
+            <RecommendCard />
+            <RecommendCard />
+            <RecommendCard />
+          </RecommendCardsContainer>
+        </RecommendCards>
+
+        <ProductCards>
+          <CardsContainer>
+            <RootTitle>Футболки и свитшоты</RootTitle>
+
+            <CardsItems>
+              {products.map(product => (
+                <Card key={product.id} product={product} />
+              ))}
+            </CardsItems>
+          </CardsContainer>
+        </ProductCards>
+      </Catalog>
     </>
   )
 }

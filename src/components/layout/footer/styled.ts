@@ -1,11 +1,5 @@
 import styled from 'styled-components'
-import {
-  bgColors,
-  borderColors,
-  borders,
-  fonts,
-  textColors,
-} from '@/styled/vars'
+import { borders, colors, fonts } from '@/styled/vars'
 import { RootButton, RootContainer } from '@/styled/root'
 import Logo from '@ui/logo/Logo'
 import VkIcon from '@/assets/svg/vk.svg'
@@ -14,8 +8,8 @@ export const FooterWrapper = styled.footer`
   width: 100%;
   border-top: ${borders.delimeter};
   padding: 80px 0;
-  background-color: ${bgColors.main};
-  color: ${textColors.main};
+  background-color: ${colors.violet};
+  color: ${colors.white};
 `
 
 export const Container = styled(RootContainer)`
@@ -38,7 +32,7 @@ export const FooterLogo = styled(Logo)`
 export const Button = styled(RootButton)`
   width: 100%;
   margin-bottom: 14px;
-  color: ${textColors.main};
+  color: ${colors.white};
 `
 
 export const Address = styled.address`
@@ -69,7 +63,7 @@ export const NewsLetter = styled.div`
 
 export const NewsLetterTitle = styled.p`
   margin-bottom: 14px;
-  color: ${textColors.main};
+  color: ${colors.white};
   font-size: 18px;
   font-weight: 700;
   line-height: 21px;
@@ -91,7 +85,7 @@ export const InputBox = styled.div`
   & > input:focus + label,
   & > input:not(:placeholder-shown) + label {
     transform: translateY(-20px) scale(0.75);
-    color: ${textColors.main};
+    color: ${colors.white};
   }
 `
 
@@ -101,7 +95,7 @@ export const Label = styled.label`
   left: 10px;
   display: block;
   background-color: transparent;
-  color: ${textColors.gray};
+  color: ${colors.gray};
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
@@ -118,14 +112,14 @@ export const InputText = styled.input`
   width: 100%;
   box-sizing: border-box;
   padding: 18px 10px 6px;
-  border: 1px solid ${borderColors.gray};
+  border: 1px solid ${colors.gray};
   border-radius: 4px;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
   transition: border-color 0.3s;
-  color: ${textColors.main};
+  color: ${colors.white};
   background-color: transparent;
 `
 
@@ -148,7 +142,7 @@ export const SocialsIcon = styled.span`
   position: relative;
   padding: 6px 16px;
   border-radius: 50%;
-  background: linear-gradient(91.06deg, ${bgColors.pink} 0%, #6f5b39 100%);
+  background: linear-gradient(91.06deg, ${colors.neon} 0%, #6f5b39 100%);
   box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.25);
 
   &::before {
@@ -167,14 +161,14 @@ export const SocialsIcon = styled.span`
 `
 
 export const Privacy = styled.p`
-  color: ${textColors.gray};
+  color: ${colors.gray};
   font-family: ${fonts.exo};
   font-size: 10px;
   font-weight: 400;
   text-align: center;
 
   & > a {
-    color: ${textColors.neon};
+    color: ${colors.neon};
     text-decoration-line: underline;
   }
 `
@@ -196,14 +190,14 @@ export const GenderInput = styled.input`
   opacity: 0;
 
   &:checked + label > span {
-    border-color: ${textColors.main};
+    border-color: ${colors.white};
   }
 
   & + label > span {
     display: inline-block;
     width: 16px;
     height: 16px;
-    border: 3px solid ${borderColors.gray};
+    border: 3px solid ${colors.gray};
     border-radius: 50%;
     margin: 0 10px 2px 0;
     cursor: pointer;
@@ -216,7 +210,7 @@ export const GenderInput = styled.input`
     height: 6px;
     border-radius: 1em;
     margin: 2px;
-    background: ${textColors.main};
+    background: ${colors.white};
   }
 `
 

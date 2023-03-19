@@ -1,5 +1,5 @@
 import { RootButton, RootContainer } from '@/styled/root'
-import { bgColors, borders, bp, fonts, textColors } from '@/styled/vars'
+import { borders, bp, colors, fonts } from '@/styled/vars'
 import styled from 'styled-components'
 import HeroSectionBg from '@/assets/img/home-page/hero-section/bg.webp'
 
@@ -13,7 +13,7 @@ export const HeroSection = styled.section<{ headerHeight: number }>`
     center / cover no-repeat url(${HeroSectionBg});
   border-bottom: ${borders.delimeter};
 
-  @media (max-width: ${bp.sm}px) {
+  @media (max-width: ${bp.md}px) {
     background-position: 100% 100%;
   }
 `
@@ -22,7 +22,7 @@ export const HeroSectionContainer = styled(RootContainer)`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  @media (max-width: ${bp.sm}px) {
+  @media (max-width: ${bp.md}px) {
     grid-template-columns: 1fr;
     gap: 24px;
   }
@@ -34,7 +34,7 @@ export const HeroSectionInfo = styled.div`
   gap: clamp(1rem, 0.865rem + 0.51vw, 1.25rem);
   order: 1;
 
-  @media (max-width: ${bp.sm}px) {
+  @media (max-width: ${bp.md}px) {
     order: 2;
   }
 `
@@ -45,7 +45,7 @@ export const HeroSectionLogo = styled.div`
   justify-content: center;
   order: 2;
 
-  @media (max-width: ${bp.sm}px) {
+  @media (max-width: ${bp.md}px) {
     height: 100%;
     max-height: 178px;
     order: 1;
@@ -154,10 +154,10 @@ export const Title = styled.h1`
   line-height: 125%;
 
   & > span {
-    color: ${textColors.neon};
+    color: ${colors.neon};
   }
 
-  @media (max-width: ${bp.sm}px) {
+  @media (max-width: ${bp.md}px) {
     text-align: center;
   }
 `
@@ -168,7 +168,7 @@ export const Subtitle = styled.p`
   font-size: clamp(0.875rem, 0.673rem + 0.77vw, 1.25rem);
   line-height: 125%;
 
-  @media (max-width: ${bp.sm}px) {
+  @media (max-width: ${bp.md}px) {
     text-align: center;
   }
 `
@@ -177,19 +177,38 @@ export const HeroSectionButton = styled(RootButton)`
   width: 100%;
   max-width: 380px;
 
-  @media (max-width: ${bp.sm}px) {
+  @media (max-width: ${bp.md}px) {
     align-self: center;
   }
 `
 
-export const Cards = styled.section`
-  background-color: ${bgColors.darkViolet};
+export const Catalog = styled.div`
+  padding: clamp(3rem, 1.923rem + 4.1vw, 5rem) 0;
+  display: grid;
+  gap: 48px;
 `
 
-export const CardsContainer = styled(RootContainer)`
-  padding: clamp(3rem, 1.923rem + 4.1vw, 5rem)
-    clamp(0.5rem, 0.341rem + 0.8vw, 0.938rem);
+export const RecommendCards = styled.section``
+
+export const RecommendCardsContainer = styled(RootContainer)`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 24px;
+
+  @media (max-width: ${bp.md}px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: ${bp.xs}px) {
+    grid-template-columns: 1fr;
+  }
 `
+
+export const ProductCards = styled.section``
+
+export const CardsContainer = styled(RootContainer)``
 
 export const CardsTitle = styled.h2`
   font-size: clamp(2.25rem, 2.115rem + 0.51vw, 2.5rem);
@@ -198,7 +217,7 @@ export const CardsTitle = styled.h2`
   line-height: 125%;
   text-align: center;
 
-  @media (max-width: ${bp.sm}px) {
+  @media (max-width: ${bp.md}px) {
     font-weight: 600;
   }
 `
@@ -218,7 +237,7 @@ export const CardsItems = styled.div`
     margin: 0 auto;
   }
 
-  @media (max-width: ${bp.md}px) {
+  @media (max-width: ${bp.lg}px) {
     grid-template-columns: repeat(3, 1fr);
 
     & > :nth-child(9n) {
@@ -226,7 +245,7 @@ export const CardsItems = styled.div`
     }
   }
 
-  @media (max-width: ${bp.sm}px) {
+  @media (max-width: ${bp.md}px) {
     grid-template-columns: repeat(2, 1fr);
 
     & > :nth-child(9n) {

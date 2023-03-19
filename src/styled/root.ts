@@ -1,12 +1,5 @@
 import styled from 'styled-components'
-import {
-  bgColors,
-  borderColors,
-  bp,
-  containerWidth,
-  fonts,
-  textColors,
-} from './vars'
+import { bp, colors, containerWidth, fonts } from './vars'
 import { IButtonProps } from '@ui/button/Button'
 
 // основной контейнер, от которого наследуются другие контейнеры
@@ -16,12 +9,24 @@ export const RootContainer = styled.div`
   margin: 0 auto;
 `
 
+export const RootTitle = styled.h2`
+  font-size: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+  font-family: ${fonts.primary};
+  font-weight: 500;
+  line-height: 125%;
+  text-align: center;
+
+  @media (max-width: ${bp.md}px) {
+    font-weight: 600;
+  }
+`
+
 // стили кнопки
 export const RootButton = styled.button<IButtonProps>`
   padding: 14px 22px;
   background-color: ${({ variant }) => {
-    if (variant === 'outlined') return bgColors.main
-    if (variant === 'solid') return bgColors.pink
+    if (variant === 'outlined') return colors.violet
+    if (variant === 'solid') return colors.neon
   }};
   border: ${({ variant }) => {
     if (variant === 'outlined') return '2px solid #32B5E3'
@@ -33,7 +38,7 @@ export const RootButton = styled.button<IButtonProps>`
   font-weight: 400;
   font-size: 16px;
 
-  @media (max-width: ${bp.sm}px) {
+  @media (max-width: ${bp.md}px) {
     font-weight: 600;
   }
 
@@ -45,7 +50,7 @@ export const RootButton = styled.button<IButtonProps>`
         return '2px 2px 0px #32B5E3, inset 2px 2px 4px rgba(0, 0, 0, 0.5)'
     }};
     background-color: ${({ variant }) => {
-      if (variant === 'outlined') return bgColors.pink
+      if (variant === 'outlined') return colors.neon
     }};
   }
 `
@@ -95,7 +100,7 @@ export const RootAuthModal = styled.div`
 // заголовок регистрации / авторизации
 export const RootAuthTitle = styled.p`
   text-align: center;
-  color: ${textColors.main};
+  color: ${colors.white};
   font-family: ${fonts.exo};
   font-style: normal;
   font-weight: 600;
@@ -115,7 +120,7 @@ export const RootAuthForm = styled.form`
 
 // input авторизации / регистрации
 export const RootAuthInput = styled.input`
-  border: 1px solid ${borderColors.gray};
+  border: 1px solid ${colors.gray};
   border-radius: 4px;
   width: 100%;
   display: block;
@@ -126,12 +131,12 @@ export const RootAuthInput = styled.input`
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: ${textColors.gray};
+  color: ${colors.gray};
 
   &:active,
   &:focus {
-    border: 1px solid ${borderColors.white};
-    color: ${textColors.main};
+    border: 1px solid ${colors.white};
+    color: ${colors.white};
   }
 `
 
@@ -151,7 +156,7 @@ export const RootAuthFooter = styled.div<{ justify: 'space-between' | 'end' }>`
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  color: ${textColors.gray};
+  color: ${colors.gray};
 `
 
 // количество товара + / -
@@ -163,8 +168,8 @@ export const RootCountBox = styled.div`
 export const RootCountInput = styled.input`
   width: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
   height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
-  background-color: ${bgColors.indigo};
-  color: ${textColors.main};
+  background-color: ${colors.indigo};
+  color: ${colors.white};
   font-size: 16px;
   line-height: 19px;
   text-align: center;
@@ -176,8 +181,8 @@ export const RootCountBtn = styled.span<{ action: 'plus' | 'minus' }>`
   height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
   padding: 10.5px 14.5px;
   user-select: none;
-  background-color: ${bgColors.lightPink};
-  color: ${textColors.main};
+  background-color: ${colors.lightNeon};
+  color: ${colors.white};
   cursor: pointer;
   border-radius: ${({ action }) =>
     action === 'minus' ? '20px 0 0 20px' : '0 20px 20px 0'};

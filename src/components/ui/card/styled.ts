@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { cutLongStringStyles } from '@/styled/mixins'
-import { bgColors, gradients, textColors } from '@/styled/vars'
+import { colors, gradients } from '@/styled/vars'
 import { RootButton } from '@/styled/root'
 
 export const Wrapper = styled.div`
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   transition: all 0.3s;
 
   &:hover {
-    box-shadow: 0px -3px 8px ${bgColors.pink};
+    box-shadow: 0px -3px 8px ${colors.neon};
 
     img {
       transform: scale(1.05);
@@ -48,7 +48,7 @@ export const Body = styled.div`
 `
 
 export const Subtitle = styled.p`
-  color: ${textColors.gray};
+  color: ${colors.gray};
   font-weight: 300;
   font-size: clamp(0.688rem, 0.587rem + 0.38vw, 0.875rem);
   line-height: 1.5;
@@ -56,7 +56,7 @@ export const Subtitle = styled.p`
 `
 
 export const Title = styled.h3`
-  color: ${textColors.main};
+  color: ${colors.white};
   font-weight: 600;
   font-size: clamp(1rem, 0.731rem + 1.03vw, 1.5rem);
   line-height: 1.25;
@@ -78,7 +78,7 @@ export const FooterPrices = styled.div`
 `
 
 export const Price = styled.span`
-  color: ${textColors.main};
+  color: ${colors.white};
   font-size: clamp(0.875rem, 0.673rem + 0.77vw, 1.25rem);
   font-weight: 600;
   line-height: 1;
@@ -86,7 +86,7 @@ export const Price = styled.span`
 
 export const OldPrice = styled.span`
   position: relative;
-  color: ${textColors.gray};
+  color: ${colors.gray};
   font-weight: 600;
   font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
   line-height: 1.25;
@@ -99,12 +99,12 @@ export const OldPrice = styled.span`
     height: 1px;
     width: 100%;
     transform: translateY(-50%);
-    background-color: ${textColors.gray};
+    background-color: ${colors.gray};
   }
 `
 
 export const Button = styled(RootButton)`
-  color: ${textColors.main};
+  color: ${colors.white};
 `
 
 export const CardButton = styled(RootButton)`
