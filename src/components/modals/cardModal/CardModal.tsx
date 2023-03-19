@@ -16,11 +16,13 @@ import {
   Title,
   CloseModal,
 } from './styled'
-import { RootCountBox, RootCountBtn, RootCountInput } from '@/styled/root'
 import { useCountBox } from '@/hooks/useCountBox'
 import { useAppDispatch } from '@/hooks/reduxHooks'
 import { addProduct, setIsOpenCart } from '@/store/cart/cartSlice'
 import CloseIcon from '@ui/icons/CloseIcon'
+import { RootCountBox } from '@root/RootCountBox'
+import { RootCountInput } from '@root/RootCountInput'
+import { RootCountBtn } from '@root/RootCountBtn'
 
 interface IProps {
   product: IProduct

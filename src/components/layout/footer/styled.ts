@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import { borders, colors, fonts } from '@/styled/vars'
-import { RootButton, RootContainer } from '@/styled/root'
 import Logo from '@ui/logo/Logo'
 import VkIcon from '@/assets/svg/vk.svg'
+import { RootContainer } from '@root/RootContainer'
+import { RootButton } from '@root/RootButton'
 
 export const FooterWrapper = styled.footer`
   width: 100%;

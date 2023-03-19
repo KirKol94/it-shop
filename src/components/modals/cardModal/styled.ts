@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { colors, fonts } from '@/styled/vars'
-import { RootButton } from '@/styled/root'
+import { RootButton } from '@root/RootButton'
 
 export const CardModalWrapper = styled.div`
   display: flex;

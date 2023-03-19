@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { colors, fonts, gradients } from '@/styled/vars'
-import { RootButton } from '@/styled/root'
+import { RootButton } from '@root/RootButton'
 
 export const Wrapper = styled.div`
   height: 100%;

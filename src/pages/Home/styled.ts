@@ -1,7 +1,8 @@
-import { RootButton, RootContainer } from '@/styled/root'
+import { RootContainer } from '@root/RootContainer'
 import { borders, bp, colors, fonts } from '@/styled/vars'
 import styled from 'styled-components'
 import HeroSectionBg from '@/assets/img/home-page/hero-section/bg.webp'
+import { RootButton } from '@root/RootButton'
 
 export const HeroSection = styled.section<{ headerHeight: number }>`
   padding-top: calc(
@@ -188,8 +189,6 @@ export const Catalog = styled.div`
   gap: 48px;
 `
 
-export const RecommendCards = styled.section``
-
 export const RecommendCardsContainer = styled(RootContainer)`
   display: flex;
   justify-content: center;
@@ -205,10 +204,6 @@ export const RecommendCardsContainer = styled(RootContainer)`
     grid-template-columns: 1fr;
   }
 `
-
-export const ProductCards = styled.section``
-
-export const CardsContainer = styled(RootContainer)``
 
 export const CardsItems = styled.div`
   margin-top: 24px;

@@ -2,15 +2,13 @@ import React, { ChangeEvent, FC, FormEvent, useState } from 'react'
 import Modal from '@ui/modal/Modal'
 import { Link } from 'react-router-dom'
 import { Privacy, PrivacyLink } from './styled'
-import {
-  RootAuthBtn,
-  RootAuthFooter,
-  RootAuthForm,
-  RootAuthInput,
-  RootAuthModal,
-  RootAuthTitle,
-} from '@/styled/root'
 import Logo from '@ui/logo/Logo'
+import { RootAuthModal } from '@root/RootAuthModal'
+import { RootAuthTitle } from '@root/RootAuthTitle'
+import { RootAuthForm } from '@root/RootAuthForm'
+import { RootAuthInput } from '@root/RootAuthInput'
+import { RootAuthBtn } from '@root/RootAuthBtn'
+import { RootAuthFooter } from '@root/RootAuthFooter'
 
 interface IProps {
   isOpen: boolean
