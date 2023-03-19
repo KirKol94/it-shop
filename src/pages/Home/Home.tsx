@@ -20,6 +20,7 @@ import { RootContainer } from '@root/RootContainer'
 
 const Home: FC = () => {
   const products = useAppSelector(state => state.product.products)
+  const recommended = useAppSelector(state => state.recommended.products)
   const headerHeight = useAppSelector(state => state.header.height)
 
   return (
@@ -52,10 +53,9 @@ const Home: FC = () => {
           <RootTitle>Рекомендованные товары</RootTitle>
 
           <RecommendCardsContainer>
-            <RecommendCard />
-            <RecommendCard />
-            <RecommendCard />
-            <RecommendCard />
+            {recommended.map(product => (
+              <RecommendCard key={product.id} product={product} />
+            ))}
           </RecommendCardsContainer>
         </section>
 

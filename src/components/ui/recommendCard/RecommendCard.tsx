@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import {
   Footer,
   ImgBox,
@@ -9,29 +9,42 @@ import {
   Title,
   Wrapper,
 } from './styled'
+import { IProduct } from '@/types/IProduct'
+import CardModal from '@/components/modals/cardModal/CardModal'
 
-const RecommendCard: FC = () => {
+interface IProps {
+  product: IProduct
+}
+
+const RecommendCard: FC<IProps> = ({ product }) => {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <Wrapper>
-      <ImgBox>
-        <img
-          src="https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png"
-          alt=""
-        />
-      </ImgBox>
-      <Inner>
-        <div>
-          <ProductName>Кепка</ProductName>
-        </div>
-        <div>
-          <Title>IT-пузырь</Title>
-        </div>
-        <Footer>
-          <Price>800 ₽</Price>
-          <OldPrice>1500 ₽</OldPrice>
-        </Footer>
-      </Inner>
-    </Wrapper>
+    <>
+      <Wrapper onClick={() => setIsOpen(true)}>
+        <ImgBox>
+          <img src={product.image} alt={product.name} />
+        </ImgBox>
+        <Inner>
+          <div>
+            <ProductName>{product.name}</ProductName>
+          </div>
+          <div>
+            <Title>{product.name}</Title>
+          </div>
+          <Footer>
+            <Price>{product.price.toLocaleString()} ₽</Price>
+            <OldPrice>{product.price.toLocaleString()} ₽</OldPrice>
+          </Footer>
+        </Inner>
+      </Wrapper>
+
+      <CardModal
+        product={product}
+        isOpenCard={isOpen}
+        setIsOpenCard={setIsOpen}
+      />
+    </>
   )
 }
 

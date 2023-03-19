@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   padding: 10px;
   background: ${gradients.main};
   border-radius: 16px;
+  cursor: pointer;
 `
 
 export const ProductName = styled.p`
