@@ -1,7 +1,8 @@
 import styled from 'styled-components'
-import { bp, fonts, colors } from '@/styled/vars'
+import { bp, colors, fonts } from '@/styled/vars'
 import { RootContainer } from '@root/RootContainer'
 import { ReactComponent as Logo } from '@/assets/svg/logo.svg'
+import { ReactComponent as Burger } from '@/assets/svg/burger.svg'
 
 export const Wrapper = styled.header<{ isScrolled: boolean }>`
   z-index: 1;
@@ -27,19 +28,23 @@ export const Container = styled(RootContainer)`
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+
+  ${bp.xl} {
+    padding: 0 80px;
+    max-width: 1920px;
+  }
 `
 
 export const LogoBox = styled(Logo)`
-  width: clamp(10.938rem, 9.423rem + 5.77vw, 13.75rem);
+  width: clamp(7.938rem, 5.824rem + 10.57vw, 13.75rem);
 `
 
-export const IconsBox = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 20px;
+export const BurgerIcon = styled(Burger)`
+  display: none;
+  max-width: clamp(1.5rem, 0.845rem + 3.27vw, 2.875rem);
 
-  @media (min-width: ${bp.lg}px) {
-    display: none;
+  ${bp.lg} {
+    display: flex;
   }
 `
 

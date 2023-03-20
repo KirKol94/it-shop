@@ -2,11 +2,11 @@ import React, { FC, useEffect, useRef, useState } from 'react'
 import AuthModal from '@/components/modals/authModal/AuthModal'
 import RegisterModal from '@/components/modals/registerModal/RegisterModal'
 import {
+  BurgerIcon,
   CartBox,
   CartText,
   Container,
   HeaderAuthBtn,
-  IconsBox,
   LoginBox,
   LogoBox,
   Nav,
@@ -20,7 +20,6 @@ import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 import { setIsOpenCart } from '@/store/cart/cartSlice'
 import useScroll from '@/hooks/useScroll'
 import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
-import { ReactComponent as Burger } from '@/assets/svg/burger.svg'
 import { Link } from 'react-router-dom'
 import { setHeight } from '@/store/header/headerSlice'
 
@@ -75,12 +74,7 @@ const Header: FC = () => {
             </NavList>
           </Nav>
 
-          <IconsBox>
-            <button onClick={() => dispatch(setIsOpenCart(true))}>
-              <Cart />
-            </button>
-            <Burger />
-          </IconsBox>
+          <BurgerIcon />
 
           <ProfileBox>
             <LoginBox>
