@@ -23,9 +23,8 @@ export const borders = {
 }
 
 export const bp = {
-  xs: 380,
-  sm: 568,
+  sm: 576,
   md: 768,
-  lg: 991,
+  lg: 992,
   xl: 1200,
 }

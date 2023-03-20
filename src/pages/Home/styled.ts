@@ -200,7 +200,7 @@ export const RecommendCardsContainer = styled(RootContainer)`
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: ${bp.xs}px) {
+  @media (max-width: ${bp.sm}px) {
     grid-template-columns: 1fr;
   }
 `
