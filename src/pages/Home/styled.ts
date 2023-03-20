@@ -7,15 +7,16 @@ import { RootButton } from '@root/RootButton'
 export const HeroSection = styled.section<{ headerHeight: number }>`
   padding-top: calc(
     ${({ headerHeight }) => headerHeight}px +
-      clamp(3rem, 1.923rem + 4.1vw, 5rem)
+      clamp(3rem, 1.923rem + 4.1vw, 5rem) // 48 80 320 1200
   );
   padding-bottom: clamp(3rem, 1.923rem + 4.1vw, 5rem);
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     center / cover no-repeat url(${HeroSectionBg});
   border-bottom: ${borders.delimeter};
 
-  ${bp.md} {
-    background-position: 100% 100%;
+  ${bp.sm} {
+    background-position: 55% 0;
+    background-size: 1600%;
   }
 `
 
