@@ -8,7 +8,7 @@ export const RootTitle = styled.h2`
   line-height: 125%;
   text-align: center;
 
-  @media (max-width: ${bp.md}px) {
+  ${bp.md} {
     font-weight: 600;
   }
 `

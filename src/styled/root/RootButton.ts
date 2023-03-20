@@ -18,7 +18,7 @@ export const RootButton = styled.button<IButton>`
   font-weight: 400;
   font-size: clamp(0.75rem, 0.615rem + 0.51vw, 1rem);
 
-  @media (max-width: ${bp.md}px) {
+  ${bp.md} {
     font-weight: 600;
   }
 

@@ -16,7 +16,7 @@ export const Wrapper = styled.header<{ isScrolled: boolean }>`
   transition: background 150ms;
   font-family: ${fonts.exo};
 
-  @media (max-width: ${bp.md}px) {
+  ${bp.md} {
     padding: 25px 0;
   }
 `
@@ -44,7 +44,7 @@ export const IconsBox = styled.div`
 `
 
 export const Nav = styled.nav`
-  @media (max-width: ${bp.lg}px) {
+  ${bp.lg} {
     display: none;
   }
 `
@@ -70,7 +70,7 @@ export const ProfileBox = styled.div`
   align-items: center;
   gap: 27px;
 
-  @media (max-width: ${bp.lg}px) {
+  ${bp.lg} {
     display: none;
   }
 `
