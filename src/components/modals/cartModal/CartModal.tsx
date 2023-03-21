@@ -19,6 +19,7 @@ import CartItem from '@ui/cartItem/CartItem'
 import CloseIcon from '@ui/icons/CloseIcon'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 import { changeDiscountSize, setIsOpenCart } from '@/store/cart/cartSlice'
+import MakeOrderModal from '@/components/modals/makeOrderModal/MakeOrderModal'
 
 interface IProps {
   isOpen: boolean
@@ -32,6 +33,7 @@ const CartModal: FC<IProps> = ({ isOpen }) => {
 
   const [promoCode, setPromoCode] = useState('')
   const [totalPrice, setTotalPrice] = useState(0)
+  const [isMakeOrderOpen, setIsMakeOrderOpen] = useState(false)
 
   const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target
@@ -58,58 +60,71 @@ const CartModal: FC<IProps> = ({ isOpen }) => {
   }, [cartItems])
 
   return (
-    <Menu isOpen={isOpen} setIsOpen={setIsOpen}>
-      <Wrapper>
-        <CartTop>
-          <Title>Корзина</Title>
-          <Close>
-            <button onClick={setIsOpen}>
-              <CloseIcon size={32} />
-            </button>
-          </Close>
-        </CartTop>
+    <>
+      <Menu isOpen={isOpen} setIsOpen={setIsOpen}>
+        <Wrapper>
+          <CartTop>
+            <Title>Корзина</Title>
+            <Close>
+              <button onClick={setIsOpen}>
+                <CloseIcon size={32} />
+              </button>
+            </Close>
+          </CartTop>
 
-        <CartBody>
-          {cartItems.map(product => (
-            <CartItem product={product} key={product.id} />
-          ))}
-        </CartBody>
+          <CartBody>
+            {cartItems.map(product => (
+              <CartItem product={product} key={product.id} />
+            ))}
+          </CartBody>
 
-        <CartFooter>
-          <CartFooterInfo>
-            <CartInfoRow>
-              <span>Товары({productCount})</span>
-              <span>{totalPrice.toLocaleString()}₽</span>
-            </CartInfoRow>
-            <CartInfoRow>
-              <span>Доставка</span>
-              <span>Считается отдельно</span>
-            </CartInfoRow>
-            <CartInfoRow>
-              <div>
-                <div>Скидка</div>
+          <CartFooter>
+            <CartFooterInfo>
+              <CartInfoRow>
+                <span>Товары({productCount})</span>
+                <span>{totalPrice.toLocaleString()}₽</span>
+              </CartInfoRow>
+              <CartInfoRow>
+                <span>Доставка</span>
+                <span>Считается отдельно</span>
+              </CartInfoRow>
+              <CartInfoRow>
                 <div>
-                  <PromoLabel>
-                    Добавить купон →
-                    <PromoInput
-                      type="text"
-                      value={promoCode}
-                      onChange={onChangeInputHandler}
-                    />
-                  </PromoLabel>
+                  <div>Скидка</div>
+                  <div>
+                    <PromoLabel>
+                      Добавить купон →
+                      <PromoInput
+                        type="text"
+                        value={promoCode}
+                        onChange={onChangeInputHandler}
+                      />
+                    </PromoLabel>
+                  </div>
                 </div>
-              </div>
-              <PromoSaleSize>-{discountSize}₽</PromoSaleSize>
-            </CartInfoRow>
-            <InfoFinal>
-              <span>Сумма заказа</span>
-              <span>{totalPriceWithDiscount.toLocaleString('ru')}₽</span>
-            </InfoFinal>
-          </CartFooterInfo>
-          <CartFooterAction variant="solid">Оформить заказ</CartFooterAction>
-        </CartFooter>
-      </Wrapper>
-    </Menu>
+                <PromoSaleSize>-{discountSize}₽</PromoSaleSize>
+              </CartInfoRow>
+              <InfoFinal>
+                <span>Сумма заказа</span>
+                <span>{totalPriceWithDiscount.toLocaleString('ru')}₽</span>
+              </InfoFinal>
+            </CartFooterInfo>
+            <CartFooterAction
+              variant="solid"
+              onClick={() => {
+                setIsMakeOrderOpen(true)
+              }}>
+              Оформить заказ
+            </CartFooterAction>
+          </CartFooter>
+        </Wrapper>
+      </Menu>
+
+      <MakeOrderModal
+        isMakeOrderOpen={isMakeOrderOpen}
+        setIsMakeOrderOpen={setIsMakeOrderOpen}
+      />
+    </>
   )
 }
 
