@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { borders, colors, fonts } from '@/styled/vars'
+import { borders, bp, colors, fonts } from '@/styled/vars'
 import Logo from '@ui/logo/Logo'
 import VkIcon from '@/assets/svg/vk.svg'
 import { RootContainer } from '@root/RootContainer'
@@ -19,11 +19,23 @@ export const Container = styled(RootContainer)`
   align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
+
+  ${bp.md} {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 export const Block = styled.div`
   display: flex;
   flex-direction: column;
+`
+
+export const LinksBlock = styled(Block)`
+  ${bp.md} {
+    display: none;
+  }
 `
 
 export const FooterLogo = styled(Logo)`
@@ -48,6 +60,9 @@ export const AddressText = styled.p`
   font-size: 16px;
   font-weight: 300;
   line-height: 19px;
+  ${bp.md} {
+    text-align: center;
+  }
 `
 
 export const Subtitle = styled.p<{ mod: 'nav' | 'social' }>`

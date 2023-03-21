@@ -18,6 +18,7 @@ import {
   NewsLetter,
   NewsLetterTitle,
   Privacy,
+  LinksBlock,
   Socials,
   SocialsIcon,
   Subtitle,
@@ -58,7 +59,7 @@ const Footer: FC = () => {
           </Address>
         </Block>
 
-        <nav>
+        <LinksBlock>
           <Subtitle mod="nav">Меню</Subtitle>
           <FooterList>
             {menuLinks.map(({ name, url }) => (
@@ -67,7 +68,7 @@ const Footer: FC = () => {
               </li>
             ))}
           </FooterList>
-        </nav>
+        </LinksBlock>
         <Block>
           <Subtitle mod="social">Познакомиться с нами</Subtitle>
           <Socials>
