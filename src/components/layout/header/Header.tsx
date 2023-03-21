@@ -2,26 +2,21 @@ import React, { FC, useEffect, useRef, useState } from 'react'
 import AuthModal from '@/components/modals/authModal/AuthModal'
 import RegisterModal from '@/components/modals/registerModal/RegisterModal'
 import {
+  AuthAndCart,
   BurgerIcon,
-  CartBox,
-  CartText,
   Container,
-  HeaderAuthBtn,
-  LoginBox,
   LogoBox,
   Nav,
-  ProfileBox,
   Wrapper,
 } from './styled'
 import CartModal from '@/components/modals/cartModal/CartModal'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
-import { setIsOpenCart } from '@/store/cart/cartSlice'
 import useScroll from '@/hooks/useScroll'
-import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
 import { Link } from 'react-router-dom'
 import { setHeight } from '@/store/header/headerSlice'
 import MenuModal from '@/components/modals/menuModal/MenuModal'
 import Navigation from '@ui/navigation/Navigation'
+import AuthAndCartBox from '@ui/authAndCartBox/AuthAndCartBox'
 
 const Header: FC = () => {
   const dispatch = useAppDispatch()
@@ -68,22 +63,13 @@ const Header: FC = () => {
             />
           </Nav>
 
-          <ProfileBox>
-            <LoginBox>
-              <HeaderAuthBtn onClick={() => setIsAuthOpen(true)}>
-                Войти
-              </HeaderAuthBtn>
-              |
-              <HeaderAuthBtn onClick={() => setIsRegisterOpen(true)}>
-                Регистрация
-              </HeaderAuthBtn>
-            </LoginBox>
-
-            <CartBox onClick={() => dispatch(setIsOpenCart(true))}>
-              <Cart />
-              <CartText>Корзина</CartText>
-            </CartBox>
-          </ProfileBox>
+          <AuthAndCart>
+            <AuthAndCartBox
+              setIsAuthOpen={setIsAuthOpen}
+              setIsRegisterOpen={setIsRegisterOpen}
+              setIsOpenMenu={() => console.log()}
+            />
+          </AuthAndCart>
         </Container>
       </Wrapper>
 
@@ -102,7 +88,12 @@ const Header: FC = () => {
       {isCartOpen && <CartModal isOpen={isCartOpen} />}
 
       {isMenuOpen && (
-        <MenuModal isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
+        <MenuModal
+          isOpen={isMenuOpen}
+          setIsOpen={setIsMenuOpen}
+          setIsRegisterOpen={setIsRegisterOpen}
+          setIsAuthOpen={setIsAuthOpen}
+        />
       )}
     </>
   )
