@@ -36,6 +36,7 @@ export const LogoBox = styled(Logo)`
 export const BurgerIcon = styled(Burger)`
   display: none;
   max-width: clamp(1.5rem, 0.845rem + 3.27vw, 2.875rem);
+  cursor: pointer;
 
   ${bp.lg} {
     display: flex;

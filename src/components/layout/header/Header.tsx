@@ -22,6 +22,7 @@ import useScroll from '@/hooks/useScroll'
 import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
 import { Link } from 'react-router-dom'
 import { setHeight } from '@/store/header/headerSlice'
+import MenuModal from '@/components/modals/menuModal/MenuModal'
 
 const Header: FC = () => {
   const dispatch = useAppDispatch()
@@ -29,6 +30,7 @@ const Header: FC = () => {
   const isCartOpen = useAppSelector(state => state.cart.isOpenCart)
   const [isAuthOpen, setIsAuthOpen] = useState(false)
   const [isRegisterOpen, setIsRegisterOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const isScrolled = useScroll()
 
   const links = [
@@ -74,7 +76,7 @@ const Header: FC = () => {
             </NavList>
           </Nav>
 
-          <BurgerIcon />
+          <BurgerIcon onClick={() => setIsMenuOpen(true)} />
 
           <ProfileBox>
             <LoginBox>
@@ -108,6 +110,10 @@ const Header: FC = () => {
       )}
 
       {isCartOpen && <CartModal isOpen={isCartOpen} />}
+
+      {isMenuOpen && (
+        <MenuModal isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
+      )}
     </>
   )
 }
