@@ -10,8 +10,6 @@ import {
   LoginBox,
   LogoBox,
   Nav,
-  NavItem,
-  NavList,
   ProfileBox,
   Wrapper,
 } from './styled'
@@ -23,6 +21,7 @@ import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
 import { Link } from 'react-router-dom'
 import { setHeight } from '@/store/header/headerSlice'
 import MenuModal from '@/components/modals/menuModal/MenuModal'
+import Navigation from '@ui/navigation/Navigation'
 
 const Header: FC = () => {
   const dispatch = useAppDispatch()
@@ -32,13 +31,6 @@ const Header: FC = () => {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const isScrolled = useScroll()
-
-  const links = [
-    { name: 'Главная', url: '' },
-    { name: 'Каталог', url: '' },
-    { name: 'О нас', url: 'about' },
-    { name: 'Оплата и доставка', url: '' },
-  ]
 
   // отдаём высоту хедера в PageStructure
   const headerRef = useRef<HTMLDivElement>(null)
@@ -66,17 +58,15 @@ const Header: FC = () => {
             <LogoBox />
           </Link>
 
-          <Nav>
-            <NavList>
-              {links.map((link, i) => (
-                <NavItem key={i}>
-                  <Link to={link.url}>{link.name}</Link>
-                </NavItem>
-              ))}
-            </NavList>
-          </Nav>
-
           <BurgerIcon onClick={() => setIsMenuOpen(true)} />
+
+          <Nav>
+            <Navigation
+              setIsOpenMenu={() => {
+                console.log()
+              }}
+            />
+          </Nav>
 
           <ProfileBox>
             <LoginBox>

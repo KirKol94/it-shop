@@ -43,24 +43,9 @@ export const BurgerIcon = styled(Burger)`
   }
 `
 
-export const Nav = styled.nav`
+export const Nav = styled.div`
   ${bp.lg} {
     display: none;
-  }
-`
-
-export const NavList = styled.ul`
-  display: flex;
-  gap: 32px;
-`
-
-export const NavItem = styled.li`
-  font-weight: 600;
-  transition: all 150ms;
-
-  &:hover {
-    color: ${colors.neon};
-    text-decoration: underline;
   }
 `
 

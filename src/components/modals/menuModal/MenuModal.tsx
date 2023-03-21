@@ -2,6 +2,7 @@ import React, { Dispatch, FC } from 'react'
 import Menu from '@ui/menu/Menu'
 import { Wrapper } from './styled'
 import Logo from '@ui/logo/Logo'
+import Navigation from '@ui/navigation/Navigation'
 
 interface IProps {
   isOpen: boolean
@@ -15,6 +16,8 @@ const MenuModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
         <button onClick={() => setIsOpen(false)}>
           <Logo />
         </button>
+
+        <Navigation isVertical={true} setIsOpenMenu={setIsOpen} />
       </Wrapper>
     </Menu>
   )
