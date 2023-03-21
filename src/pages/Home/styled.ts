@@ -233,5 +233,8 @@ export const CardsItems = styled.div`
 
   ${bp.sm} {
     grid-template-columns: 1fr 1fr;
+    & > :nth-child(9n) {
+      display: none;
+    }
   }
 `
