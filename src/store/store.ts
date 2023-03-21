@@ -4,6 +4,7 @@ import productSlice from './products/productSlice'
 import cartSlice from './cart/cartSlice'
 import headerSlice from '@/store/header/headerSlice'
 import recommendSlice from '@/store/recommended/recommendedSlice'
+import dialogsWindowsSlice from '@/store/dialogWindows/dialogWindowsSlice'
 
 const rootReducer = combineReducers({
   category: categorySlice,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   cart: cartSlice,
   header: headerSlice,
   recommended: recommendSlice,
+  dialogs: dialogsWindowsSlice,
 })
 
 export const store = configureStore({
