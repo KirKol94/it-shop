@@ -1,37 +1,21 @@
-import React, { Dispatch, FC } from 'react'
+import React, { FC } from 'react'
 import Menu from '@ui/menu/Menu'
 import { Wrapper } from './styled'
 import Logo from '@ui/logo/Logo'
 import Navigation from '@ui/navigation/Navigation'
 import AuthAndCartBox from '@ui/authAndCartBox/AuthAndCartBox'
 
-interface IProps {
-  isOpen: boolean
-  setIsOpen: Dispatch<boolean>
-  setIsAuthOpen: Dispatch<boolean>
-  setIsRegisterOpen: Dispatch<boolean>
-}
-
-const MenuModal: FC<IProps> = ({
-  isOpen,
-  setIsOpen,
-  setIsRegisterOpen,
-  setIsAuthOpen,
-}) => {
+const MenuModal: FC = () => {
   return (
-    <Menu setIsOpen={setIsOpen} isOpen={isOpen}>
+    <Menu>
       <Wrapper>
-        <button onClick={() => setIsOpen(false)}>
+        <button>
           <Logo />
         </button>
 
-        <Navigation isVertical={true} setIsOpenMenu={setIsOpen} />
+        <Navigation isVertical={true} />
 
-        <AuthAndCartBox
-          setIsAuthOpen={setIsAuthOpen}
-          setIsRegisterOpen={setIsRegisterOpen}
-          setIsOpenMenu={setIsOpen}
-        />
+        <AuthAndCartBox />
       </Wrapper>
     </Menu>
   )

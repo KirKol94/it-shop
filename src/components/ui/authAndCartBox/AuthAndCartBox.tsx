@@ -1,4 +1,4 @@
-import React, { Dispatch, FC } from 'react'
+import React, { FC } from 'react'
 import {
   CartBox,
   CartText,
@@ -6,48 +6,17 @@ import {
   LoginBox,
   ProfileBox,
 } from './styled'
-import { setIsOpenCart } from '@/store/cart/cartSlice'
-import { useAppDispatch } from '@/hooks/reduxHooks'
 import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
 
-interface IProps {
-  setIsAuthOpen: Dispatch<boolean>
-  setIsRegisterOpen: Dispatch<boolean>
-  setIsOpenMenu: Dispatch<boolean>
-}
-
-const AuthAndCartBox: FC<IProps> = ({
-  setIsAuthOpen,
-  setIsRegisterOpen,
-  setIsOpenMenu,
-}) => {
-  const dispatch = useAppDispatch()
-
+const AuthAndCartBox: FC = () => {
   return (
     <ProfileBox>
       <LoginBox>
-        <HeaderAuthBtn
-          onClick={() => {
-            setIsOpenMenu(false)
-            setIsAuthOpen(true)
-          }}>
-          Войти
-        </HeaderAuthBtn>
-        |
-        <HeaderAuthBtn
-          onClick={() => {
-            setIsOpenMenu(false)
-            setIsRegisterOpen(true)
-          }}>
-          Регистрация
-        </HeaderAuthBtn>
+        <HeaderAuthBtn>Войти</HeaderAuthBtn>|
+        <HeaderAuthBtn>Регистрация</HeaderAuthBtn>
       </LoginBox>
 
-      <CartBox
-        onClick={() => {
-          setIsOpenMenu(false)
-          dispatch(setIsOpenCart(true))
-        }}>
+      <CartBox>
         <Cart />
         <CartText>Корзина</CartText>
       </CartBox>

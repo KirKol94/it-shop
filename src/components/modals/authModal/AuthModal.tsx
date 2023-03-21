@@ -9,12 +9,7 @@ import { RootAuthInput } from '@root/RootAuthInput'
 import { RootAuthBtn } from '@root/RootAuthBtn'
 import { RootAuthFooter } from '@root/RootAuthFooter'
 
-interface IProps {
-  isOpen: boolean
-  setIsOpen: (isOpen?: boolean) => void | typeof isOpen
-}
-
-const AuthModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
+const AuthModal: FC = () => {
   const [authData, setAuthData] = useState({ email: '', password: '' })
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -26,11 +21,10 @@ const AuthModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
     e.preventDefault()
     console.log(authData)
     setAuthData({ email: '', password: '' })
-    setIsOpen(false)
   }
 
   return (
-    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+    <Modal>
       <RootAuthModal>
         <Logo />
         <RootAuthTitle>Авторизация</RootAuthTitle>

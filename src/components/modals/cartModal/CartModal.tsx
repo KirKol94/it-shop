@@ -21,11 +21,7 @@ import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 import { changeDiscountSize, setIsOpenCart } from '@/store/cart/cartSlice'
 import MakeOrderModal from '@/components/modals/makeOrderModal/MakeOrderModal'
 
-interface IProps {
-  isOpen: boolean
-}
-
-const CartModal: FC<IProps> = ({ isOpen }) => {
+const CartModal: FC = () => {
   const dispatch = useAppDispatch()
 
   const cartItems = useAppSelector(state => state.cart.items)
@@ -33,7 +29,6 @@ const CartModal: FC<IProps> = ({ isOpen }) => {
 
   const [promoCode, setPromoCode] = useState('')
   const [totalPrice, setTotalPrice] = useState(0)
-  const [isMakeOrderOpen, setIsMakeOrderOpen] = useState(false)
 
   const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target
@@ -61,7 +56,7 @@ const CartModal: FC<IProps> = ({ isOpen }) => {
 
   return (
     <>
-      <Menu isOpen={isOpen} setIsOpen={setIsOpen}>
+      <Menu>
         <Wrapper>
           <CartTop>
             <Title>Корзина</Title>
@@ -109,21 +104,12 @@ const CartModal: FC<IProps> = ({ isOpen }) => {
                 <span>{totalPriceWithDiscount.toLocaleString('ru')}₽</span>
               </InfoFinal>
             </CartFooterInfo>
-            <CartFooterAction
-              variant="solid"
-              onClick={() => {
-                setIsMakeOrderOpen(true)
-              }}>
-              Оформить заказ
-            </CartFooterAction>
+            <CartFooterAction variant="solid">Оформить заказ</CartFooterAction>
           </CartFooter>
         </Wrapper>
       </Menu>
 
-      <MakeOrderModal
-        isMakeOrderOpen={isMakeOrderOpen}
-        setIsMakeOrderOpen={setIsMakeOrderOpen}
-      />
+      <MakeOrderModal />
     </>
   )
 }

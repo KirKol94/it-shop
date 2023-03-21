@@ -26,11 +26,9 @@ import { RootCountBtn } from '@root/RootCountBtn'
 
 interface IProps {
   product: IProduct
-  isOpenCard: boolean
-  setIsOpenCard: (isOpen: boolean) => void | typeof isOpen
 }
 
-const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
+const CardModal: FC<IProps> = ({ product }) => {
   const dispatch = useAppDispatch()
 
   const sizes = ['xs', 's', 'm', 'l', 'xl']
@@ -46,7 +44,6 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setIsOpenCard(false)
     const productToCart = {
       id: product.id + size,
       img: product.image,
@@ -71,13 +68,13 @@ const CardModal: FC<IProps> = ({ isOpenCard, setIsOpenCard, product }) => {
   }, [size])
 
   return (
-    <Modal isOpen={isOpenCard} setIsOpen={() => setIsOpenCard(false)}>
+    <Modal>
       <CardModalWrapper>
         <ImgBox>
           <img src={product.image} alt={product.name} />
         </ImgBox>
 
-        <CloseModal onClick={() => setIsOpenCard(false)}>
+        <CloseModal>
           <CloseIcon size={24} />
         </CloseModal>
 

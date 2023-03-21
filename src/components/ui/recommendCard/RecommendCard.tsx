@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import {
   Footer,
   ImgBox,
@@ -17,11 +17,9 @@ interface IProps {
 }
 
 const RecommendCard: FC<IProps> = ({ product }) => {
-  const [isOpen, setIsOpen] = useState(false)
-
   return (
     <>
-      <Wrapper onClick={() => setIsOpen(true)}>
+      <Wrapper>
         <ImgBox>
           <img src={product.image} alt={product.name} />
         </ImgBox>
@@ -39,11 +37,7 @@ const RecommendCard: FC<IProps> = ({ product }) => {
         </Inner>
       </Wrapper>
 
-      <CardModal
-        product={product}
-        isOpenCard={isOpen}
-        setIsOpenCard={setIsOpen}
-      />
+      <CardModal product={product} />
     </>
   )
 }

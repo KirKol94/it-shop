@@ -10,13 +10,7 @@ import { RootAuthInput } from '@root/RootAuthInput'
 import { RootAuthBtn } from '@root/RootAuthBtn'
 import { RootAuthFooter } from '@root/RootAuthFooter'
 
-interface IProps {
-  isOpen: boolean
-  setIsOpen: (isOpen?: boolean) => void | typeof isOpen
-  setIsAuthModal: (isOpen: boolean) => void | typeof isOpen
-}
-
-const RegisterModal: FC<IProps> = ({ isOpen, setIsOpen, setIsAuthModal }) => {
+const RegisterModal: FC = () => {
   const initialState = {
     name: '',
     email: '',
@@ -36,17 +30,11 @@ const RegisterModal: FC<IProps> = ({ isOpen, setIsOpen, setIsAuthModal }) => {
     if (registerData.password === registerData.rememberPassword) {
       console.log(registerData)
       setRegisterData(initialState)
-      setIsOpen(false)
     }
   }
 
-  const onClickToAlreadyExistAnAccount = () => {
-    setIsOpen(false)
-    setIsAuthModal(true)
-  }
-
   return (
-    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+    <Modal>
       <RootAuthModal>
         <Logo />
         <RootAuthTitle>Регистрация аккаунта</RootAuthTitle>
@@ -93,9 +81,7 @@ const RegisterModal: FC<IProps> = ({ isOpen, setIsOpen, setIsAuthModal }) => {
           <PrivacyLink to="privacy">политикой конфиденциальности</PrivacyLink>
         </Privacy>
         <RootAuthFooter justify="space-between">
-          <button onClick={onClickToAlreadyExistAnAccount}>
-            Уже есть аккаунт
-          </button>
+          <button>Уже есть аккаунт</button>
           <Link to="">Забыли пароль</Link>
         </RootAuthFooter>
       </RootAuthModal>
