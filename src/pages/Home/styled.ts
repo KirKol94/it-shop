@@ -207,11 +207,11 @@ export const RecommendCardsContainer = styled(RootContainer)`
 `
 
 export const CardsItems = styled.div`
-  margin-top: 24px;
+  padding-top: 24px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   row-gap: 24px;
+  column-gap: 20px;
 
   & > :nth-child(9n) {
     display: none;
@@ -222,18 +222,16 @@ export const CardsItems = styled.div`
   }
 
   ${bp.lg} {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
+  ${bp.lg} {
     & > :nth-child(9n) {
       display: block;
     }
   }
 
-  ${bp.md} {
-    grid-template-columns: repeat(2, 1fr);
-
-    & > :nth-child(9n) {
-      display: none;
-    }
+  ${bp.sm} {
+    grid-template-columns: 1fr 1fr;
   }
 `

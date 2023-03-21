@@ -27,12 +27,6 @@ export const Container = styled(RootContainer)`
   height: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-
-  ${bp.xl} {
-    padding: 0 80px;
-    max-width: 1920px;
-  }
 `
 
 export const LogoBox = styled(Logo)`

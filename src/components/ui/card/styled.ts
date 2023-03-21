@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 import { cutLongStringStyles } from '@/styled/mixins'
-import { colors, gradients } from '@/styled/vars'
+import { bp, colors, gradients } from '@/styled/vars'
 import { RootButton } from '@root/RootButton'
 
 export const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  max-width: clamp(11.25rem, 7.885rem + 12.82vw, 17.5rem);
+  max-width: 280px;
   flex-direction: column;
   gap: clamp(0.5rem, 0.365rem + 0.51vw, 0.75rem);
   padding: clamp(0.625rem, 0.288rem + 1.28vw, 1.25rem)
@@ -23,6 +23,10 @@ export const Wrapper = styled.div`
       filter: drop-shadow(0px 0px 32px rgba(255, 255, 255, 0.25));
     }
   }
+  
+  ${bp.xl}{
+    max-width: 225px;
+  }}
 `
 
 export const ImgBox = styled.div`
