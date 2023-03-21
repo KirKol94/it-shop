@@ -18,15 +18,25 @@ import {
 import CartItem from '@ui/cartItem/CartItem'
 import CloseIcon from '@ui/icons/CloseIcon'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
-import { changeDiscountSize, setIsOpenCart } from '@/store/cart/cartSlice'
-import MakeOrderModal from '@/components/modals/makeOrderModal/MakeOrderModal'
+import { changeDiscountSize } from '@/store/cart/cartSlice'
+import {
+  setIsOpenCart,
+  setIsOpenMakeOrder,
+} from '@/store/dialogWindows/dialogWindowsSlice'
 
 const CartModal: FC = () => {
   const dispatch = useAppDispatch()
 
+  const isOpen = useAppSelector(state => state.dialogs.isOpenCart)
+  const setIsOpen = (isOpen: boolean) => dispatch(setIsOpenCart(isOpen))
+
+  const onMakeOrderClick = () => {
+    setIsOpen(false)
+    dispatch(setIsOpenMakeOrder(true))
+  }
+
   const cartItems = useAppSelector(state => state.cart.items)
   const discountSize = useAppSelector(state => state.cart.discountSize)
-
   const [promoCode, setPromoCode] = useState('')
   const [totalPrice, setTotalPrice] = useState(0)
 
@@ -46,71 +56,69 @@ const CartModal: FC = () => {
   const totalPriceWithDiscount = totalPrice - discountSize
   const productCount = cartItems.reduce((acc, cur) => acc + cur.count, 0)
 
-  const setIsOpen = () => dispatch(setIsOpenCart(false))
-
   useEffect(() => {
     setTotalPrice(
       cartItems.reduce((acc, cur) => acc + cur.price * cur.count, 0)
     )
   }, [cartItems])
 
+  if (!isOpen) return null
+
   return (
-    <>
-      <Menu>
-        <Wrapper>
-          <CartTop>
-            <Title>Корзина</Title>
-            <Close>
-              <button onClick={setIsOpen}>
-                <CloseIcon size={32} />
-              </button>
-            </Close>
-          </CartTop>
+    <Menu isOpen={isOpen} setIsOpen={setIsOpen}>
+      <Wrapper>
+        <CartTop>
+          <Title>Корзина</Title>
+          <Close>
+            <button onClick={() => setIsOpen(false)}>
+              <CloseIcon size={32} />
+            </button>
+          </Close>
+        </CartTop>
 
-          <CartBody>
-            {cartItems.map(product => (
-              <CartItem product={product} key={product.id} />
-            ))}
-          </CartBody>
+        <CartBody>
+          {cartItems.map(product => (
+            <CartItem product={product} key={product.id} />
+          ))}
+        </CartBody>
 
-          <CartFooter>
-            <CartFooterInfo>
-              <CartInfoRow>
-                <span>Товары({productCount})</span>
-                <span>{totalPrice.toLocaleString()}₽</span>
-              </CartInfoRow>
-              <CartInfoRow>
-                <span>Доставка</span>
-                <span>Считается отдельно</span>
-              </CartInfoRow>
-              <CartInfoRow>
+        <CartFooter>
+          <CartFooterInfo>
+            <CartInfoRow>
+              <span>Товары({productCount})</span>
+              <span>{totalPrice.toLocaleString()}₽</span>
+            </CartInfoRow>
+            <CartInfoRow>
+              <span>Доставка</span>
+              <span>Считается отдельно</span>
+            </CartInfoRow>
+            <CartInfoRow>
+              <div>
+                <div>Скидка</div>
                 <div>
-                  <div>Скидка</div>
-                  <div>
-                    <PromoLabel>
-                      Добавить купон →
-                      <PromoInput
-                        type="text"
-                        value={promoCode}
-                        onChange={onChangeInputHandler}
-                      />
-                    </PromoLabel>
-                  </div>
+                  <PromoLabel>
+                    Добавить купон →
+                    <PromoInput
+                      type="text"
+                      value={promoCode}
+                      onChange={onChangeInputHandler}
+                    />
+                  </PromoLabel>
                 </div>
-                <PromoSaleSize>-{discountSize}₽</PromoSaleSize>
-              </CartInfoRow>
-              <InfoFinal>
-                <span>Сумма заказа</span>
-                <span>{totalPriceWithDiscount.toLocaleString('ru')}₽</span>
-              </InfoFinal>
-            </CartFooterInfo>
-            <CartFooterAction variant="solid">Оформить заказ</CartFooterAction>
-          </CartFooter>
-        </Wrapper>
-      </Menu>
-
-      <MakeOrderModal />
-    </>
+              </div>
+              <PromoSaleSize>-{discountSize}₽</PromoSaleSize>
+            </CartInfoRow>
+            <InfoFinal>
+              <span>Сумма заказа</span>
+              <span>{totalPriceWithDiscount.toLocaleString('ru')}₽</span>
+            </InfoFinal>
+          </CartFooterInfo>
+          <CartFooterAction variant="solid" onClick={onMakeOrderClick}>
+            Оформить заказ
+          </CartFooterAction>
+        </CartFooter>
+      </Wrapper>
+    </Menu>
   )
 }
 

@@ -1,17 +1,15 @@
-import React, { FC, ReactNode } from 'react'
+import React, { Dispatch, FC, ReactNode } from 'react'
 import { Dialog } from '@headlessui/react'
 import { MenuContent } from './styled'
 import { RootModalOverlay } from '@root/RootModalOverlay'
 
 interface IProps {
+  isOpen: boolean
+  setIsOpen: Dispatch<boolean>
   children: ReactNode
 }
 
-const Menu: FC<IProps> = ({ children }) => {
-  const isOpen = false
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  const setIsOpen = () => {}
-
+const Menu: FC<IProps> = ({ isOpen, setIsOpen, children }) => {
   return (
     <Dialog open={isOpen} onClose={setIsOpen}>
       <RootModalOverlay>

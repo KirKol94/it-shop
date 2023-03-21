@@ -9,8 +9,18 @@ import { RootAuthForm } from '@root/RootAuthForm'
 import { RootAuthInput } from '@root/RootAuthInput'
 import { RootAuthBtn } from '@root/RootAuthBtn'
 import { RootAuthFooter } from '@root/RootAuthFooter'
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
+import {
+  setIsOpenAuth,
+  setIsOpenRegister,
+} from '@/store/dialogWindows/dialogWindowsSlice'
 
 const RegisterModal: FC = () => {
+  const dispatch = useAppDispatch()
+
+  const isOpen = useAppSelector(state => state.dialogs.isOpenRegister)
+  const setIsOpen = (isOpen: boolean) => dispatch(setIsOpenRegister(isOpen))
+
   const initialState = {
     name: '',
     email: '',
@@ -30,11 +40,23 @@ const RegisterModal: FC = () => {
     if (registerData.password === registerData.rememberPassword) {
       console.log(registerData)
       setRegisterData(initialState)
+      setIsOpen(false)
     }
   }
 
+  const onClickIsHaveAnAccount = () => {
+    setIsOpen(false)
+    dispatch(setIsOpenAuth(true))
+  }
+
+  const onClickForgetPassword = () => {
+    setIsOpen(false)
+  }
+
+  if (!isOpen) return null
+
   return (
-    <Modal>
+    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <RootAuthModal>
         <Logo />
         <RootAuthTitle>Регистрация аккаунта</RootAuthTitle>
@@ -81,8 +103,10 @@ const RegisterModal: FC = () => {
           <PrivacyLink to="privacy">политикой конфиденциальности</PrivacyLink>
         </Privacy>
         <RootAuthFooter justify="space-between">
-          <button>Уже есть аккаунт</button>
-          <Link to="">Забыли пароль</Link>
+          <button onClick={onClickIsHaveAnAccount}>Уже есть аккаунт</button>
+          <Link to="" onClick={onClickForgetPassword}>
+            Забыли пароль
+          </Link>
         </RootAuthFooter>
       </RootAuthModal>
     </Modal>

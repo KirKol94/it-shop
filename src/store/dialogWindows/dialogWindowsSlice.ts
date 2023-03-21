@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { IProduct } from '@/types/IProduct'
 
 type DialogWindowsState = {
   isOpenProduct: boolean
@@ -7,6 +8,7 @@ type DialogWindowsState = {
   isOpenMenu: boolean
   isOpenCart: boolean
   isOpenMakeOrder: boolean
+  currentProduct: IProduct | null
 }
 
 const initialState: DialogWindowsState = {
@@ -16,6 +18,7 @@ const initialState: DialogWindowsState = {
   isOpenMenu: false,
   isOpenCart: false,
   isOpenMakeOrder: false,
+  currentProduct: null,
 }
 
 const dialogWindowsSlice = createSlice({
@@ -40,6 +43,9 @@ const dialogWindowsSlice = createSlice({
     setIsOpenMakeOrder(state, action: PayloadAction<boolean>) {
       state.isOpenMakeOrder = action.payload
     },
+    setCurrentProduct(state, action: PayloadAction<IProduct>) {
+      state.currentProduct = action.payload
+    },
   },
 })
 
@@ -51,6 +57,7 @@ export const {
   setIsOpenMenu,
   setIsOpenCart,
   setIsOpenMakeOrder,
+  setCurrentProduct,
 } = dialogWindowsSlice.actions
 
 export default dialogWindowsSlice.reducer

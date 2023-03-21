@@ -8,8 +8,15 @@ import { RootAuthForm } from '@root/RootAuthForm'
 import { RootAuthInput } from '@root/RootAuthInput'
 import { RootAuthBtn } from '@root/RootAuthBtn'
 import { RootAuthFooter } from '@root/RootAuthFooter'
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
+import { setIsOpenAuth } from '@/store/dialogWindows/dialogWindowsSlice'
 
 const AuthModal: FC = () => {
+  const dispatch = useAppDispatch()
+
+  const isOpen = useAppSelector(state => state.dialogs.isOpenAuth)
+  const setIsOpen = (isOpen: boolean) => dispatch(setIsOpenAuth(isOpen))
+
   const [authData, setAuthData] = useState({ email: '', password: '' })
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -21,10 +28,17 @@ const AuthModal: FC = () => {
     e.preventDefault()
     console.log(authData)
     setAuthData({ email: '', password: '' })
+    setIsOpen(false)
   }
 
+  const onClickForgetPassword = () => {
+    setIsOpen(false)
+  }
+
+  if (!isOpen) return null
+
   return (
-    <Modal>
+    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <RootAuthModal>
         <Logo />
         <RootAuthTitle>Авторизация</RootAuthTitle>
@@ -53,7 +67,9 @@ const AuthModal: FC = () => {
         </RootAuthForm>
 
         <RootAuthFooter justify="end">
-          <Link to="forget">Забыли пароль</Link>
+          <Link to="" onClick={onClickForgetPassword}>
+            Забыли пароль
+          </Link>
         </RootAuthFooter>
       </RootAuthModal>
     </Modal>

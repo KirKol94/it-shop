@@ -2,14 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { ICartProduct } from '@/types/ICartProduct'
 
 type CartSlice = {
-  isOpenCart: boolean
   items: ICartProduct[]
   discountSize: number
   totalPriceWithDiscount: number
 }
 
 const initialState: CartSlice = {
-  isOpenCart: false,
   items: [],
   discountSize: 0,
   totalPriceWithDiscount: 0,
@@ -23,11 +21,6 @@ const cartSlice = createSlice({
     // setCartProducts(state, action: PayloadAction<IProduct[]>) {
     //   state.products = action.payload
     // },
-
-    // показать скрыть корзину
-    setIsOpenCart(state, action: PayloadAction<boolean>) {
-      state.isOpenCart = action.payload
-    },
 
     // Добавляем товар в корзину
     addProduct(state, action: PayloadAction<ICartProduct>) {
@@ -80,7 +73,6 @@ export const {
   incrementCartItemCount,
   decrementCartItemCount,
   changeDiscountSize,
-  setIsOpenCart,
 } = cartSlice.actions
 
 export default cartSlice.reducer

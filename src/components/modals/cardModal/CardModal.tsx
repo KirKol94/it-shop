@@ -1,10 +1,11 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
+import React, { Dispatch, FC, useEffect, useRef, useState } from 'react'
 import Modal from '@ui/modal/Modal'
 import { IProduct } from '@/types/IProduct'
 import {
   Body,
   Button,
   CardModalWrapper,
+  CloseModal,
   Description,
   Footer,
   ImgBox,
@@ -14,21 +15,23 @@ import {
   SizeLabel,
   Sizes,
   Title,
-  CloseModal,
 } from './styled'
 import { useCountBox } from '@/hooks/useCountBox'
 import { useAppDispatch } from '@/hooks/reduxHooks'
-import { addProduct, setIsOpenCart } from '@/store/cart/cartSlice'
+import { addProduct } from '@/store/cart/cartSlice'
 import CloseIcon from '@ui/icons/CloseIcon'
 import { RootCountBox } from '@root/RootCountBox'
 import { RootCountInput } from '@root/RootCountInput'
 import { RootCountBtn } from '@root/RootCountBtn'
+import { setIsOpenCart } from '@/store/dialogWindows/dialogWindowsSlice'
 
 interface IProps {
   product: IProduct
+  isOpen: boolean
+  setIsOpen: Dispatch<boolean>
 }
 
-const CardModal: FC<IProps> = ({ product }) => {
+const CardModal: FC<IProps> = ({ isOpen, setIsOpen, product }) => {
   const dispatch = useAppDispatch()
 
   const sizes = ['xs', 's', 'm', 'l', 'xl']
@@ -54,6 +57,7 @@ const CardModal: FC<IProps> = ({ product }) => {
     }
     dispatch(addProduct(productToCart))
     dispatch(setIsOpenCart(true))
+    setIsOpen(false)
     setCount(1)
   }
 
@@ -67,8 +71,10 @@ const CardModal: FC<IProps> = ({ product }) => {
     }
   }, [size])
 
+  if (!isOpen) return null
+
   return (
-    <Modal>
+    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <CardModalWrapper>
         <ImgBox>
           <img src={product.image} alt={product.name} />

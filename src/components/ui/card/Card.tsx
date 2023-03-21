@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import CardModal from '@/components/modals/cardModal/CardModal'
 import { IProduct } from '@/types/IProduct'
 import {
@@ -20,10 +20,15 @@ interface IProps {
 }
 
 const Card: FC<IProps> = ({ product }) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const showProduct = () => {
+    setIsOpen(true)
+  }
+
   return (
     <>
       <Wrapper>
-        <ImgBox>
+        <ImgBox onClick={showProduct}>
           <Img src={product.image} alt={product.name} />
         </ImgBox>
 
@@ -37,11 +42,13 @@ const Card: FC<IProps> = ({ product }) => {
             <Price>{product.price.toLocaleString('ru')} ₽</Price>
             <OldPrice>{product.price.toLocaleString('ru')} ₽</OldPrice>
           </FooterPrices>
-          <CardButton variant="outlined">Подробнее</CardButton>
+          <CardButton variant="outlined" onClick={showProduct}>
+            Подробнее
+          </CardButton>
         </Footer>
       </Wrapper>
 
-      <CardModal product={product} />
+      <CardModal product={product} isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   )
 }
