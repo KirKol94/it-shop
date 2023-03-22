@@ -80,7 +80,7 @@ const CardModal: FC<IProps> = ({ isOpen, setIsOpen, product }) => {
           <img src={product.image} alt={product.name} />
         </ImgBox>
 
-        <CloseModal>
+        <CloseModal onClick={() => setIsOpen(false)}>
           <CloseIcon />
         </CloseModal>
 
