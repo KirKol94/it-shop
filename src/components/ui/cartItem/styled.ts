@@ -55,11 +55,12 @@ export const Title = styled.h3`
 export const Delete = styled.div`
   position: absolute;
   top: 0;
-  right: 0;
+  right: 4px;
+  width: 22px;
 `
 
 export const CloseIcon = styled(Close)`
-  width: 22px;
+  width: 100%;
 `
 
 export const Sizes = styled.div`
