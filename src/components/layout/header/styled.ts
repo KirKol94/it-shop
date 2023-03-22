@@ -3,9 +3,16 @@ import { bp, fonts } from '@/styled/vars'
 import { ReactComponent as Logo } from '@/assets/svg/logo.svg'
 import { ReactComponent as Burger } from '@/assets/svg/burger.svg'
 
-export const Wrapper = styled.header<{ isScrolled: boolean }>`
+export const Wrapper = styled.header<{
+  isScrolled: boolean
+  scrollDirection: 'down' | 'up'
+}>`
   z-index: 1;
   position: fixed;
+  opacity: ${({ scrollDirection }) => {
+    if (scrollDirection === 'up') return 1
+    if (scrollDirection === 'down') return 0
+  }};
   width: 100%;
   padding: 20px 0;
   background: ${({ isScrolled }) => {
@@ -13,7 +20,7 @@ export const Wrapper = styled.header<{ isScrolled: boolean }>`
       return 'linear-gradient(180deg, rgba(12, 1, 26, 0.5) 0%, rgba(12, 1, 26, 0) 100%)'
     if (isScrolled) return '#0C011A'
   }};
-  transition: background 150ms;
+  transition: all 600ms;
   font-family: ${fonts.exo};
 
   ${bp.md} {

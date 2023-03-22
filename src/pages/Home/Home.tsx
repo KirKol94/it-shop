@@ -26,7 +26,10 @@ const Home: FC = () => {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const catalog = document.getElementById('catalog')
     e.preventDefault()
-    catalog && catalog.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    catalog &&
+      catalog.scrollIntoView({
+        behavior: 'smooth',
+      })
   }
 
   return (
@@ -64,9 +67,9 @@ const Home: FC = () => {
           </RecommendCardsContainer>
         </section>
 
-        <section id="catalog">
+        <section>
           <RootContainer>
-            <RootTitle>Футболки и свитшоты</RootTitle>
+            <RootTitle id="catalog">Футболки и свитшоты</RootTitle>
 
             <CardsItems>
               {products.map(product => (

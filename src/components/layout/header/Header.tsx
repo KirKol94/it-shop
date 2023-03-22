@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import {
   AuthAndCart,
   BurgerIcon,
@@ -14,6 +14,7 @@ import { setHeight } from '@/store/header/headerSlice'
 import Navigation from '@ui/navigation/Navigation'
 import AuthAndCartBox from '@ui/authAndCartBox/AuthAndCartBox'
 import { setIsOpenMenu } from '@/store/dialogWindows/dialogWindowsSlice'
+import useScrollDirection from '@/hooks/useScrollDirection'
 
 const Header: FC = () => {
   const dispatch = useAppDispatch()
@@ -21,6 +22,9 @@ const Header: FC = () => {
   const showMenu = () => dispatch(setIsOpenMenu(true))
 
   const isScrolled = useScroll()
+  const { scrollDirection } = useScrollDirection()
+
+  const [scrollDir, setScrollDir] = useState<'up' | 'down'>('up')
 
   // отдаём высоту хедера в PageStructure
   const headerRef = useRef<HTMLDivElement>(null)
@@ -40,8 +44,15 @@ const Header: FC = () => {
     }
   }, [headerRef])
 
+  useEffect(() => {
+    setScrollDir(scrollDirection)
+  }, [scrollDirection])
+
   return (
-    <Wrapper ref={headerRef} isScrolled={isScrolled}>
+    <Wrapper
+      ref={headerRef}
+      isScrolled={isScrolled}
+      scrollDirection={scrollDir}>
       <Container>
         <Link to="">
           <LogoBox />
