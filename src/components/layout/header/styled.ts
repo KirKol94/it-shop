@@ -9,9 +9,9 @@ export const Wrapper = styled.header<{
 }>`
   z-index: 1;
   position: fixed;
-  opacity: ${({ scrollDirection }) => {
-    if (scrollDirection === 'up') return 1
-    if (scrollDirection === 'down') return 0
+  transform: ${({ scrollDirection }) => {
+    if (scrollDirection === 'up') return 'translateY(0)'
+    if (scrollDirection === 'down') return 'translateY(-100%)'
   }};
   width: 100%;
   padding: 20px 0;
