@@ -11,6 +11,16 @@ export const Wrapper = styled.div`
   background: ${gradients.main};
   border-radius: 16px;
   cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 0px -3px 8px ${colors.neon};
+
+    img {
+      transform: scale(1.05);
+      filter: drop-shadow(0px 0px 32px rgba(255, 255, 255, 0.25));
+    }
+  }
 `
 
 export const ProductName = styled.p`
