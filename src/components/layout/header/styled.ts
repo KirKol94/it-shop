@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { bp, fonts } from '@/styled/vars'
-import { RootContainer } from '@root/RootContainer'
 import { ReactComponent as Logo } from '@/assets/svg/logo.svg'
 import { ReactComponent as Burger } from '@/assets/svg/burger.svg'
 
@@ -22,7 +21,10 @@ export const Wrapper = styled.header<{ isScrolled: boolean }>`
   }
 `
 
-export const Container = styled(RootContainer)`
+export const Container = styled.div`
+  max-width: 1920px;
+  padding: 0 clamp(0.938rem, -37.5rem + 50vw, 5rem);
+  margin: 0 auto;
   display: flex;
   height: 100%;
   align-items: center;
