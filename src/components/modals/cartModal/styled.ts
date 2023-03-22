@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { colors, fonts, gradients } from '@/styled/vars'
 import { RootButton } from '@root/RootButton'
+import { ReactComponent as Wolf } from '@/assets/svg/wolf.svg'
 
 export const Wrapper = styled.div`
   height: 100%;
@@ -58,6 +59,26 @@ export const CartBody = styled.div`
     border-radius: 6px;
     border: 3px solid #18042f;
   }
+`
+
+export const EmptyCart = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`
+
+export const EmptyTitle = styled.span`
+  font-size: 40px;
+  text-align: center;
+`
+
+export const WolfIcon = styled(Wolf)`
+  width: clamp(11.25rem, 6.705rem + 22.73vw, 23.75rem);
+  height: clamp(11.25rem, 6.705rem + 22.73vw, 23.75rem);
 `
 
 export const CartFooter = styled.div`
