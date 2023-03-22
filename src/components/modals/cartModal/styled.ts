@@ -32,6 +32,10 @@ export const Close = styled.div`
   display: flex;
   align-items: center;
   justify-content: end;
+
+  & > svg {
+    width: 32px;
+  }
 `
 
 export const CartBody = styled.div`

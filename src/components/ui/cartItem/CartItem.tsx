@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import CloseIcon from '@ui/icons/CloseIcon'
 import {
   CountBtn,
   CountInput,
+  CloseIcon,
   Delete,
   Footer,
   Header,
@@ -56,7 +56,7 @@ const CartItem: FC<IProps> = ({ product }) => {
           <Title>{product.name}</Title>
           <Delete>
             <button onClick={onDeleteItem}>
-              <CloseIcon size={22} />
+              <CloseIcon />
             </button>
           </Delete>
         </Header>

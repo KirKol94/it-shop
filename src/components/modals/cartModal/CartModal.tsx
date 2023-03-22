@@ -16,7 +16,7 @@ import {
   Wrapper,
 } from './styled'
 import CartItem from '@ui/cartItem/CartItem'
-import CloseIcon from '@ui/icons/CloseIcon'
+import { ReactComponent as CloseIcon } from '@/assets/svg/close.svg'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 import { changeDiscountSize } from '@/store/cart/cartSlice'
 import {
@@ -71,7 +71,7 @@ const CartModal: FC = () => {
           <Title>Корзина</Title>
           <Close>
             <button onClick={() => setIsOpen(false)}>
-              <CloseIcon size={32} />
+              <CloseIcon />
             </button>
           </Close>
         </CartTop>

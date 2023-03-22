@@ -3,6 +3,7 @@ import { cutLongStringStyles } from '@/styled/mixins'
 import { colors, gradients } from '@/styled/vars'
 import { RootCountInput } from '@root/RootCountInput'
 import { RootCountBtn } from '@root/RootCountBtn'
+import { ReactComponent as Close } from '@/assets/svg/close.svg'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -56,6 +57,11 @@ export const Delete = styled.div`
   top: 0;
   right: 0;
 `
+
+export const CloseIcon = styled(Close)`
+  width: 22px;
+`
+
 export const Sizes = styled.div`
   display: flex;
   align-content: center;

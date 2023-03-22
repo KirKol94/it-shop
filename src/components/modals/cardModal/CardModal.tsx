@@ -6,6 +6,7 @@ import {
   Button,
   CardModalWrapper,
   CloseModal,
+  CloseIcon,
   Description,
   Footer,
   ImgBox,
@@ -19,7 +20,6 @@ import {
 import { useCountBox } from '@/hooks/useCountBox'
 import { useAppDispatch } from '@/hooks/reduxHooks'
 import { addProduct } from '@/store/cart/cartSlice'
-import CloseIcon from '@ui/icons/CloseIcon'
 import { RootCountBox } from '@root/RootCountBox'
 import { RootCountInput } from '@root/RootCountInput'
 import { RootCountBtn } from '@root/RootCountBtn'
@@ -81,7 +81,7 @@ const CardModal: FC<IProps> = ({ isOpen, setIsOpen, product }) => {
         </ImgBox>
 
         <CloseModal>
-          <CloseIcon size={24} />
+          <CloseIcon />
         </CloseModal>
 
         <Body>

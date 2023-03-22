@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { colors, fonts } from '@/styled/vars'
 import { RootButton } from '@root/RootButton'
+import { ReactComponent as Close } from '@/assets/svg/close.svg'
 
 export const CardModalWrapper = styled.div`
   display: flex;
@@ -29,6 +30,11 @@ export const CloseModal = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
+  width: 24px;
+`
+
+export const CloseIcon = styled(Close)`
+  width: 100%;
 `
 
 export const Body = styled.div`
