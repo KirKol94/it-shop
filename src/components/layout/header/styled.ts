@@ -9,8 +9,9 @@ export const Wrapper = styled.header<{
 }>`
   z-index: 1;
   position: fixed;
-  transform: ${({ scrollDirection }) => {
+  transform: ${({ scrollDirection, isScrolled }) => {
     if (scrollDirection === 'up') return 'translateY(0)'
+    if (!isScrolled) return 'translateY(0)'
     if (scrollDirection === 'down') return 'translateY(-100%)'
   }};
   width: 100%;
@@ -21,6 +22,7 @@ export const Wrapper = styled.header<{
     if (isScrolled) return '#0C011A'
   }};
   transition: all 600ms;
+  will-change: transform;
   font-family: ${fonts.exo};
 
   ${bp.md} {
