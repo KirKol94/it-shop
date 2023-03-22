@@ -2,7 +2,6 @@ import { RootContainer } from '@root/RootContainer'
 import { borders, bp, colors, fonts } from '@/styled/vars'
 import styled from 'styled-components'
 import HeroSectionBg from '@/assets/img/home-page/hero-section/bg.webp'
-import { RootButton } from '@root/RootButton'
 
 export const HeroSection = styled.section<{ headerHeight: number }>`
   padding-top: calc(
@@ -175,11 +174,26 @@ export const Subtitle = styled.p`
   }
 `
 
-export const HeroSectionButton = styled(RootButton)`
+export const HeroSectionLink = styled.a`
+  display: inline-block;
+  text-align: center;
   width: 100%;
   max-width: 380px;
+  padding: 14px 22px;
+  background-color: ${colors.neon};
+  border: 2px solid ${colors.white};
+  border-radius: 10px;
+  transition: all 0.3s;
+  font-family: ${fonts.exo};
+  font-weight: 400;
+  font-size: clamp(0.75rem, 0.615rem + 0.51vw, 1rem);
+
+  &:hover {
+    box-shadow: 2px 2px 0 ${colors.white}, inset 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
 
   ${bp.md} {
+    font-weight: 600;
     align-self: center;
   }
 `

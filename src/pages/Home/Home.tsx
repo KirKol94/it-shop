@@ -7,9 +7,9 @@ import {
   CardsItems,
   Catalog,
   HeroSection,
-  HeroSectionButton,
   HeroSectionContainer,
   HeroSectionInfo,
+  HeroSectionLink,
   HeroSectionLogo,
   RecommendCardsContainer,
   Subtitle,
@@ -23,6 +23,12 @@ const Home: FC = () => {
   const recommended = useAppSelector(state => state.recommended.products)
   const headerHeight = useAppSelector(state => state.header.height)
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const catalog = document.getElementById('catalog')
+    e.preventDefault()
+    catalog && catalog.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <>
       <HeroSection headerHeight={headerHeight}>
@@ -34,12 +40,11 @@ const Home: FC = () => {
 
             <Subtitle>
               Первый мерч-шоп осознанной меркантильности (h1) Создано
-              отчаявшимися найти валютную удалёнку джунами для таких же джунов В
-              каталог мерча Нанять талантливых джунов
+              отчаявшимися найти валютную удалёнку джунами для таких же джунов
             </Subtitle>
-            <HeroSectionButton variant="solid">
-              В каталог мерча
-            </HeroSectionButton>
+            <HeroSectionLink href="/" onClick={scrollToSection}>
+              В каталог
+            </HeroSectionLink>
           </HeroSectionInfo>
 
           <HeroSectionLogo>
@@ -59,7 +64,7 @@ const Home: FC = () => {
           </RecommendCardsContainer>
         </section>
 
-        <section>
+        <section id="catalog">
           <RootContainer>
             <RootTitle>Футболки и свитшоты</RootTitle>
 
