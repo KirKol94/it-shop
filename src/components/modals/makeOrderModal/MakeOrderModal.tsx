@@ -9,13 +9,12 @@ import {
   InputRow,
   Title,
   Wrapper,
-  OrderInputBox,
   OrderInput,
-  OrderInputLabel,
 } from './styled'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 import { setIsOpenMakeOrder } from '@/store/dialogWindows/dialogWindowsSlice'
 import { ReactComponent as CloseIcon } from '@/assets/svg/close.svg'
+import { InputBox, Label } from '@root/RootInput'
 
 const MakeOrderModal: FC = () => {
   const dispatch = useAppDispatch()
@@ -39,7 +38,7 @@ const MakeOrderModal: FC = () => {
         <Form>
           <FormTitle>Информация о покупателе</FormTitle>
           <InputRow>
-            <OrderInputBox>
+            <InputBox>
               <OrderInput
                 id="orderName"
                 type="text"
@@ -47,9 +46,9 @@ const MakeOrderModal: FC = () => {
                 maxLength={20}
                 placeholder=" "
               />
-              <OrderInputLabel htmlFor="orderName">Имя</OrderInputLabel>
-            </OrderInputBox>
-            <OrderInputBox>
+              <Label htmlFor="orderName">Имя</Label>
+            </InputBox>
+            <InputBox>
               <OrderInput
                 id="orderLastName"
                 type="text"
@@ -57,11 +56,11 @@ const MakeOrderModal: FC = () => {
                 maxLength={20}
                 placeholder=" "
               />
-              <OrderInputLabel htmlFor="orderLastName">Фамилия</OrderInputLabel>
-            </OrderInputBox>
+              <Label htmlFor="orderLastName">Фамилия</Label>
+            </InputBox>
           </InputRow>
           <InputRow>
-            <OrderInputBox>
+            <InputBox>
               <OrderInput
                 id="orderPhone"
                 type="text"
@@ -69,47 +68,43 @@ const MakeOrderModal: FC = () => {
                 maxLength={20}
                 placeholder=" "
               />
-              <OrderInputLabel htmlFor="orderPhone">Телефон</OrderInputLabel>
-            </OrderInputBox>
-            <OrderInputBox>
+              <Label htmlFor="orderPhone">Телефон</Label>
+            </InputBox>
+            <InputBox>
               <OrderInput
                 id="orderMail"
                 type="email"
                 required
                 placeholder=" "
               />
-              <OrderInputLabel htmlFor="orderMail">Эл. почта</OrderInputLabel>
-            </OrderInputBox>
+              <Label htmlFor="orderMail">Эл. почта</Label>
+            </InputBox>
           </InputRow>
 
           <FormTitle>Адрес доставки</FormTitle>
           <InputRow>
-            <OrderInputBox>
+            <InputBox>
               <OrderInput
                 id="orderCountry"
                 type="text"
                 required
                 placeholder=" "
               />
-              <OrderInputLabel htmlFor="orderCountry">Страна</OrderInputLabel>
-            </OrderInputBox>
-            <OrderInputBox>
+              <Label htmlFor="orderCountry">Страна</Label>
+            </InputBox>
+            <InputBox>
               <OrderInput id="orderCity" type="text" required placeholder=" " />
-              <OrderInputLabel htmlFor="orderCity">Город</OrderInputLabel>
-            </OrderInputBox>
+              <Label htmlFor="orderCity">Город</Label>
+            </InputBox>
           </InputRow>
-          <OrderInputBox>
+          <InputBox>
             <OrderInput id="orderCity" type="text" required placeholder=" " />
-            <OrderInputLabel htmlFor="orderCity">
-              Адрес строка 1
-            </OrderInputLabel>
-          </OrderInputBox>
-          <OrderInputBox>
+            <Label htmlFor="orderCity">Адрес строка 1</Label>
+          </InputBox>
+          <InputBox>
             <OrderInput id="orderCity" type="text" placeholder=" " />
-            <OrderInputLabel htmlFor="orderCity">
-              Адрес строка 2
-            </OrderInputLabel>
-          </OrderInputBox>
+            <Label htmlFor="orderCity">Адрес строка 2</Label>
+          </InputBox>
 
           <FormTitle>Информация об оплате</FormTitle>
 

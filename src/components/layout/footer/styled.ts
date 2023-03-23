@@ -4,7 +4,7 @@ import Logo from '@ui/logo/Logo'
 import VkIcon from '@/assets/svg/vk.svg'
 import { RootContainer } from '@root/RootContainer'
 import { RootButton } from '@root/RootButton'
-import { InputBox, InputText, Label } from '@root/RootInput'
+import { InputText } from '@root/RootInput'
 
 export const FooterWrapper = styled.footer`
   width: 100%;
@@ -92,10 +92,6 @@ export const Form = styled.form`
   align-items: center;
   gap: 14px;
 `
-
-export const InputBoxFooter = styled(InputBox)``
-
-export const LabelFooter = styled(Label)``
 
 export const InputTextFooter = styled(InputText)`
   border: 1px solid ${colors.gray};

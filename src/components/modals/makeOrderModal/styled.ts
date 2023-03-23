@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { bp, colors } from '@/styled/vars'
 import { RootButton } from '@root/RootButton'
-import { InputBox, InputText, Label } from '@root/RootInput'
+import { InputText } from '@root/RootInput'
 
 export const Wrapper = styled.div`
   overflow-y: auto;
@@ -63,12 +63,9 @@ export const InputRow = styled.div`
     grid-template-columns: 1fr;
   }
 `
-
-export const OrderInputBox = styled(InputBox)``
 export const OrderInput = styled(InputText)`
   background-color: ${colors.lightNeon};
 `
-export const OrderInputLabel = styled(Label)``
 
 export const Button = styled(RootButton)`
   align-self: center;
