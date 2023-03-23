@@ -1,18 +1,23 @@
 import styled from 'styled-components'
-import { colors, fonts, gradients } from '@/styled/vars'
+import { colors, fonts, gradients, bp } from '@/styled/vars'
 import { RootButton } from '@root/RootButton'
 import { ReactComponent as Wolf } from '@/assets/svg/wolf.svg'
 
 export const Wrapper = styled.div`
   height: 100%;
   border-radius: 16px;
-  width: clamp(18.75rem, 12.841rem + 29.55vw, 35rem);
-  padding: 20px;
+  width: 460px;
+  padding: 10px 20px 20px;
   background-color: ${colors.violet};
   display: flex;
   gap: 10px;
   flex-direction: column;
   justify-content: space-between;
+
+  ${bp.sm} {
+    width: 100%;
+    padding: 10px;
+  }
 `
 
 export const CartTop = styled.div`
@@ -23,9 +28,8 @@ export const CartTop = styled.div`
 export const Title = styled.h2`
   font-family: ${fonts.primary};
   font-weight: 500;
-  font-size: 26px;
-  line-height: 125%;
-  padding-bottom: 10px;
+  font-size: 22px;
+  line-height: 1.25;
   border-bottom: 1px solid ${colors.neon};
 `
 
@@ -34,8 +38,8 @@ export const Close = styled.div`
   align-items: center;
   justify-content: end;
 
-  & > svg {
-    width: 32px;
+  & svg {
+    width: 26px;
   }
 `
 
@@ -93,6 +97,14 @@ export const CartFooterInfo = styled.div`
   gap: 10px;
   border-radius: 16px;
   padding: 0 16px;
+
+  ${bp.sm} {
+    padding: 0;
+  }
+
+  ${bp.vs} {
+    gap: 5px;
+  }
 `
 
 export const CartInfoRow = styled.div`
@@ -109,6 +121,10 @@ export const CartInfoRow = styled.div`
 
   & > div {
     flex: 1 1 auto;
+  }
+
+  ${bp.sm} {
+    font-size: 14px;
   }
 `
 
@@ -132,6 +148,10 @@ export const InfoFinal = styled(CartInfoRow)`
   font-family: ${fonts.exo};
   font-weight: 700;
   font-size: 20px;
+
+  ${bp.sm} {
+    font-size: 18px;
+  }
 `
 
 export const PromoInput = styled.input`

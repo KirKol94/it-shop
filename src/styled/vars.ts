@@ -23,6 +23,7 @@ export const borders = {
 }
 
 export const bp = {
+  vs: '@media (max-width: 385px)',
   sm: '@media (max-width: 576px)',
   md: '@media (max-width: 768px)',
   lg: '@media (max-width: 992px)',

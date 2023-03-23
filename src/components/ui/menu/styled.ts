@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { bp } from '@/styled/vars'
 
 export const MenuContent = styled.div`
   position: absolute;
@@ -17,5 +18,9 @@ export const MenuContent = styled.div`
     to {
       transform: translateX(0);
     }
+  }
+
+  ${bp.sm} {
+    width: 100%;
   }
 `

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { cutLongStringStyles } from '@/styled/mixins'
-import { colors, gradients } from '@/styled/vars'
+import { colors, gradients, bp } from '@/styled/vars'
 import { RootCountInput } from '@root/RootCountInput'
 import { RootCountBtn } from '@root/RootCountBtn'
 import { ReactComponent as Close } from '@/assets/svg/close.svg'
@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   max-height: 120px;
-  height: 100%;
   gap: 20px;
   padding: 10px;
   border-radius: 16px;
@@ -36,7 +35,7 @@ export const Inner = styled.div`
   flex: 1 1 230px;
   flex-direction: column;
   justify-content: space-between;
-  gap: 5.5px;
+  gap: 6.5px;
   height: 100%;
 `
 export const Header = styled.div`
@@ -50,17 +49,29 @@ export const Title = styled.h3`
   font-weight: 600;
   line-height: 1.5;
   ${cutLongStringStyles(2)}
+
+  ${bp.vs} {
+    font-size: 14px;
+  }
 `
 
 export const Delete = styled.div`
   position: absolute;
   top: 0;
   right: 4px;
-  width: 22px;
+
+  ${bp.sm} {
+    top: -6px;
+    right: 0px;
+  }
 `
 
 export const CloseIcon = styled(Close)`
-  width: 100%;
+  width: 22px;
+
+  ${bp.sm} {
+    width: 18px;
+  }
 `
 
 export const Sizes = styled.div`
@@ -82,18 +93,29 @@ export const SizeName = styled.div`
 export const Footer = styled.div`
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 10px;
 `
 
 export const CountBtn = styled(RootCountBtn)`
   padding: 2.5px 9px;
   width: 26px;
   height: 26px;
+
+  ${bp.sm} {
+    padding: 1.5px 7px;
+    width: 22px;
+    height: 22px;
+  }
 `
 export const CountInput = styled(RootCountInput)`
   width: 26px;
   height: 26px;
   font-size: 14px;
+
+  ${bp.sm} {
+    width: 22px;
+    height: 22px;
+  }
 `
 
 export const Price = styled.span`
@@ -101,7 +123,16 @@ export const Price = styled.span`
   font-size: 16px;
   font-weight: 600;
   line-height: 1.2;
+
+  ${bp.sm} {
+    font-size: 14px;
+  }
+
+  ${bp.vs} {
+    font-size: 13px;
+  }
 `
+
 export const Line = styled.span`
   position: relative;
   height: 1px;
@@ -125,4 +156,8 @@ export const Multiply = styled.div`
   font-size: 16px;
   text-transform: uppercase;
   line-height: 1;
+
+  ${bp.sm} {
+    font-size: 13px;
+  }
 `

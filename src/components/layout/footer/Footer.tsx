@@ -9,12 +9,10 @@ import {
   FooterLogo,
   FooterWrapper,
   Form,
+  InputTextFooter,
   GenderBox,
   GenderInput,
   GenderLabel,
-  InputBox,
-  InputText,
-  Label,
   NewsLetter,
   NewsLetterTitle,
   Privacy,
@@ -24,6 +22,7 @@ import {
   Subtitle,
 } from './styled'
 import { Link } from 'react-router-dom'
+import { InputBox, Label } from '@root/RootInput'
 
 const Footer: FC = () => {
   const menuLinks = [
@@ -86,7 +85,7 @@ const Footer: FC = () => {
             <NewsLetterTitle>Подписаться на рассылку</NewsLetterTitle>
             <Form id="fastMail" name="fastMail">
               <InputBox>
-                <InputText
+                <InputTextFooter
                   autoComplete="off"
                   id="fastMailPhone"
                   type="text"
@@ -98,7 +97,7 @@ const Footer: FC = () => {
                 <span hidden>УКАЖИТЕ ВАШЕ ИМЯ</span>
               </InputBox>
               <InputBox>
-                <InputText
+                <InputTextFooter
                   autoComplete="off"
                   id="fastMailEmail"
                   type="email"
