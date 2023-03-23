@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
 import { RootContainer } from '@root/RootContainer'
 import styled from 'styled-components'
+import { useAppSelector } from '@/hooks/reduxHooks'
 
-const Wrapper = styled(RootContainer)`
-  padding-top: 40px;
+const Wrapper = styled(RootContainer)<{ headerHeight: number }>`
+  padding-top: calc(${({ headerHeight }) => headerHeight}px + 40px);
   padding-bottom: 40px;
   display: flex;
   flex-direction: column;
@@ -11,8 +12,10 @@ const Wrapper = styled(RootContainer)`
 `
 
 const About: FC = () => {
+  const headerHeight = useAppSelector(state => state.header.height)
+
   return (
-    <Wrapper>
+    <Wrapper headerHeight={headerHeight}>
       <h1>
         Добро пожаловать на страницу нашего интернет-магазина,
         специализирующегося на продаже мерч-одежды с айтишной тематикой!
