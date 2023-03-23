@@ -102,7 +102,7 @@ export const CartFooterInfo = styled.div`
     padding: 0;
   }
 
-  ${bp.vs} {
+  ${bp.xs} {
     gap: 5px;
   }
 `

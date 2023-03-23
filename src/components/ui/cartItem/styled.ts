@@ -50,7 +50,7 @@ export const Title = styled.h3`
   line-height: 1.5;
   ${cutLongStringStyles(2)}
 
-  ${bp.vs} {
+  ${bp.xs} {
     font-size: 14px;
   }
 `
@@ -62,7 +62,7 @@ export const Delete = styled.div`
 
   ${bp.sm} {
     top: -6px;
-    right: 0px;
+    right: 0;
   }
 `
 
@@ -128,7 +128,7 @@ export const Price = styled.span`
     font-size: 14px;
   }
 
-  ${bp.vs} {
+  ${bp.xs} {
     font-size: 13px;
   }
 `
