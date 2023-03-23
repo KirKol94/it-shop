@@ -6,10 +6,12 @@ import {
   Form,
   FormTitle,
   Header,
-  Input,
   InputRow,
   Title,
   Wrapper,
+  OrderInputBox,
+  OrderInput,
+  OrderInputLabel,
 } from './styled'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 import { setIsOpenMakeOrder } from '@/store/dialogWindows/dialogWindowsSlice'
@@ -37,24 +39,79 @@ const MakeOrderModal: FC = () => {
         <Form>
           <FormTitle>Информация о покупателе</FormTitle>
           <InputRow>
-            <Input placeholder="Имя" />
-            <Input placeholder="Фамилия" />
+            <OrderInputBox>
+              <OrderInput
+                id="orderName"
+                type="text"
+                required
+                maxLength={20}
+                placeholder=" "
+              />
+              <OrderInputLabel htmlFor="orderName">Имя</OrderInputLabel>
+            </OrderInputBox>
+            <OrderInputBox>
+              <OrderInput
+                id="orderLastName"
+                type="text"
+                required
+                maxLength={20}
+                placeholder=" "
+              />
+              <OrderInputLabel htmlFor="orderLastName">Фамилия</OrderInputLabel>
+            </OrderInputBox>
           </InputRow>
           <InputRow>
-            <Input placeholder="Телефон" />
-            <Input placeholder="Эл. почта" />
+            <OrderInputBox>
+              <OrderInput
+                id="orderPhone"
+                type="text"
+                required
+                maxLength={20}
+                placeholder=" "
+              />
+              <OrderInputLabel htmlFor="orderPhone">Телефон</OrderInputLabel>
+            </OrderInputBox>
+            <OrderInputBox>
+              <OrderInput
+                id="orderMail"
+                type="email"
+                required
+                placeholder=" "
+              />
+              <OrderInputLabel htmlFor="orderMail">Эл. почта</OrderInputLabel>
+            </OrderInputBox>
           </InputRow>
 
           <FormTitle>Адрес доставки</FormTitle>
           <InputRow>
-            <Input placeholder="Страна" />
-            <Input placeholder="Город" />
+            <OrderInputBox>
+              <OrderInput
+                id="orderCountry"
+                type="text"
+                required
+                placeholder=" "
+              />
+              <OrderInputLabel htmlFor="orderCountry">Страна</OrderInputLabel>
+            </OrderInputBox>
+            <OrderInputBox>
+              <OrderInput id="orderCity" type="text" required placeholder=" " />
+              <OrderInputLabel htmlFor="orderCity">Город</OrderInputLabel>
+            </OrderInputBox>
           </InputRow>
-          <Input placeholder="Адрес строка 1" />
-          <Input placeholder="Адрес строка 2" />
+          <OrderInputBox>
+            <OrderInput id="orderCity" type="text" required placeholder=" " />
+            <OrderInputLabel htmlFor="orderCity">
+              Адрес строка 1
+            </OrderInputLabel>
+          </OrderInputBox>
+          <OrderInputBox>
+            <OrderInput id="orderCity" type="text" placeholder=" " />
+            <OrderInputLabel htmlFor="orderCity">
+              Адрес строка 2
+            </OrderInputLabel>
+          </OrderInputBox>
 
           <FormTitle>Информация об оплате</FormTitle>
-          <Input placeholder="Извините, но я пока в душе не ебу, что сюда лепить" />
 
           <Button onClick={() => setIsOpen(false)} variant="solid">
             Перейти к оплате

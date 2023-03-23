@@ -9,12 +9,12 @@ import {
   FooterLogo,
   FooterWrapper,
   Form,
+  InputBoxFooter,
+  InputTextFooter,
+  LabelFooter,
   GenderBox,
   GenderInput,
   GenderLabel,
-  InputBox,
-  InputText,
-  Label,
   NewsLetter,
   NewsLetterTitle,
   Privacy,
@@ -85,8 +85,8 @@ const Footer: FC = () => {
           <NewsLetter>
             <NewsLetterTitle>Подписаться на рассылку</NewsLetterTitle>
             <Form id="fastMail" name="fastMail">
-              <InputBox>
-                <InputText
+              <InputBoxFooter>
+                <InputTextFooter
                   autoComplete="off"
                   id="fastMailPhone"
                   type="text"
@@ -94,11 +94,11 @@ const Footer: FC = () => {
                   maxLength={20}
                   placeholder=" "
                 />
-                <Label htmlFor="fastMailPhone">Имя</Label>
+                <LabelFooter htmlFor="fastMailPhone">Имя</LabelFooter>
                 <span hidden>УКАЖИТЕ ВАШЕ ИМЯ</span>
-              </InputBox>
-              <InputBox>
-                <InputText
+              </InputBoxFooter>
+              <InputBoxFooter>
+                <InputTextFooter
                   autoComplete="off"
                   id="fastMailEmail"
                   type="email"
@@ -106,11 +106,11 @@ const Footer: FC = () => {
                   maxLength={40}
                   placeholder=" "
                 />
-                <Label htmlFor="fastMailEmail">Эл. почта</Label>
+                <LabelFooter htmlFor="fastMailEmail">Эл. почта</LabelFooter>
                 <span hidden>
                   УКАЖИТЕ ПРАВИЛЬНЫЙ АДРЕС ВАШЕЙ ЭЛЕКТРОННОЙ ПОЧТЫ
                 </span>
-              </InputBox>
+              </InputBoxFooter>
               <GenderBox>
                 <div>
                   <div>
