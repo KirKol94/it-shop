@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
 import { RootContainer } from '@root/RootContainer'
 import styled from 'styled-components'
+import { useAppSelector } from '@/hooks/reduxHooks'
 
-const Wrapper = styled(RootContainer)`
-  padding-top: 40px;
+const Wrapper = styled(RootContainer)<{ headerHeight: number }>`
+  padding-top: calc(${({ headerHeight }) => headerHeight}px + 40px);
   padding-bottom: 40px;
   display: flex;
   flex-direction: column;
@@ -11,8 +12,10 @@ const Wrapper = styled(RootContainer)`
 `
 
 const PrivacyPolicy: FC = () => {
+  const headerHeight = useAppSelector(state => state.header.height)
+
   return (
-    <Wrapper>
+    <Wrapper headerHeight={headerHeight}>
       <h1>Политика конфиденциальности для интернет-магазина:</h1>
 
       <h2>1. Сбор и использование личных данных</h2>
