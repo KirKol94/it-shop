@@ -223,32 +223,15 @@ export const RecommendCardsContainer = styled(RootContainer)`
 export const CardsItems = styled.div`
   padding-top: 24px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   row-gap: 24px;
   column-gap: 20px;
 
-  & > :nth-child(9n) {
-    display: none;
-  }
-
-  & > * {
-    margin: 0 auto;
-  }
-
   ${bp.lg} {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  ${bp.lg} {
-    & > :nth-child(9n) {
-      display: block;
-    }
+    grid-template-columns: repeat(3, 1fr);
   }
 
   ${bp.sm} {
-    grid-template-columns: 1fr 1fr;
-    & > :nth-child(9n) {
-      display: none;
-    }
+    grid-template-columns: repeat(2, 1fr);
   }
 `

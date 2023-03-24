@@ -74,14 +74,6 @@ const initialState: ProductState = {
       description: 'Ну тут не надо описание даже',
       price: 1905,
     },
-    {
-      id: '9',
-      image:
-        'https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png',
-      name: 'Сорочка для Си-разработчика',
-      description: 'Ну тут не надо описание даже',
-      price: 1905,
-    },
   ],
 }
 
