@@ -30,7 +30,6 @@ export const Label = styled.label`
   transform-origin: 0 0;
   transition: all 200ms cubic-bezier(0.25, 0.8, 0.25, 1);
   white-space: pre-wrap;
-  will-change: transform;
 `
 
 export const InputText = styled.input`
