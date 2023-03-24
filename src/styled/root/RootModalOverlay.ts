@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const RootModalOverlay = styled.div`
+  overflow: hidden;
   position: fixed;
   top: 0;
   right: 0;
