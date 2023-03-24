@@ -10,12 +10,12 @@ import {
   Close,
   EmptyCart,
   EmptyTitle,
+  ImgBox,
   InfoFinal,
   PromoInput,
   PromoLabel,
   PromoSaleSize,
   Title,
-  WolfIcon,
   Wrapper,
 } from './styled'
 import CartItem from '@ui/cartItem/CartItem'
@@ -87,10 +87,11 @@ const CartModal: FC = () => {
         {cartItems.length === 0 && (
           <EmptyCart>
             <EmptyTitle>Корзина пуста</EmptyTitle>
-            <WolfIcon />
+            <ImgBox>
+              <img src="/empty_basket.png" alt="корзина пуста" />
+            </ImgBox>
           </EmptyCart>
         )}
-
         {cartItems.length && (
           <CartFooter>
             <CartFooterInfo>

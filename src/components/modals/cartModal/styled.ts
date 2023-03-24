@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { colors, fonts, gradients, bp } from '@/styled/vars'
 import { RootButton } from '@root/RootButton'
-import { ReactComponent as Wolf } from '@/assets/svg/wolf.svg'
 
 export const Wrapper = styled.div`
   height: 100%;
@@ -69,10 +68,12 @@ export const EmptyCart = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding: 0 20px;
+  transform: translate(-50%, -50%);
 `
 
 export const EmptyTitle = styled.span`
@@ -80,9 +81,12 @@ export const EmptyTitle = styled.span`
   text-align: center;
 `
 
-export const WolfIcon = styled(Wolf)`
-  width: clamp(11.25rem, 6.705rem + 22.73vw, 23.75rem);
-  height: clamp(11.25rem, 6.705rem + 22.73vw, 23.75rem);
+export const ImgBox = styled.div`
+  & > img {
+    margin: 0 auto;
+    width: 165px;
+    height: 165px;
+  }
 `
 
 export const CartFooter = styled.div`
