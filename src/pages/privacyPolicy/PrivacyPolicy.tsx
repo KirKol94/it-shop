@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useLayoutEffect } from 'react'
 import { RootContainer } from '@root/RootContainer'
 import styled from 'styled-components'
 import { useAppSelector } from '@/hooks/reduxHooks'
@@ -13,6 +13,10 @@ const Wrapper = styled(RootContainer)<{ headerHeight: number }>`
 
 const PrivacyPolicy: FC = () => {
   const headerHeight = useAppSelector(state => state.header.height)
+
+  useLayoutEffect(() => {
+    window.scroll(0, 0)
+  }, [])
 
   return (
     <Wrapper headerHeight={headerHeight}>

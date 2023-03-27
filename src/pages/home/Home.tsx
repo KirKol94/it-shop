@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useLayoutEffect } from 'react'
 import Card from '@ui/card/Card'
 import { RootTitle } from '@root/RootTitle'
 import RecommendCard from '@/components/ui/recommendCard/RecommendCard'
@@ -31,6 +31,10 @@ const Home: FC = () => {
         behavior: 'smooth',
       })
   }
+
+  useLayoutEffect(() => {
+    window.scroll(0, 0)
+  }, [])
 
   return (
     <>
