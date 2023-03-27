@@ -1,52 +1,56 @@
-import React, { FC, useState } from "react";
-import CardModal from "../../modals/cardModal/CardModal";
-import { IProduct } from "../../../types/IProduct";
+import React, { FC, useState } from 'react'
+import CardModal from '@/components/modals/cardModal/CardModal'
+import { IProduct } from '@/types/IProduct'
 import {
-  Wrapper,
+  Body,
+  CardButton,
+  Footer,
+  FooterPrices,
   Img,
   ImgBox,
+  OldPrice,
   Price,
+  Subtitle,
   Title,
-  Body,
-  Description,
-  Footer,
-  Button,
-} from "./styled";
+  Wrapper,
+} from './styled'
 
 interface IProps {
-  product: IProduct;
+  product: IProduct
 }
 
 const Card: FC<IProps> = ({ product }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+  const showProduct = () => {
+    setIsOpen(true)
+  }
 
   return (
     <>
       <Wrapper>
-        <ImgBox onClick={() => setIsOpen(true)}>
+        <ImgBox onClick={showProduct}>
           <Img src={product.image} alt={product.name} />
         </ImgBox>
 
         <Body>
+          <Subtitle>Футболка</Subtitle>
           <Title>{product.name}</Title>
-          <Description>{product.description}</Description>
         </Body>
 
         <Footer>
-          <Price>{product.price.toLocaleString("ru")} ₽</Price>
-          <Button variant="primary" onClick={() => setIsOpen(true)}>
+          <FooterPrices>
+            <Price>{product.price.toLocaleString('ru')} ₽</Price>
+            <OldPrice>{product.price.toLocaleString('ru')} ₽</OldPrice>
+          </FooterPrices>
+          <CardButton variant="outlined" onClick={showProduct}>
             Подробнее
-          </Button>
+          </CardButton>
         </Footer>
       </Wrapper>
 
-      <CardModal
-        isOpenCard={isOpen}
-        setIsOpenCard={setIsOpen}
-        product={product}
-      />
+      <CardModal product={product} isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

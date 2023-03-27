@@ -1,28 +1,79 @@
-import React, { FC } from "react";
-import Modal from "../../ui/modal/Modal";
-import styled from "styled-components";
-import { gradients } from "../../../styled/vars";
+import React, { ChangeEvent, FC, FormEvent, useState } from 'react'
+import Modal from '@ui/modal/Modal'
+import Logo from '@ui/logo/Logo'
+import { Link } from 'react-router-dom'
+import { RootAuthModal } from '@root/RootAuthModal'
+import { RootAuthTitle } from '@root/RootAuthTitle'
+import { RootAuthForm } from '@root/RootAuthForm'
+import { RootAuthInput } from '@root/RootAuthInput'
+import { RootAuthBtn } from '@root/RootAuthBtn'
+import { RootAuthFooter } from '@root/RootAuthFooter'
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
+import { setIsOpenAuth } from '@/store/dialogWindows/dialogWindowsSlice'
 
-interface IProps {
-  isOpen: boolean;
-  setIsOpen: () => void;
-}
+const AuthModal: FC = () => {
+  const dispatch = useAppDispatch()
 
-export const AuthModalWrapper = styled.div`
-  padding: 1rem;
-  border-radius: 1rem;
-  background: ${gradients.hover};
-`;
+  const isOpen = useAppSelector(state => state.dialogs.isOpenAuth)
+  const setIsOpen = (isOpen: boolean) => dispatch(setIsOpenAuth(isOpen))
 
-const AuthModal: FC<IProps> = ({ isOpen, setIsOpen }) => {
+  const [authData, setAuthData] = useState({ email: '', password: '' })
+
+  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setAuthData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    console.log(authData)
+    setAuthData({ email: '', password: '' })
+    setIsOpen(false)
+  }
+
+  const onClickForgetPassword = () => {
+    setIsOpen(false)
+  }
+
+  if (!isOpen) return null
+
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-      <AuthModalWrapper>
-        <h2>Auth Modal</h2>
-        <p>при закрытии этого модального окна улетаешь на главную</p>
-      </AuthModalWrapper>
-    </Modal>
-  );
-};
+      <RootAuthModal>
+        <Logo />
+        <RootAuthTitle>Авторизация</RootAuthTitle>
 
-export default AuthModal;
+        <RootAuthForm onSubmit={onSubmitHandler}>
+          <RootAuthInput
+            autoComplete="off"
+            type="email"
+            value={authData.email}
+            onChange={onChangeHandler}
+            name="email"
+            placeholder="Эл. почта"
+          />
+
+          <RootAuthInput
+            name="password"
+            value={authData.password}
+            onChange={onChangeHandler}
+            placeholder="Пароль"
+            type="password"
+            autoComplete="off"
+          />
+          <RootAuthBtn variant="outlined" type="submit">
+            Авторизоваться
+          </RootAuthBtn>
+        </RootAuthForm>
+
+        <RootAuthFooter justify="end">
+          <Link to="" onClick={onClickForgetPassword}>
+            Забыли пароль
+          </Link>
+        </RootAuthFooter>
+      </RootAuthModal>
+    </Modal>
+  )
+}
+
+export default AuthModal

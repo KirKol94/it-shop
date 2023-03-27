@@ -1,45 +1,34 @@
-import React, { FC } from "react";
+import React, { FC } from 'react'
 import {
   Address,
   AddressText,
   Block,
   Button,
   Container,
-  FooterList,
   FooterLogo,
   FooterWrapper,
   Form,
   GenderBox,
   GenderInput,
   GenderLabel,
-  InputBox,
-  InputText,
-  Label,
+  InputTextFooter,
   NewsLetter,
   NewsLetterTitle,
   Privacy,
   Socials,
   SocialsIcon,
   Subtitle,
-} from "./styled";
-import { Link } from "react-router-dom";
+} from './styled'
+import { Link } from 'react-router-dom'
+import { InputBox, Label } from '@root/RootInput'
 
 const Footer: FC = () => {
-  const menuLinks = [
-    { name: "Главная", url: "" },
-    { name: "Новинки", url: "new-products" },
-    { name: "Футболки", url: "t-shirts" },
-    { name: "Кепки", url: "caps" },
-    { name: "Аксессуары", url: "accessories" },
-    { name: "Чехлы", url: "covers" },
-  ];
-
   const socialLinks = [
-    { name: "vk", url: "https://vk.com/1" },
-    { name: "vk", url: "https://vk.com/2" },
-    { name: "vk", url: "https://vk.com/3" },
-    { name: "vk", url: "https://vk.com/4" },
-  ];
+    { name: 'vk', url: 'https://vk.com/1' },
+    { name: 'vk', url: 'https://vk.com/2' },
+    { name: 'vk', url: 'https://vk.com/3' },
+    { name: 'vk', url: 'https://vk.com/4' },
+  ]
 
   return (
     <FooterWrapper>
@@ -58,16 +47,6 @@ const Footer: FC = () => {
           </Address>
         </Block>
 
-        <nav>
-          <Subtitle mod="nav">Меню</Subtitle>
-          <FooterList>
-            {menuLinks.map(({ name, url }) => (
-              <li key={url}>
-                <Link to={url}>{name}</Link>
-              </li>
-            ))}
-          </FooterList>
-        </nav>
         <Block>
           <Subtitle mod="social">Познакомиться с нами</Subtitle>
           <Socials>
@@ -85,7 +64,7 @@ const Footer: FC = () => {
             <NewsLetterTitle>Подписаться на рассылку</NewsLetterTitle>
             <Form id="fastMail" name="fastMail">
               <InputBox>
-                <InputText
+                <InputTextFooter
                   autoComplete="off"
                   id="fastMailPhone"
                   type="text"
@@ -97,7 +76,7 @@ const Footer: FC = () => {
                 <span hidden>УКАЖИТЕ ВАШЕ ИМЯ</span>
               </InputBox>
               <InputBox>
-                <InputText
+                <InputTextFooter
                   autoComplete="off"
                   id="fastMailEmail"
                   type="email"
@@ -146,14 +125,18 @@ const Footer: FC = () => {
                 </div>
               </GenderBox>
               <div>
-                <Button variant="main" type="submit" onClick={() => {}}>
+                <Button
+                  variant="outlined"
+                  type="submit"
+                  onClick={() => console.log('форма отправлена')}>
                   Подписаться
                 </Button>
                 <Privacy>
                   При нажатии на кнопку подписаться вы даёте своё согласие на
                   получение новостной рассылки по электронной почте. Для
                   получения подробной информации ознакомьтесь с
-                  <Link to="policy">политикой конфиденциальности</Link>.
+                  <Link to="privacy-policy"> политикой конфиденциальности</Link>
+                  .
                 </Privacy>
               </div>
             </Form>
@@ -161,7 +144,7 @@ const Footer: FC = () => {
         </Block>
       </Container>
     </FooterWrapper>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

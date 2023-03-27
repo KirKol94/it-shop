@@ -1,33 +1,33 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ICategory } from "../../types/ICategory";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { ICategory } from '@/types/ICategory'
 
 type CategoryState = {
-  isLoading: boolean;
-  categories: ICategory[];
-};
+  isLoading: boolean
+  categories: ICategory[]
+}
 
 const initialState: CategoryState = {
   isLoading: false,
   categories: [],
-};
+}
 
-export const categorySlice = createSlice({
-  name: "category",
+const categorySlice = createSlice({
+  name: 'category',
   initialState,
   reducers: {
     // меняем статус процесса загрузки
     setIsLoading(state, action: PayloadAction<boolean>) {
-      state.isLoading = action.payload;
+      state.isLoading = action.payload
     },
 
     // получаем категории с бека
     setCategories(state, action: PayloadAction<ICategory[]>) {
-      state.categories = action.payload;
+      state.categories = action.payload
     },
   },
-});
+})
 
 // экспортируем экшены
-export const { setIsLoading, setCategories } = categorySlice.actions;
+export const { setIsLoading, setCategories } = categorySlice.actions
 
-export default categorySlice.reducer;
+export default categorySlice.reducer

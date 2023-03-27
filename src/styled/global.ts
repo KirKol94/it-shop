@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import { bgColors, fonts, textColors } from "./vars";
+import { createGlobalStyle } from 'styled-components'
+import { colors, fonts } from './vars'
 
 export const GlobalCss = createGlobalStyle`
   html {
@@ -14,10 +14,11 @@ export const GlobalCss = createGlobalStyle`
 
   body {
     font-family: ${fonts.primary};
-    background: ${bgColors.main};
-    color: ${textColors.main};
+    background: ${colors.violet};
+    color: ${colors.white};
     font-style: normal;
     line-height: 1.2;
+    scroll-behavior: smooth;
   }
 
   ul, ol {
@@ -77,4 +78,4 @@ export const GlobalCss = createGlobalStyle`
   input {
     outline: none;
   }
-`;
+`

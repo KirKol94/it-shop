@@ -1,19 +1,21 @@
-import styled from "styled-components";
-import { bgColors, fonts, textColors } from "../../../styled/vars";
-import { StyledButton } from "../../ui/button/styled";
+import styled from 'styled-components'
+import { colors, fonts } from '@/styled/vars'
+import { RootButton } from '@root/RootButton'
+import { ReactComponent as Close } from '@/assets/svg/close.svg'
 
 export const CardModalWrapper = styled.div`
   display: flex;
   width: 100%;
   max-width: 480px;
   flex-direction: column;
-  border-radius: 32px;
-  backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.4);
   gap: 16px;
-`;
+  padding-top: 10px;
+  border-radius: 32px;
+  background: linear-gradient(180deg, #1a0534 0%, #0c011a 100%);
+`
 
 export const ImgBox = styled.div`
+  position: relative;
   overflow: hidden;
   border-radius: 16px 16px 0 0;
 
@@ -22,29 +24,40 @@ export const ImgBox = styled.div`
     max-height: clamp(22.5rem, 7.955rem + 72.73vw, 30rem);
     border-radius: 32px 32px 0 0;
   }
-`;
+`
+
+export const CloseModal = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+`
+
+export const CloseIcon = styled(Close)`
+  width: 100%;
+`
 
 export const Body = styled.div`
   padding: 16px;
   text-align: center;
-`;
+`
 
 export const Title = styled.h2`
   margin-bottom: 12px;
-  color: ${textColors.main};
+  color: ${colors.white};
   font-size: 20px;
   font-weight: 600;
   line-height: 1.5;
-`;
+`
 
 export const Description = styled.p`
   margin-bottom: 16px;
-  color: ${textColors.main};
-  font-family: ${fonts.second};
+  color: ${colors.white};
+  font-family: ${fonts.exo};
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-`;
+`
 
 export const Footer = styled.form`
   display: flex;
@@ -54,22 +67,22 @@ export const Footer = styled.form`
   padding: 0 16px 16px;
   column-gap: 16px;
   gap: clamp(0.75rem, -0.826rem + 7.88vw, 1.563rem);
-`;
+`
 
 export const Price = styled.span`
-  color: ${textColors.main};
+  color: ${colors.white};
   font-size: clamp(1.125rem, 0.883rem + 1.21vw, 1.25rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
-`;
+`
 
 export const Sizes = styled.div`
   position: relative;
   display: flex;
   height: 40px;
   border-radius: 20px;
-  background-color: ${bgColors.dark};
-`;
+  background-color: ${colors.lightNeon};
+`
 
 export const Selected = styled.div<{ position: number }>`
   position: absolute;
@@ -85,28 +98,28 @@ export const Selected = styled.div<{ position: number }>`
     width: 100%;
     height: 100%;
     border-radius: 16px;
-    background-color: ${bgColors.accent};
+    background-color: ${colors.indigo};
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-    content: " ";
+    content: ' ';
   }
-`;
+`
 
 export const SizeInput = styled.input`
   position: absolute;
   display: none;
 
   &:checked + label {
-    color: ${textColors.main};
+    color: ${colors.white};
     font-weight: 500;
   }
-`;
+`
 
 export const SizeLabel = styled.label`
   position: relative;
   display: block;
   flex: 1 1 0;
   border-radius: 9999px;
-  color: ${textColors.lightBrown};
+  color: ${colors.white};
   cursor: pointer;
   font-size: 12px;
   font-weight: 400;
@@ -117,39 +130,11 @@ export const SizeLabel = styled.label`
   user-select: none;
 
   &:hover {
-    color: ${textColors.main};
+    color: ${colors.white};
   }
-`;
+`
 
-export const CountBox = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const CountInput = styled.input`
-  width: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
-  height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
-  background-color: ${bgColors.accent};
-  color: ${textColors.main};
-  font-size: 16px;
-  line-height: 19px;
-  text-align: center;
-`;
-
-export const CountBtn = styled.span<{ action: "plus" | "minus" }>`
-  position: relative;
-  width: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
-  height: clamp(2.188rem, 2.074rem + 0.57vw, 2.5rem);
-  padding: 10.5px 14.5px;
-  user-select: none;
-  background-color: ${bgColors.dark};
-  color: ${textColors.lightBrown};
-  cursor: pointer;
-  border-radius: ${({ action }) =>
-    action === "minus" ? "20px 0 0 20px" : "0 20px 20px 0"};
-`;
-
-export const Button = styled(StyledButton)`
+export const Button = styled(RootButton)`
   flex: 1 1 auto;
   color: #fff;
-`;
+`

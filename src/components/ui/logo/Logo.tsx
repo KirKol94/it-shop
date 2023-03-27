@@ -1,17 +1,13 @@
-import React, { FC } from "react";
-import LogoIcon from "../../icons/LogoIcon";
-import { Link } from "react-router-dom";
+import React, { FC } from 'react'
+import { ReactComponent as LogoIcon } from '@/assets/svg/logo.svg'
+import { Link } from 'react-router-dom'
 
-interface IProps {
-  className?: string;
-}
-
-const Logo: FC<IProps> = ({ className }) => (
-  <Link to="/" className={className}>
+const Logo: FC = () => (
+  <Link to="/">
     <div>
       <LogoIcon />
     </div>
   </Link>
-);
+)
 
-export default Logo;
+export default Logo

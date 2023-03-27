@@ -1,34 +1,31 @@
-export const containerWidth = "1230px";
+export const containerWidth = '1230px'
 
-export const textColors = {
-  main: "#fff",
-  gray: "#95928f",
-  accent: "#2c2c2c",
-  brown: "#816e4c",
-  lightBrown: "#bca67f",
-};
-
-export const borderColors = {
-  gray: "#95928f",
-  white: "#fff",
-};
-
-export const bgColors = {
-  white: "#fff",
-  main: "#2c2926",
-  accent: "#2c2c2c",
-  lightBrown: "#816e4c",
-  dark: "#191919",
-};
+export const colors = {
+  white: '#FFFFFF',
+  gray: '#8D8D8D',
+  neon: '#EB00FF',
+  lightNeon: '#190434',
+  violet: '#0C011A',
+  indigo: '#3A1170',
+}
 
 export const fonts = {
-  main: "Inter, sans-serif, Arial",
-  second: "Raleway, sans-serif",
-  primary: "Jura, sans-serif",
-};
+  primary: 'Jura, sans-serif',
+  exo: '"Exo 2", sans-serif',
+}
 
 export const gradients = {
-  main: "linear-gradient(180deg, #1d1e1e 0%, #1a1b1a 100%)",
-  hover:
-    "radial-gradient(70.18% 70.18% at 16.7% 11.77%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.066) 100%), radial-gradient(48.75% 48.75% at 50% 32.66%, #495449 0%, #1A1B1A 100%)",
-};
+  main: 'linear-gradient(180deg, #1A0534 0%, #0C011A 100%);',
+}
+
+export const borders = {
+  delimeter: '2px solid #32B5E3',
+}
+
+export const bp = {
+  xs: '@media (max-width: 385px)',
+  sm: '@media (max-width: 576px)',
+  md: '@media (max-width: 768px)',
+  lg: '@media (max-width: 992px)',
+  xl: '@media (max-width: 1200px)',
+}
