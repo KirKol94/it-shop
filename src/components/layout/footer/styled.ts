@@ -33,12 +33,6 @@ export const Block = styled.div`
   flex-direction: column;
 `
 
-export const LinksBlock = styled(Block)`
-  ${bp.md} {
-    display: none;
-  }
-`
-
 export const FooterLogo = styled(Logo)`
   margin-bottom: 24px;
 `
@@ -96,14 +90,6 @@ export const Form = styled.form`
 export const InputTextFooter = styled(InputText)`
   border: 1px solid ${colors.gray};
   background-color: transparent;
-`
-
-export const FooterList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-family: ${fonts.exo};
-  font-weight: 300;
 `
 
 export const Socials = styled.ul`

@@ -5,18 +5,16 @@ import {
   Block,
   Button,
   Container,
-  FooterList,
   FooterLogo,
   FooterWrapper,
   Form,
-  InputTextFooter,
   GenderBox,
   GenderInput,
   GenderLabel,
+  InputTextFooter,
   NewsLetter,
   NewsLetterTitle,
   Privacy,
-  LinksBlock,
   Socials,
   SocialsIcon,
   Subtitle,
@@ -25,15 +23,6 @@ import { Link } from 'react-router-dom'
 import { InputBox, Label } from '@root/RootInput'
 
 const Footer: FC = () => {
-  const menuLinks = [
-    { name: 'Главная', url: '' },
-    { name: 'Новинки', url: 'new-products' },
-    { name: 'Футболки', url: 't-shirts' },
-    { name: 'Кепки', url: 'caps' },
-    { name: 'Аксессуары', url: 'accessories' },
-    { name: 'Чехлы', url: 'covers' },
-  ]
-
   const socialLinks = [
     { name: 'vk', url: 'https://vk.com/1' },
     { name: 'vk', url: 'https://vk.com/2' },
@@ -58,16 +47,6 @@ const Footer: FC = () => {
           </Address>
         </Block>
 
-        <LinksBlock>
-          <Subtitle mod="nav">Меню</Subtitle>
-          <FooterList>
-            {menuLinks.map(({ name, url }) => (
-              <li key={url}>
-                <Link to={url}>{name}</Link>
-              </li>
-            ))}
-          </FooterList>
-        </LinksBlock>
         <Block>
           <Subtitle mod="social">Познакомиться с нами</Subtitle>
           <Socials>
