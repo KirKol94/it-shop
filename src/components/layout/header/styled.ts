@@ -23,6 +23,7 @@ export const Wrapper = styled.header<{
   }};
   transition: all 600ms;
   font-family: ${fonts.exo};
+  font-size: 20px;
 
   ${bp.md} {
     padding: 25px 0;

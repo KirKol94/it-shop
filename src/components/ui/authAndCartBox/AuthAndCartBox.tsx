@@ -1,11 +1,5 @@
 import React, { FC } from 'react'
-import {
-  CartBox,
-  CartText,
-  HeaderAuthBtn,
-  LoginBox,
-  ProfileBox,
-} from './styled'
+import { CartBox, HeaderAuthBtn, LoginBox, ProfileBox } from './styled'
 import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
 import { useAppDispatch } from '@/hooks/reduxHooks'
 import {
@@ -40,7 +34,7 @@ const AuthAndCartBox: FC = () => {
 
       <CartBox onClick={onCartClick}>
         <Cart />
-        <CartText>Корзина</CartText>
+        <span>Корзина</span>
       </CartBox>
     </ProfileBox>
   )
