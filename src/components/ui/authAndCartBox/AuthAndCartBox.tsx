@@ -1,13 +1,7 @@
 import React, { FC } from 'react'
-import {
-  CartBox,
-  CartText,
-  HeaderAuthBtn,
-  LoginBox,
-  ProfileBox,
-} from './styled'
+import { CartBox, HeaderAuthBtn, LoginBox, ProfileBox } from './styled'
 import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
-import { useAppDispatch } from '@/hooks/reduxHooks'
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 import {
   setIsOpenAuth,
   setIsOpenCart,
@@ -18,14 +12,20 @@ import {
 const AuthAndCartBox: FC = () => {
   const dispatch = useAppDispatch()
 
+  const theNumberOfProductsInTheBasket = useAppSelector(
+    state => state.cart.items
+  ).length
+
   const onLoginClick = () => {
     dispatch(setIsOpenMenu(false))
     dispatch(setIsOpenAuth(true))
   }
+
   const onRegisterClick = () => {
     dispatch(setIsOpenMenu(false))
     dispatch(setIsOpenRegister(true))
   }
+
   const onCartClick = () => {
     dispatch(setIsOpenMenu(false))
     dispatch(setIsOpenCart(true))
@@ -38,9 +38,11 @@ const AuthAndCartBox: FC = () => {
         <HeaderAuthBtn onClick={onRegisterClick}>Регистрация</HeaderAuthBtn>
       </LoginBox>
 
-      <CartBox onClick={onCartClick}>
+      <CartBox
+        onClick={onCartClick}
+        itemsCount={theNumberOfProductsInTheBasket}>
         <Cart />
-        <CartText>Корзина</CartText>
+        <span>Корзина</span>
       </CartBox>
     </ProfileBox>
   )

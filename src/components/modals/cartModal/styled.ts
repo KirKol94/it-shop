@@ -4,8 +4,9 @@ import { RootButton } from '@root/RootButton'
 
 export const Wrapper = styled.div`
   height: 100%;
-  border-radius: 16px;
   width: 460px;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
   padding: 10px 20px 20px;
   background-color: ${colors.violet};
   display: flex;

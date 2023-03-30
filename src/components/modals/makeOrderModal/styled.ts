@@ -6,7 +6,8 @@ import { InputText } from '@root/RootInput'
 export const Wrapper = styled.div`
   overflow-y: auto;
   height: 100%;
-  border-radius: 16px;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
   width: clamp(20rem, 10.227rem + 48.86vw, 46.875rem);
   padding: 20px;
   background-color: ${colors.violet};

@@ -18,9 +18,8 @@ const Navigation: FC<IProps> = ({ isVertical }) => {
 
   const links = [
     { name: 'Главная', url: '' },
-    { name: 'Каталог', url: '' },
     { name: 'О нас', url: 'about' },
-    { name: 'Оплата и доставка', url: '' },
+    { name: 'Оплата и доставка', url: 'payment-and-delivery' },
   ]
 
   return (

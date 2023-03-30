@@ -22,8 +22,8 @@ export const Wrapper = styled.header<{
     if (isScrolled) return '#0C011A'
   }};
   transition: all 600ms;
-  will-change: transform;
   font-family: ${fonts.exo};
+  font-size: 20px;
 
   ${bp.md} {
     padding: 25px 0;

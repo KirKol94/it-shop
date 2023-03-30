@@ -4,7 +4,8 @@ import { bp, colors } from '@/styled/vars'
 export const Wrapper = styled.div`
   height: 100%;
   width: 460px;
-  border-radius: 16px;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
   padding: 20px;
   background-color: ${colors.violet};
   display: flex;

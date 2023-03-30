@@ -5,8 +5,8 @@ import {
   Body,
   Button,
   CardModalWrapper,
-  CloseModal,
   CloseIcon,
+  CloseModal,
   Description,
   Footer,
   ImgBox,
@@ -23,7 +23,6 @@ import { addProduct } from '@/store/cart/cartSlice'
 import { RootCountBox } from '@root/RootCountBox'
 import { RootCountInput } from '@root/RootCountInput'
 import { RootCountBtn } from '@root/RootCountBtn'
-import { setIsOpenCart } from '@/store/dialogWindows/dialogWindowsSlice'
 
 interface IProps {
   product: IProduct
@@ -56,7 +55,6 @@ const CardModal: FC<IProps> = ({ isOpen, setIsOpen, product }) => {
       size,
     }
     dispatch(addProduct(productToCart))
-    dispatch(setIsOpenCart(true))
     setIsOpen(false)
     setCount(1)
   }
