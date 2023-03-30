@@ -30,7 +30,7 @@ const RecommendCard: FC<IProps> = ({ product }) => {
         </ImgBox>
         <Inner>
           <div>
-            <ProductName>{product.name}</ProductName>
+            <ProductName>{product.category?.name}</ProductName>
           </div>
           <div>
             <Title>{product.name}</Title>
