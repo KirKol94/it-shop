@@ -2,6 +2,9 @@ import styled from 'styled-components'
 import { borders, bp, colors, fonts } from '@/styled/vars'
 import Logo from '@ui/logo/Logo'
 import VkIcon from '@/assets/svg/vk.svg'
+import BoostyIcon from '@/assets/svg/boosty.svg'
+import InstagramIcon from '@/assets/svg/instagram.svg'
+import TwitterIcon from '@/assets/svg/twitter.svg'
 import { RootContainer } from '@root/RootContainer'
 import { RootButton } from '@root/RootButton'
 import { InputText } from '@root/RootInput'
@@ -99,7 +102,7 @@ export const Socials = styled.ul`
   gap: 24px;
 `
 
-export const SocialsIcon = styled.span`
+export const SocialsIcon = styled.span<{ icon: string }>`
   position: relative;
   padding: 6px 16px;
   border-radius: 50%;
@@ -117,8 +120,17 @@ export const SocialsIcon = styled.span`
     background-size: contain;
     content: '';
     transform: translate(-50%, -50%);
-    background-image: url(${VkIcon});
-  }
+    background-image: ${({ icon }) =>
+      icon === 'vk'
+        ? `url(${VkIcon})`
+        : icon === 'boosty'
+        ? `url(${BoostyIcon})`
+        : icon === 'instagram'
+        ? `url(${InstagramIcon})`
+        : icon === 'twitter'
+        ? `url(${TwitterIcon})`
+        : 'none'};
+
 `
 
 export const Privacy = styled.p`

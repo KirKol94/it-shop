@@ -25,9 +25,9 @@ import { InputBox, Label } from '@root/RootInput'
 const Footer: FC = () => {
   const socialLinks = [
     { name: 'vk', url: 'https://vk.com/1' },
-    { name: 'vk', url: 'https://vk.com/2' },
-    { name: 'vk', url: 'https://vk.com/3' },
-    { name: 'vk', url: 'https://vk.com/4' },
+    { name: 'boosty', url: 'https://boosty.to/m0rtymerr' },
+    { name: 'instagram', url: 'https://www.instagram.com/m0rtymerr/' },
+    { name: 'twitter', url: 'https://twitter.com/M0rtyMerr' },
   ]
 
   return (
@@ -53,7 +53,7 @@ const Footer: FC = () => {
             {socialLinks.map(({ name, url }) => (
               <li key={url}>
                 <a href={url} title={name} target="_blank" rel="noreferrer">
-                  <SocialsIcon />
+                  <SocialsIcon icon={name} />
                 </a>
               </li>
             ))}
