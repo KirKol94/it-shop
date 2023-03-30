@@ -120,17 +120,17 @@ export const SocialsIcon = styled.span<{ icon: string }>`
     background-size: contain;
     content: '';
     transform: translate(-50%, -50%);
-    background-image: url(${({ icon }) =>
+    background-image: ${({ icon }) =>
       icon === 'vk'
-        ? VkIcon
+        ? `url(${VkIcon})`
         : icon === 'boosty'
-        ? BoostyIcon
+        ? `url(${BoostyIcon})`
         : icon === 'instagram'
-        ? InstagramIcon
+        ? `url(${InstagramIcon})`
         : icon === 'twitter'
-        ? TwitterIcon
-        : 'none'};);
-  }
+        ? `url(${TwitterIcon})`
+        : 'none'};
+
 `
 
 export const Privacy = styled.p`
