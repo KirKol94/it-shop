@@ -33,14 +33,14 @@ const Card: FC<IProps> = ({ product }) => {
         </ImgBox>
 
         <Body>
-          <Subtitle>Футболка</Subtitle>
+          <Subtitle>{product.category?.name}</Subtitle>
           <Title>{product.name}</Title>
         </Body>
 
         <Footer>
           <FooterPrices>
             <Price>{product.price.toLocaleString('ru')} ₽</Price>
-            <OldPrice>{product.price.toLocaleString('ru')} ₽</OldPrice>
+            <OldPrice>{product.oldPrice.toLocaleString('ru')} ₽</OldPrice>
           </FooterPrices>
           <CardButton variant="outlined" onClick={showProduct}>
             Подробнее

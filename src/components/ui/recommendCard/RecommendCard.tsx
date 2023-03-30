@@ -37,7 +37,7 @@ const RecommendCard: FC<IProps> = ({ product }) => {
           </div>
           <Footer>
             <Price>{product.price.toLocaleString()} ₽</Price>
-            <OldPrice>{product.price.toLocaleString()} ₽</OldPrice>
+            <OldPrice>{product.oldPrice.toLocaleString()} ₽</OldPrice>
           </Footer>
         </Inner>
       </Wrapper>

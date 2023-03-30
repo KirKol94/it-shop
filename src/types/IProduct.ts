@@ -8,5 +8,6 @@ export interface IProduct {
   count?: 1
   description: string
   price: number
+  oldPrice: number
   available?: boolean
 }

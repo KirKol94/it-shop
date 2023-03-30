@@ -10,37 +10,45 @@ const initialState: recommendedState = {
   isLoading: false,
   products: [
     {
-      id: '11',
+      id: '1',
+      category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086233923924791328/image.png',
-      name: 'Футболка на плечиках',
-      description: 'Её позволит только айтишник',
+      name: 'IT-Пузырь',
+      description: 'Тряпка для мужиком с круглым авторитетом',
       price: 1399,
+      oldPrice: 1599,
     },
     {
-      id: 'r2',
+      id: '2',
+      category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png',
-      name: 'Футболка с рукой',
-      description: 'Рука, плечики, футболка',
+      name: 'Меня мама любит',
+      description: 'Не, ну по-факту же',
       price: 1299,
+      oldPrice: 1499,
     },
     {
-      id: 'r3',
+      id: '3',
+      category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086234758331252776/image.png',
-      name: 'Рубашка с галстуком',
+      name: 'Этот принт говорит сам за себя',
       description:
-        'Очень крутая рубашка белого цвета для очень успешных людей, которые знают толк в хороших вещах и имеют потрясающий вкус, а ещё она доступна каждому  Купи - и будь пиздат!',
+        'Сначала ты работаешь на принт, потом принт работает на тебя',
       price: 5999,
+      oldPrice: 6599,
     },
     {
-      id: 'r4',
+      id: '4',
+      category: { name: 'Футболка' },
       image:
-        'https://cdn.discordapp.com/attachments/1080428490379247716/1086233923924791328/image.png',
-      name: 'Футболка на плечиках',
-      description: 'Её позволит только айтишник',
-      price: 1399,
+        'https://cdn.discordapp.com/attachments/1080428490379247716/1090702570089103422/Card_pic2.png',
+      name: 'Для тех, кто в теме',
+      description: 'Не обошлось без внутрянки',
+      price: 10999,
+      oldPrice: 11099,
     },
   ],
 }

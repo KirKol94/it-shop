@@ -11,68 +11,44 @@ const initialState: ProductState = {
   products: [
     {
       id: '1',
+      category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086233923924791328/image.png',
-      name: 'Футболка на плечиках',
-      description: 'Её позволит только айтишник',
+      name: 'IT-Пузырь',
+      description: 'Тряпка для мужиком с круглым авторитетом',
       price: 1399,
+      oldPrice: 1599,
     },
     {
       id: '2',
+      category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png',
-      name: 'Футболка с рукой',
-      description: 'Рука, плечики, футболка',
+      name: 'Меня мама любит',
+      description: 'Не, ну по-факту же',
       price: 1299,
+      oldPrice: 1499,
     },
     {
       id: '3',
+      category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086234758331252776/image.png',
-      name: 'Рубашка с галстуком',
+      name: 'Этот принт говорит сам за себя',
       description:
-        'Очень крутая рубашка белого цвета для очень успешных людей, которые знают толк в хороших вещах и имеют потрясающий вкус, а ещё она доступна каждому  Купи - и будь пиздат!',
+        'Сначала ты работаешь на принт, потом принт работает на тебя',
       price: 5999,
+      oldPrice: 6599,
     },
     {
       id: '4',
+      category: { name: 'Футболка' },
       image:
-        'https://cdn.discordapp.com/attachments/1080428490379247716/1086233923924791328/image.png',
-      name: 'Футболка с циферками',
-      description: 'Шляпа, если честно',
-      price: 0,
-    },
-    {
-      id: '5',
-      image:
-        'https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png',
-      name: 'Кепка-кастрюля',
-      description: 'Чисто шапка для волка',
-      price: 1699,
-    },
-    {
-      id: '6',
-      image:
-        'https://cdn.discordapp.com/attachments/1080428490379247716/1086234758331252776/image.png',
-      name: 'Свитер разной расцветки',
-      description: 'Вязанная кофта',
+        'https://cdn.discordapp.com/attachments/1080428490379247716/1090702570089103422/Card_pic2.png',
+      name: 'Для тех, кто в теме',
+      description: 'Не обошлось без внутрянки',
       price: 10999,
-    },
-    {
-      id: '7',
-      image:
-        'https://cdn.discordapp.com/attachments/1080428490379247716/1086233923924791328/image.png',
-      name: 'Свитер сисадмина',
-      description: 'Ты не тру сисадмин, если нет такого шмота',
-      price: 1984,
-    },
-    {
-      id: '8',
-      image:
-        'https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png',
-      name: 'Сорочка для Си-разработчика',
-      description: 'Ну тут не надо описание даже',
-      price: 1905,
+      oldPrice: 11099,
     },
   ],
 }
