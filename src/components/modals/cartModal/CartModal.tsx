@@ -26,6 +26,7 @@ import {
   setIsOpenCart,
   setIsOpenMakeOrder,
 } from '@/store/dialogWindows/dialogWindowsSlice'
+import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
 
 const CartModal: FC = () => {
   const dispatch = useAppDispatch()
@@ -88,7 +89,7 @@ const CartModal: FC = () => {
           <EmptyCart>
             <EmptyTitle>Корзина пуста</EmptyTitle>
             <ImgBox>
-              <img src="/empty_basket.png" alt="корзина пуста" />
+              <Cart />
             </ImgBox>
           </EmptyCart>
         )}

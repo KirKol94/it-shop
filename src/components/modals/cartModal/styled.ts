@@ -83,8 +83,9 @@ export const EmptyTitle = styled.span`
 `
 
 export const ImgBox = styled.div`
-  & > img {
-    margin: 0 auto;
+  margin: 0 auto;
+
+  & > svg {
     width: 165px;
     height: 165px;
   }
