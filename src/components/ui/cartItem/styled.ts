@@ -20,6 +20,8 @@ export const Wrapper = styled.div`
 export const ImgBox = styled.div`
   border-radius: 16px;
   flex: 0 1 70px;
+  overflow: hidden;
+  max-height: 100%;
 `
 
 export const Img = styled.img`
