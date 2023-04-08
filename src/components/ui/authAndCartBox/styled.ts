@@ -1,5 +1,6 @@
-import styled from 'styled-components'
 import { bp, colors } from '@/styled/vars'
+
+import styled from 'styled-components'
 
 export const ProfileBox = styled.div`
   display: flex;
@@ -11,19 +12,6 @@ export const ProfileBox = styled.div`
 
   ${bp.lg} {
     flex-direction: column-reverse;
-  }
-`
-
-export const LoginBox = styled.div`
-  display: flex;
-  gap: 4px;
-`
-
-export const HeaderAuthBtn = styled.button`
-  cursor: pointer;
-
-  &:hover {
-    color: ${colors.white};
   }
 `
 
