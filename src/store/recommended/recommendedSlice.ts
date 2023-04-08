@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+
 import { IProduct } from '@/types/IProduct'
 
 type recommendedState = {
@@ -11,6 +12,7 @@ const initialState: recommendedState = {
   products: [
     {
       id: '1',
+      isHasSizes: true,
       category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086233923924791328/image.png',
@@ -21,6 +23,7 @@ const initialState: recommendedState = {
     },
     {
       id: '2',
+      isHasSizes: true,
       category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png',
@@ -31,6 +34,7 @@ const initialState: recommendedState = {
     },
     {
       id: '3',
+      isHasSizes: true,
       category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086234758331252776/image.png',
@@ -42,6 +46,7 @@ const initialState: recommendedState = {
     },
     {
       id: '4',
+      isHasSizes: true,
       category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1090702570089103422/Card_pic2.png',

@@ -1,8 +1,7 @@
-import React, { FC } from 'react'
 import {
+  CloseIcon,
   CountBtn,
   CountInput,
-  CloseIcon,
   Delete,
   Footer,
   Header,
@@ -17,15 +16,17 @@ import {
   Title,
   Wrapper,
 } from './styled'
-import { ICartProduct } from '@/types/ICartProduct'
-import { useCountBox } from '@/hooks/useCountBox'
-import { useAppDispatch } from '@/hooks/reduxHooks'
+import React, { FC } from 'react'
 import {
   decrementCartItemCount,
   deleteProduct,
   incrementCartItemCount,
 } from '@/store/cart/cartSlice'
+
+import { ICartProduct } from '@/types/ICartProduct'
 import { RootCountBox } from '@root/RootCountBox'
+import { useAppDispatch } from '@/hooks/reduxHooks'
+import { useCountBox } from '@/hooks/useCountBox'
 
 interface IProps {
   product: ICartProduct
@@ -61,10 +62,12 @@ const CartItem: FC<IProps> = ({ product }) => {
           </Delete>
         </Header>
 
-        <Sizes>
-          <p>Размер:</p>
-          <SizeName>{product.size}</SizeName>
-        </Sizes>
+        {product.size && (
+          <Sizes>
+            <p>Размер:</p>
+            <SizeName>{product.size}</SizeName>
+          </Sizes>
+        )}
 
         <Footer>
           <RootCountBox>

@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+
 import { IProduct } from '@/types/IProduct'
 
 type ProductState = {
@@ -11,6 +12,7 @@ const initialState: ProductState = {
   products: [
     {
       id: '1',
+      isHasSizes: true,
       category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086233923924791328/image.png',
@@ -21,6 +23,7 @@ const initialState: ProductState = {
     },
     {
       id: '2',
+      isHasSizes: true,
       category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086235329457033246/image.png',
@@ -31,6 +34,7 @@ const initialState: ProductState = {
     },
     {
       id: '3',
+      isHasSizes: true,
       category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1086234758331252776/image.png',
@@ -42,6 +46,7 @@ const initialState: ProductState = {
     },
     {
       id: '4',
+      isHasSizes: true,
       category: { name: 'Футболка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1090702570089103422/Card_pic2.png',
@@ -52,6 +57,7 @@ const initialState: ProductState = {
     },
     {
       id: '5',
+      isHasSizes: false,
       category: { name: 'Доска' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1091432098503594125/1-removebg-preview.png',
@@ -62,6 +68,7 @@ const initialState: ProductState = {
     },
     {
       id: '6',
+      isHasSizes: false,
       category: { name: 'Фигурка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1091432098268717096/f5cpgjswiz0dnal6ck1g6ql5rcd1r3tj-removebg-preview.png',
@@ -72,6 +79,7 @@ const initialState: ProductState = {
     },
     {
       id: '7',
+      isHasSizes: false,
       category: { name: 'Кружка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1091432098038038528/6426799121-removebg-preview.png',
@@ -83,6 +91,7 @@ const initialState: ProductState = {
     },
     {
       id: '8',
+      isHasSizes: false,
       category: { name: 'Шапка' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1091432097534713917/1__1_-removebg-preview.png',
@@ -93,6 +102,7 @@ const initialState: ProductState = {
     },
     {
       id: '9',
+      isHasSizes: false,
       category: { name: 'Маска' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1091432097761202266/maska_volka_1_465_auto_jpg__100-removebg-preview.png',
@@ -103,6 +113,7 @@ const initialState: ProductState = {
     },
     {
       id: '10',
+      isHasSizes: false,
       category: { name: 'Трость' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1091435802405384303/759389c8dc308b9f02db87e3a478--ukrasheniya-opornaya-trost-volk.png',
@@ -114,6 +125,7 @@ const initialState: ProductState = {
     },
     {
       id: '11',
+      isHasSizes: false,
       category: { name: 'Кубок' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1091437463622406264/2023-03-31_22-01-16-removebg-preview.png',
@@ -125,6 +137,7 @@ const initialState: ProductState = {
     },
     {
       id: '12',
+      isHasSizes: false,
       category: { name: 'Браслет' },
       image:
         'https://cdn.discordapp.com/attachments/1080428490379247716/1091438261395787876/2023-03-31_22-04-41-removebg-preview.png',
