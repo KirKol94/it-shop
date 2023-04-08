@@ -1,10 +1,11 @@
 import React, { FC } from 'react'
-import Menu from '@ui/menu/Menu'
-import { Wrapper } from './styled'
-import Logo from '@ui/logo/Logo'
-import Navigation from '@ui/navigation/Navigation'
-import AuthAndCartBox from '@ui/authAndCartBox/AuthAndCartBox'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
+
+import AuthAndCartBox from '@/components/ui/cartBox/CartBox'
+import Logo from '@ui/logo/Logo'
+import Menu from '@ui/menu/Menu'
+import Navigation from '@ui/navigation/Navigation'
+import { Wrapper } from './styled'
 import { setIsOpenMenu } from '@/store/dialogWindows/dialogWindowsSlice'
 
 const MenuModal: FC = () => {

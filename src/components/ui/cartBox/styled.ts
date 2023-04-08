@@ -19,7 +19,7 @@ export const CartIconBox = styled.div<{ itemsCount: number }>`
     position: absolute;
     top: 5px;
     right: 5px;
-    display: flex;
+    display: ${({ itemsCount }) => (itemsCount ? 'flex' : 'none')};
     align-items: center;
     justify-content: center;
     font-size: 12px;

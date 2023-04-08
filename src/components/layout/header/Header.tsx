@@ -1,4 +1,3 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
 import {
   AuthAndCart,
   BurgerIcon,
@@ -7,13 +6,15 @@ import {
   Nav,
   Wrapper,
 } from './styled'
+import React, { FC, useEffect, useRef, useState } from 'react'
+
+import AuthAndCartBox from '@/components/ui/cartBox/CartBox'
+import { Link } from 'react-router-dom'
+import Navigation from '@ui/navigation/Navigation'
+import { setHeight } from '@/store/header/headerSlice'
+import { setIsOpenMenu } from '@/store/dialogWindows/dialogWindowsSlice'
 import { useAppDispatch } from '@/hooks/reduxHooks'
 import useScroll from '@/hooks/useScroll'
-import { Link } from 'react-router-dom'
-import { setHeight } from '@/store/header/headerSlice'
-import Navigation from '@ui/navigation/Navigation'
-import AuthAndCartBox from '@ui/authAndCartBox/AuthAndCartBox'
-import { setIsOpenMenu } from '@/store/dialogWindows/dialogWindowsSlice'
 import useScrollDirection from '@/hooks/useScrollDirection'
 
 const Header: FC = () => {
