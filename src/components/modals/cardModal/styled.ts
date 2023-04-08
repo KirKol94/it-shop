@@ -21,6 +21,7 @@ export const ImgBox = styled.div`
 
   & > img {
     width: 100%;
+    object-fit: contain;
     max-height: clamp(22.5rem, 7.955rem + 72.73vw, 30rem);
     border-radius: 32px 32px 0 0;
   }
