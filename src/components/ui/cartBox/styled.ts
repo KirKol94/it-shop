@@ -28,6 +28,6 @@ export const CartIconBox = styled.div<{ itemsCount: number }>`
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    content: '${({ itemsCount }) => itemsCount || null}';
+    content: '${({ itemsCount }) => itemsCount}';
   }
 `
