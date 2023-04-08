@@ -1,4 +1,3 @@
-import React, { FC } from 'react'
 import {
   Address,
   AddressText,
@@ -8,9 +7,6 @@ import {
   FooterLogo,
   FooterWrapper,
   Form,
-  GenderBox,
-  GenderInput,
-  GenderLabel,
   InputTextFooter,
   NewsLetter,
   NewsLetterTitle,
@@ -19,8 +15,10 @@ import {
   SocialsIcon,
   Subtitle,
 } from './styled'
-import { Link } from 'react-router-dom'
 import { InputBox, Label } from '@root/RootInput'
+import React, { FC } from 'react'
+
+import { Link } from 'react-router-dom'
 
 const Footer: FC = () => {
   const socialLinks = [
@@ -89,41 +87,6 @@ const Footer: FC = () => {
                   УКАЖИТЕ ПРАВИЛЬНЫЙ АДРЕС ВАШЕЙ ЭЛЕКТРОННОЙ ПОЧТЫ
                 </span>
               </InputBox>
-              <GenderBox>
-                <div>
-                  <div>
-                    <GenderInput
-                      defaultChecked={true}
-                      id="gender-choice__input_w"
-                      name="Gender"
-                      type="radio"
-                      defaultValue="W"
-                    />
-                    <GenderLabel htmlFor="gender-choice__input_w">
-                      <span>
-                        <span />
-                      </span>
-                      Женщина
-                    </GenderLabel>
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    <GenderInput
-                      id="gender-choice__input_m"
-                      name="Gender"
-                      type="radio"
-                      defaultValue="M"
-                    />
-                    <GenderLabel htmlFor="gender-choice__input_m">
-                      <span>
-                        <span />
-                      </span>
-                      Мужчина
-                    </GenderLabel>
-                  </div>
-                </div>
-              </GenderBox>
               <div>
                 <Button
                   variant="outlined"
