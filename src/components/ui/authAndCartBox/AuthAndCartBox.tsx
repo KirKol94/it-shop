@@ -1,3 +1,4 @@
+import { CartBox, CartIconBox } from './styled'
 import React, { FC } from 'react'
 import {
   setIsOpenCart,
@@ -6,7 +7,6 @@ import {
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 
 import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
-import { CartBox } from './styled'
 
 const AuthAndCartBox: FC = () => {
   const dispatch = useAppDispatch()
@@ -21,8 +21,10 @@ const AuthAndCartBox: FC = () => {
   }
 
   return (
-    <CartBox onClick={onCartClick} itemsCount={theNumberOfProductsInTheBasket}>
-      <Cart />
+    <CartBox onClick={onCartClick}>
+      <CartIconBox itemsCount={theNumberOfProductsInTheBasket}>
+        <Cart />
+      </CartIconBox>
       <span>Корзина</span>
     </CartBox>
   )
