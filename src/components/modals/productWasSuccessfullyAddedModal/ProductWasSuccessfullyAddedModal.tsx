@@ -12,12 +12,15 @@ export const ProductWasSuccessfullyAddedModal: FC = () => {
   const dispatch = useAppDispatch()
 
   const isOpen = useAppSelector(state => state.dialogs.isOpenSuccessfullyAdded)
-  const setIsOpen = () => dispatch(setIsOpenSuccessfullyAdded(false))
+  const setIsOpen = (isOpen: boolean) =>
+    dispatch(setIsOpenSuccessfullyAdded(isOpen))
 
   const onCartClick = () => {
     dispatch(setIsOpenSuccessfullyAdded(false))
     dispatch(setIsOpenCart(true))
   }
+
+  if (!isOpen) return null
 
   return (
     <Menu isOpen={isOpen} setIsOpen={setIsOpen}>
