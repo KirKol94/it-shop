@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   width: 100vw;
   padding: 16px;
   border-radius: 16px;
-  background-color: ${colors.white};
-  color: ${colors.gray};
+  background-color: ${colors.neon};
+  color: ${colors.white};
   text-align: center;
 `
