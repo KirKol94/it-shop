@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
   bottom: 0;
   width: 100vw;
   padding: 16px;
-  border-radius: 16px;
   background-color: ${colors.neon};
   color: ${colors.white};
   text-align: center;
