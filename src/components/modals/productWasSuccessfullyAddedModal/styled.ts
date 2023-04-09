@@ -10,6 +10,16 @@ export const Wrapper = styled.div`
   background-color: ${colors.neon};
   color: ${colors.white};
   text-align: center;
+  animation: fade-in 150ms linear;
+
+  @keyframes fade-in {
+    from {
+      transform: translateY(50%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
 `
 
 export const CartButton = styled.button`

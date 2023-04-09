@@ -6,7 +6,7 @@ import {
 } from '@/store/dialogWindows/dialogWindowsSlice'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 
-import Menu from '@/components/ui/menu/Menu'
+import BottomBanner from '@/components/ui/bottomBanner/BottomBanner'
 
 export const ProductWasSuccessfullyAddedModal: FC = () => {
   const dispatch = useAppDispatch()
@@ -23,11 +23,11 @@ export const ProductWasSuccessfullyAddedModal: FC = () => {
   if (!isOpen) return null
 
   return (
-    <Menu isOpen={isOpen} setIsOpen={setIsOpen}>
+    <BottomBanner isOpen={isOpen} setIsOpen={setIsOpen}>
       <Wrapper>
         Товар успешно добавлен{' '}
         <CartButton onClick={onCartClick}>в корзину</CartButton>
       </Wrapper>
-    </Menu>
+    </BottomBanner>
   )
 }
