@@ -11,3 +11,9 @@ export const Wrapper = styled.div`
   color: ${colors.white};
   text-align: center;
 `
+
+export const CartButton = styled.button`
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: underline;
+`
