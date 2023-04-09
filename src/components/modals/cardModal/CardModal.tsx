@@ -22,6 +22,7 @@ import { RootCountBox } from '@root/RootCountBox'
 import { RootCountBtn } from '@root/RootCountBtn'
 import { RootCountInput } from '@root/RootCountInput'
 import { addProduct } from '@/store/cart/cartSlice'
+import { setIsOpenSuccessfullyAdded } from '@/store/dialogWindows/dialogWindowsSlice'
 import { useAppDispatch } from '@/hooks/reduxHooks'
 import { useCountBox } from '@/hooks/useCountBox'
 
@@ -46,6 +47,7 @@ const CardModal: FC<IProps> = ({ isOpen, setIsOpen, product }) => {
   } = useCountBox(product)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    dispatch(setIsOpenSuccessfullyAdded(true))
     e.preventDefault()
     const productToCart = {
       id: product.id + size,

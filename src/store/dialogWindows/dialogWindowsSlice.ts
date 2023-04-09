@@ -4,12 +4,14 @@ type DialogWindowsState = {
   isOpenMenu: boolean
   isOpenCart: boolean
   isOpenMakeOrder: boolean
+  isOpenSuccessfullyAdded: boolean
 }
 
 const initialState: DialogWindowsState = {
   isOpenMenu: false,
   isOpenCart: false,
   isOpenMakeOrder: false,
+  isOpenSuccessfullyAdded: false,
 }
 
 const dialogWindowsSlice = createSlice({
@@ -25,11 +27,18 @@ const dialogWindowsSlice = createSlice({
     setIsOpenMakeOrder(state, action: PayloadAction<boolean>) {
       state.isOpenMakeOrder = action.payload
     },
+    setIsOpenSuccessfullyAdded(state, action: PayloadAction<boolean>) {
+      state.isOpenSuccessfullyAdded = action.payload
+    },
   },
 })
 
 // экспортируем экшены
-export const { setIsOpenMenu, setIsOpenCart, setIsOpenMakeOrder } =
-  dialogWindowsSlice.actions
+export const {
+  setIsOpenMenu,
+  setIsOpenCart,
+  setIsOpenMakeOrder,
+  setIsOpenSuccessfullyAdded,
+} = dialogWindowsSlice.actions
 
 export default dialogWindowsSlice.reducer
