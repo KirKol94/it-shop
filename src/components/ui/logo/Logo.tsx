@@ -1,13 +1,27 @@
-import React, { FC } from 'react'
-import { ReactComponent as LogoIcon } from '@/assets/svg/logo.svg'
-import { Link } from 'react-router-dom'
+import { LogoIcon } from './styled'
+import React from 'react'
+import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
-const Logo: FC = () => (
-  <Link to="/">
-    <div>
-      <LogoIcon />
-    </div>
-  </Link>
-)
+const LogoWrapper = styled.div`
+  & > svg {
+    width: clamp(7.938rem, 5.192rem + 11.41vw, 13.75rem);
+  }
+`
+
+const Logo = () => {
+  const navigate = useNavigate()
+
+  const onLocoClick = () => {
+    navigate('')
+    window.scroll(0, 0)
+  }
+
+  return (
+    <LogoWrapper>
+      <LogoIcon onClick={onLocoClick} />
+    </LogoWrapper>
+  )
+}
 
 export default Logo

@@ -1,8 +1,7 @@
-import React, { FC } from 'react'
 import {
+  CloseIcon,
   CountBtn,
   CountInput,
-  CloseIcon,
   Delete,
   Footer,
   Header,
@@ -17,15 +16,17 @@ import {
   Title,
   Wrapper,
 } from './styled'
-import { ICartProduct } from '@/types/ICartProduct'
-import { useCountBox } from '@/hooks/useCountBox'
-import { useAppDispatch } from '@/hooks/reduxHooks'
+import React, { FC } from 'react'
 import {
   decrementCartItemCount,
   deleteProduct,
   incrementCartItemCount,
 } from '@/store/cart/cartSlice'
+
+import { ICartProduct } from '@/types/ICartProduct'
 import { RootCountBox } from '@root/RootCountBox'
+import { useAppDispatch } from '@/hooks/reduxHooks'
+import { useCountBox } from '@/hooks/useCountBox'
 
 interface IProps {
   product: ICartProduct
@@ -34,7 +35,7 @@ interface IProps {
 const CartItem: FC<IProps> = ({ product }) => {
   const dispatch = useAppDispatch()
 
-  const { increment, decrement, handleCountInputChange } = useCountBox(product)
+  const { increment, decrement } = useCountBox(product)
 
   const onDeleteItem = () => dispatch(deleteProduct(product.id))
   const onDecrement = () => {
@@ -61,23 +62,19 @@ const CartItem: FC<IProps> = ({ product }) => {
           </Delete>
         </Header>
 
-        <Sizes>
-          <p>Размер:</p>
-          <SizeName>{product.size}</SizeName>
-        </Sizes>
+        {product.size && (
+          <Sizes>
+            <p>Размер:</p>
+            <SizeName>{product.size}</SizeName>
+          </Sizes>
+        )}
 
         <Footer>
           <RootCountBox>
             <CountBtn action="minus" onClick={onDecrement}>
               -
             </CountBtn>
-            <CountInput
-              type="text"
-              inputMode="numeric"
-              value={product.count}
-              onChange={handleCountInputChange}
-              maxLength={3}
-            />
+            <CountInput readOnly value={product.count} maxLength={2} />
             <CountBtn action="plus" onClick={onIncrement}>
               +
             </CountBtn>
@@ -85,7 +82,9 @@ const CartItem: FC<IProps> = ({ product }) => {
           <Multiply>x</Multiply>
           <Price>{product.price.toLocaleString('ru')} ₽</Price>
           <Line></Line>
-          <Price>{product.price * product.count} ₽</Price>
+          <Price>
+            {(product.price * product.count).toLocaleString('ru')} ₽
+          </Price>
         </Footer>
       </Inner>
     </Wrapper>

@@ -21,7 +21,7 @@ const PaymentAndDelivery: FC = () => {
   return (
     <Wrapper headerHeight={headerHeight}>
       <h1>Оплата и доставка</h1>
-      <p>Оплата на сбер, доставка на сдэк</p>
+      <p>Оплата на сбер, доставка по сдэк</p>
     </Wrapper>
   )
 }

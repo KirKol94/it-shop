@@ -1,7 +1,8 @@
-import styled from 'styled-components'
-import { cutLongStringStyles } from '@/styled/mixins'
 import { bp, colors, gradients } from '@/styled/vars'
+
 import { RootButton } from '@root/RootButton'
+import { cutLongStringStyles } from '@/styled/mixins'
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ export const Wrapper = styled.div`
   transition: all 0.3s;
 
   &:hover {
-    box-shadow: 0px -3px 8px ${colors.neon};
+    box-shadow: 4px 4px 8px ${colors.neon};
 
     img {
       transform: scale(1.05);

@@ -30,14 +30,14 @@ const RecommendCard: FC<IProps> = ({ product }) => {
         </ImgBox>
         <Inner>
           <div>
-            <ProductName>{product.name}</ProductName>
+            <ProductName>{product.category?.name}</ProductName>
           </div>
           <div>
             <Title>{product.name}</Title>
           </div>
           <Footer>
             <Price>{product.price.toLocaleString()} ₽</Price>
-            <OldPrice>{product.price.toLocaleString()} ₽</OldPrice>
+            <OldPrice>{product.oldPrice.toLocaleString()} ₽</OldPrice>
           </Footer>
         </Inner>
       </Wrapper>

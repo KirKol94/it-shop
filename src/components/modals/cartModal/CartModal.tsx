@@ -10,12 +10,12 @@ import {
   Close,
   EmptyCart,
   EmptyTitle,
+  ImgBox,
   InfoFinal,
   PromoInput,
   PromoLabel,
   PromoSaleSize,
   Title,
-  WolfIcon,
   Wrapper,
 } from './styled'
 import CartItem from '@ui/cartItem/CartItem'
@@ -26,6 +26,7 @@ import {
   setIsOpenCart,
   setIsOpenMakeOrder,
 } from '@/store/dialogWindows/dialogWindowsSlice'
+import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
 
 const CartModal: FC = () => {
   const dispatch = useAppDispatch()
@@ -87,10 +88,11 @@ const CartModal: FC = () => {
         {cartItems.length === 0 && (
           <EmptyCart>
             <EmptyTitle>Корзина пуста</EmptyTitle>
-            <WolfIcon />
+            <ImgBox>
+              <Cart />
+            </ImgBox>
           </EmptyCart>
         )}
-
         {cartItems.length && (
           <CartFooter>
             <CartFooterInfo>

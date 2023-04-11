@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
-import { Outlet } from 'react-router-dom'
+
+import CartModal from '@/components/modals/cartModal/CartModal'
 import Footer from '../footer/Footer'
 import Header from '@/components/layout/header/Header'
-import MenuModal from '@/components/modals/menuModal/MenuModal'
-import CartModal from '@/components/modals/cartModal/CartModal'
 import MakeOrderModal from '@/components/modals/makeOrderModal/MakeOrderModal'
-import AuthModal from '@/components/modals/authModal/AuthModal'
-import RegisterModal from '@/components/modals/registerModal/RegisterModal'
+import MenuModal from '@/components/modals/menuModal/MenuModal'
+import { Outlet } from 'react-router-dom'
+import { ProductWasSuccessfullyAddedModal } from '@/components/modals/productWasSuccessfullyAddedModal/ProductWasSuccessfullyAddedModal'
 
 const PageStructure: FC = () => {
   return (
@@ -19,11 +19,10 @@ const PageStructure: FC = () => {
       <Footer />
 
       {/* модалки */}
-      <AuthModal />
-      <RegisterModal />
       <MenuModal />
       <CartModal />
       <MakeOrderModal />
+      <ProductWasSuccessfullyAddedModal />
     </>
   )
 }

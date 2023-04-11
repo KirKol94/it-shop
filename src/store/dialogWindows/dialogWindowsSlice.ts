@@ -1,31 +1,23 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 type DialogWindowsState = {
-  isOpenAuth: boolean
-  isOpenRegister: boolean
   isOpenMenu: boolean
   isOpenCart: boolean
   isOpenMakeOrder: boolean
+  isOpenSuccessfullyAdded: boolean
 }
 
 const initialState: DialogWindowsState = {
-  isOpenAuth: false,
-  isOpenRegister: false,
   isOpenMenu: false,
   isOpenCart: false,
   isOpenMakeOrder: false,
+  isOpenSuccessfullyAdded: false,
 }
 
 const dialogWindowsSlice = createSlice({
   name: 'dialogs',
   initialState,
   reducers: {
-    setIsOpenAuth(state, action: PayloadAction<boolean>) {
-      state.isOpenAuth = action.payload
-    },
-    setIsOpenRegister(state, action: PayloadAction<boolean>) {
-      state.isOpenRegister = action.payload
-    },
     setIsOpenMenu(state, action: PayloadAction<boolean>) {
       state.isOpenMenu = action.payload
     },
@@ -35,16 +27,18 @@ const dialogWindowsSlice = createSlice({
     setIsOpenMakeOrder(state, action: PayloadAction<boolean>) {
       state.isOpenMakeOrder = action.payload
     },
+    setIsOpenSuccessfullyAdded(state, action: PayloadAction<boolean>) {
+      state.isOpenSuccessfullyAdded = action.payload
+    },
   },
 })
 
 // экспортируем экшены
 export const {
-  setIsOpenAuth,
-  setIsOpenRegister,
   setIsOpenMenu,
   setIsOpenCart,
   setIsOpenMakeOrder,
+  setIsOpenSuccessfullyAdded,
 } = dialogWindowsSlice.actions
 
 export default dialogWindowsSlice.reducer

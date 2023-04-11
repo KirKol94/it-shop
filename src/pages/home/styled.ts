@@ -1,7 +1,8 @@
-import { RootContainer } from '@root/RootContainer'
 import { borders, bp, colors, fonts } from '@/styled/vars'
-import styled from 'styled-components'
+
 import HeroSectionBg from '@/assets/img/home-page/hero-section/bg.webp'
+import { RootContainer } from '@root/RootContainer'
+import styled from 'styled-components'
 
 export const HeroSection = styled.section<{ headerHeight: number }>`
   padding-top: calc(
@@ -167,7 +168,7 @@ export const Subtitle = styled.p`
   font-family: ${fonts.exo};
   font-weight: 300;
   font-size: clamp(0.875rem, 0.673rem + 0.77vw, 1.25rem);
-  line-height: 125%;
+  line-height: 140%;
 
   ${bp.md} {
     text-align: center;

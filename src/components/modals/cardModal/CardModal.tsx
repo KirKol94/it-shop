@@ -1,6 +1,3 @@
-import React, { Dispatch, FC, useEffect, useRef, useState } from 'react'
-import Modal from '@ui/modal/Modal'
-import { IProduct } from '@/types/IProduct'
 import {
   Body,
   Button,
@@ -17,12 +14,17 @@ import {
   Sizes,
   Title,
 } from './styled'
-import { useCountBox } from '@/hooks/useCountBox'
-import { useAppDispatch } from '@/hooks/reduxHooks'
-import { addProduct } from '@/store/cart/cartSlice'
+import React, { Dispatch, FC, useEffect, useRef, useState } from 'react'
+
+import { IProduct } from '@/types/IProduct'
+import Modal from '@ui/modal/Modal'
 import { RootCountBox } from '@root/RootCountBox'
-import { RootCountInput } from '@root/RootCountInput'
 import { RootCountBtn } from '@root/RootCountBtn'
+import { RootCountInput } from '@root/RootCountInput'
+import { addProduct } from '@/store/cart/cartSlice'
+import { setIsOpenSuccessfullyAdded } from '@/store/dialogWindows/dialogWindowsSlice'
+import { useAppDispatch } from '@/hooks/reduxHooks'
+import { useCountBox } from '@/hooks/useCountBox'
 
 interface IProps {
   product: IProduct
@@ -45,6 +47,7 @@ const CardModal: FC<IProps> = ({ isOpen, setIsOpen, product }) => {
   } = useCountBox(product)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    dispatch(setIsOpenSuccessfullyAdded(true))
     e.preventDefault()
     const productToCart = {
       id: product.id + size,
@@ -52,7 +55,7 @@ const CardModal: FC<IProps> = ({ isOpen, setIsOpen, product }) => {
       name: product.name,
       price: product.price,
       count,
-      size,
+      size: product.isHasSizes ? size : '',
     }
     dispatch(addProduct(productToCart))
     setIsOpen(false)
@@ -86,27 +89,29 @@ const CardModal: FC<IProps> = ({ isOpen, setIsOpen, product }) => {
           <Title>{product.name}</Title>
           <Description>{product.description}</Description>
 
-          <Sizes>
-            <Selected position={position}></Selected>
-            {sizes.map(value => (
-              <React.Fragment key={value}>
-                <SizeInput
-                  type="radio"
-                  id={`sizes__input_${value}`}
-                  name={'size'}
-                  value={value}
-                  readOnly={true}
-                  checked={value === size}
-                />
-                <SizeLabel
-                  ref={value === size ? labelRef : null}
-                  onClick={() => setSize(value)}
-                  htmlFor={`sizes__input_${value}`}>
-                  {value}
-                </SizeLabel>
-              </React.Fragment>
-            ))}
-          </Sizes>
+          {product.isHasSizes && (
+            <Sizes>
+              <Selected position={position}></Selected>
+              {sizes.map(value => (
+                <React.Fragment key={value}>
+                  <SizeInput
+                    type="radio"
+                    id={`sizes__input_${value}`}
+                    name={'size'}
+                    value={value}
+                    readOnly={true}
+                    checked={value === size}
+                  />
+                  <SizeLabel
+                    ref={value === size ? labelRef : null}
+                    onClick={() => setSize(value)}
+                    htmlFor={`sizes__input_${value}`}>
+                    {value}
+                  </SizeLabel>
+                </React.Fragment>
+              ))}
+            </Sizes>
+          )}
         </Body>
 
         <Footer onSubmit={handleSubmit}>
@@ -120,7 +125,7 @@ const CardModal: FC<IProps> = ({ isOpen, setIsOpen, product }) => {
               inputMode="numeric"
               value={count}
               onChange={handleCountInputChange}
-              maxLength={3}
+              maxLength={2}
             />
             <RootCountBtn action="plus" onClick={increment}>
               +

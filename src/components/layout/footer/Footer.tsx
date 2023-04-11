@@ -1,16 +1,12 @@
-import React, { FC } from 'react'
 import {
   Address,
   AddressText,
   Block,
   Button,
   Container,
-  FooterLogo,
+  FooterLogoBox,
   FooterWrapper,
   Form,
-  GenderBox,
-  GenderInput,
-  GenderLabel,
   InputTextFooter,
   NewsLetter,
   NewsLetterTitle,
@@ -19,22 +15,27 @@ import {
   SocialsIcon,
   Subtitle,
 } from './styled'
-import { Link } from 'react-router-dom'
 import { InputBox, Label } from '@root/RootInput'
+import React, { FC } from 'react'
+
+import { Link } from 'react-router-dom'
+import Logo from '@/components/ui/Logo/Logo'
 
 const Footer: FC = () => {
   const socialLinks = [
     { name: 'vk', url: 'https://vk.com/1' },
-    { name: 'vk', url: 'https://vk.com/2' },
-    { name: 'vk', url: 'https://vk.com/3' },
-    { name: 'vk', url: 'https://vk.com/4' },
+    { name: 'boosty', url: 'https://boosty.to/m0rtymerr' },
+    { name: 'instagram', url: 'https://www.instagram.com/m0rtymerr/' },
+    { name: 'twitter', url: 'https://twitter.com/M0rtyMerr' },
   ]
 
   return (
     <FooterWrapper>
       <Container>
         <Block>
-          <FooterLogo />
+          <FooterLogoBox>
+            <Logo />
+          </FooterLogoBox>
 
           <Address>
             <AddressText>ул. Пушкина, д. Колотушкина</AddressText>
@@ -53,7 +54,7 @@ const Footer: FC = () => {
             {socialLinks.map(({ name, url }) => (
               <li key={url}>
                 <a href={url} title={name} target="_blank" rel="noreferrer">
-                  <SocialsIcon />
+                  <SocialsIcon icon={name} />
                 </a>
               </li>
             ))}
@@ -89,41 +90,6 @@ const Footer: FC = () => {
                   УКАЖИТЕ ПРАВИЛЬНЫЙ АДРЕС ВАШЕЙ ЭЛЕКТРОННОЙ ПОЧТЫ
                 </span>
               </InputBox>
-              <GenderBox>
-                <div>
-                  <div>
-                    <GenderInput
-                      defaultChecked={true}
-                      id="gender-choice__input_w"
-                      name="Gender"
-                      type="radio"
-                      defaultValue="W"
-                    />
-                    <GenderLabel htmlFor="gender-choice__input_w">
-                      <span>
-                        <span />
-                      </span>
-                      Женщина
-                    </GenderLabel>
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    <GenderInput
-                      id="gender-choice__input_m"
-                      name="Gender"
-                      type="radio"
-                      defaultValue="M"
-                    />
-                    <GenderLabel htmlFor="gender-choice__input_m">
-                      <span>
-                        <span />
-                      </span>
-                      Мужчина
-                    </GenderLabel>
-                  </div>
-                </div>
-              </GenderBox>
               <div>
                 <Button
                   variant="outlined"

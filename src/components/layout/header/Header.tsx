@@ -1,28 +1,39 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
 import {
-  AuthAndCart,
   BurgerIcon,
+  CartWrapper,
   Container,
-  LogoBox,
+  MobileIcons,
   Nav,
   Wrapper,
 } from './styled'
-import { useAppDispatch } from '@/hooks/reduxHooks'
-import useScroll from '@/hooks/useScroll'
-import { Link } from 'react-router-dom'
-import { setHeight } from '@/store/header/headerSlice'
+import React, { FC, useEffect, useRef, useState } from 'react'
+import {
+  setIsOpenCart,
+  setIsOpenMenu,
+} from '@/store/dialogWindows/dialogWindowsSlice'
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
+
+import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
+import CartBox from '@/components/ui/cartBox/CartBox'
+import Logo from '@/components/ui/Logo/Logo'
 import Navigation from '@ui/navigation/Navigation'
-import AuthAndCartBox from '@ui/authAndCartBox/AuthAndCartBox'
-import { setIsOpenMenu } from '@/store/dialogWindows/dialogWindowsSlice'
+import { RootCartIconWrapper } from '@/styled/root/RootCartIconWrapper'
+import { setHeight } from '@/store/header/headerSlice'
+import useScroll from '@/hooks/useScroll'
 import useScrollDirection from '@/hooks/useScrollDirection'
 
 const Header: FC = () => {
   const dispatch = useAppDispatch()
 
   const showMenu = () => dispatch(setIsOpenMenu(true))
+  const showCart = () => dispatch(setIsOpenCart(true))
 
   const isScrolled = useScroll()
   const { scrollDirection } = useScrollDirection()
+
+  const theNumberOfProductsInTheBasket = useAppSelector(
+    state => state.cart.items
+  ).length
 
   const [scrollDir, setScrollDir] = useState<'up' | 'down'>('up')
 
@@ -54,19 +65,24 @@ const Header: FC = () => {
       isScrolled={isScrolled}
       scrollDirection={scrollDir}>
       <Container>
-        <Link to="">
-          <LogoBox />
-        </Link>
+        <Logo />
 
-        <BurgerIcon onClick={showMenu} />
+        <MobileIcons>
+          <RootCartIconWrapper
+            onClick={showCart}
+            itemsCount={theNumberOfProductsInTheBasket}>
+            <Cart />
+          </RootCartIconWrapper>
+          <BurgerIcon onClick={showMenu} />
+        </MobileIcons>
 
         <Nav>
           <Navigation />
         </Nav>
 
-        <AuthAndCart>
-          <AuthAndCartBox />
-        </AuthAndCart>
+        <CartWrapper>
+          <CartBox />
+        </CartWrapper>
       </Container>
     </Wrapper>
   )

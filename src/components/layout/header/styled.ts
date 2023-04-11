@@ -1,7 +1,7 @@
-import styled from 'styled-components'
 import { bp, fonts } from '@/styled/vars'
-import { ReactComponent as Logo } from '@/assets/svg/logo.svg'
+
 import { ReactComponent as Burger } from '@/assets/svg/burger.svg'
+import styled from 'styled-components'
 
 export const Wrapper = styled.header<{
   isScrolled: boolean
@@ -40,18 +40,21 @@ export const Container = styled.div`
   justify-content: space-between;
 `
 
-export const LogoBox = styled(Logo)`
-  width: clamp(7.938rem, 5.824rem + 10.57vw, 13.75rem);
-`
-
-export const BurgerIcon = styled(Burger)`
+export const MobileIcons = styled.div`
   display: none;
-  max-width: clamp(1.5rem, 0.845rem + 3.27vw, 2.875rem);
-  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
   ${bp.lg} {
     display: flex;
   }
+`
+
+export const BurgerIcon = styled(Burger)`
+  display: flex;
+  max-width: 56px;
+  cursor: pointer;
 `
 
 export const Nav = styled.div`
@@ -60,7 +63,7 @@ export const Nav = styled.div`
   }
 `
 
-export const AuthAndCart = styled.div`
+export const CartWrapper = styled.div`
   ${bp.lg} {
     display: none;
   }

@@ -1,10 +1,13 @@
-import styled from 'styled-components'
 import { borders, bp, colors, fonts } from '@/styled/vars'
-import Logo from '@ui/logo/Logo'
-import VkIcon from '@/assets/svg/vk.svg'
-import { RootContainer } from '@root/RootContainer'
-import { RootButton } from '@root/RootButton'
+
+import BoostyIcon from '@/assets/svg/boosty.svg'
 import { InputText } from '@root/RootInput'
+import InstagramIcon from '@/assets/svg/instagram.svg'
+import { RootButton } from '@root/RootButton'
+import { RootContainer } from '@root/RootContainer'
+import TwitterIcon from '@/assets/svg/twitter.svg'
+import VkIcon from '@/assets/svg/vk.svg'
+import styled from 'styled-components'
 
 export const FooterWrapper = styled.footer`
   width: 100%;
@@ -33,7 +36,8 @@ export const Block = styled.div`
   flex-direction: column;
 `
 
-export const FooterLogo = styled(Logo)`
+export const FooterLogoBox = styled.div`
+  margin: 0 auto;
   margin-bottom: 24px;
 `
 
@@ -99,7 +103,7 @@ export const Socials = styled.ul`
   gap: 24px;
 `
 
-export const SocialsIcon = styled.span`
+export const SocialsIcon = styled.span<{ icon: string }>`
   position: relative;
   padding: 6px 16px;
   border-radius: 50%;
@@ -117,8 +121,17 @@ export const SocialsIcon = styled.span`
     background-size: contain;
     content: '';
     transform: translate(-50%, -50%);
-    background-image: url(${VkIcon});
-  }
+    background-image: ${({ icon }) =>
+      icon === 'vk'
+        ? `url(${VkIcon})`
+        : icon === 'boosty'
+        ? `url(${BoostyIcon})`
+        : icon === 'instagram'
+        ? `url(${InstagramIcon})`
+        : icon === 'twitter'
+        ? `url(${TwitterIcon})`
+        : 'none'};
+
 `
 
 export const Privacy = styled.p`
@@ -132,51 +145,4 @@ export const Privacy = styled.p`
     color: ${colors.neon};
     text-decoration-line: underline;
   }
-`
-
-export const GenderBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 35px;
-`
-
-export const GenderInput = styled.input`
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  padding: 0;
-  margin: 4px 0 0;
-  cursor: pointer;
-  opacity: 0;
-
-  &:checked + label > span {
-    border-color: ${colors.white};
-  }
-
-  & + label > span {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 3px solid ${colors.gray};
-    border-radius: 50%;
-    margin: 0 10px 2px 0;
-    cursor: pointer;
-    vertical-align: bottom;
-  }
-
-  &:checked + label > span > span {
-    display: block;
-    width: 6px;
-    height: 6px;
-    border-radius: 1em;
-    margin: 2px;
-    background: ${colors.white};
-  }
-`
-
-export const GenderLabel = styled.label`
-  font-family: ${fonts.exo};
-  font-weight: 400;
-  cursor: pointer;
 `
