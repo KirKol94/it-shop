@@ -125,7 +125,7 @@ const CardModal: FC<IProps> = ({ isOpen, setIsOpen, product }) => {
               inputMode="numeric"
               value={count}
               onChange={handleCountInputChange}
-              maxLength={3}
+              maxLength={2}
             />
             <RootCountBtn action="plus" onClick={increment}>
               +

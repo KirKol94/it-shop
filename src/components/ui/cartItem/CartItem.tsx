@@ -74,7 +74,7 @@ const CartItem: FC<IProps> = ({ product }) => {
             <CountBtn action="minus" onClick={onDecrement}>
               -
             </CountBtn>
-            <CountInput readOnly value={product.count} maxLength={3} />
+            <CountInput readOnly value={product.count} maxLength={2} />
             <CountBtn action="plus" onClick={onIncrement}>
               +
             </CountBtn>
