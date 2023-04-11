@@ -1,19 +1,25 @@
 import {
-  AuthAndCart,
   BurgerIcon,
+  CartWrapper,
   Container,
   LogoBox,
+  MobileIcons,
   Nav,
   Wrapper,
 } from './styled'
 import React, { FC, useEffect, useRef, useState } from 'react'
+import {
+  setIsOpenCart,
+  setIsOpenMenu,
+} from '@/store/dialogWindows/dialogWindowsSlice'
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 
-import AuthAndCartBox from '@/components/ui/cartBox/CartBox'
+import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
+import CartBox from '@/components/ui/cartBox/CartBox'
 import { Link } from 'react-router-dom'
 import Navigation from '@ui/navigation/Navigation'
+import { RootCartIconWrapper } from '@/styled/root/RootCartIconWrapper'
 import { setHeight } from '@/store/header/headerSlice'
-import { setIsOpenMenu } from '@/store/dialogWindows/dialogWindowsSlice'
-import { useAppDispatch } from '@/hooks/reduxHooks'
 import useScroll from '@/hooks/useScroll'
 import useScrollDirection from '@/hooks/useScrollDirection'
 
@@ -21,9 +27,13 @@ const Header: FC = () => {
   const dispatch = useAppDispatch()
 
   const showMenu = () => dispatch(setIsOpenMenu(true))
+  const showCart = () => dispatch(setIsOpenCart(true))
 
   const isScrolled = useScroll()
   const { scrollDirection } = useScrollDirection()
+  const theNumberOfProductsInTheBasket = useAppSelector(
+    state => state.cart.items
+  ).length
 
   const [scrollDir, setScrollDir] = useState<'up' | 'down'>('up')
 
@@ -59,15 +69,22 @@ const Header: FC = () => {
           <LogoBox />
         </Link>
 
-        <BurgerIcon onClick={showMenu} />
+        <MobileIcons>
+          <RootCartIconWrapper
+            onClick={showCart}
+            itemsCount={theNumberOfProductsInTheBasket}>
+            <Cart />
+          </RootCartIconWrapper>
+          <BurgerIcon onClick={showMenu} />
+        </MobileIcons>
 
         <Nav>
           <Navigation />
         </Nav>
 
-        <AuthAndCart>
-          <AuthAndCartBox />
-        </AuthAndCart>
+        <CartWrapper>
+          <CartBox />
+        </CartWrapper>
       </Container>
     </Wrapper>
   )
