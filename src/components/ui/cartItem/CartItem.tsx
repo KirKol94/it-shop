@@ -35,7 +35,7 @@ interface IProps {
 const CartItem: FC<IProps> = ({ product }) => {
   const dispatch = useAppDispatch()
 
-  const { increment, decrement, handleCountInputChange } = useCountBox(product)
+  const { increment, decrement } = useCountBox(product)
 
   const onDeleteItem = () => dispatch(deleteProduct(product.id))
   const onDecrement = () => {
@@ -74,13 +74,7 @@ const CartItem: FC<IProps> = ({ product }) => {
             <CountBtn action="minus" onClick={onDecrement}>
               -
             </CountBtn>
-            <CountInput
-              type="text"
-              inputMode="numeric"
-              value={product.count}
-              onChange={handleCountInputChange}
-              maxLength={3}
-            />
+            <CountInput readOnly value={product.count} maxLength={3} />
             <CountBtn action="plus" onClick={onIncrement}>
               +
             </CountBtn>
