@@ -19,7 +19,6 @@ import CartBox from '@/components/ui/cartBox/CartBox'
 import Navigation from '@ui/navigation/Navigation'
 import { RootCartIconWrapper } from '@/styled/root/RootCartIconWrapper'
 import { setHeight } from '@/store/header/headerSlice'
-import { useNavigate } from 'react-router-dom'
 import useScroll from '@/hooks/useScroll'
 import useScrollDirection from '@/hooks/useScrollDirection'
 
@@ -31,18 +30,12 @@ const Header: FC = () => {
 
   const isScrolled = useScroll()
   const { scrollDirection } = useScrollDirection()
-  const navigate = useNavigate()
 
   const theNumberOfProductsInTheBasket = useAppSelector(
     state => state.cart.items
   ).length
 
   const [scrollDir, setScrollDir] = useState<'up' | 'down'>('up')
-
-  const onLogoClick = () => {
-    navigate('/')
-    window.scroll(0, 0)
-  }
 
   // отдаём высоту хедера в PageStructure
   const headerRef = useRef<HTMLDivElement>(null)
@@ -72,7 +65,7 @@ const Header: FC = () => {
       isScrolled={isScrolled}
       scrollDirection={scrollDir}>
       <Container>
-        <LogoBox onClick={onLogoClick} />
+        <LogoBox />
 
         <MobileIcons>
           <RootCartIconWrapper

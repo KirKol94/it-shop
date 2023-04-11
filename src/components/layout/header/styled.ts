@@ -1,7 +1,7 @@
 import { bp, fonts } from '@/styled/vars'
 
 import { ReactComponent as Burger } from '@/assets/svg/burger.svg'
-import { ReactComponent as Logo } from '@/assets/svg/logo.svg'
+import Logo from '@/components/ui/Logo/Logo'
 import styled from 'styled-components'
 
 export const Wrapper = styled.header<{

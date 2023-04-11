@@ -3,7 +3,6 @@ import { borders, bp, colors, fonts } from '@/styled/vars'
 import BoostyIcon from '@/assets/svg/boosty.svg'
 import { InputText } from '@root/RootInput'
 import InstagramIcon from '@/assets/svg/instagram.svg'
-import Logo from '@ui/logo/Logo'
 import { RootButton } from '@root/RootButton'
 import { RootContainer } from '@root/RootContainer'
 import TwitterIcon from '@/assets/svg/twitter.svg'
@@ -37,7 +36,7 @@ export const Block = styled.div`
   flex-direction: column;
 `
 
-export const FooterLogo = styled(Logo)`
+export const FooterLogoBox = styled.div`
   margin-bottom: 24px;
 `
 

@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 
 import CartBox from '@/components/ui/cartBox/CartBox'
-import Logo from '@ui/logo/Logo'
+import Logo from '@/components/ui/Logo/Logo'
 import Menu from '@ui/menu/Menu'
 import Navigation from '@ui/navigation/Navigation'
 import { Wrapper } from './styled'
