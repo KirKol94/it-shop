@@ -82,7 +82,9 @@ const CartItem: FC<IProps> = ({ product }) => {
           <Multiply>x</Multiply>
           <Price>{product.price.toLocaleString('ru')} ₽</Price>
           <Line></Line>
-          <Price>{product.price * product.count} ₽</Price>
+          <Price>
+            {(product.price * product.count).toLocaleString('ru')} ₽
+          </Price>
         </Footer>
       </Inner>
     </Wrapper>

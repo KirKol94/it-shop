@@ -2,7 +2,7 @@ import { bp, colors, gradients } from '@/styled/vars'
 
 import { ReactComponent as Close } from '@/assets/svg/close.svg'
 import { RootCountBtn } from '@root/RootCountBtn'
-import { RootCountInput } from '@root/RootCountInput'
+import { RootCountInput } from '@/styled/root/RootCountInput'
 import { cutLongStringStyles } from '@/styled/mixins'
 import styled from 'styled-components'
 
@@ -110,13 +110,9 @@ export const CountBtn = styled(RootCountBtn)`
     height: 22px;
   }
 `
-export const CountInput = styled(RootCountInput)`
-  height: 26px;
-  font-size: 12px;
 
-  ${bp.sm} {
-    height: 22px;
-  }
+export const CountInput = styled(RootCountInput)`
+  height: 22px;
 `
 
 export const Price = styled.span`
@@ -126,11 +122,11 @@ export const Price = styled.span`
   line-height: 1.2;
 
   ${bp.sm} {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   ${bp.xs} {
-    font-size: 13px;
+    font-size: 12px;
   }
 `
 
