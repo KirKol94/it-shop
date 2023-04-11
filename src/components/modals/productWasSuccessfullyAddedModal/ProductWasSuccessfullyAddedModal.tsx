@@ -16,7 +16,6 @@ export const ProductWasSuccessfullyAddedModal: FC = () => {
     dispatch(setIsOpenSuccessfullyAdded(isOpen))
 
   const onCartClick = () => {
-    dispatch(setIsOpenSuccessfullyAdded(false))
     dispatch(setIsOpenCart(true))
   }
 

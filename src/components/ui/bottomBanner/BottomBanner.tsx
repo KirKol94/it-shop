@@ -1,7 +1,4 @@
-import React, { Dispatch, FC, ReactNode } from 'react'
-
-import { Dialog } from '@headlessui/react'
-import { RootModalOverlay } from '@/styled/root/RootModalOverlay'
+import React, { Dispatch, FC, ReactNode, useEffect } from 'react'
 
 interface IProps {
   isOpen: boolean
@@ -10,13 +7,15 @@ interface IProps {
 }
 
 const BottomBanner: FC<IProps> = ({ isOpen, setIsOpen, children }) => {
-  return (
-    <Dialog open={isOpen} onClose={setIsOpen}>
-      <RootModalOverlay>
-        <Dialog.Panel>{children}</Dialog.Panel>
-      </RootModalOverlay>
-    </Dialog>
-  )
+  useEffect(() => {
+    setTimeout(() => {
+      setIsOpen(false)
+    }, 10 * 1000)
+  }, [])
+
+  if (!isOpen) return null
+
+  return <>{children}</>
 }
 
 export default BottomBanner
