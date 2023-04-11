@@ -1,7 +1,6 @@
 import { bp, fonts } from '@/styled/vars'
 
 import { ReactComponent as Burger } from '@/assets/svg/burger.svg'
-import Logo from '@/components/ui/Logo/Logo'
 import styled from 'styled-components'
 
 export const Wrapper = styled.header<{
@@ -39,10 +38,6 @@ export const Container = styled.div`
   height: 100%;
   align-items: center;
   justify-content: space-between;
-`
-
-export const LogoBox = styled(Logo)`
-  width: clamp(7.938rem, 5.824rem + 10.57vw, 13.75rem);
 `
 
 export const MobileIcons = styled.div`

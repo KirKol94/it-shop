@@ -37,6 +37,7 @@ export const Block = styled.div`
 `
 
 export const FooterLogoBox = styled.div`
+  margin: 0 auto;
   margin-bottom: 24px;
 `
 
