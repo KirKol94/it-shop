@@ -1,9 +1,10 @@
-import styled from 'styled-components'
-import { cutLongStringStyles } from '@/styled/mixins'
-import { colors, gradients, bp } from '@/styled/vars'
-import { RootCountInput } from '@root/RootCountInput'
-import { RootCountBtn } from '@root/RootCountBtn'
+import { bp, colors, gradients } from '@/styled/vars'
+
 import { ReactComponent as Close } from '@/assets/svg/close.svg'
+import { RootCountBtn } from '@root/RootCountBtn'
+import { RootCountInput } from '@root/RootCountInput'
+import { cutLongStringStyles } from '@/styled/mixins'
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -110,12 +111,10 @@ export const CountBtn = styled(RootCountBtn)`
   }
 `
 export const CountInput = styled(RootCountInput)`
-  width: 26px;
   height: 26px;
-  font-size: 14px;
+  font-size: 12px;
 
   ${bp.sm} {
-    width: 22px;
     height: 22px;
   }
 `
