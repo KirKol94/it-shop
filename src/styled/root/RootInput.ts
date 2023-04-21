@@ -1,5 +1,7 @@
-import styled from 'styled-components'
 import { colors, fonts } from '@/styled/vars'
+
+import InputMask from 'react-input-mask'
+import styled from 'styled-components'
 
 export const InputBox = styled.div`
   position: relative;
@@ -32,7 +34,7 @@ export const Label = styled.label`
   white-space: pre-wrap;
 `
 
-export const InputText = styled.input`
+export const InputText = styled(InputMask)`
   width: 100%;
   box-sizing: border-box;
   padding: 18px 10px 6px;

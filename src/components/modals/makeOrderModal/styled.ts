@@ -1,7 +1,8 @@
-import styled from 'styled-components'
 import { bp, colors } from '@/styled/vars'
-import { RootButton } from '@root/RootButton'
+
 import { InputText } from '@root/RootInput'
+import { RootButton } from '@root/RootButton'
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   overflow-y: auto;

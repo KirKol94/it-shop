@@ -66,6 +66,7 @@ const Footer: FC = () => {
             <Form id="fastMail" name="fastMail">
               <InputBox>
                 <InputTextFooter
+                  mask=""
                   autoComplete="off"
                   id="fastMailPhone"
                   type="text"
@@ -78,6 +79,7 @@ const Footer: FC = () => {
               </InputBox>
               <InputBox>
                 <InputTextFooter
+                  mask=""
                   autoComplete="off"
                   id="fastMailEmail"
                   type="email"

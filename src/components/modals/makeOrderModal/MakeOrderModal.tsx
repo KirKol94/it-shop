@@ -1,5 +1,3 @@
-import React, { FC } from 'react'
-import Menu from '@ui/menu/Menu'
 import {
   Button,
   CloseBox,
@@ -7,14 +5,17 @@ import {
   FormTitle,
   Header,
   InputRow,
+  OrderInput,
   Title,
   Wrapper,
-  OrderInput,
 } from './styled'
-import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
-import { setIsOpenMakeOrder } from '@/store/dialogWindows/dialogWindowsSlice'
-import { ReactComponent as CloseIcon } from '@/assets/svg/close.svg'
 import { InputBox, Label } from '@root/RootInput'
+import React, { FC } from 'react'
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
+
+import { ReactComponent as CloseIcon } from '@/assets/svg/close.svg'
+import Menu from '@ui/menu/Menu'
+import { setIsOpenMakeOrder } from '@/store/dialogWindows/dialogWindowsSlice'
 
 const MakeOrderModal: FC = () => {
   const dispatch = useAppDispatch()
@@ -40,6 +41,7 @@ const MakeOrderModal: FC = () => {
           <InputRow>
             <InputBox>
               <OrderInput
+                mask=""
                 id="orderName"
                 type="text"
                 required
@@ -50,6 +52,7 @@ const MakeOrderModal: FC = () => {
             </InputBox>
             <InputBox>
               <OrderInput
+                mask=""
                 id="orderLastName"
                 type="text"
                 required
@@ -63,15 +66,15 @@ const MakeOrderModal: FC = () => {
             <InputBox>
               <OrderInput
                 id="orderPhone"
-                type="text"
                 required
-                maxLength={20}
                 placeholder=" "
+                mask="+7(999)999-99-99"
               />
               <Label htmlFor="orderPhone">Телефон</Label>
             </InputBox>
             <InputBox>
               <OrderInput
+                mask=""
                 id="orderMail"
                 type="email"
                 required
@@ -85,6 +88,7 @@ const MakeOrderModal: FC = () => {
           <InputRow>
             <InputBox>
               <OrderInput
+                mask=""
                 id="orderCountry"
                 type="text"
                 required
@@ -93,16 +97,28 @@ const MakeOrderModal: FC = () => {
               <Label htmlFor="orderCountry">Страна</Label>
             </InputBox>
             <InputBox>
-              <OrderInput id="orderCity" type="text" required placeholder=" " />
+              <OrderInput
+                mask=""
+                id="orderCity"
+                type="text"
+                required
+                placeholder=" "
+              />
               <Label htmlFor="orderCity">Город</Label>
             </InputBox>
           </InputRow>
           <InputBox>
-            <OrderInput id="orderCity" type="text" required placeholder=" " />
+            <OrderInput
+              mask=""
+              id="orderCity"
+              type="text"
+              required
+              placeholder=" "
+            />
             <Label htmlFor="orderCity">Адрес строка 1</Label>
           </InputBox>
           <InputBox>
-            <OrderInput id="orderCity" type="text" placeholder=" " />
+            <OrderInput mask="" id="orderCity" type="text" placeholder=" " />
             <Label htmlFor="orderCity">Адрес строка 2</Label>
           </InputBox>
 
