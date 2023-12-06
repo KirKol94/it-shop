@@ -1,7 +1,7 @@
 import React, { FC, useLayoutEffect } from 'react'
 import Card from '@ui/card/Card'
 import { RootTitle } from '@root/RootTitle'
-import RecommendCard from '@/components/ui/recommendCard/RecommendCard'
+import RecommendCard from '@ui/recommendCard/RecommendCard'
 import { useAppSelector } from '@/hooks/reduxHooks'
 import {
   CardsItems,

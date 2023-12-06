@@ -6,7 +6,7 @@ import {
 } from '@/store/dialogWindows/dialogWindowsSlice'
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 
-import BottomBanner from '@/components/ui/bottomBanner/BottomBanner'
+import BottomBanner from '@ui/bottomBanner/BottomBanner'
 
 export const ProductWasSuccessfullyAddedModal: FC = () => {
   const dispatch = useAppDispatch()

@@ -14,7 +14,7 @@ import {
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
 
 import { ReactComponent as Cart } from '@/assets/svg/cart.svg'
-import CartBox from '@/components/ui/cartBox/CartBox'
+import CartBox from '@ui/cartBox/CartBox'
 import Logo from '@ui/logo/Logo'
 import Navigation from '@ui/navigation/Navigation'
 import { RootCartIconWrapper } from '@/styled/root/RootCartIconWrapper'
