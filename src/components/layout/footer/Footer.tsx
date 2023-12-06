@@ -19,7 +19,7 @@ import { InputBox, Label } from '@root/RootInput'
 import React, { FC } from 'react'
 
 import { Link } from 'react-router-dom'
-import Logo from '@/components/ui/Logo/Logo'
+import Logo from '@ui/logo/Logo'
 
 const Footer: FC = () => {
   const socialLinks = [
