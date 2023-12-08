@@ -110,7 +110,10 @@ export const OldPrice = styled.span`
 `
 
 export const CardButton = styled(RootButton)`
-  width: clamp(7.5rem, 3.462rem + 15.38vw, 15rem);
+  width: 100%;
   margin: 0 auto;
   padding: clamp(0.281rem, 0.096rem + 0.71vw, 0.625rem) 0;
+  ${bp.md} {
+    width: 80%;
+  }
 `
