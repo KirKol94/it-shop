@@ -11,7 +11,7 @@ const App: FC = () => {
   return (
     <Routes>
       <Route path="" element={<PageStructure />}>
-        <Route path="" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="payment-and-delivery" element={<PaymentAndDelivery />} />
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
