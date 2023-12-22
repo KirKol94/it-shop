@@ -1,6 +1,6 @@
-import { ReactComponent as Logo } from '@/assets/svg/logo.svg'
 import styled from 'styled-components'
 
-export const LogoIcon = styled(Logo)`
+export const LogoIcon = styled.div`
+  font-size: 40px;
   cursor: pointer;
 `
