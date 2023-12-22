@@ -15,7 +15,6 @@ import {
   Subtitle,
   Title,
 } from './styled'
-import { ReactComponent as WolfIcon } from '@/assets/svg/wolf.svg'
 import { RootContainer } from '@root/RootContainer'
 
 const Home: FC = () => {
@@ -42,15 +41,15 @@ const Home: FC = () => {
         <HeroSectionContainer>
           <HeroSectionInfo>
             <Title>
-              Первый <span>мерч-шоп</span> осознанной меркантильности
+              Первый <span>мерч-шоп</span> айтишной тематики
             </Title>
 
             <Subtitle>
               Добро пожаловать в уникальный интернет-магазин, где каждая покупка
-              становится проявлением осознанной меркантильности! Наш магазин
+              становится проявлением безграничного интереса к IT! Наш магазин
               представляет собой настоящий рай для ценителей качественного
               мерчендайза, которые хотят приобрести не только стильную вещь, но
-              и поддержать идею умной потребительской культуры.
+              и поддержать идею IT-шной культуры.
             </Subtitle>
             <HeroSectionLink href="/" onClick={scrollToSection}>
               В каталог
@@ -58,7 +57,10 @@ const Home: FC = () => {
           </HeroSectionInfo>
 
           <HeroSectionLogo>
-            <WolfIcon />
+            <img
+              src="https://kolchanov.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F62763b15-906b-40b3-862b-867be8f6bb28%2Fa0d67fbe-39f2-4d52-93bd-855bcf9472e2%2Fkisspng-electronic-engineering-computer-icons-electronics-chip-5abc2587f3b127.7166338615222798159982.svg?table=block&id=bf1d41a1-8a5d-4a1f-b28d-e6d9da4fc125&spaceId=62763b15-906b-40b3-862b-867be8f6bb28&userId=&cache=v2"
+              alt="intro img"
+            />
           </HeroSectionLogo>
         </HeroSectionContainer>
       </HeroSection>
