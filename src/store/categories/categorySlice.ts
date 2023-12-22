@@ -28,6 +28,4 @@ const categorySlice = createSlice({
 })
 
 // экспортируем экшены
-export const { setIsLoading, setCategories } = categorySlice.actions
-
 export default categorySlice.reducer

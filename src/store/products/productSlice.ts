@@ -74,7 +74,4 @@ const productSlice = createSlice({
   },
 })
 
-// экспортируем экшены
-export const { setIsLoading, setProducts } = productSlice.actions
-
 export default productSlice.reducer

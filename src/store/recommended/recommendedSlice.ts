@@ -11,7 +11,7 @@ const initialState: recommendedState = {
   isLoading: false,
   products: [
     {
-      id: '1',
+      id: '5',
       isHasSizes: true,
       category: { name: 'Футболка' },
       image:
@@ -22,7 +22,7 @@ const initialState: recommendedState = {
       oldPrice: 1599,
     },
     {
-      id: '2',
+      id: '6',
       isHasSizes: true,
       category: { name: 'Футболка' },
       image:
@@ -33,7 +33,7 @@ const initialState: recommendedState = {
       oldPrice: 1499,
     },
     {
-      id: '3',
+      id: '7',
       isHasSizes: true,
       category: { name: 'Футболка' },
       image:
@@ -45,7 +45,7 @@ const initialState: recommendedState = {
       oldPrice: 6599,
     },
     {
-      id: '4',
+      id: '8',
       isHasSizes: true,
       category: { name: 'Футболка' },
       image:
@@ -73,8 +73,5 @@ const recommendedSlice = createSlice({
     },
   },
 })
-
-// экспортируем экшены
-export const { setIsLoading, setProducts } = recommendedSlice.actions
 
 export default recommendedSlice.reducer
