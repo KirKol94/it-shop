@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { LogoIcon } from './styled'
+import { LogoIcon, LogoAccent } from './styled'
 
 const Logo = () => {
   const navigate = useNavigate()
@@ -10,7 +10,11 @@ const Logo = () => {
     window.scroll(0, 0)
   }
 
-  return <LogoIcon onClick={onLocoClick}>IT SHOP</LogoIcon>
+  return (
+    <LogoIcon onClick={onLocoClick}>
+      IT <LogoAccent>SHOP</LogoAccent>
+    </LogoIcon>
+  )
 }
 
 export default Logo
