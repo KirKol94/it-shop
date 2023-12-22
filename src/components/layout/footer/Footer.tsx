@@ -40,7 +40,7 @@ const Footer: FC = () => {
           <Address>
             <AddressText>ул. Пушкина, д. Колотушкина</AddressText>
             <AddressText>
-              <a href="mailto:info@wolfpack.com">info@wolfpack.com</a>
+              <a href="mailto:info@itshop.com">info@itshop.com</a>
             </AddressText>
             <AddressText>
               <a href="tel:+79999999999">+7 (999) 999-99-99</a>
