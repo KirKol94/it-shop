@@ -23,10 +23,10 @@ import Logo from '@ui/logo/Logo'
 
 const Footer: FC = () => {
   const socialLinks = [
-    { name: 'vk', url: 'https://vk.com/1' },
-    { name: 'boosty', url: 'https://boosty.to/m0rtymerr' },
-    { name: 'instagram', url: 'https://www.instagram.com/m0rtymerr/' },
-    { name: 'twitter', url: 'https://twitter.com/M0rtyMerr' },
+    { name: 'vk', url: 'https://vk.com/zyazik0v' },
+    { name: 'boosty', url: '' },
+    { name: 'instagram', url: '' },
+    { name: 'twitter', url: '' },
   ]
 
   return (
