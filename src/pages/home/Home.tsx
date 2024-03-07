@@ -58,7 +58,7 @@ const Home: FC = () => {
 
           <HeroSectionLogo>
             <img
-              src="https://file.notion.so/f/f/62763b15-906b-40b3-862b-867be8f6bb28/e755fe66-f309-4b59-a86a-f78a247176a5/kisspng-electronic-engineering-computer-icons-electronics-chip-5abc2587f3b127.7166338615222798159982.webp?id=54185432-a02c-41ed-89bb-f23ec09d38b2&table=block&spaceId=62763b15-906b-40b3-862b-867be8f6bb28&expirationTimestamp=1703347200000&signature=8SLPSHyh5qK-sfJexlfDn51mpA7CCcJXRTqzY2aZuiE&downloadName=kisspng-electronic-engineering-computer-icons-electronics-chip-5abc2587f3b127.7166338615222798159982.webp"
+              src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F62763b15-906b-40b3-862b-867be8f6bb28%2Fe755fe66-f309-4b59-a86a-f78a247176a5%2Fkisspng-electronic-engineering-computer-icons-electronics-chip-5abc2587f3b127.7166338615222798159982.webp?table=block&id=54185432-a02c-41ed-89bb-f23ec09d38b2&spaceId=62763b15-906b-40b3-862b-867be8f6bb28&width=2000&userId=2741abc2-75dd-4832-9063-4f0b928741d6&cache=v2"
               alt="intro img"
             />
           </HeroSectionLogo>
